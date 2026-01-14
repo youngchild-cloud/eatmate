@@ -1,0 +1,38 @@
+/* base.scss */
+
+@use './font' as *;
+@use './variables' as *;
+@use './function' as *;
+
+// reset
+body {
+  max-width: 760px;
+  width: 100%;
+  margin: auto;
+  color: $color-text;
+  font-family: "Pretendard", Arial, sans-serif;
+  font-size: 28px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  border: none;
+}
+
+button {
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+// common
+.inner {
+  width: $inner;
+  margin: auto;
+}

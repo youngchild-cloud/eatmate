@@ -1,0 +1,19 @@
+/* _mixins.scss 믹스인 */
+
+@use './variables' as *;
+@use './function' as *;
+
+@mixin label {
+  margin-bottom: 6px;
+  color: $color-sub-black;
+}
+
+@mixin input {
+  display: block;
+  width: 100%;
+  padding: 23px 20px;
+  border: 1px solid $color-gray-light;
+  border-radius: 6px;
+  color: $color-text;
+  font-size: 24px;
+}

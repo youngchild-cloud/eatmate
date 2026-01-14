@@ -1,0 +1,75 @@
+/* layout.scss */
+
+@use './variables' as *;
+@use './function' as *;
+
+// header
+header {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .logo {
+    width: 184px;
+  }
+
+  .bell {
+    width: 40px;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+// nav
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 760px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menus {
+  display: flex;
+
+  li {
+    width: 20%;
+    background-color: $color-white;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+    padding: 20px 0;
+    font-size: 24px;
+  }
+
+  img {
+    width: 50px;
+    margin: auto;
+  }
+
+  // act
+  .act {
+    color: $color-main;
+  }
+
+  .act img {
+    filter: invert(31%) sepia(59%) saturate(5524%) hue-rotate(346deg) brightness(83%) contrast(88%);
+  }
+}
+
+// main
+main {
+  height: 100vh; // 추후 삭제 예정
+}

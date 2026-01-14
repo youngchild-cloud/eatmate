@@ -1,0 +1,14 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+@mixin btn-short() {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid $color-sub-orange;
+  border-radius: 6px;
+  color: $color-sub-orange;
+}
+
+.btn-short {
+  @include btn-short();
+}

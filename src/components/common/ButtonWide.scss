@@ -1,0 +1,16 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+@mixin btn-wide($width: 100%) {
+  display: block;
+  width: $width;
+  padding: 20px 0;
+  background-color: $color-main;
+  border-radius: 6px;
+  color: $color-white;
+  text-align: center;
+}
+
+.btn-wide {
+  @include btn-wide();
+}
