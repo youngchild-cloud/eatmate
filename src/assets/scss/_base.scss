@@ -1,0 +1,76 @@
+// inner 변수
+$inner: 700px;
+
+// 컬러 변수
+$color-font: #333333; //글자 검정
+$color-main: #C92E2E; //메인 빨강
+$color-sub-orange: #F25C3D; //서브 주황
+$color-sub-yellow: #F29C3D; //서브 노랑
+$color-sub-black: #1F1F1F; //서브 검정
+$color-white: #fff; // 흰색
+$color-white-gray: #F7F7F7; // 짙은 흰색
+$color-gray: #8E8E8E; // 짙은 회색
+$color-gray-light: #b7b7b7; // 회색
+
+// 폰트
+// @font-face {
+//   font-family: 'Pretendard';
+//   src: url('../assets/font/Pretendard-Black.woff') format('woff');
+//   src: url('../assets/font/Pretendard-Bold.woff') format('woff');
+//   src: url('../assets/font/Pretendard-ExtraBold.woff') format('woff');
+//   src: url('../assets/font/Pretendard-ExtraLight.woff') format('woff');
+//   src: url('../assets/font/Pretendard-Light.woff') format('woff');
+//   src: url('../assets/font/Pretendard-Medium.woff') format('woff');
+//   src: url('../assets/font/Pretendard-Regular.woff') format('woff');
+//   src: url('../assets/font/Pretendard-SemiBold.woff') format('woff');
+//   src: url('../assets/font/Pretendard-Thin.woff') format('woff');
+// }
+
+$font-pretendard: "Pretendard", Arial, sans-serif;
+
+// 믹스인
+@mixin btn-wide {
+  display: block;
+  width: 100%;
+  background-color: $color-main;
+  text-align: center;
+  color: $color-white;
+  border-radius: 6px;
+  padding: 20px 0;
+}
+
+@mixin btn-short {
+  display: block;
+  width: 300px;
+  background-color: $color-main;
+  text-align: center;
+  color: $color-white;
+  border-radius: 6px;
+  padding: 20px 0;
+
+}
+
+@mixin input-normal {
+  display: block;
+  width:100%;
+  padding: 23px 20px;
+  font-size:24px;
+  color:$color-font;
+  border: 1px solid $color-gray-light;
+  border-radius: 6px;
+}
+
+@mixin label-normal {
+  margin-bottom:6px;
+  color:$color-sub-black;
+
+}
+
+.input-normal {
+  @include input-normal()
+}
+label{
+  @include label-normal()
+}
+
+// 함수 > 김혜련 제작 예정

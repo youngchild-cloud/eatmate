@@ -1,0 +1,9 @@
+@use './_base.scss' as *;
+
+body {
+  color: $color-font;
+  font-size: 28px;
+  line-height: 1.4;
+  font-family: $font-pretendard;
+  word-break: keep-all;
+}
