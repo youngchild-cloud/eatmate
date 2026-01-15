@@ -37,12 +37,12 @@ components
   - Nav 내비
 ---
 pages
-- reviews 맛집 리뷰
+- review 맛집 리뷰
   - ReviewList.js 홈
   - ReviewDetail.js 리뷰 상세
   - RestaurantList.js 맛집 목록
   - RestaurantDetail.js 맛집 상세
-- meetups 맛집 탐방
+- meetup 맛집 탐방
   - MeetupList.js 맛집 탐방 목록
   - MeetupDetail.js 맛집 탐방 상세
 - write 글쓰기

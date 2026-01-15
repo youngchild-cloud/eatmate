@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WriteReview = () => {
+const RestaurantDetail = () => {
   return (
     <div>
 
@@ -8,4 +8,4 @@ const WriteReview = () => {
   );
 };
 
-export default WriteReview;
+export default RestaurantDetail;

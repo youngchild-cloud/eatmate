@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './meetuplist.scss';
 import ButtonShort from '../../components/common/ButtonShort';
-import tabTxtImg1 from '../../assets/images/meetups/con-txt-img1.png';
-import tabTxtImg2 from '../../assets/images/meetups/con-txt-img2.png';
-import tabTxtImg3 from '../../assets/images/meetups/con-txt-img3.png';
+import tabTxtImg1 from '../../assets/images/meetup/con-txt-img1.png';
+import tabTxtImg2 from '../../assets/images/meetup/con-txt-img2.png';
+import tabTxtImg3 from '../../assets/images/meetup/con-txt-img3.png';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -50,7 +50,7 @@ function MeetupList(props) {
                 </p>
               </div>
               <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetups/con-img1.png`} alt="" />
+                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
               </div>
               <div></div>
             </div>

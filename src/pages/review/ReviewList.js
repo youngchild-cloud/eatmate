@@ -1,14 +1,14 @@
 import './ReviewList.scss';
 import { Link } from 'react-router-dom';
 import ButtonShort from '../../components/common/ButtonShort';
-import cate1 from '../../assets/images/reviews/icon_cate01.png';
-import cate2 from '../../assets/images/reviews/icon_cate02.png';
-import cate3 from '../../assets/images/reviews/icon_cate03.png';
-import cate4 from '../../assets/images/reviews/icon_cate04.png';
-import cate5 from '../../assets/images/reviews/icon_cate05.png';
-import cate6 from '../../assets/images/reviews/icon_cate06.png';
-import cate7 from '../../assets/images/reviews/icon_cate07.png';
-import cate8 from '../../assets/images/reviews/icon_cate08.png';
+import cate1 from '../../assets/images/review/icon_cate01.png';
+import cate2 from '../../assets/images/review/icon_cate02.png';
+import cate3 from '../../assets/images/review/icon_cate03.png';
+import cate4 from '../../assets/images/review/icon_cate04.png';
+import cate5 from '../../assets/images/review/icon_cate05.png';
+import cate6 from '../../assets/images/review/icon_cate06.png';
+import cate7 from '../../assets/images/review/icon_cate07.png';
+import cate8 from '../../assets/images/review/icon_cate08.png';
 
 const ReviewList = () => {
   return (
@@ -85,11 +85,11 @@ const ReviewList = () => {
       <section className='review-review'>
         <div className="inner">
           <h3 className="review-title">전체 리뷰 보기</h3>
-          <ul className="reviews">
+          <ul className="review">
             <li>
               <Link to={'/review-detail'}>
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/reviews/review01.jpg`} alt="리뷰" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
                 </div>
                 <div className="txt-box">
                   <p>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
@@ -102,7 +102,7 @@ const ReviewList = () => {
             <li>
               <Link to={'/review-detail'}>
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/reviews/review01.jpg`} alt="리뷰" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
                 </div>
                 <div className="txt-box">
                   <p>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
@@ -115,7 +115,7 @@ const ReviewList = () => {
             <li>
               <Link to={'/review-detail'}>
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/reviews/review01.jpg`} alt="리뷰" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
                 </div>
                 <div className="txt-box">
                   <p>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
@@ -128,7 +128,7 @@ const ReviewList = () => {
             <li>
               <Link to={'/review-detail'}>
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/reviews/review01.jpg`} alt="리뷰" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
                 </div>
                 <div className="txt-box">
                   <p>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
@@ -141,7 +141,7 @@ const ReviewList = () => {
             <li>
               <Link to={'/review-detail'}>
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/reviews/review01.jpg`} alt="리뷰" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
                 </div>
                 <div className="txt-box">
                   <p>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>

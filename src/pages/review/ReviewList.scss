@@ -57,7 +57,7 @@
       right: 20px;
       width: 30px;
       height: 30px;
-      background: url('../../assets/images/reviews/Icon_search.png') no-repeat center center / cover;
+      background: url('../../assets/images/review/Icon_search.png') no-repeat center center / cover;
     }
   }
 }
@@ -96,7 +96,7 @@
     margin-bottom: 0;
   }
 
-  .reviews {
+  .review {
     a {
       display: flex;
       justify-content: space-between;
@@ -138,7 +138,7 @@
 
       .rank {
         height: 25px;
-        background-image: url('../../assets/images/reviews/icon_rank.png');
+        background-image: url('../../assets/images/review/icon_rank.png');
         background-repeat: repeat no-repeat;
         background-position: 0 center;
       }
