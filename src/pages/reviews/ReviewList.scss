@@ -1,0 +1,167 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+// common
+.review-title {
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+// 검색 영역
+.review-search {
+  .title-box {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  .main-title {
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .btn-short {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+
+  .search-box {
+    position: relative;
+    background: $color-white-gray;
+    border-radius: 50px;
+
+    input {
+      display: block;
+      width: 94%;
+      padding: 23px 20px;
+      background-color: transparent;
+    }
+
+    input::placeholder {
+      color: $color-gray;
+      font-size: 24px;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      background: url('../../assets/images/reviews/Icon_search.png') no-repeat center center / cover;
+    }
+  }
+}
+
+// 카테고리 영역
+.review-category {
+  .categorys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 160px;
+      height: 160px;
+      border-radius: 40px;
+      border: 2px solid $color-sub-orange;
+      color: $color-sub-orange;
+    }
+
+    img {
+      width: 60px;
+    }
+  }
+}
+
+// 리뷰 영역
+.review-review {
+  .review-title {
+    margin-bottom: 0;
+  }
+
+  .reviews {
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid $color-gray;
+    }
+
+    .img-box {
+      width: 170px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .txt-box {
+      width: calc(100% - 170px - 40px);
+
+      p {
+        margin-bottom: 10px;
+        font-size: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      span {
+        display: block;
+        font-size: 24px;
+        color: $color-gray;
+      }
+
+      .name {}
+
+      .cate {
+        margin-bottom: 10px;
+      }
+
+      .rank {
+        height: 25px;
+        background-image: url('../../assets/images/reviews/icon_rank.png');
+        background-repeat: repeat no-repeat;
+        background-position: 0 center;
+      }
+
+      .rank1 {
+        width: 25px;
+      }
+
+      .rank2 {
+        width: 50px;
+      }
+
+      .rank3 {
+        width: 75px;
+      }
+
+      .rank4 {
+        width: 100px;
+      }
+
+      .rank5 {
+        width: 125px;
+      }
+    }
+  }
+}

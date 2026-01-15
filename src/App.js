@@ -3,7 +3,16 @@ import './assets/scss/_reset.scss';
 import './assets/scss/base.scss';
 import Header from './components/layout/Header'
 import Nav from './components/layout/Nav'
-import RestaurantList from './pages/reviews/RestaurantList'
+
+
+
+
+
+
+
+
+
+import ReviewList from './pages/reviews/ReviewList'
 
 function App() {
   return (
@@ -11,9 +20,17 @@ function App() {
       <BrowserRouter>
         <Header />
 
-        <Routes>
-          <Route path='/' element={<RestaurantList />} />
-        </Routes>
+        <main>
+          <Routes>
+
+
+
+
+
+
+            <Route path='/' element={<ReviewList />} />
+          </Routes>
+        </main>
 
         <Nav />
       </BrowserRouter>
