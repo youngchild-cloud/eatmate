@@ -4,6 +4,8 @@ import './assets/scss/base.scss';
 import Header from './components/layout/Header'
 import Nav from './components/layout/Nav'
 import RestaurantList from './pages/reviews/RestaurantList'
+import CommunityList from './pages/community/CommunityList';
+import CommunityDetail from './pages/community/CommunityDetail';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
 
         <Routes>
           <Route path='/' element={<RestaurantList />} />
+          <Route path='/community' element={<CommunityList />} />
+          <Route path='/community/detail' element={<CommunityDetail />} />
         </Routes>
 
         <Nav />
