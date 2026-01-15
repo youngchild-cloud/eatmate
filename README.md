@@ -25,10 +25,10 @@ npm i --save @fortawesome/free-brands-svg-icons
 2. JavaScript > 변수, 함수 규칙은 카멜케이스 (ex. let textBox, const titleArea)
 
 # 폴더/페이지명
-* assets
+assets
 - font, scss, images 등 js를 제외한 모든 폴더가 있는 곳
 
-* components
+components
 - common
   - ButtonWide 버튼_fill_메인 컬러
   - ButtonShort 버튼_line_서브 컬러
@@ -36,7 +36,7 @@ npm i --save @fortawesome/free-brands-svg-icons
   - Header 헤더
   - Nav 내비
 
-* pages
+pages
 - reviews 맛집 리뷰
   - ReviewList.js 홈
   - ReviewDetail.js 리뷰 상세
