@@ -1,0 +1,57 @@
+// meetuplist.scss
+
+@use '../../assets/scss/_reset' as *;
+@use '../../assets/scss/base' as *;
+@use '../../assets/scss/variables' as *;
+
+.meetup-list {
+  .inner {}
+
+  .title-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 30px 0px 0px;
+
+
+    .main-title {
+      font-size: 44px;
+      font-weight: bold;
+    }
+
+    .btn-short {}
+  }
+
+  .tab-title {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 2px solid $color-gray;
+    font-size: 32px;
+
+    .tab-content1 {}
+
+    button {}
+  }
+
+  .tab-content {
+    li {}
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .item-txt {
+      h3 {}
+
+      p {}
+
+      span {}
+
+      img {}
+    }
+
+    .item-img {
+      img {}
+    }
+  }
+}

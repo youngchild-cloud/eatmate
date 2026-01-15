@@ -4,6 +4,7 @@ import './assets/scss/base.scss';
 import Header from './components/layout/Header'
 import Nav from './components/layout/Nav'
 import RestaurantList from './pages/reviews/RestaurantList'
+import MeetupList from './pages/meetups/MeetupList'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<RestaurantList />} />
+          <Route path='/meetup' element={<MeetupList />} />
         </Routes>
 
         <Nav />
