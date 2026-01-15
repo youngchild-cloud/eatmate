@@ -1,0 +1,136 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+// 버튼 콤포넌트
+import ButtonShort from '../../components/common/ButtonShort';
+
+//아이콘
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
+import { faComment as faCommentRegular } from "@fortawesome/free-regular-svg-icons";
+
+// scss
+import './CommunityList.scss';
+
+function CommunityList(props) {
+  return (
+    <>
+      <section className="community-list">
+        <div className="inner">
+          {/* 제목 + 글쓰기 버튼 */}
+          <div className="info-box">
+            <h2>자유게시판</h2>
+            <ButtonShort type="button" text="게시물 쓰기" />
+          </div>
+
+          {/* 자유게시판 글 목록  */}
+          <Link to="/community/detail/">
+            {/* 프로필 + 닉네임 + 등록시간 */}
+            <div className="comm-top">
+              {/* 프로필 사진 public */}
+              <div className="img-box">
+                <img src={`${process.env.PUBLIC_URL}/images/community/user01.png`} alt="프로필 사진" />
+              </div>
+              {/* 닉네임 + 등록시간 */}
+              <p className='txt-box'>
+                <span className="nick">피자광인</span>
+                |
+                <span className="upload-time">23:13</span>
+              </p>
+            </div>
+
+            {/* 게시물 제목 + 게시글 내용 */}
+            <div className="comm-mid">
+              <h3 className='comm-title'>나 피자 진짜 좋아하는데</h3>
+              <p className='comm-content'>지금 시간에 먹으면 오바야?</p>
+            </div>
+
+            {/* 하트 수 + 채팅 수 */}
+            <div className="comm-bot">
+              <span>
+                <FontAwesomeIcon icon={faHeartRegular} />
+                12
+              </span>
+              <span>
+                <FontAwesomeIcon icon={faCommentRegular} />
+                12
+              </span>
+            </div>
+          </Link>
+
+          {/* 자유게시판 글 목록  */}
+          <Link to="/community/detail/">
+            {/* 프로필 + 닉네임 + 등록시간 */}
+            <div className="comm-top">
+              {/* 프로필 사진 public */}
+              <div className="img-box">
+                <img src={`${process.env.PUBLIC_URL}/images/community/user01.png`} alt="프로필 사진" />
+              </div>
+              {/* 닉네임 + 등록시간 */}
+              <p className='txt-box'>
+                <span className="nick">피자광인</span>
+                |
+                <span className="upload-time">23:13</span>
+              </p>
+            </div>
+
+            {/* 게시물 제목 + 게시글 내용 */}
+            <div className="comm-mid">
+              <h3 className='comm-title'>나 피자 진짜 좋아하는데</h3>
+              <p className='comm-content'>지금 시간에 먹으면 오바야?</p>
+            </div>
+
+            {/* 하트 수 + 채팅 수 */}
+            <div className="comm-bot">
+              <span>
+                <FontAwesomeIcon icon={faHeartRegular} />
+                12
+              </span>
+              <span>
+                <FontAwesomeIcon icon={faCommentRegular} />
+                12
+              </span>
+            </div>
+          </Link>
+
+          {/* 자유게시판 글 목록  */}
+          <Link to="/community/detail/">
+            {/* 프로필 + 닉네임 + 등록시간 */}
+            <div className="comm-top">
+              {/* 프로필 사진 public */}
+              <div className="img-box">
+                <img src={`${process.env.PUBLIC_URL}/images/community/user01.png`} alt="프로필 사진" />
+              </div>
+              {/* 닉네임 + 등록시간 */}
+              <p className='txt-box'>
+                <span className="nick">피자광인</span>
+                |
+                <span className="upload-time">23:13</span>
+              </p>
+            </div>
+
+            {/* 게시물 제목 + 게시글 내용 */}
+            <div className="comm-mid">
+              <h3 className='comm-title'>나 피자 진짜 좋아하는데</h3>
+              <p className='comm-content'>지금 시간에 먹으면 오바야?</p>
+            </div>
+
+            {/* 하트 수 + 채팅 수 */}
+            <div className="comm-bot">
+              <span>
+                <FontAwesomeIcon icon={faHeartRegular} />
+                12
+              </span>
+              <span>
+                <FontAwesomeIcon icon={faCommentRegular} />
+                12
+              </span>
+            </div>
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default CommunityList;
