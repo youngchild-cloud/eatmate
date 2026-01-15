@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // 버튼 콤포넌트
-import ButtonShort from '../../components/common/ButtonShort';
+import TitleLeft from '../../components/common/TitleLeft';
 
 //아이콘
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,14 +17,10 @@ function CommunityList(props) {
     <>
       <section className="community-list">
         <div className="inner">
-          {/* 제목 + 글쓰기 버튼 */}
-          <div className="info-box">
-            <h2>자유게시판</h2>
-            <ButtonShort type="button" text="게시물 쓰기" />
-          </div>
+          <TitleLeft title={'자유게시판'} link={'/write/community'} linkTitle={'자유게시판 글쓰기'} text={'게시물 쓰기'} />
 
           {/* 자유게시판 글 목록  */}
-          <Link to="/community/detail/">
+          <Link to="/community/detail/" className='item'>
             {/* 프로필 + 닉네임 + 등록시간 */}
             <div className="comm-top">
               {/* 프로필 사진 public */}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './meetuplist.scss';
-import ButtonShort from '../../components/common/ButtonShort';
+import TitleLeft from '../../components/common/TitleLeft';
 import tabTxtImg1 from '../../assets/images/meetup/con-txt-img1.png';
 import tabTxtImg2 from '../../assets/images/meetup/con-txt-img2.png';
 import tabTxtImg3 from '../../assets/images/meetup/con-txt-img3.png';
@@ -22,10 +22,7 @@ function MeetupList(props) {
 
     <section className='meetup-list'>
       <div className="inner">
-        <div className="title-box">
-          <h2 className="main-title">맛집 탐방</h2>
-          <ButtonShort type={'button'} text={'게시물 쓰기'} />
-        </div>
+        <TitleLeft title={'맛집 탐방'} link={'/write/meetup'} linkTitle={'맛집 탐방 글쓰기'} text={'게시물 쓰기'} />
 
         <ul className="tab-title">
           <li className='act'><button>전체글</button></li>

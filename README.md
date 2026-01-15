@@ -32,6 +32,8 @@ components
 - common
   - ButtonWide 버튼_fill_메인 컬러
   - ButtonShort 버튼_line_서브 컬러
+  - TitleCenter 타이틀_가운데 / 글쓰기 버튼_왼쪽
+  - TitleLeft 타이틀_왼쪽 / 뒤로가기 버튼_오른쪽
 - layout
   - Header 헤더
   - Nav 내비

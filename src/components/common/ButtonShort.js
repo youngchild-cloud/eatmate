@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import './ButtonShort.scss';
 
-const ButtonShort = ({ type, text }) => {
+const ButtonShort = ({ link, linkTitle, text }) => {
   return (
-    <button type={type} className='btn-short'>{text}</button>
+    <Link to={link} title={`${linkTitle} 페이지로 이동`} className='btn-short'>{text}</Link>
   );
 };
 

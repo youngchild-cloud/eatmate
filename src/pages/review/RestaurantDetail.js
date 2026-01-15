@@ -1,10 +1,13 @@
 import React from 'react';
+import TitleCenter from '../../components/common/TitleCenter';
 
 const RestaurantDetail = () => {
   return (
-    <div>
+    <section>
+      <div className="inner">
 
-    </div>
+      </div>
+    </section>
   );
 };
 

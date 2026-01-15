@@ -1,0 +1,12 @@
+.common-title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  .common-title {
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+}

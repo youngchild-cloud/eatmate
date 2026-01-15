@@ -1,10 +1,13 @@
 import React from 'react';
+import TitleCenter from '../../components/common/TitleCenter';
 
 const Login = () => {
   return (
-    <div>
-
-    </div>
+    <section className=''>
+      <div className="inner">
+        <TitleCenter title={'로그인'} />
+      </div>
+    </section>
   );
 };
 

@@ -11,24 +11,6 @@
 
 // 검색 영역
 .review-search {
-  .title-box {
-    position: relative;
-    margin-bottom: 30px;
-  }
-
-  .main-title {
-    font-size: 44px;
-    font-weight: bold;
-    line-height: 1.2;
-  }
-
-  .btn-short {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-  }
-
   .search-box {
     position: relative;
     background: $color-white-gray;
@@ -116,7 +98,7 @@
     .txt-box {
       width: calc(100% - 170px - 40px);
 
-      p {
+      .text {
         margin-bottom: 10px;
         font-size: 30px;
         overflow: hidden;
@@ -124,15 +106,13 @@
         white-space: nowrap;
       }
 
-      span {
-        display: block;
+      .name,
+      .info {
         font-size: 24px;
         color: $color-gray;
       }
 
-      .name {}
-
-      .cate {
+      .info {
         margin-bottom: 10px;
       }
 

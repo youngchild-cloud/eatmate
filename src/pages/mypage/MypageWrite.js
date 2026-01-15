@@ -1,10 +1,13 @@
 import React from 'react';
+import TitleCenter from '../../components/common/TitleCenter';
 
 const MypageWrite = () => {
   return (
-    <div>
-
-    </div>
+    <section className=''>
+      <div className="inner">
+        <TitleCenter title={'작성한 게시글'} />
+      </div>
+    </section>
   );
 };
 
