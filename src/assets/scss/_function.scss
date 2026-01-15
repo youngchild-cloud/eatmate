@@ -1,5 +1,7 @@
 @use "sass:math";
 
 @function vw-mo($num, $base: 760) {
-  @return math.div($num, $base) * 100vw;
+  // 760 이하: vw가 더 작아서 vw가 적용됨
+  // 760 이상: vw가 더 커지려 하지만 px이 상한이 되어 멈춤
+  @return min(calc(#{math.div($num, $base)} * 100vw), #{$num}px);
 }

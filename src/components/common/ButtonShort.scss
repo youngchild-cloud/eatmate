@@ -3,9 +3,9 @@
 
 @mixin btn-short() {
   display: inline-block;
-  padding: 10px 20px;
+  padding: vw-mo(10) vw-mo(20);
   border: 1px solid $color-sub-orange;
-  border-radius: 6px;
+  border-radius: vw-mo(6);
   color: $color-sub-orange;
 }
 

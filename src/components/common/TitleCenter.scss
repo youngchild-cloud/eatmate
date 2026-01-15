@@ -4,7 +4,7 @@
 .common-title-box-center {
   display: block;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: vw-mo(30);
 
   .common-title {
     text-align: center;
@@ -16,5 +16,10 @@
     top: 50%;
     transform: translateY(-50%);
     left: 0;
+    width: vw-mo(15);
+
+    img {
+      width: 100%;
+    }
   }
 }

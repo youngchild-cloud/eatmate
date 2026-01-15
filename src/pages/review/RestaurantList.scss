@@ -1,0 +1,38 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.restaurant-list {
+  .inner {}
+
+  .title-box {
+    .title {}
+
+    .filter {}
+
+    .filter-tit {}
+
+    .filter-list {
+      li {}
+
+      button {}
+    }
+  }
+
+  .list-box {
+    li {}
+
+    a {}
+
+    .img-box {
+      img {}
+    }
+
+    .txt-box {
+      .tit {}
+
+      p {}
+
+      span {}
+    }
+  }
+}

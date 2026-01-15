@@ -5,7 +5,7 @@ const RestaurantDetail = () => {
   return (
     <section>
       <div className="inner">
-
+        식당 상세
       </div>
     </section>
   );

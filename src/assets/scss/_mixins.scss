@@ -4,16 +4,16 @@
 @use './function' as *;
 
 @mixin label {
-  margin-bottom: 6px;
+  margin-bottom: vw-mo(6);
   color: $color-sub-black;
 }
 
 @mixin input {
   display: block;
   width: 100%;
-  padding: 23px 20px;
+  padding: vw-mo(23) vw-mo(20);
   border: 1px solid $color-gray-light;
-  border-radius: 6px;
+  border-radius: vw-mo(6);
   color: $color-text;
-  font-size: 24px;
+  font-size: vw-mo(24);
 }

@@ -6,12 +6,9 @@
 
 // reset
 body {
-  max-width: 760px;
-  width: 100%;
-  margin: auto;
   color: $color-text;
   font-family: "Pretendard", Arial, sans-serif;
-  font-size: 28px;
+  font-size: vw-mo(28);
   line-height: 1.4;
   word-break: keep-all;
 }
@@ -42,7 +39,8 @@ button {
 }
 
 .inner {
+  max-width: 700px;
   width: $inner;
   margin: auto;
-  padding: 30px 0;
+  padding: vw-mo(30) 0;
 }

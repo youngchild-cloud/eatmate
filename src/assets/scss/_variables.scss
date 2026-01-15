@@ -3,7 +3,7 @@
 @use './function' as *;
 
 // inner
-$inner: 700px;
+$inner: vw-mo(700);
 
 // 컬러
 $color-text: #333333; //글자 검정
