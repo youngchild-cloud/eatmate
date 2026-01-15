@@ -38,32 +38,40 @@ npm i --save @fortawesome/free-brands-svg-icons
 
 * pages
 - reviews 맛집 리뷰
-  - ReviewList 홈
-  - ReviewDetail 리뷰 상세
-  - RestaurantList 맛집 목록
-  - RestaurantDetail 맛집 상세
+  - ReviewList.js 홈
+  - ReviewDetail.js 리뷰 상세
+  - RestaurantList.js 맛집 목록
+  - RestaurantDetail.js 맛집 상세
 - meetups 맛집 탐방
-  - MeetupList 맛집 탐방 목록
-  - MeetupDetail 맛집 탐방 상세
+  - MeetupList.js 맛집 탐방 목록
+  - MeetupDetail.js 맛집 탐방 상세
 - write 글쓰기
-  - WriteReview 리뷰 글쓰기
-  - WriteMeetup 탐방 글쓰기
-  - WriteCommunity 자유게시판 글쓰기
+  - WriteReview.js 리뷰 글쓰기
+  - WriteMeetup.js 탐방 글쓰기
+  - WriteCommunity.js 자유게시판 글쓰기
 - community 자유게시판
-  - CommunityList 맛집 탐방 목록
-  - CommunityDetail 맛집 탐방 상세
+  - CommunityList.js 맛집 탐방 목록
+  - CommunityDetail.js 맛집 탐방 상세
 - mypage 마이페이지
-  - Mypage 홈
-  - MypageProfile 프로필
-  - MypageBookmark 저장한 식당
-  - MypageMeetup 맛집 탐방 신청내역
-  - MypageWrite 작성한 게시글
-  - MypageLike 내가 남긴 좋아요
-  - MypageComment 내가 남긴 댓글
+  - Mypage.js 홈
+  - MypageProfile.js 프로필
+  - MypageBookmark.js 저장한 식당
+  - MypageMeetup.js 맛집 탐방 신청내역
+  - MypageWrite.js 작성한 게시글
+  - MypageLike.js 내가 남긴 좋아요
+  - MypageComment.js 내가 남긴 댓글
 - login 로그인/회원가입
-  - Login 로그인
-  - Join 회원가입
+  - Login.js 로그인
+  - Join.js 회원가입
 - not-found 404페이지
-  - NotFound 404페이지
+  - NotFound.js 404페이지
+- admin 관리자
+  - restaurant 매장 관리
+    - RestaurantList.js 매장 목록
+    - RestaurantCreate.js 매장 등록
+  - reviews 게시판 관리 > 맛집 리뷰 관리 (디자인x 추후 시간 남으면 작업 예정)
+  - meetups 게시판 관리 > 맛집 탐방 관리 (디자인x 추후 시간 남으면 작업 예정)
+  - community 게시판 관리 > 자유게시판 관리 (디자인x 추후 시간 남으면 작업 예정)
+  - Login.js 로그인
 
 # 참고사항
