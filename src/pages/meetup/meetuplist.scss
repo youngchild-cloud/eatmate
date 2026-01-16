@@ -1,41 +1,83 @@
 // meetuplist.scss
 
-@use '../../assets/scss/_reset' as *;
-@use '../../assets/scss/base' as *;
 @use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
 
 .meetup-list {
   .tab-title {
     display: flex;
     justify-content: space-evenly;
-    border-bottom: 2px solid $color-gray;
-    font-size: 32px;
+    font-size: vw-mo(32);
 
-    .tab-content1 {}
+    li {
+      border-bottom: vw-mo(2) solid $color-gray;
+      width: vw-mo(350);
+      text-align: center;
+      padding-bottom: vw-mo(20);
+    }
 
-    button {}
+    .act {
+      border-bottom: vw-mo(2) solid $color-main;
+    }
   }
 
   .tab-content {
-    li {}
+    .tab-content-list {
+      display: block;
+    }
+
+    li {
+      display: none;
+    }
 
     .item {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $color-gray;
+      padding: vw-mo(20) 0;
     }
 
     .item-txt {
-      h3 {}
+      h3 {
+        font-size: vw-mo(30);
+        font-weight: bold;
+        padding-bottom: vw-mo(10);
+      }
 
-      p {}
+      p {
+        padding-bottom: vw-mo(20);
+        font-size: vw-mo(24);
+        color: $color-gray;
+      }
 
-      span {}
+      img {
+        height: vw-mo(20)
+      }
 
-      img {}
+      .icon-num {
+        color: #333;
+      }
+
+      span {
+        padding-right: vw-mo(20);
+      }
+
+      svg {
+        padding-right: vw-mo(10);
+        font-size: vw-mo(30);
+        vertical-align: middle;
+      }
     }
 
     .item-img {
-      img {}
+      width: vw-mo(300);
+      text-align: right;
+
+      img {
+        width: vw-mo(170);
+        height: vw-mo(190);
+      }
     }
   }
 }
