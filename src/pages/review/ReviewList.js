@@ -23,9 +23,11 @@ const ReviewList = () => {
         </div>
       </section>
 
-      <section className='review-category'>
+      <section className='review-list-category'>
         <div className="inner">
-          <h3 className="review-title">식당 카테고리 보기</h3>
+          <div className="review-title-box">
+            <h3 className="review-title">식당 카테고리 보기</h3>
+          </div>
           <ul className="categorys">
             <li>
               <Link to={'/review/restaurant'}>
@@ -79,9 +81,11 @@ const ReviewList = () => {
         </div>
       </section>
 
-      <section className='review-review'>
+      <section className='review-list-review'>
         <div className="inner">
-          <h3 className="review-title">전체 리뷰 보기</h3>
+          <div className="review-title-box">
+            <h3 className="review-title">전체 리뷰 보기</h3>
+          </div>
           <ul className="review">
             <li>
               <Link to={'/review/detail'}>

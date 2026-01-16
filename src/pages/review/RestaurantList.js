@@ -20,8 +20,8 @@ const RestaurantList = () => {
 
       <section className='restaurant-list'>
         <div className="inner">
-          <div className="title-box">
-            <h3 class="title">한식</h3>
+          <div className="review-title-box">
+            <h3 class="review-title">한식</h3>
             <div className={`filter ${addAct ? 'act' : ''}`}> {/* act */}
               <p className='filter-tit' onClick={() => setAddAct(prev => !prev)}><button>평점순</button></p>
               <ul className='filter-list'>

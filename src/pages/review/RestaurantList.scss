@@ -1,16 +1,10 @@
 @use '../../assets/scss/variables' as *;
 @use '../../assets/scss/function' as *;
 
+/*** 식당 목록 ***/
 .restaurant-list {
-  .title-box {
+  .review-title-box {
     position: relative;
-    margin-bottom: vw-mo(20);
-
-    .title {
-      font-size: vw-mo(36);
-      font-weight: bold;
-      line-height: 1.2;
-    }
 
     .filter {
       position: absolute;
