@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import './assets/scss/_reset.scss';
 import './assets/scss/base.scss';
 import Header from './components/layout/Header'
@@ -34,10 +34,11 @@ function App() {
         <main>
           <Routes>
             {/* 메인(맛집 리뷰) */}
-            <Route path='/' element={<ReviewList />} />
+            <Route path="/" element={<Navigate to="/review" replace />} /> {/* /으로 들어오면 /review로 강제 이동 */}
+            <Route path='/review' element={<ReviewList />} />
             <Route path='/review/detail' element={<ReviewDetail />} />
-            <Route path='/restaurant' element={<RestaurantList />} />
-            <Route path='/restaurant/detail' element={<RestaurantDetail />} />
+            <Route path='/review/restaurant' element={<RestaurantList />} />
+            <Route path='/review/restaurant/detail' element={<RestaurantDetail />} />
 
             {/* 서브(맛집 탐방) */}
             <Route path='/meetup' element={<MeetupList />} />

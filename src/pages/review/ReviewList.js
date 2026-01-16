@@ -28,49 +28,49 @@ const ReviewList = () => {
           <h3 className="review-title">식당 카테고리 보기</h3>
           <ul className="categorys">
             <li>
-              <Link to={'/restaurant'}>
+              <Link to={'/review/restaurant'}>
                 <img src={cate1} alt="한식 아이콘" />
                 <span>한식</span>
               </Link>
             </li>
             <li>
-              <Link to={'/restaurant'}>
+              <Link to={'/review/restaurant'}>
                 <img src={cate2} alt="일식 아이콘" />
                 <span>일식</span>
               </Link>
             </li>
             <li>
-              <Link to={'/restaurant'}>
+              <Link to={'/review/restaurant'}>
                 <img src={cate3} alt="중식 아이콘" />
                 <span>중식</span>
               </Link>
             </li>
             <li>
-              <Link to={'/restaurant'}>
+              <Link to={'/review/restaurant'}>
                 <img src={cate4} alt="양식 아이콘" />
                 <span>양식</span>
               </Link>
             </li>
             <li>
-              <Link to={'/restaurant'}>
+              <Link to={'/review/restaurant'}>
                 <img src={cate5} alt="분식 아이콘" />
                 <span>분식</span>
               </Link>
             </li>
             <li>
-              <Link to={'/restaurant'}>
+              <Link to={'/review/restaurant'}>
                 <img src={cate6} alt="카페 아이콘" />
                 <span>카페</span>
               </Link>
             </li>
             <li>
-              <Link to={'/restaurant'}>
+              <Link to={'/review/restaurant'}>
                 <img src={cate7} alt="디저트 아이콘" />
                 <span>디저트</span>
               </Link>
             </li>
             <li>
-              <Link to={'/restaurant'}>
+              <Link to={'/review/restaurant'}>
                 <img src={cate8} alt="기타 아이콘" />
                 <span>기타</span>
               </Link>

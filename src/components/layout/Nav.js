@@ -13,8 +13,7 @@ const Nav = () => {
       <ul className="menus">
         <li>
           <NavLink
-            to="/"
-            end
+            to="/review"
             className={({ isActive }) => (isActive ? 'act' : '')}
           >
             <img src={review} alt="홈 아이콘" />
