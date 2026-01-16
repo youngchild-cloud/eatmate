@@ -33,6 +33,7 @@ nav {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 100;
   width: 100%;
   background-color: $color-white;
   box-shadow: 0 vw-mo(-4) vw-mo(20) rgba(0, 0, 0, 0.1);
