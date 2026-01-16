@@ -1,0 +1,223 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+/*** 식당 상세 메인 ***/
+body.restaurant-detail main {
+  padding: 0;
+}
+
+/*** 식당 상세 ***/
+// 
+.restaurant-detail-infomation {
+  .inner {
+    padding: 0;
+  }
+}
+
+// 슬라이드(스와이퍼)
+.restaurant-detail-slide {
+  position: relative;
+
+  .common-back {
+    position: absolute;
+    top: 55px;
+    left: 6px;
+    z-index: 10;
+
+    img {}
+  }
+
+  .restaurant-detail-swiper {}
+
+  .swiper-wrapper {}
+
+  .swiper-slide {}
+
+  .img-box {
+    width: 100%;
+    height: 430px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .swiper-pagination {
+    display: inline-block;
+    top: auto;
+    bottom: 20px;
+    left: auto;
+    right: 30px;
+    width: auto;
+    background: rgba($color: $color-sub-black, $alpha: 0.6);
+    color: $color_white;
+  }
+}
+
+// 정보(타이틀, 평점, 전화 등)
+.restaurant-detail-info {
+  .info-text {
+    padding: 30px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .desc {
+    margin-bottom: 10px;
+  }
+
+  .disc {
+    color: $color_gray;
+    font-size: 24px;
+  }
+
+  .rank {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: url('../../assets/images/review/icon_rank.png') no-repeat center / contain;
+    }
+  }
+
+  .category {}
+
+  .location {}
+
+  .info-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      width: 25%;
+      border-right: 1px solid $color_gray_light;
+    }
+
+    a,
+    button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      height: 140px;
+    }
+
+    img {
+      width: auto;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    span {}
+  }
+}
+
+// 리뷰 보기
+.restaurant-detail-review {
+  .restaurant-title-box {
+    position: relative;
+    margin-bottom: 10px;
+
+    .restaurant-title {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    a {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      color: $color_sub_orange;
+      font-size: 24px;
+    }
+  }
+
+  .list {
+    li {
+      border-bottom: 1px solid $color-gray;
+    }
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .img-box {
+      width: 170px;
+      height: 193px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .txt-box {
+      width: 490px;
+
+      p {}
+
+      .text {
+        margin-bottom: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .rank {
+        display: block;
+        height: vw-mo(25);
+        background-image: url('../../assets/images/review/icon_rank.png');
+        background-repeat: repeat no-repeat;
+        background-position: 0 center;
+        background-size: vw-mo(25) vw-mo(25);
+      }
+
+      .rank1 {
+        width: vw-mo(25);
+      }
+
+      .rank2 {
+        width: vw-mo(50);
+      }
+
+      .rank3 {
+        width: vw-mo(75);
+      }
+
+      .rank4 {
+        width: vw-mo(100);
+      }
+
+      .rank5 {
+        width: vw-mo(125);
+      }
+
+      .date {
+        font-size: 24px;
+        color: $color_gray;
+      }
+    }
+  }
+}
