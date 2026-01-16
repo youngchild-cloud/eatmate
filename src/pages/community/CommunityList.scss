@@ -1,22 +1,24 @@
 // CommunityList.scss
 @import '../../assets/scss/variables';
+@import '../../assets/scss/function';
 
 .community-list {
   .item {
     display: block;
-    padding: 20px 0;
+    padding: vw-mo(20) 0;
     border-bottom: 1px solid $color-gray;
+
   }
 
   .comm-top {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: vw-mo(20);
 
     .img-box {
-      width: 64px;
-      height: 64px;
-      margin-right: 20px;
+      width: vw-mo(64);
+      height: vw-mo(64);
+      margin-right: vw-mo(20);
 
 
       img {
@@ -28,40 +30,47 @@
 
     .txt-box {
       color: $color-gray;
-      font-size: 24px;
+      font-size: vw-mo(24);
 
       .nick {
-        margin-right: 6px;
+        margin-right: vw-mo(6);
       }
 
       .upload-time {
-        margin-left: 6px;
+        margin-left: vw-mo(6);
       }
     }
 
   }
 
   .comm-mid {
-    margin-bottom: 20px;
+    margin-bottom: vw-mo(20);
 
     .comm-title {
       font-weight: bold;
-      margin-bottom: 6px;
+      margin-bottom: vw-mo(6);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      
     }
 
     .comm-content {
       color: $color-gray;
-      font-size: 24px;
+      font-size: vw-mo(24);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 
   .comm-bot {
     span {
-      margin-right: 20px;
+      margin-right: vw-mo(20);
     }
 
     svg {
-      margin-right: 10px;
+      margin-right: vw-mo(10);
     }
   }
 }

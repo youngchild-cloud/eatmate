@@ -1,0 +1,163 @@
+// CommunityDetail.scss
+@import '../../assets/scss/variables';
+@import '../../assets/scss/function';
+
+
+.community-detail {
+  .item {
+    display: block;
+    padding: vw-mo(20) 0 vw-mo(60);
+    border-bottom: 1px solid $color-gray;
+    margin-bottom: vw-mo(60);
+
+  }
+
+  .comm-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: vw-mo(20);
+
+    .img-box {
+      width: vw-mo(64);
+      height: vw-mo(64);
+      margin-right: vw-mo(20);
+      border-radius: 50%;
+
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .txt-box {
+      color: $color-gray;
+      font-size: vw-mo(24);
+
+      .nick {
+        margin-right: vw-mo(6);
+      }
+
+      .upload-time {
+        margin-left: vw-mo(6);
+      }
+    }
+
+  }
+
+  .comm-mid {
+    margin-bottom: vw-mo(20);
+
+    .comm-title {
+      margin-bottom: vw-mo(6);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: vw-mo(30);
+      font-weight: bold;
+    }
+
+    .comm-content {
+      color: $color-gray;
+      font-size: vw-mo(28);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .comm-bot {
+    span {
+      margin-right: vw-mo(20);
+    }
+
+    svg {
+      margin-right: vw-mo(10);
+    }
+  }
+
+  //게시물 서식 끝
+
+  // 댓글 입력 서식 시작 (프로필 사진 + 댓글입력 + 댓글등록)
+  .comm-input {
+    display: flex;
+    align-items: center;
+
+    .input-img {
+      border-radius: 50%;
+      width: vw-mo(56);
+      height: vw-mo(56);
+      margin-right: vw-mo(20);
+
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .input-form {
+      position: relative;
+      width: calc(100% - vw-mo(56) - vw-mo(20));
+
+      input {
+        width: 100%;
+        background-color: $color-white-gray;
+        padding: vw-mo(23) vw-mo(20);
+        font-size: vw-mo(24);
+        border: 1px solid $color-gray-light;
+        border-radius: 6px;
+
+        &::placeholder {
+          color: $color-gray-light;
+        }
+      }
+
+      button {
+        position: absolute;
+        right: vw-mo(20);
+        top: vw-mo(23);
+        font-size: vw-mo(24);
+        color: $color-text;
+      }
+    }
+  }
+
+  // 게시글 댓글 ul
+  .comm-comment {
+    li {
+      display: flex;
+    }
+
+    .comment-img {
+      border-radius: 50%;
+      width: vw-mo(56);
+      height: vw-mo(56);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .comment-content {
+      .comment-nick {
+        font-size: vw-mo(24);
+        color: $color-gray;
+      }
+
+      .comment-txt {
+        font-size: vw-mo(24);
+        color: $color-text;
+      }
+
+      .comment-time {
+        font-size: vw-mo(24);
+        color: $color-gray-light;
+      }
+    }
+  }
+}
