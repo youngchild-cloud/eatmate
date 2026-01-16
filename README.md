@@ -34,6 +34,7 @@ components
   - ButtonShort 버튼_line_서브 컬러
   - TitleCenter 타이틀_가운데 / 글쓰기 버튼_왼쪽
   - TitleLeft 타이틀_왼쪽 / 뒤로가기 버튼_오른쪽
+
 - layout
   - Header 헤더
   - Nav 내비
@@ -44,16 +45,20 @@ pages
   - ReviewDetail.js 리뷰 상세
   - RestaurantList.js 맛집 목록
   - RestaurantDetail.js 맛집 상세
+
 - meetup 맛집 탐방
   - MeetupList.js 맛집 탐방 목록
   - MeetupDetail.js 맛집 탐방 상세
+
 - write 글쓰기
   - WriteReview.js 리뷰 글쓰기
   - WriteMeetup.js 탐방 글쓰기
   - WriteCommunity.js 자유게시판 글쓰기
+
 - community 자유게시판
   - CommunityList.js 맛집 탐방 목록
   - CommunityDetail.js 맛집 탐방 상세
+
 - mypage 마이페이지
   - Mypage.js 홈
   - MypageProfile.js 프로필
@@ -62,11 +67,14 @@ pages
   - MypageWrite.js 작성한 게시글
   - MypageLike.js 내가 남긴 좋아요
   - MypageComment.js 내가 남긴 댓글
+
 - login 로그인/회원가입
   - Login.js 로그인
   - Join.js 회원가입
+
 - not-found 404페이지
   - NotFound.js 404페이지
+
 - admin 관리자
   - restaurant 매장 관리
     - RestaurantList.js 매장 목록
@@ -76,4 +84,47 @@ pages
   - community 게시판 관리 > 자유게시판 관리 (디자인x 추후 시간 남으면 작업 예정)
   - Login.js 로그인
 
-# 참고사항
+# url 주소
+review 맛집 리뷰
+- review/ 맛집 리뷰 O
+- review/detail 맛집 리뷰 상세
+- review/restaurant 매장 목록
+- review/restaurant/detail 매장 상세
+
+meetup 맛집 탐방
+- meetup 맛집 탐방 목록
+- meetup/detail 맛집 탐방 상세
+
+write 글쓰기
+- write/review 리뷰 글쓰기
+- write/meetup 탐방 글쓰기
+- write/community 자유게시판 글쓰기
+
+community 자유게시판
+- community 맛집 탐방 목록
+- community/detail 맛집 탐방 상세
+
+mypage 마이페이지
+- mypage 홈
+- mypage/profile 프로필
+- mypage/bookmark 저장한 식당
+- mypage/meetup 맛집 탐방 신청내역
+- mypage/write 작성한 게시글
+- mypage/like 내가 남긴 좋아요
+- mypage/comment 내가 남긴 댓글
+
+login 로그인/회원가입
+- login 로그인
+- join 회원가입
+
+not-found 404페이지
+- notfound 404페이지
+
+admin 관리자
+- restaurant 매장 관리
+  - restaurant 매장 목록
+  - restaurant/create 매장 등록
+- reviews 게시판 관리 > 맛집 리뷰 관리 (디자인x 추후 시간 남으면 작업 예정)
+- meetups 게시판 관리 > 맛집 탐방 관리 (디자인x 추후 시간 남으면 작업 예정)
+- community 게시판 관리 > 자유게시판 관리 (디자인x 추후 시간 남으면 작업 예정)
+- login 로그인
