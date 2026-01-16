@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.meetup-detail {
+  .inner {
+    .user {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+
+    .user-img {
+      width: 64px;
+    }
+
+    .user-info {
+      color: $color-gray;
+      font-size: 24px;
+
+    }
+
+    .user-info-gap {
+      padding: 0 10px;
+    }
+
+    .content-box {
+      .content-img {
+        width: 300px;
+        height: 340px;
+      }
+
+
+    }
+
+    .content-txt {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .content-txt-detail {
+      display: block;
+      font-size: 28px;
+      font-weight: 400;
+      padding-bottom: 20px;
+    }
+
+    .content-info {
+      padding-bottom: 20px;
+      font-size: 28px;
+
+      img {
+        width: 30px;
+      }
+    }
+
+    .content-info-txt {
+      display: block;
+      align-items: center;
+    }
+
+    .content-info-txt img {
+      margin-right: 10px;
+    }
+
+    .icon-num {
+      padding: 20px 0;
+      font-size: 24px;
+    }
+
+    svg {
+      padding-right: vw-mo(10);
+      font-size: vw-mo(30);
+      vertical-align: middle;
+    }
+
+    .icon-num-first {
+      padding-right: 20px;
+    }
+  }
+}

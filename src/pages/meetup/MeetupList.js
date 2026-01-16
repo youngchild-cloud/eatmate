@@ -8,10 +8,12 @@ import tabTxtImg3 from '../../assets/images/meetup/con-txt-img3.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 function MeetupList(props) {
 
   const [tabTitle, setTabTitle] = useState(1);
+  const navigate = useNavigate();
 
   const tabContent = (e) => {
     setTabTitle(e);
@@ -30,7 +32,7 @@ function MeetupList(props) {
           <li className={tabTitle === 1 ? 'tab-content-list' : ''} onClick={() => tabContent(1)}>
             <div className='item'>
               <div className='item-txt'>
-                <h3>피자 같이 먹으러 갈 사람!</h3>
+                <h3 onClick={() => navigate(`/meetup/detail`)}>피자 같이 먹으러 갈 사람!</h3>
                 <p>
                   <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
                   <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
