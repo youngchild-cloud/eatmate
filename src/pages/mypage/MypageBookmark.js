@@ -5,7 +5,7 @@ const MypageBookmark = () => {
   return (
     <section className=''>
       <div className="inner">
-        <TitleCenter title={'저장한 식당'} />
+        <TitleCenter title={'저장한 맛집'} />
       </div>
     </section>
   );

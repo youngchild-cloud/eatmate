@@ -10,9 +10,9 @@ const RestaurantList = () => {
     <>
       <section className='review-search'>
         <div className="inner">
-          <TitleCenter title={'식당 보기'} />
+          <TitleCenter title={'맛집 보기'} />
           <div className="search-box">
-            <input type="search" name="search" id="search" placeholder='식당명을 검색하세요' />
+            <input type="search" name="search" id="search" placeholder='맛집명을 검색하세요' />
             <button><span className="blind">검색</span></button>
           </div>
         </div>
@@ -36,7 +36,7 @@ const RestaurantList = () => {
             <li>
               <Link to={'/review/restaurant/detail'}>
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant01.jpg`} alt="식당" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant01.jpg`} alt="맛집" />
                 </div>
                 <div className="txt-box">
                   <h4 className="tit">더 페어링</h4>
@@ -47,7 +47,7 @@ const RestaurantList = () => {
             <li>
               <Link to={'/review/restaurant/detail'}>
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant01.jpg`} alt="식당" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant01.jpg`} alt="맛집" />
                 </div>
                 <div className="txt-box">
                   <h4 className="tit">더 페어링</h4>
@@ -58,7 +58,7 @@ const RestaurantList = () => {
             <li>
               <Link to={'/review/restaurant/detail'}>
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant01.jpg`} alt="식당" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant01.jpg`} alt="맛집" />
                 </div>
                 <div className="txt-box">
                   <h4 className="tit">더 페어링</h4>
