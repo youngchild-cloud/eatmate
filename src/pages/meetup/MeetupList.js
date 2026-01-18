@@ -101,8 +101,9 @@ function MeetupList(props) {
                 <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
               </div>
             </div>
-            {/* 2번탭 리스트(모집중) */}
           </li>
+
+          {/* 2번탭 리스트(모집중) */}
           <li className={tabTitle === 2 ? 'tab-content-list' : ''}>
             <div className='item'>
               <div className='item-txt'>
