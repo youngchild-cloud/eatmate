@@ -32,7 +32,7 @@
       right: vw-mo(20);
       width: vw-mo(30);
       height: vw-mo(30);
-      background: url('../../assets/images/review/Icon_search.png') no-repeat center center / cover;
+      background: url('../../assets/images/review/icon_search.png') no-repeat center center / cover;
     }
   }
 }
@@ -122,31 +122,35 @@
       }
 
       .rank {
-        height: vw-mo(25);
-        background-image: url('../../assets/images/review/icon_rank.png');
-        background-repeat: repeat no-repeat;
+        width: vw-mo(144);
+        height: vw-mo(24);
+        background-repeat: no-repeat;
         background-position: 0 center;
-        background-size: vw-mo(25) vw-mo(25);
       }
 
       .rank1 {
-        width: vw-mo(25);
+        background-image: url('../../assets/images/review/icon_rank1.png');
+
       }
 
       .rank2 {
-        width: vw-mo(50);
+        background-image: url('../../assets/images/review/icon_rank2.png');
+
       }
 
       .rank3 {
-        width: vw-mo(75);
+        background-image: url('../../assets/images/review/icon_rank3.png');
+
       }
 
       .rank4 {
-        width: vw-mo(100);
+        background-image: url('../../assets/images/review/icon_rank4.png');
+
       }
 
       .rank5 {
-        width: vw-mo(125);
+        background-image: url('../../assets/images/review/icon_rank5.png');
+
       }
     }
   }

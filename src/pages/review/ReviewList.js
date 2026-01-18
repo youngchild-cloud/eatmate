@@ -96,7 +96,7 @@ const ReviewList = () => {
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
                   <p className='name'>더 페어링</p>
                   <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <p className='rank rank5'><span className="blind">5점</span></p>
+                  <p className='rank rank5'><span className="blind">5점</span></p> {/* 평점 5점일 경우 rank5 클래스 추가 */}
                 </div>
               </Link>
             </li>
@@ -109,7 +109,7 @@ const ReviewList = () => {
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
                   <p className='name'>더 페어링</p>
                   <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <p className='rank rank4'><span className="blind">5점</span></p>
+                  <p className='rank rank4'><span className="blind">5점</span></p> {/* 평점 4점일 경우 rank4 클래스 추가 */}
                 </div>
               </Link>
             </li>
@@ -122,7 +122,33 @@ const ReviewList = () => {
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
                   <p className='name'>더 페어링</p>
                   <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <p className='rank rank3'><span className="blind">5점</span></p>
+                  <p className='rank rank3'><span className="blind">5점</span></p> {/* 평점 3점일 경우 rank3 클래스 추가 */}
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link to={'/review/detail'}>
+                <div className="img-box">
+                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
+                </div>
+                <div className="txt-box">
+                  <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
+                  <p className='name'>더 페어링</p>
+                  <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
+                  <p className='rank rank2'><span className="blind">5점</span></p> {/* 평점 2점일 경우 rank2 클래스 추가 */}
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link to={'/review/detail'}>
+                <div className="img-box">
+                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
+                </div>
+                <div className="txt-box">
+                  <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
+                  <p className='name'>더 페어링</p>
+                  <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
+                  <p className='rank rank1'><span className="blind">5점</span></p> {/* 평점 1점일 경우 rank1 클래스 추가 */}
                 </div>
               </Link>
             </li>
