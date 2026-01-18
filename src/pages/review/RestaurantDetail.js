@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './RestaurantDetail.scss';
 import Rank5 from '../../components/common/Rank5';
-import backIcon from '../../assets/images/icon_back.png';
+import iconBack from '../../assets/images/icon_back.png';
 import icon01 from '../../assets/images/review/icon_restaurant-detail01.png';
 import icon02 from '../../assets/images/review/icon_restaurant-detail02.png';
 import icon03 from '../../assets/images/review/icon_restaurant-detail03.png';
@@ -29,7 +29,7 @@ const RestaurantDetail = () => {
       <section className='restaurant-detail-infomation'>
         <article className='restaurant-detail-slide'>
           <button className='common-back' onClick={() => navigate(-1)}>
-            <img src={backIcon} alt="뒤로 가기" />
+            <img src={iconBack} alt="뒤로 가기" />
             <span className="blind">뒤로 가기</span>
           </button>
           <Swiper

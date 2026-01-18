@@ -3,17 +3,17 @@
 
 /*** 맛집 상세 메인 ***/
 body.restaurant-detail main {
-  padding: 0 0 130px;
+  padding: 0 0 vw-mo(130);
 }
 
 /*** 맛집 상세 ***/
 // 슬라이드(스와이퍼)와 정보(타이틀, 평점, 전화 등) section
 .restaurant-detail-infomation {
-  width: 760px;
+  width: vw-mo(760);
   margin: auto;
 
   .inner {
-    padding: 0 0 30px;
+    padding: 0 0 vw-mo(30);
   }
 }
 
@@ -22,19 +22,27 @@ body.restaurant-detail main {
   position: relative;
 
   .common-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 55px;
-    left: 6px;
+    top: vw-mo(55);
+    left: vw-mo(6);
     z-index: 10;
+    width: vw-mo(64);
+    height: vw-mo(64);
+    background: rgba($color: $color-sub-black, $alpha: 0.6);
+    border-radius: 50%;
 
     img {
-      width: 100%;
+      width: vw-mo(15);
+      filter: brightness(0) invert(1);
     }
   }
 
   .img-box {
     width: 100%;
-    height: 430px;
+    height: vw-mo(430);
 
     img {
       display: block;
@@ -47,38 +55,38 @@ body.restaurant-detail main {
   .swiper-pagination {
     display: inline-block;
     top: auto;
-    bottom: 20px;
+    bottom: vw-mo(20);
     left: auto;
-    right: 30px;
+    right: vw-mo(30);
     width: auto;
-    padding: 2px 16px;
+    padding: vw-mo(2) vw-mo(16);
     background: rgba($color: $color-sub-black, $alpha: 0.6);
-    border-radius: 50px;
+    border-radius: vw-mo(50);
     color: $color_white;
-    font-size: 24px;
+    font-size: vw-mo(24);
   }
 }
 
 // 정보(타이틀, 평점, 전화 등)
 .restaurant-detail-info {
   .info-text {
-    padding: 30px 0;
+    padding: vw-mo(30) 0;
   }
 
   .title {
-    margin-bottom: 10px;
-    font-size: 36px;
+    margin-bottom: vw-mo(10);
+    font-size: vw-mo(36);
     font-weight: bold;
     line-height: 1.2;
   }
 
   .desc {
-    margin-bottom: 10px;
+    margin-bottom: vw-mo(10);
   }
 
   .disc {
     color: $color_gray;
-    font-size: 24px;
+    font-size: vw-mo(24);
 
     span {
       vertical-align: middle;
@@ -89,13 +97,13 @@ body.restaurant-detail main {
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: vw-mo(10);
 
     &::before {
       content: '';
       display: inline-block;
-      width: 24px;
-      height: 24px;
+      width: vw-mo(24);
+      height: vw-mo(24);
       background: url('../../assets/images/review/icon_rank.png') no-repeat center / contain;
     }
   }
@@ -120,15 +128,15 @@ body.restaurant-detail main {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 6px;
+      gap: vw-mo(6);
       width: 100%;
-      height: 140px;
+      height: vw-mo(140);
       color: $color-gray;
     }
 
     img {
       width: auto;
-      height: 40px;
+      height: vw-mo(40);
       object-fit: contain;
     }
   }
@@ -138,11 +146,11 @@ body.restaurant-detail main {
 .restaurant-detail-review {
   .restaurant-title-box {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: vw-mo(10);
 
     .restaurant-title {
       font-weight: bold;
-      font-size: 30px;
+      font-size: vw-mo(30);
     }
 
     a {
@@ -151,7 +159,7 @@ body.restaurant-detail main {
       transform: translateY(-50%);
       right: 0;
       color: $color_sub_orange;
-      font-size: 24px;
+      font-size: vw-mo(24);
     }
   }
 
@@ -164,12 +172,12 @@ body.restaurant-detail main {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+      padding: vw-mo(20) 0;
     }
 
     .img-box {
-      width: 170px;
-      height: 193px;
+      width: vw-mo(170);
+      height: vw-mo(193);
 
       img {
         width: 100%;
@@ -179,22 +187,22 @@ body.restaurant-detail main {
     }
 
     .txt-box {
-      width: 490px;
+      width: vw-mo(490);
 
       .text {
-        margin-bottom: 10px;
-        font-size: 30px;
+        margin-bottom: vw-mo(10);
+        font-size: vw-mo(30);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
 
       .rank {
-        margin-bottom: 10px;
+        margin-bottom: vw-mo(10);
       }
 
       .date {
-        font-size: 24px;
+        font-size: vw-mo(24);
         color: $color_gray;
       }
     }

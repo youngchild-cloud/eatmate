@@ -34,6 +34,10 @@ components
   - ButtonShort 버튼_line_서브 컬러
   - TitleCenter 타이틀_가운데 / 글쓰기 버튼_왼쪽
   - TitleLeft 타이틀_왼쪽 / 뒤로가기 버튼_오른쪽
+  - Rank5 맛집 리뷰 평점(별점)
+  - Input 인풋_텍스트, 파일, 비밀번호, 날짜, 넘버
+  - InputTextarea 인풋_텍스트박스
+  - InputSelectbox 인풋_셀렉트박스
 
 - layout
   - Header 헤더
@@ -41,74 +45,74 @@ components
 ---
 pages
 - review 맛집 리뷰
-  - ReviewList.js 홈
-  - ReviewDetail.js 리뷰 상세
-  - RestaurantList.js 맛집 목록
-  - RestaurantDetail.js 맛집 상세
+  - ReviewList.js 맛집 리뷰 목록                => 퍼블 완료
+  - ReviewDetail.js 맛집 리뷰 상세              => 퍼블 예정(혜련)
+  - RestaurantList.js 맛집 목록                 => 퍼블 완료
+  - RestaurantDetail.js 맛집 상세               => 퍼블 완료
 
-- meetup 맛집 탐방
-  - MeetupList.js 맛집 탐방 목록
-  - MeetupDetail.js 맛집 탐방 상세
+- meetup 맛집 맛집 탐방
+  - MeetupList.js 맛집 맛집 탐방 목록           => 퍼블 완료
+  - MeetupDetail.js 맛집 맛집 탐방 상세         => 퍼블 진행중(지희)
 
 - write 글쓰기
-  - WriteReview.js 리뷰 글쓰기
-  - WriteMeetup.js 탐방 글쓰기
+  - WriteReview.js 맛집 리뷰 글쓰기             => 퍼블 진행중(혜련)
+  - WriteMeetup.js 맛집 맛집 탐방 글쓰기
   - WriteCommunity.js 자유게시판 글쓰기
 
 - community 자유게시판
-  - CommunityList.js 맛집 탐방 목록
-  - CommunityDetail.js 맛집 탐방 상세
+  - CommunityList.js 맛집 맛집 탐방 목록        => 퍼블 완료
+  - CommunityDetail.js 맛집 맛집 탐방 상세      => 퍼블 진행중(영찬)
 
 - mypage 마이페이지
-  - Mypage.js 홈
+  - Mypage.js 마이페이지                        => 퍼블 예정(지희)
   - MypageProfile.js 프로필
-  - MypageBookmark.js 저장한 식당
-  - MypageMeetup.js 맛집 탐방 신청내역
+  - MypageBookmark.js 저장한 맛집
+  - MypageMeetup.js 맛집 맛집 탐방 신청내역
   - MypageWrite.js 작성한 게시글
   - MypageLike.js 내가 남긴 좋아요
   - MypageComment.js 내가 남긴 댓글
 
 - login 로그인/회원가입
-  - Login.js 로그인
-  - Join.js 회원가입
+  - Login.js 로그인                             => 
+  - Join.js 회원가입                            => 
 
-- not-found 404페이지
-  - NotFound.js 404페이지
+- notfound 404페이지
+  - NotFound.js 404페이지                       => 퍼블 예정(영찬)
 
 - admin 관리자
-  - restaurant 매장 관리
-    - RestaurantList.js 매장 목록
-    - RestaurantCreate.js 매장 등록
+  - restaurant 맛집 관리
+    - RestaurantList.js 맛집 목록
+    - RestaurantCreate.js 맛집 등록
   - reviews 게시판 관리 > 맛집 리뷰 관리 (디자인x 추후 시간 남으면 작업 예정)
-  - meetups 게시판 관리 > 맛집 탐방 관리 (디자인x 추후 시간 남으면 작업 예정)
+  - meetups 게시판 관리 > 맛집 탐방 (디자인x 추후 시간 남으면 작업 예정)
   - community 게시판 관리 > 자유게시판 관리 (디자인x 추후 시간 남으면 작업 예정)
   - Login.js 로그인
 
 # url 주소
 review 맛집 리뷰
-- review/ 맛집 리뷰 O
+- review/ 맛집 리뷰
 - review/detail 맛집 리뷰 상세
 - review/restaurant 매장 목록
 - review/restaurant/detail 매장 상세
 
-meetup 맛집 탐방
-- meetup 맛집 탐방 목록
-- meetup/detail 맛집 탐방 상세
+meetup 맛집 맛집 탐방
+- meetup 맛집 맛집 탐방 목록
+- meetup/detail 맛집 맛집 탐방 상세
 
 write 글쓰기
-- write/review 리뷰 글쓰기
-- write/meetup 탐방 글쓰기
+- write/review 맛집 리뷰 글쓰기
+- write/meetup 맛집 맛집 탐방 글쓰기
 - write/community 자유게시판 글쓰기
 
 community 자유게시판
-- community 맛집 탐방 목록
-- community/detail 맛집 탐방 상세
+- community 맛집 맛집 탐방 목록
+- community/detail 맛집 맛집 탐방 상세
 
 mypage 마이페이지
 - mypage 홈
 - mypage/profile 프로필
-- mypage/bookmark 저장한 식당
-- mypage/meetup 맛집 탐방 신청내역
+- mypage/bookmark 저장한 맛집
+- mypage/meetup 맛집 맛집 탐방 신청내역
 - mypage/write 작성한 게시글
 - mypage/like 내가 남긴 좋아요
 - mypage/comment 내가 남긴 댓글
@@ -117,7 +121,7 @@ login 로그인/회원가입
 - login 로그인
 - join 회원가입
 
-not-found 404페이지
+notfound 404페이지
 - notfound 404페이지
 
 admin 관리자
@@ -125,6 +129,6 @@ admin 관리자
   - restaurant 매장 목록
   - restaurant/create 매장 등록
 - reviews 게시판 관리 > 맛집 리뷰 관리 (디자인x 추후 시간 남으면 작업 예정)
-- meetups 게시판 관리 > 맛집 탐방 관리 (디자인x 추후 시간 남으면 작업 예정)
+- meetups 게시판 관리 > 맛집 탐방 (디자인x 추후 시간 남으면 작업 예정)
 - community 게시판 관리 > 자유게시판 관리 (디자인x 추후 시간 남으면 작업 예정)
 - login 로그인

@@ -2,18 +2,3 @@
 
 @use './variables' as *;
 @use './function' as *;
-
-@mixin label {
-  margin-bottom: vw-mo(6);
-  color: $color-sub-black;
-}
-
-@mixin input {
-  display: block;
-  width: 100%;
-  padding: vw-mo(23) vw-mo(20);
-  border: 1px solid $color-gray-light;
-  border-radius: vw-mo(6);
-  color: $color-text;
-  font-size: vw-mo(24);
-}
