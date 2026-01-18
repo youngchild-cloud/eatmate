@@ -9,6 +9,7 @@ import cate5 from '../../assets/images/review/icon_cate05.png';
 import cate6 from '../../assets/images/review/icon_cate06.png';
 import cate7 from '../../assets/images/review/icon_cate07.png';
 import cate8 from '../../assets/images/review/icon_cate08.png';
+import Rank5 from '../../components/common/Rank5';
 
 const ReviewList = () => {
   return (
@@ -17,7 +18,7 @@ const ReviewList = () => {
         <div className="inner">
           <TitleLeft title={'맛집 리뷰'} link={'/write/review'} linkTitle={'맛집 리뷰 글쓰기'} text={'리뷰 쓰기'} />
           <div className="search-box">
-            <input type="search" name="search" id="search" placeholder='식당명을 검색하세요' />
+            <input type="search" name="search" id="search" placeholder='맛집명을 검색하세요' />
             <button><span className="blind">검색</span></button>
           </div>
         </div>
@@ -26,7 +27,7 @@ const ReviewList = () => {
       <section className='review-list-category'>
         <div className="inner">
           <div className="review-title-box">
-            <h3 className="review-title">식당 카테고리 보기</h3>
+            <h3 className="review-title">맛집 카테고리 보기</h3>
           </div>
           <ul className="categorys">
             <li>
@@ -96,7 +97,7 @@ const ReviewList = () => {
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
                   <p className='name'>더 페어링</p>
                   <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <p className='rank rank5'><span className="blind">5점</span></p> {/* 평점 5점일 경우 rank5 클래스 추가 */}
+                  <Rank5 num={'5'} />
                 </div>
               </Link>
             </li>
@@ -109,7 +110,7 @@ const ReviewList = () => {
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
                   <p className='name'>더 페어링</p>
                   <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <p className='rank rank4'><span className="blind">5점</span></p> {/* 평점 4점일 경우 rank4 클래스 추가 */}
+                  <Rank5 num={'4'} />
                 </div>
               </Link>
             </li>
@@ -122,7 +123,7 @@ const ReviewList = () => {
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
                   <p className='name'>더 페어링</p>
                   <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <p className='rank rank3'><span className="blind">5점</span></p> {/* 평점 3점일 경우 rank3 클래스 추가 */}
+                  <Rank5 num={'3'} />
                 </div>
               </Link>
             </li>
@@ -135,7 +136,7 @@ const ReviewList = () => {
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
                   <p className='name'>더 페어링</p>
                   <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <p className='rank rank2'><span className="blind">5점</span></p> {/* 평점 2점일 경우 rank2 클래스 추가 */}
+                  <Rank5 num={'2'} />
                 </div>
               </Link>
             </li>
@@ -148,7 +149,7 @@ const ReviewList = () => {
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
                   <p className='name'>더 페어링</p>
                   <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <p className='rank rank1'><span className="blind">5점</span></p> {/* 평점 1점일 경우 rank1 클래스 추가 */}
+                  <Rank5 num={'1'} />
                 </div>
               </Link>
             </li>
