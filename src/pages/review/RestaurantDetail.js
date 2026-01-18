@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './RestaurantDetail.scss'
+import './RestaurantDetail.scss';
+import Rank5 from '../../components/common/Rank5';
 import backIcon from '../../assets/images/icon_back.png';
 import icon01 from '../../assets/images/review/icon_restaurant-detail01.png';
 import icon02 from '../../assets/images/review/icon_restaurant-detail02.png';
@@ -26,38 +27,43 @@ const RestaurantDetail = () => {
   return (
     <>
       <section className='restaurant-detail-infomation'>
-        <div className="inner">
-          <article className='restaurant-detail-slide'>
-            <button className='common-back' onClick={() => navigate(-1)}>
-              <img src={backIcon} alt="뒤로 가기" />
-              <span className="blind">뒤로 가기</span>
-            </button>
-            <Swiper
-              pagination={{
-                type: 'fraction',
-              }}
-              modules={[Pagination]}
-              className="restaurant-detail-swiper"
-            >
-              <SwiperSlide>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant-detail01.jpg`} alt="리뷰" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant-detail01.jpg`} alt="리뷰" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant-detail01.jpg`} alt="리뷰" />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </article>
+        <article className='restaurant-detail-slide'>
+          <button className='common-back' onClick={() => navigate(-1)}>
+            <img src={backIcon} alt="뒤로 가기" />
+            <span className="blind">뒤로 가기</span>
+          </button>
+          <Swiper
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            pagination={{
+              type: 'fraction',
+            }}
+            modules={[Autoplay, Pagination]}
+            className="restaurant-detail-swiper"
+          >
+            <SwiperSlide>
+              <div className="img-box">
+                <img src={`${process.env.PUBLIC_URL}/images/review/restaurant-detail01.jpg`} alt="리뷰" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="img-box">
+                <img src={`${process.env.PUBLIC_URL}/images/review/restaurant-detail01.jpg`} alt="리뷰" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="img-box">
+                <img src={`${process.env.PUBLIC_URL}/images/review/restaurant-detail01.jpg`} alt="리뷰" />
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </article>
 
-          <article className='restaurant-detail-info'>
+        <article className='restaurant-detail-info'>
+          <div className="inner">
             <div className="info-text">
               <h2 className="title">더 페어링</h2>
               <p className='desc'>잠실을 대표하는 식당</p>
@@ -91,8 +97,8 @@ const RestaurantDetail = () => {
                 </button>
               </li>
             </ul>
-          </article>
-        </div>
+          </div>
+        </article>
       </section>
 
       <section className='restaurant-detail-review'>
@@ -109,7 +115,7 @@ const RestaurantDetail = () => {
                 </div>
                 <div className="txt-box">
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생 맛집인 듯</p>
-                  <span className='rank rank5'><span className="blind">5점</span></span>
+                  <Rank5 num={'5'} />
                   <span className='date'>2026.01.06</span>
                 </div>
               </Link>
@@ -121,7 +127,7 @@ const RestaurantDetail = () => {
                 </div>
                 <div className="txt-box">
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생 맛집인 듯</p>
-                  <span className='rank rank5'><span className="blind">5점</span></span>
+                  <Rank5 num={'4'} />
                   <span className='date'>2026.01.06</span>
                 </div>
               </Link>
@@ -133,7 +139,7 @@ const RestaurantDetail = () => {
                 </div>
                 <div className="txt-box">
                   <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생 맛집인 듯</p>
-                  <span className='rank rank5'><span className="blind">5점</span></span>
+                  <Rank5 num={'3'} />
                   <span className='date'>2026.01.06</span>
                 </div>
               </Link>

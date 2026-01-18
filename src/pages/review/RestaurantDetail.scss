@@ -1,16 +1,19 @@
 @use '../../assets/scss/variables' as *;
 @use '../../assets/scss/function' as *;
 
-/*** 식당 상세 메인 ***/
+/*** 맛집 상세 메인 ***/
 body.restaurant-detail main {
-  padding: 0;
+  padding: 0 0 130px;
 }
 
-/*** 식당 상세 ***/
-// 
+/*** 맛집 상세 ***/
+// 슬라이드(스와이퍼)와 정보(타이틀, 평점, 전화 등) section
 .restaurant-detail-infomation {
+  width: 760px;
+  margin: auto;
+
   .inner {
-    padding: 0;
+    padding: 0 0 30px;
   }
 }
 
@@ -24,14 +27,10 @@ body.restaurant-detail main {
     left: 6px;
     z-index: 10;
 
-    img {}
+    img {
+      width: 100%;
+    }
   }
-
-  .restaurant-detail-swiper {}
-
-  .swiper-wrapper {}
-
-  .swiper-slide {}
 
   .img-box {
     width: 100%;
@@ -52,15 +51,18 @@ body.restaurant-detail main {
     left: auto;
     right: 30px;
     width: auto;
+    padding: 2px 16px;
     background: rgba($color: $color-sub-black, $alpha: 0.6);
+    border-radius: 50px;
     color: $color_white;
+    font-size: 24px;
   }
 }
 
 // 정보(타이틀, 평점, 전화 등)
 .restaurant-detail-info {
   .info-text {
-    padding: 30px;
+    padding: 30px 0;
   }
 
   .title {
@@ -77,6 +79,10 @@ body.restaurant-detail main {
   .disc {
     color: $color_gray;
     font-size: 24px;
+
+    span {
+      vertical-align: middle;
+    }
   }
 
   .rank {
@@ -94,10 +100,6 @@ body.restaurant-detail main {
     }
   }
 
-  .category {}
-
-  .location {}
-
   .info-list {
     display: flex;
     justify-content: center;
@@ -106,6 +108,10 @@ body.restaurant-detail main {
     li {
       width: 25%;
       border-right: 1px solid $color_gray_light;
+
+      &:last-child {
+        border-right: none;
+      }
     }
 
     a,
@@ -117,6 +123,7 @@ body.restaurant-detail main {
       gap: 6px;
       width: 100%;
       height: 140px;
+      color: $color-gray;
     }
 
     img {
@@ -124,8 +131,6 @@ body.restaurant-detail main {
       height: 40px;
       object-fit: contain;
     }
-
-    span {}
   }
 }
 
@@ -176,42 +181,16 @@ body.restaurant-detail main {
     .txt-box {
       width: 490px;
 
-      p {}
-
       .text {
         margin-bottom: 10px;
+        font-size: 30px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
 
       .rank {
-        display: block;
-        height: vw-mo(25);
-        background-image: url('../../assets/images/review/icon_rank.png');
-        background-repeat: repeat no-repeat;
-        background-position: 0 center;
-        background-size: vw-mo(25) vw-mo(25);
-      }
-
-      .rank1 {
-        width: vw-mo(25);
-      }
-
-      .rank2 {
-        width: vw-mo(50);
-      }
-
-      .rank3 {
-        width: vw-mo(75);
-      }
-
-      .rank4 {
-        width: vw-mo(100);
-      }
-
-      .rank5 {
-        width: vw-mo(125);
+        margin-bottom: 10px;
       }
 
       .date {
