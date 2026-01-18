@@ -1,0 +1,29 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.rank5 {
+  width: vw-mo(144);
+  height: vw-mo(24);
+  background-repeat: no-repeat;
+  background-position: 0 center;
+
+  &-1 {
+    background-image: url('../../assets/images/review/icon_rank1.png');
+  }
+
+  &-2 {
+    background-image: url('../../assets/images/review/icon_rank2.png');
+  }
+
+  &-3 {
+    background-image: url('../../assets/images/review/icon_rank3.png');
+  }
+
+  &-4 {
+    background-image: url('../../assets/images/review/icon_rank4.png');
+  }
+
+  &-5 {
+    background-image: url('../../assets/images/review/icon_rank5.png');
+  }
+}
