@@ -47,7 +47,7 @@ components
 pages
 - review 맛집 리뷰
   - ReviewList.js 맛집 리뷰 목록                => 퍼블 완료
-  - ReviewDetail.js 맛집 리뷰 상세              => 퍼블 진행중(하트, 댓글 컴포넌트 만들기)
+  - ReviewDetail.js 맛집 리뷰 상세              => 퍼블 완료
   - RestaurantList.js 맛집 목록                 => 퍼블 완료
   - RestaurantDetail.js 맛집 상세               => 퍼블 완료
 
@@ -56,6 +56,7 @@ pages
   - MeetupDetail.js 맛집 맛집 탐방 상세         => 퍼블 완료
 
 - write 글쓰기
+  - Write.js 글쓰기 모달                        => 퍼블 예정(혜련)
   - WriteReview.js 맛집 리뷰 글쓰기             => 퍼블 완료
   - WriteMeetup.js 맛집 맛집 탐방 글쓰기        => 퍼블 완료
   - WriteCommunity.js 자유게시판 글쓰기         => 퍼블 완료
@@ -74,7 +75,7 @@ pages
   - MypageComment.js 내가 남긴 댓글
 
 - login 로그인/회원가입
-  - Login.js 로그인                             => 퍼블 예정(혜련)
+  - Login.js 로그인                             => 퍼블 완료
   - Join.js 회원가입                            => 퍼블 예정(혜련)
 
 - notfound 404페이지

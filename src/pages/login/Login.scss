@@ -1,0 +1,58 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/function';
+
+.login {
+  .search-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: vw-mo(10);
+    margin-bottom: vw-mo(20);
+
+    input {
+      width: vw-mo(20);
+      height: vw-mo(20);
+      margin: 0;
+      border-radius: vw-mo(3);
+      border: 1px solid $color-gray-light;
+      vertical-align: sub;
+    }
+
+    label {
+      font-size: vw-mo(24);
+      color: $color-gray;
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: vw-mo(60);
+
+    li {
+      position: relative;
+      margin-right: vw-mo(28);
+    }
+
+    li::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: vw-mo(-14);
+      display: block;
+      width: vw-mo(2);
+      height: vw-mo(22);
+      background: $color-gray;
+    }
+
+    li:last-child::after {
+      display: none;
+    }
+
+    a {
+      color: $color-gray;
+      font-size: vw-mo(24);
+    }
+  }
+}
