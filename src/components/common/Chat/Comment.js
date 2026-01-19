@@ -1,0 +1,37 @@
+import React from 'react';
+import './Comment.scss';
+
+function Comment({ profil, nick, txt, time }) {
+  return (
+    <>
+      {/* ------게시글 댓글------ */}
+      <li>
+        <div className="comment-img">
+          <img src={`${process.env.PUBLIC_URL}/images/user/${profil}`} alt="프로필 사진" />
+        </div>
+
+        <div className="comment-content">
+          <span className='comment-nick'>{nick}</span>
+          <p className='comment-txt'>{txt}</p>
+          <span className="comment-time">{time}</span>
+        </div>
+      </li>
+
+      {/* <ul className='comm-comment'>
+        <li>
+        <div className="comment-img">
+          <img src={`${process.env.PUBLIC_URL}/images/community/user03.png`} alt="프로필 사진" />
+        </div>
+
+        <div className="comment-content">
+          <span className='comment-nick'>sdfas</span>
+          <p className='comment-txt'>asdfasdfasdf</p>
+          <span className="comment-time">11분전</span>
+        </div>
+      </li>
+      </ul> */}
+    </>
+  );
+}
+
+export default Comment;
