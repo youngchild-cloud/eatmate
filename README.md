@@ -38,6 +38,7 @@ components
   - Input 인풋_텍스트, 파일, 비밀번호, 날짜, 넘버
   - InputTextarea 인풋_텍스트박스
   - InputSelectbox 인풋_셀렉트박스
+  - Bagde 프로필_뱃지
 
 - layout
   - Header 헤더
@@ -46,7 +47,7 @@ components
 pages
 - review 맛집 리뷰
   - ReviewList.js 맛집 리뷰 목록                => 퍼블 완료
-  - ReviewDetail.js 맛집 리뷰 상세              => 퍼블 예정(혜련)
+  - ReviewDetail.js 맛집 리뷰 상세              => 퍼블 진행중(혜련)
   - RestaurantList.js 맛집 목록                 => 퍼블 완료
   - RestaurantDetail.js 맛집 상세               => 퍼블 완료
 
@@ -55,16 +56,16 @@ pages
   - MeetupDetail.js 맛집 맛집 탐방 상세         => 퍼블 진행중(지희)
 
 - write 글쓰기
-  - WriteReview.js 맛집 리뷰 글쓰기             => 퍼블 진행중(혜련)
-  - WriteMeetup.js 맛집 맛집 탐방 글쓰기
-  - WriteCommunity.js 자유게시판 글쓰기
+  - WriteReview.js 맛집 리뷰 글쓰기             => 퍼블 완료
+  - WriteMeetup.js 맛집 맛집 탐방 글쓰기        => 퍼블 완료
+  - WriteCommunity.js 자유게시판 글쓰기         => 퍼블 완료
 
 - community 자유게시판
   - CommunityList.js 맛집 맛집 탐방 목록        => 퍼블 완료
-  - CommunityDetail.js 맛집 맛집 탐방 상세      => 퍼블 진행중(영찬)
+  - CommunityDetail.js 맛집 맛집 탐방 상세      => 퍼블 완료
 
 - mypage 마이페이지
-  - Mypage.js 마이페이지                        => 퍼블 예정(지희)
+  - Mypage.js 마이페이지                        => 퍼블 진행중(지희)
   - MypageProfile.js 프로필
   - MypageBookmark.js 저장한 맛집
   - MypageMeetup.js 맛집 맛집 탐방 신청내역
@@ -77,7 +78,7 @@ pages
   - Join.js 회원가입                            => 
 
 - notfound 404페이지
-  - NotFound.js 404페이지                       => 퍼블 예정(영찬)
+  - NotFound.js 404페이지                       => 퍼블 진행중(영찬)
 
 - admin 관리자
   - restaurant 맛집 관리

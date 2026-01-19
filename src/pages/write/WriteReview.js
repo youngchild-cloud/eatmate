@@ -1,7 +1,9 @@
 import React from 'react';
 import TitleCenter from '../../components/common/TitleCenter';
 import Input from '../../components/common/Input';
+import InputFile from '../../components/common/InputFile';
 import InputTextarea from '../../components/common/InputTextarea';
+import ButtonWide from '../../components/common/ButtonWide';
 
 const WriteReview = () => {
   return (
@@ -12,7 +14,7 @@ const WriteReview = () => {
         <form className='write-form'>
           <Input type={'text'} name={'r_name'} title={'맛집명'} />
 
-          <Input type={'file'} name={'r_file'} title={'사진'} />
+          <InputFile name={'r_file'} title={'사진'} />
 
           <InputTextarea name={'r_text'} title={'리뷰'} />
 
@@ -27,6 +29,8 @@ const WriteReview = () => {
               <option value="rank1">1점</option>
             </select>
           </div>
+
+          <ButtonWide type={'submit'} text={'등록하기'} />
         </form>
       </div>
     </section>

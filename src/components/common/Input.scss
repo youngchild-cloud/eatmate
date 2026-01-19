@@ -2,13 +2,14 @@
 @use '../../assets/scss/function' as *;
 
 .common-input-box {
-  margin-bottom: 20px;
+  margin-bottom: vw-mo(20);
 
-  &:last-child {
-    margin-bottom: 0;
+  &:last-of-type {
+    margin-bottom: vw-mo(60);
   }
 
-  label {
+  label,
+  .label {
     display: block;
     margin-bottom: vw-mo(6);
     color: $color-sub-black;

@@ -1,0 +1,31 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.common-input-box__file {
+  label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid $color-gray-light;
+    border-radius: 6px;
+    color: $color-gray-light;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  label::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 24px;
+    background: url('../../assets/images/write/icon_picture.png') no-repeat center / contain;
+  }
+
+  input {
+    display: none;
+  }
+}
