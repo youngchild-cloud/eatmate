@@ -10,15 +10,21 @@ function InputComment({ image }) {
     if (!trimmed) return;
   }
 
-
   return (
     <div className='comm-input'>
       <div className="input-img">
         <img src={`${process.env.PUBLIC_URL}/images/user/${image}`} alt="기본프로필" />
       </div>
+
       <form className="input-form" onSubmit={handleSubmit}>
-        <input type="text" placeholder='댓글을 입력하세요' name="comment" id="comment" maxLength={500}
-          value={text} onChange={(e) => setText(e.target.value)}
+        <input
+          type="text"
+          placeholder='댓글을 입력하세요'
+          name="comment"
+          id="comment"
+          maxLength={500}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
         />
         <button type="submit">입력</button>
       </form>

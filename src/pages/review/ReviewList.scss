@@ -2,41 +2,6 @@
 @use '../../assets/scss/function' as *;
 
 /*** 맛집 리뷰 공통 서식  ***/
-// 검색 영역
-.review-search {
-  .search-box {
-    position: relative;
-    background: $color-white-gray;
-    border-radius: vw-mo(50);
-
-    input {
-      display: block;
-      width: 94%;
-      padding: vw-mo(23) vw-mo(20);
-      background-color: transparent;
-    }
-
-    input::placeholder {
-      color: $color-gray;
-      font-size: vw-mo(24);
-    }
-
-    input:focus {
-      outline: none;
-    }
-
-    button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: vw-mo(20);
-      width: vw-mo(30);
-      height: vw-mo(30);
-      background: url('../../assets/images/review/icon_search.png') no-repeat center center / cover;
-    }
-  }
-}
-
 // 맛집 리뷰 타이틀
 .review-title-box {
   margin-bottom: vw-mo(30);

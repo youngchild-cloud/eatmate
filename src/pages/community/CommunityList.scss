@@ -52,7 +52,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      
+
     }
 
     .comm-content {
@@ -61,16 +61,6 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-    }
-  }
-
-  .comm-bot {
-    span {
-      margin-right: vw-mo(20);
-    }
-
-    svg {
-      margin-right: vw-mo(10);
     }
   }
 }

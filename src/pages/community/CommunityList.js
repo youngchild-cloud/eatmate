@@ -1,13 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// 버튼 콤포넌트
+// 콤포넌트
 import TitleLeft from '../../components/common/TitleLeft';
-
-//아이콘
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
-import { faComment as faCommentRegular } from "@fortawesome/free-regular-svg-icons";
+import HeartComment from '../../components/common/HeartComment';
 
 // scss
 import './CommunityList.scss';
@@ -42,16 +38,7 @@ function CommunityList(props) {
             </div>
 
             {/* 하트 수 + 채팅 수 */}
-            <div className="comm-bot">
-              <span>
-                <FontAwesomeIcon icon={faHeartRegular} />
-                12
-              </span>
-              <span>
-                <FontAwesomeIcon icon={faCommentRegular} />
-                12
-              </span>
-            </div>
+            <HeartComment heart={'10'} comment={'10'} />
           </Link>
 
           {/* 자유게시판 글 목록  */}
@@ -77,16 +64,7 @@ function CommunityList(props) {
             </div>
 
             {/* 하트 수 + 채팅 수 */}
-            <div className="comm-bot">
-              <span>
-                <FontAwesomeIcon icon={faHeartRegular} />
-                12
-              </span>
-              <span>
-                <FontAwesomeIcon icon={faCommentRegular} />
-                12
-              </span>
-            </div>
+            <HeartComment heart={'10'} comment={'10'} />
           </Link>
 
           {/* 자유게시판 글 목록  */}
@@ -112,16 +90,7 @@ function CommunityList(props) {
             </div>
 
             {/* 하트 수 + 채팅 수 */}
-            <div className="comm-bot">
-              <span>
-                <FontAwesomeIcon icon={faHeartRegular} />
-                12
-              </span>
-              <span>
-                <FontAwesomeIcon icon={faCommentRegular} />
-                12
-              </span>
-            </div>
+            <HeartComment heart={'10'} comment={'10'} />
           </Link>
         </div>
       </section>

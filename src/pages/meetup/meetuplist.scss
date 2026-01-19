@@ -26,7 +26,7 @@
       display: block;
     }
 
-    li {
+    .tab-content-list>li {
       display: none;
     }
 
@@ -55,19 +55,8 @@
         height: vw-mo(20)
       }
 
-      .icon-num {
-        color: #333;
-        line-height: 1.6;
-      }
-
-      span {
+      p span {
         padding-right: vw-mo(20);
-      }
-
-      svg {
-        padding-right: vw-mo(10);
-        font-size: vw-mo(30);
-        vertical-align: middle;
       }
     }
 

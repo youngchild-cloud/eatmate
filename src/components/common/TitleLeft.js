@@ -1,6 +1,6 @@
 import React from 'react';
 import './TitleLeft.scss'
-import ButtonShort from './ButtonShort';
+import ButtonShort from './TitleLeft/ButtonShort';
 
 const TitleLeft = ({ title, link, linkTitle, text }) => {
   return (

@@ -30,6 +30,8 @@
     }
 
     .content-box {
+      padding-bottom: vw-mo(60);
+
       .content-img {
         width: vw-mo(300);
         height: vw-mo(340);
@@ -66,25 +68,12 @@
       }
     }
 
-
     .content-info-txt img {
       margin-right: vw-mo(10);
     }
 
-    .icon-num {
-      padding: vw-mo(20) 0;
-      font-size: vw-mo(24);
-      line-height: 1.6;
-    }
-
-    svg {
-      padding-right: vw-mo(10);
-      font-size: vw-mo(30);
-      vertical-align: middle;
-    }
-
-    .icon-num-first {
-      padding-right: vw-mo(20);
+    .btn-wide {
+      margin-bottom: vw-mo(20);
     }
   }
 }

@@ -3,8 +3,6 @@ import React from 'react';
 import './CommunityDetail.scss'
 // 헤더 콤포넌트
 import TitleCenter from '../../components/common/TitleCenter';
-//이미지
-import default_profile from '../../assets/images/default_profile.png';
 //아이콘
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";

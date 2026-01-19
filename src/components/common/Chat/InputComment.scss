@@ -5,14 +5,12 @@
   display: flex;
   align-items: center;
   margin-bottom: vw-mo(30);
-  margin-top: vw-mo(60);
 
   .input-img {
     border-radius: 50%;
     width: vw-mo(56);
     height: vw-mo(56);
     margin-right: vw-mo(20);
-
 
     img {
       width: 100%;
@@ -28,10 +26,10 @@
     input {
       width: 100%;
       background-color: $color-white-gray;
-      padding: vw-mo(23) vw-mo(20);
+      padding: vw-mo(23) vw-mo(70) vw-mo(23) vw-mo(20);
       font-size: vw-mo(24);
       border: 1px solid $color-gray-light;
-      border-radius: 6px;
+      border-radius: vw-mo(6);
 
       &::placeholder {
         color: $color-gray-light;

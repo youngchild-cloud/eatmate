@@ -1,0 +1,34 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.review-search-box {
+  position: relative;
+  background: $color-white-gray;
+  border-radius: vw-mo(50);
+
+  input {
+    display: block;
+    width: 94%;
+    padding: vw-mo(23) vw-mo(20);
+    background-color: transparent;
+  }
+
+  input::placeholder {
+    color: $color-gray;
+    font-size: vw-mo(24);
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: vw-mo(20);
+    width: vw-mo(30);
+    height: vw-mo(30);
+    background: url('../../assets/images/review/icon_search.png') no-repeat center center / cover;
+  }
+}

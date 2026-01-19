@@ -1,6 +1,11 @@
 import './ReviewList.scss';
+
 import { Link } from 'react-router-dom';
+
 import TitleLeft from '../../components/common/TitleLeft';
+import Search from '../../components/review/Search';
+import Rank5 from '../../components/review/Rank5';
+
 import cate1 from '../../assets/images/review/icon_cate01.png';
 import cate2 from '../../assets/images/review/icon_cate02.png';
 import cate3 from '../../assets/images/review/icon_cate03.png';
@@ -9,7 +14,6 @@ import cate5 from '../../assets/images/review/icon_cate05.png';
 import cate6 from '../../assets/images/review/icon_cate06.png';
 import cate7 from '../../assets/images/review/icon_cate07.png';
 import cate8 from '../../assets/images/review/icon_cate08.png';
-import Rank5 from '../../components/common/Rank5';
 
 const ReviewList = () => {
   return (
@@ -17,10 +21,8 @@ const ReviewList = () => {
       <section className='review-search'>
         <div className="inner">
           <TitleLeft title={'맛집 리뷰'} link={'/write/review'} linkTitle={'맛집 리뷰 글쓰기'} text={'리뷰 쓰기'} />
-          <div className="search-box">
-            <input type="search" name="search" id="search" placeholder='맛집명을 검색하세요' />
-            <button><span className="blind">검색</span></button>
-          </div>
+
+          <Search />
         </div>
       </section>
 

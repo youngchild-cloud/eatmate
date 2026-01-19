@@ -1,8 +1,11 @@
 import './ReviewDetail.scss';
-import TitleCenter from '../../components/common/TitleCenter';
-import Rank5 from '../../components/common/Rank5';
+
 import { Link } from 'react-router-dom';
+
+import TitleCenter from '../../components/common/TitleCenter';
 import Badge from '../../components/common/Badge';
+import Rank5 from '../../components/review/Rank5';
+import HeartComment from '../../components/common/HeartComment';
 import Chat from '../../components/common/Chat';
 
 const ReviewDetail = () => {
@@ -47,7 +50,7 @@ const ReviewDetail = () => {
 
             <Link to={'/review/restaurant/detail'} title='식당 상세보기 페이지로 이동' className='link'>#더 페어링</Link>
 
-            <div>하트 컴포넌트</div>
+            <HeartComment heart={'10'} comment={'10'} />
           </div>
         </article>
 

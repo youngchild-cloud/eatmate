@@ -5,9 +5,11 @@
 .comm-comment {
   li {
     display: flex;
-
     margin-bottom: vw-mo(20);
 
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .comment-img {

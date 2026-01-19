@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
 import './RestaurantList.scss';
-import TitleCenter from '../../components/common/TitleCenter';
+
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import TitleCenter from '../../components/common/TitleCenter';
+import Search from '../../components/review/Search';
 
 const RestaurantList = () => {
   const [addAct, setAddAct] = useState(false);
@@ -11,10 +14,8 @@ const RestaurantList = () => {
       <section className='review-search'>
         <div className="inner">
           <TitleCenter title={'맛집 보기'} />
-          <div className="search-box">
-            <input type="search" name="search" id="search" placeholder='맛집명을 검색하세요' />
-            <button><span className="blind">검색</span></button>
-          </div>
+
+          <Search />
         </div>
       </section>
 

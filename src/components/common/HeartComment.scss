@@ -1,0 +1,24 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.common-heart-comment {
+  display: flex;
+  gap: vw-mo(20);
+
+  li {
+
+    >button,
+    >svg {
+      margin-right: vw-mo(10);
+    }
+  }
+
+  svg {
+    width: vw-mo(30);
+    height: vw-mo(26);
+  }
+
+  span {
+    font-size: vw-mo(24);
+  }
+}

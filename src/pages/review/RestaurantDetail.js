@@ -5,7 +5,7 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './RestaurantDetail.scss';
-import Rank5 from '../../components/common/Rank5';
+import Rank5 from '../../components/review/Rank5';
 import iconBack from '../../assets/images/icon_back.png';
 import icon01 from '../../assets/images/review/icon_restaurant-detail01.png';
 import icon02 from '../../assets/images/review/icon_restaurant-detail02.png';

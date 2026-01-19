@@ -2,6 +2,10 @@
 @use '../../assets/scss/function' as *;
 
 .review-detail {
+  .review-con {
+    padding-bottom: vw-mo(60);
+  }
+
   .profile-area {
     display: flex;
     gap: vw-mo(20);

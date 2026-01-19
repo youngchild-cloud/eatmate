@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
 import './meetuplist.scss';
+
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import TitleLeft from '../../components/common/TitleLeft';
+import HeartComment from '../../components/common/HeartComment';
+
 import tabTxtImg1 from '../../assets/images/meetup/con-txt-img1.png';
 import tabTxtImg2 from '../../assets/images/meetup/con-txt-img2.png';
 import tabTxtImg3 from '../../assets/images/meetup/con-txt-img3.png';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faComment } from '@fortawesome/free-regular-svg-icons';
-import { useNavigate } from 'react-router-dom';
 
 function MeetupList(props) {
-
   const [tabTitle, setTabTitle] = useState(1);
   const navigate = useNavigate();
 
   const tabContent = (e) => {
     setTabTitle(e);
   }
+
   return (
     <section className='meetup-list'>
       <div className="inner">
@@ -38,10 +39,7 @@ function MeetupList(props) {
                   <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
                   <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
                 </p>
-                <p className='icon-num'>
-                  <span><FontAwesomeIcon icon={faHeart} />10</span>
-                  <span><FontAwesomeIcon icon={faComment} />3</span>
-                </p>
+                <HeartComment heart={'10'} comment={'10'} />
               </div>
               <div className='item-img'>
                 <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
@@ -56,10 +54,7 @@ function MeetupList(props) {
                   <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
                   <span><img src={tabTxtImg3} alt="" /> 3/4</span>
                 </p>
-                <p className='icon-num'>
-                  <span><FontAwesomeIcon icon={faHeart} />10</span>
-                  <span><FontAwesomeIcon icon={faComment} />3</span>
-                </p>
+                <HeartComment heart={'10'} comment={'10'} />
               </div>
               <div className='item-img'>
                 <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
@@ -74,10 +69,7 @@ function MeetupList(props) {
                   <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
                   <span><img src={tabTxtImg3} alt="" /> 3/4</span>
                 </p>
-                <p className='icon-num'>
-                  <span><FontAwesomeIcon icon={faHeart} />10</span>
-                  <span><FontAwesomeIcon icon={faComment} />3</span>
-                </p>
+                <HeartComment heart={'10'} comment={'10'} />
               </div>
               <div className='item-img'>
                 <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
@@ -92,10 +84,7 @@ function MeetupList(props) {
                   <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
                   <span><img src={tabTxtImg3} alt="" /> 3/4</span>
                 </p>
-                <p className='icon-num'>
-                  <span><FontAwesomeIcon icon={faHeart} />10</span>
-                  <span><FontAwesomeIcon icon={faComment} />3</span>
-                </p>
+                <HeartComment heart={'10'} comment={'10'} />
               </div>
               <div className='item-img'>
                 <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
@@ -113,10 +102,7 @@ function MeetupList(props) {
                   <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
                   <span><img src={tabTxtImg3} alt="" /> 3/4</span>
                 </p>
-                <p className='icon-num'>
-                  <span><FontAwesomeIcon icon={faHeart} />10</span>
-                  <span><FontAwesomeIcon icon={faComment} />3</span>
-                </p>
+                <HeartComment heart={'10'} comment={'10'} />
               </div>
               <div className='item-img'>
                 <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
@@ -131,10 +117,7 @@ function MeetupList(props) {
                   <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
                   <span><img src={tabTxtImg3} alt="" /> 3/4</span>
                 </p>
-                <p className='icon-num'>
-                  <span><FontAwesomeIcon icon={faHeart} />10</span>
-                  <span><FontAwesomeIcon icon={faComment} />3</span>
-                </p>
+                <HeartComment heart={'10'} comment={'10'} />
               </div>
               <div className='item-img'>
                 <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
@@ -149,10 +132,7 @@ function MeetupList(props) {
                   <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
                   <span><img src={tabTxtImg3} alt="" /> 3/4</span>
                 </p>
-                <p className='icon-num'>
-                  <span><FontAwesomeIcon icon={faHeart} />10</span>
-                  <span><FontAwesomeIcon icon={faComment} />3</span>
-                </p>
+                <HeartComment heart={'10'} comment={'10'} />
               </div>
               <div className='item-img'>
                 <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
@@ -167,10 +147,7 @@ function MeetupList(props) {
                   <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
                   <span><img src={tabTxtImg3} alt="" /> 3/4</span>
                 </p>
-                <p className='icon-num'>
-                  <span><FontAwesomeIcon icon={faHeart} />10</span>
-                  <span><FontAwesomeIcon icon={faComment} />3</span>
-                </p>
+                <HeartComment heart={'10'} comment={'10'} />
               </div>
               <div className='item-img'>
                 <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
@@ -185,10 +162,7 @@ function MeetupList(props) {
                   <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
                   <span><img src={tabTxtImg3} alt="" /> 3/4</span>
                 </p>
-                <p className='icon-num'>
-                  <span><FontAwesomeIcon icon={faHeart} />10</span>
-                  <span><FontAwesomeIcon icon={faComment} />3</span>
-                </p>
+                <HeartComment heart={'10'} comment={'10'} />
               </div>
               <div className='item-img'>
                 <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />

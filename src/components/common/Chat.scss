@@ -1,0 +1,7 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.common-chat {
+  border-top: 1px solid $color-gray;
+  padding: vw-mo(60) 0 vw-mo(30);
+}
