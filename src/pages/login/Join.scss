@@ -1,0 +1,37 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/function';
+
+.join {
+  .id-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: vw-mo(20);
+
+    .common-input-box {
+      width: vw-mo(511);
+      margin-bottom: 0;
+    }
+
+    button {
+      width: vw-mo(177);
+      height: vw-mo(82);
+      border-radius: vw-mo(6);
+      border: 1px solid $color-main;
+      color: $color-main;
+      font-size: vw-mo(24);
+      line-height: vw-mo(82);
+    }
+  }
+
+  .common-input-box:nth-of-type(3) {
+    margin-bottom: vw-mo(4);
+  }
+
+  .pw-text {
+    margin-bottom: vw-mo(20);
+    color: $color-gray;
+    font-size: vw-mo(24);
+  }
+
+}

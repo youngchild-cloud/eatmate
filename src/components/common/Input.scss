@@ -15,6 +15,21 @@
     color: $color-sub-black;
   }
 
+  label span,
+  .label span {
+    margin-right: vw-mo(6);
+  }
+
+  label .req,
+  .label .req {
+    color: $color-sub-orange;
+  }
+
+  label .sel,
+  .label .sel {
+    color: $color-gray;
+  }
+
   input,
   textarea,
   select {

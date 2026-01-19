@@ -76,12 +76,12 @@ pages
 
 - login 로그인/회원가입
   - Login.js 로그인                             => 퍼블 완료
-  - Join.js 회원가입                            => 퍼블 예정(혜련)
+  - Join.js 회원가입                            => 퍼블 완료
 
 - notfound 404페이지
   - NotFound.js 404페이지                       => 퍼블 진행중(영찬)
 
-- admin 관리자
+- admin 관리자                                  => 퍼블 예정(지희)
   - restaurant 맛집 관리
     - RestaurantList.js 맛집 목록
     - RestaurantCreate.js 맛집 등록
@@ -134,3 +134,7 @@ admin 관리자
 - meetups 게시판 관리 > 맛집 탐방 (디자인x 추후 시간 남으면 작업 예정)
 - community 게시판 관리 > 자유게시판 관리 (디자인x 추후 시간 남으면 작업 예정)
 - login 로그인
+
+# 수정사항
+- 피그마에 표시
+- 페이지 이동 후 맨 위로 보여져야 함
