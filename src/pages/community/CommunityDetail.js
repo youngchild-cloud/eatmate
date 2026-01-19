@@ -10,6 +10,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import { faComment as faCommentRegular } from "@fortawesome/free-regular-svg-icons";
 
+import Chat from '../../components/common/Chat'
+
 function CommunityDetail(props) {
   return (
     <section className='community-detail'>
@@ -51,44 +53,8 @@ function CommunityDetail(props) {
           </div>
         </div>
 
-        {/* ------댓글 입력------- */}
-        <div className='comm-input'>
-          <div className="input-img">
-            <img src={default_profile} alt="기본프로필" />
-          </div>
-          <form className="input-form">
-            <input type="text" placeholder='댓글을 입력하세요' />
-            <button>입력</button>
-          </form>
-        </div>
-
-        {/* ------게시글 댓글------ */}
-        <ul className='comm-comment'>
-          <li>
-            <div className="comment-img">
-              <img src={`${process.env.PUBLIC_URL}/images/community/user02.png`} alt="프로필 사진" />
-            </div>
-
-            <div className="comment-content">
-              <span className='comment-nick'>룰루랄라</span>
-              <p className='comment-txt'>넘 늦었다 지금은 ㄴㄴ</p>
-              <span className="comment-time">10분전</span>
-            </div>
-          </li>
-
-          <li>
-            <div className="comment-img">
-              <img src={`${process.env.PUBLIC_URL}/images/community/user03.png`} alt="프로필 사진" />
-            </div>
-
-            <div className="comment-content">
-              <span className='comment-nick'>sdfas</span>
-              <p className='comment-txt'>asdfasdfasdf</p>
-              <span className="comment-time">11분전</span>
-            </div>
-          </li>
-
-        </ul>
+{/* 댓글 창 시작 */}
+        <Chat />
 
       </div>
     </section>

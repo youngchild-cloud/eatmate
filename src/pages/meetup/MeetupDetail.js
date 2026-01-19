@@ -9,6 +9,7 @@ import userBase from '../../assets/images/meetup/user-base.png';
 import tabTxtImg1 from '../../assets/images/meetup/con-txt-img1.png';
 import tabTxtImg2 from '../../assets/images/meetup/con-txt-img2.png';
 import tabTxtImg3 from '../../assets/images/meetup/con-txt-img3.png';
+import Chat from '../../components/common/Chat';
 
 const MeetupDetail = () => {
   return (
@@ -40,7 +41,8 @@ const MeetupDetail = () => {
           </p>
         </div>
         {/* 댓글 */}
-        <div>
+        <Chat />
+        {/* <div>
           <img src={userBase} alt="" />
           <input type="text" id="comment" />
           <label htmlFor="comment">입력</label>
@@ -62,7 +64,7 @@ const MeetupDetail = () => {
             <span>나 미피 진짜 좋아하는데 이날 늦게 가도 돼?!ㅠㅠㅠㅜ 제발 된다고 해줘</span>
             <span>2분전</span>
           </p>
-        </div>
+        </div> */}
 
 
 
