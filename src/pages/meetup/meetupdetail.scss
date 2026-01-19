@@ -7,67 +7,74 @@
   .inner {
     .user {
       display: flex;
-      gap: 20px;
+      gap: vw-mo(20);
       align-items: center;
-      padding-bottom: 20px;
+      padding-bottom: vw-mo(20);
     }
 
     .user-img {
-      width: 64px;
+      width: vw-mo(64);
+    }
+
+    .user-img img {
+      width: 100%;
     }
 
     .user-info {
       color: $color-gray;
-      font-size: 24px;
-
+      font-size: vw-mo(24);
     }
 
     .user-info-gap {
-      padding: 0 10px;
+      padding: 0 vw-mo(10);
     }
 
     .content-box {
       .content-img {
-        width: 300px;
-        height: 340px;
+        width: vw-mo(300);
+        height: vw-mo(340);
+        padding-bottom: vw-mo(20);
       }
-
-
     }
 
     .content-txt {
       font-weight: bold;
-      font-size: 30px;
+      font-size: vw-mo(30);
     }
 
     .content-txt-detail {
       display: block;
-      font-size: 28px;
       font-weight: 400;
-      padding-bottom: 20px;
+      padding: vw-mo(10) 0 vw-mo(20) 0;
     }
 
     .content-info {
-      padding-bottom: 20px;
-      font-size: 28px;
+      padding-bottom: vw-mo(20);
 
       img {
-        width: 30px;
+        width: vw-mo(30);
       }
     }
 
-    .content-info-txt {
-      display: block;
+    .content-info span {
+      color: $color-gray;
+      display: flex;
       align-items: center;
+
+      &:not(:last-child) {
+        padding-bottom: vw-mo(6);
+      }
     }
 
+
     .content-info-txt img {
-      margin-right: 10px;
+      margin-right: vw-mo(10);
     }
 
     .icon-num {
-      padding: 20px 0;
-      font-size: 24px;
+      padding: vw-mo(20) 0;
+      font-size: vw-mo(24);
+      line-height: 1.6;
     }
 
     svg {
@@ -77,7 +84,7 @@
     }
 
     .icon-num-first {
-      padding-right: 20px;
+      padding-right: vw-mo(20);
     }
   }
 }
