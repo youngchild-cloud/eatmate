@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.mypage {
+  .inner {
+    .profile {
+      display: flex;
+      align-items: start;
+      gap: vw-mo(20);
+    }
+
+    .profile-txt {
+      vertical-align: middle;
+      padding-bottom: vw-mo(20);
+      width: vw-mo(540);
+    }
+
+    .profile-badge {
+      margin-left: vw-mo(6);
+    }
+
+    .profile-txt-detail {
+      display: block;
+      color: $color-gray;
+      padding-top: vw-mo(10);
+    }
+
+    .profile img {
+      width: vw-mo(140);
+    }
+
+    .profile-edit button {
+      background: $color-white-gray;
+      color: $color-text;
+      margin: vw-mo(20) 0 vw-mo(60) 0;
+    }
+
+    .line {
+      border-top: 1px solid $color-gray;
+      border-bottom: 1px solid $color-gray;
+      padding: vw-mo(60) 0 vw-mo(60) 0;
+      margin-bottom: vw-mo(60);
+    }
+
+    .line a {
+      display: block;
+    }
+
+    .line a span {
+      vertical-align: middle;
+    }
+
+    .line a:not(:last-child) {
+      padding-bottom: vw-mo(30);
+    }
+
+    .line img {
+      padding-right: vw-mo(20);
+      vertical-align: middle;
+      height: vw-mo(30)
+    }
+
+    .logout {
+      color: $color-gray;
+      padding-bottom: vw-mo(622);
+    }
+
+    .logout span {
+      vertical-align: middle;
+    }
+
+    .logout img {
+      padding-right: vw-mo(20);
+      vertical-align: middle;
+      height: vw-mo(30)
+    }
+  }
+}
