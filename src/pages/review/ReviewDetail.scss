@@ -1,0 +1,76 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.review-detail {
+  .profile-area {
+    display: flex;
+    gap: vw-mo(20);
+
+    .img-box {
+      width: vw-mo(64);
+      height: vw-mo(64);
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .txt-box {
+      margin-bottom: vw-mo(20);
+    }
+
+    .name {
+      display: block;
+      margin-bottom: vw-mo(4);
+      font-size: vw-mo(24);
+      color: $color-gray;
+    }
+
+    .bagde {
+      margin-left: vw-mo(6);
+    }
+
+    .rank-date {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: vw-mo(10);
+      color: $color-gray-light;
+      font-size: vw-mo(24);
+    }
+  }
+
+  .image-area {
+    display: flex;
+    gap: vw-mo(20);
+    margin-bottom: vw-mo(20);
+
+    .img-box {
+      width: vw-mo(170);
+      height: vw-mo(193);
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .text-area {
+    >p {
+      margin-bottom: vw-mo(20);
+    }
+
+    .link {
+      display: inline-block;
+      margin-bottom: vw-mo(20);
+      padding: vw-mo(5) vw-mo(10);
+      background-color: $color-white-gray;
+      border-radius: vw-mo(10);
+      color: $color-sub-orange;
+    }
+  }
+}

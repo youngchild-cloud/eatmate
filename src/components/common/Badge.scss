@@ -1,0 +1,30 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.bagde {
+  padding: vw-mo(4) vw-mo(10);
+  border-radius: vw-mo(50);
+  border: 1px solid #333;
+  font-size: vw-mo(20);
+  text-transform: uppercase;
+
+  &-vip {
+    border-color: $color-sub-yellow;
+    color: $color-sub-yellow;
+  }
+
+  &-gold {
+    border-color: $color-sub-yellow;
+    color: $color-sub-yellow;
+  }
+
+  &-sliver {
+    border-color: $color-sub-yellow;
+    color: $color-sub-yellow;
+  }
+
+  &-sliver {
+    border-color: $color-sub-yellow;
+    color: $color-sub-yellow;
+  }
+}
