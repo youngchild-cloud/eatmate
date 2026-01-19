@@ -21,10 +21,10 @@ const Login = () => {
           </div>
           <ul className="links">
             <li>
-              <Link onClick={() => alert('준비중인 페이지입니다.')}>아이디/비밀번호 찾기</Link>
+              <Link onClick={() => alert('준비중인 페이지입니다.')} title='준비중인 페이지입니다.'>아이디/비밀번호 찾기</Link>
             </li>
             <li>
-              <Link to={'/join'}>회원가입</Link>
+              <Link to={'/join'} title='회원가입 페이지로 이동'>회원가입</Link>
             </li>
           </ul>
 
