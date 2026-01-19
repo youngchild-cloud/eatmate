@@ -53,7 +53,7 @@ function CommunityDetail(props) {
           </div>
         </div>
 
-{/* 댓글 창 시작 */}
+        {/* 댓글 창 시작 */}
         <Chat />
 
       </div>

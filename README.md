@@ -47,13 +47,13 @@ components
 pages
 - review 맛집 리뷰
   - ReviewList.js 맛집 리뷰 목록                => 퍼블 완료
-  - ReviewDetail.js 맛집 리뷰 상세              => 퍼블 진행중(혜련)
+  - ReviewDetail.js 맛집 리뷰 상세              => 퍼블 진행중(하트, 댓글 컴포넌트 만들기)
   - RestaurantList.js 맛집 목록                 => 퍼블 완료
   - RestaurantDetail.js 맛집 상세               => 퍼블 완료
 
 - meetup 맛집 맛집 탐방
   - MeetupList.js 맛집 맛집 탐방 목록           => 퍼블 완료
-  - MeetupDetail.js 맛집 맛집 탐방 상세         => 퍼블 진행중(지희)
+  - MeetupDetail.js 맛집 맛집 탐방 상세         => 퍼블 완료
 
 - write 글쓰기
   - WriteReview.js 맛집 리뷰 글쓰기             => 퍼블 완료
@@ -65,7 +65,7 @@ pages
   - CommunityDetail.js 맛집 맛집 탐방 상세      => 퍼블 완료
 
 - mypage 마이페이지
-  - Mypage.js 마이페이지                        => 퍼블 진행중(지희)
+  - Mypage.js 마이페이지                        => 퍼블 완료
   - MypageProfile.js 프로필
   - MypageBookmark.js 저장한 맛집
   - MypageMeetup.js 맛집 맛집 탐방 신청내역
@@ -74,8 +74,8 @@ pages
   - MypageComment.js 내가 남긴 댓글
 
 - login 로그인/회원가입
-  - Login.js 로그인                             => 
-  - Join.js 회원가입                            => 
+  - Login.js 로그인                             => 퍼블 예정(혜련)
+  - Join.js 회원가입                            => 퍼블 예정(혜련)
 
 - notfound 404페이지
   - NotFound.js 404페이지                       => 퍼블 진행중(영찬)

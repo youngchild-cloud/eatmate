@@ -7,21 +7,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    width: 100px;
-    height: 100px;
+    gap: vw-mo(10);
+    width: vw-mo(100);
+    height: vw-mo(100);
     border: 1px solid $color-gray-light;
-    border-radius: 6px;
+    border-radius: vw-mo(6);
     color: $color-gray-light;
-    font-size: 24px;
+    font-size: vw-mo(24);
     cursor: pointer;
   }
 
   label::before {
     content: '';
     display: block;
-    width: 28px;
-    height: 24px;
+    width: vw-mo(28);
+    height: vw-mo(24);
     background: url('../../assets/images/write/icon_picture.png') no-repeat center / contain;
   }
 

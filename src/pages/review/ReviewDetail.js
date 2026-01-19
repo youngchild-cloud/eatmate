@@ -3,6 +3,7 @@ import TitleCenter from '../../components/common/TitleCenter';
 import Rank5 from '../../components/common/Rank5';
 import { Link } from 'react-router-dom';
 import Badge from '../../components/common/Badge';
+import Chat from '../../components/common/Chat';
 
 const ReviewDetail = () => {
   return (
@@ -50,7 +51,7 @@ const ReviewDetail = () => {
           </div>
         </article>
 
-        <div>댓글 컴포넌트</div>
+        <Chat />
       </div>
     </section>
   );
