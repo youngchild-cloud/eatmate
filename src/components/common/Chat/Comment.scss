@@ -30,13 +30,13 @@
 
     .comment-nick {
       display: block;
-      margin: vw-mo(10) 0;
+      padding: vw-mo(10) 0;
       font-size: vw-mo(24);
       color: $color-gray;
     }
 
     .comment-txt {
-      margin: vw-mo(10) 0;
+      padding: vw-mo(10) 0;
       font-size: vw-mo(24);
       color: $color-text;
       white-space: normal;

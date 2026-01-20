@@ -1,14 +1,14 @@
+//외부 라이브러리
 import React from 'react';
-
-import './CommunityDetail.scss'
-// 헤더 콤포넌트
-import TitleCenter from '../../components/common/TitleCenter';
-//아이콘
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import { faComment as faCommentRegular } from "@fortawesome/free-regular-svg-icons";
-
+//전역 스타일
+import './CommunityDetail.scss'
+// 기능 컴포넌트
+import TitleCenter from '../../components/common/TitleCenter';
 import Chat from '../../components/common/Chat'
+
 
 function CommunityDetail(props) {
   return (

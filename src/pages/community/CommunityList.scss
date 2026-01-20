@@ -10,6 +10,10 @@
 
   }
 
+  a:first-of-type {
+    padding-top: vw-mo(0);
+  }
+
   .comm-top {
     display: flex;
     align-items: center;
