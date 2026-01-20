@@ -1,8 +1,12 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+
 import './assets/scss/_reset.scss';
 import './assets/scss/base.scss';
+
 import Header from './components/layout/Header'
 import Nav from './components/layout/Nav'
+import ScrollTop from './components/common/ScrollTop';
+
 import ReviewList from './pages/review/ReviewList'
 import ReviewDetail from './pages/review/ReviewDetail'
 import RestaurantList from './pages/review/RestaurantList'
@@ -29,6 +33,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollTop /> {/* 주소가 바뀔 때마다 맨 위에서 시작 */}
+
         <Header />
 
         <main>

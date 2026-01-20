@@ -23,6 +23,35 @@ npm i --save @fortawesome/free-brands-svg-icons
 # 개발규칙
 - CSS > class, id 규칙은 케밥케이스 (ex. text-box, title-area)
 - JavaScript > 변수, 함수 규칙은 카멜케이스 (ex. let textBox, const titleArea)
+- React > improt 순서(아래에 예시 넣어둠)
+// 1. 외부 라이브러리
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+// 2. 전역 스타일
+import './styles/reset.css';
+import './styles/common.css';
+import './styles/layout.css';
+
+// 3. 레이아웃
+import Header from './layout/Header';
+import Footer from './layout/Footer';
+
+// 4. 페이지
+import Main from './components/Main';
+import Intro from './components/Intro';
+import Info from './components/Info';
+import Event from './components/Event';
+import Customer from './components/Customer';
+
+// 5. 기능 컴포넌트
+import Login from './components/Login';
+import Join from './components/Join';
+import Cart from './components/Cart';
+import Order from './components/Order';
+
+// 6. 이미지
+import logo from './assets/images/logo.png';
 
 # 폴더/페이지명
 assets
@@ -136,5 +165,5 @@ admin 관리자
 - login 로그인
 
 # 수정사항
-- 피그마에 표시
-- 페이지 이동 후 맨 위로 보여져야 함
+- 피그마에 표시 => 이미지 올려서 보는 법 알려드릴 예정
+- 리액트 순서 변경
