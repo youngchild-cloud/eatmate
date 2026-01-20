@@ -14,6 +14,7 @@
       width: vw-mo(350);
       text-align: center;
       padding-bottom: vw-mo(20);
+      cursor: pointer;
     }
 
     .act {
@@ -26,7 +27,7 @@
       display: block;
     }
 
-    .tab-content-list>li {
+    .tab-content-list {
       display: none;
     }
 

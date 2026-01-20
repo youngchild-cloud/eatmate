@@ -1,7 +1,7 @@
-import './meetuplist.scss';
-
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
+import './meetuplist.scss';
 
 import TitleLeft from '../../components/common/TitleLeft';
 import HeartComment from '../../components/common/HeartComment';
@@ -30,144 +30,166 @@ function MeetupList(props) {
 
         <ul className='tab-content'>
           {/* 1번탭 (전체글)  */}
-          <li className={tabTitle === 1 ? 'tab-content-list' : ''} onClick={() => tabContent(1)}>
-            <div className='item'>
-              <div className='item-txt'>
-                <h3 onClick={() => navigate(`/meetup/detail`)}>피자 같이 먹으러 갈 사람!</h3>
-                <p>
-                  <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
-                  <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
-                  <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
-                </p>
-                <HeartComment heart={'10'} comment={'10'} />
+          <li className={tabTitle === 2 ? 'tab-content-list' : ''} onClick={() => tabContent(1)}>
+            <Link to='/meetup/detail'>
+              <div className='item'>
+                <div className='item-txt'>
+                  <h3>피자 같이 먹으러 갈 사람!</h3>
+                  <p>
+                    <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
+                    <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
+                    <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
+                  </p>
+                  <HeartComment heart={'10'} comment={'10'} />
+                </div>
+                <div className='item-img'>
+                  <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+                </div>
               </div>
-              <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
-              </div>
-            </div>
+            </Link>
 
-            <div className='item'>
-              <div className='item-txt'>
-                <h3>피자 같이 먹으러 갈 사람!</h3>
-                <p>
-                  <span><img src={tabTxtImg1} alt="" /> 2026.01.11</span>
-                  <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
-                  <span><img src={tabTxtImg3} alt="" /> 3/4</span>
-                </p>
-                <HeartComment heart={'10'} comment={'10'} />
+            <Link to='/meetup/detail'>
+              <div className='item'>
+                <div className='item-txt'>
+                  <h3>피자 같이 먹으러 갈 사람!</h3>
+                  <p>
+                    <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
+                    <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
+                    <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
+                  </p>
+                  <HeartComment heart={'10'} comment={'10'} />
+                </div>
+                <div className='item-img'>
+                  <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+                </div>
               </div>
-              <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
-              </div>
-            </div>
+            </Link>
 
-            <div className='item'>
-              <div className='item-txt'>
-                <h3>피자 같이 먹으러 갈 사람!</h3>
-                <p>
-                  <span><img src={tabTxtImg1} alt="" /> 2026.01.11</span>
-                  <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
-                  <span><img src={tabTxtImg3} alt="" /> 3/4</span>
-                </p>
-                <HeartComment heart={'10'} comment={'10'} />
+            <Link to='/meetup/detail'>
+              <div className='item'>
+                <div className='item-txt'>
+                  <h3>피자 같이 먹으러 갈 사람!</h3>
+                  <p>
+                    <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
+                    <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
+                    <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
+                  </p>
+                  <HeartComment heart={'10'} comment={'10'} />
+                </div>
+                <div className='item-img'>
+                  <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+                </div>
               </div>
-              <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
-              </div>
-            </div>
+            </Link>
 
-            <div className='item'>
-              <div className='item-txt'>
-                <h3>피자 같이 먹으러 갈 사람!</h3>
-                <p>
-                  <span><img src={tabTxtImg1} alt="" /> 2026.01.11</span>
-                  <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
-                  <span><img src={tabTxtImg3} alt="" /> 3/4</span>
-                </p>
-                <HeartComment heart={'10'} comment={'10'} />
+            <Link to='/meetup/detail'>
+              <div className='item'>
+                <div className='item-txt'>
+                  <h3>피자 같이 먹으러 갈 사람!</h3>
+                  <p>
+                    <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
+                    <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
+                    <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
+                  </p>
+                  <HeartComment heart={'10'} comment={'10'} />
+                </div>
+                <div className='item-img'>
+                  <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+                </div>
               </div>
-              <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+            </Link>
+
+            <Link to='/meetup/detail'>
+              <div className='item'>
+                <div className='item-txt'>
+                  <h3>피자 같이 먹으러 갈 사람!</h3>
+                  <p>
+                    <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
+                    <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
+                    <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
+                  </p>
+                  <HeartComment heart={'10'} comment={'10'} />
+                </div>
+                <div className='item-img'>
+                  <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+                </div>
               </div>
-            </div>
+            </Link>
+
+
           </li>
 
           {/* 2번탭 리스트(모집중) */}
-          <li className={tabTitle === 2 ? 'tab-content-list' : ''}>
-            <div className='item'>
-              <div className='item-txt'>
-                <h3>피자 먹으러 갈 사람 진짜 없나?</h3>
-                <p>
-                  <span><img src={tabTxtImg1} alt="" /> 2026.01.11</span>
-                  <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
-                  <span><img src={tabTxtImg3} alt="" /> 3/4</span>
-                </p>
-                <HeartComment heart={'10'} comment={'10'} />
+          <li className={tabTitle === 1 ? 'tab-content-list' : ''}>
+            <Link to='/meetup/detail'>
+              <div className='item'>
+                <div className='item-txt'>
+                  <h3>피자 같이 먹으러 갈 사람 없어?</h3>
+                  <p>
+                    <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
+                    <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
+                    <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
+                  </p>
+                  <HeartComment heart={'10'} comment={'10'} />
+                </div>
+                <div className='item-img'>
+                  <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+                </div>
               </div>
-              <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
-              </div>
-            </div>
+            </Link>
 
-            <div className='item'>
-              <div className='item-txt'>
-                <h3>피자 먹으러 갈 사람 진짜 없나?</h3>
-                <p>
-                  <span><img src={tabTxtImg1} alt="" /> 2026.01.11</span>
-                  <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
-                  <span><img src={tabTxtImg3} alt="" /> 3/4</span>
-                </p>
-                <HeartComment heart={'10'} comment={'10'} />
+            <Link to='/meetup/detail'>
+              <div className='item'>
+                <div className='item-txt'>
+                  <h3>피자 같이 먹으러 갈 사람 없어?</h3>
+                  <p>
+                    <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
+                    <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
+                    <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
+                  </p>
+                  <HeartComment heart={'10'} comment={'10'} />
+                </div>
+                <div className='item-img'>
+                  <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+                </div>
               </div>
-              <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
-              </div>
-            </div>
+            </Link>
 
-            <div className='item'>
-              <div className='item-txt'>
-                <h3>피자 먹으러 갈 사람 진짜 없나?</h3>
-                <p>
-                  <span><img src={tabTxtImg1} alt="" /> 2026.01.11</span>
-                  <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
-                  <span><img src={tabTxtImg3} alt="" /> 3/4</span>
-                </p>
-                <HeartComment heart={'10'} comment={'10'} />
+            <Link to='/meetup/detail'>
+              <div className='item'>
+                <div className='item-txt'>
+                  <h3>피자 같이 먹으러 갈 사람 없어?</h3>
+                  <p>
+                    <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
+                    <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
+                    <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
+                  </p>
+                  <HeartComment heart={'10'} comment={'10'} />
+                </div>
+                <div className='item-img'>
+                  <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+                </div>
               </div>
-              <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
-              </div>
-            </div>
+            </Link>
 
-            <div className='item'>
-              <div className='item-txt'>
-                <h3>피자 먹으러 갈 사람 진짜 없나?</h3>
-                <p>
-                  <span><img src={tabTxtImg1} alt="" /> 2026.01.11</span>
-                  <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
-                  <span><img src={tabTxtImg3} alt="" /> 3/4</span>
-                </p>
-                <HeartComment heart={'10'} comment={'10'} />
+            <Link to='/meetup/detail'>
+              <div className='item'>
+                <div className='item-txt'>
+                  <h3>피자 같이 먹으러 갈 사람 없어?</h3>
+                  <p>
+                    <span><img src={tabTxtImg1} alt="달력아이콘" /> 2026.01.11</span>
+                    <span><img src={tabTxtImg2} alt="위치아이콘" /> 미스터피자</span>
+                    <span><img src={tabTxtImg3} alt="인원아이콘" /> 3/4</span>
+                  </p>
+                  <HeartComment heart={'10'} comment={'10'} />
+                </div>
+                <div className='item-img'>
+                  <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+                </div>
               </div>
-              <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
-              </div>
-            </div>
+            </Link>
 
-            <div className='item'>
-              <div className='item-txt'>
-                <h3>피자 먹으러 갈 사람 진짜 없나?</h3>
-                <p>
-                  <span><img src={tabTxtImg1} alt="" /> 2026.01.11</span>
-                  <span><img src={tabTxtImg2} alt="" /> 미스터피자</span>
-                  <span><img src={tabTxtImg3} alt="" /> 3/4</span>
-                </p>
-                <HeartComment heart={'10'} comment={'10'} />
-              </div>
-              <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
-              </div>
-            </div>
+
           </li>
         </ul>
       </div>
