@@ -1,6 +1,6 @@
 import './Input.scss';
 
-const Input = ({ type, name, title, requiredReq, requiredSel }) => {
+const Input = ({ type, name, title, requiredReq, requiredSel, readonly }) => {
   return (
     <div className='common-input-box'>
       <label htmlFor={name}>
@@ -8,7 +8,7 @@ const Input = ({ type, name, title, requiredReq, requiredSel }) => {
         {requiredSel ? <span className='sel'>{requiredSel}</span> : ''}
         {title}
       </label>
-      <input type={type} name={name} id={name} placeholder={`${title}을(를) 입력해 주세요.`} />
+      <input type={type} name={name} id={name} placeholder={`${title}을(를) 입력해 주세요.`} readOnly={readonly && true} />
     </div>
   );
 };
