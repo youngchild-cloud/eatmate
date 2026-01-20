@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+// notfound.scss
+
+.page404 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* 가로 */
+  align-items: center;     /* 세로 */
+  .error {
+    .error-img {
+      width: vw-mo(160);
+      height: vw-mo(174);
+      justify-content: center;
+      margin: 0 auto vw-mo(30);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    h2 {
+      font-weight: bold;
+      text-align: center;
+      font-size: vw-mo(44);
+      margin-bottom: vw-mo(20);
+    }
+
+    p {
+      font-size: vw-mo(28);
+      text-align: center;
+      color: $color-gray;
+    }
+    p:last-of-type{margin-bottom: vw-mo(60);}
+
+    a{
+      display:block;
+      width: vw-mo(300);
+      margin: 0 auto;
+      padding: vw-mo(20) 0;
+      border-radius: vw-mo(6);
+      background: $color-main;
+      text-align: center;
+      color:$color-white;
+      line-height: 140%;
+      cursor: pointer;
+    }
+  }
+}
