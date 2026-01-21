@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import '../../assets/scss/layout.scss';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png'
