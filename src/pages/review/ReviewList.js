@@ -1,10 +1,10 @@
-import './ReviewList.scss';
-
 import { Link } from 'react-router-dom';
+
+import './ReviewList.scss';
 
 import TitleLeft from '../../components/common/TitleLeft';
 import Search from '../../components/review/Search';
-import Rank5 from '../../components/review/Rank5';
+import CpReview from '../../components/review/CpReview';
 
 import cate1 from '../../assets/images/review/icon_cate01.png';
 import cate2 from '../../assets/images/review/icon_cate02.png';
@@ -89,73 +89,8 @@ const ReviewList = () => {
           <div className="review-title-box">
             <h3 className="review-title">전체 리뷰 보기</h3>
           </div>
-          <ul className="review">
-            <li>
-              <Link to={'/review/detail'}>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
-                </div>
-                <div className="txt-box">
-                  <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
-                  <p className='name'>더 페어링</p>
-                  <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <Rank5 num={'5'} />
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to={'/review/detail'}>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
-                </div>
-                <div className="txt-box">
-                  <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
-                  <p className='name'>더 페어링</p>
-                  <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <Rank5 num={'4'} />
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to={'/review/detail'}>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
-                </div>
-                <div className="txt-box">
-                  <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
-                  <p className='name'>더 페어링</p>
-                  <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <Rank5 num={'3'} />
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to={'/review/detail'}>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
-                </div>
-                <div className="txt-box">
-                  <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
-                  <p className='name'>더 페어링</p>
-                  <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <Rank5 num={'2'} />
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to={'/review/detail'}>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/review01.jpg`} alt="리뷰" />
-                </div>
-                <div className="txt-box">
-                  <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생맛집인 듯</p>
-                  <p className='name'>더 페어링</p>
-                  <p className='info'><span>양식</span> · <span>잠실</span> | <sapn>4시간 전</sapn></p>
-                  <Rank5 num={'1'} />
-                </div>
-              </Link>
-            </li>
-          </ul>
+
+          <CpReview />
         </div>
       </section>
     </>

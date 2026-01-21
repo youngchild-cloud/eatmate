@@ -47,44 +47,4 @@
   .review-title-box {
     margin-bottom: vw-mo(10);
   }
-
-  .review {
-    a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: vw-mo(20) 0;
-      border-bottom: 1px solid $color-gray;
-    }
-
-    .img-box {
-      width: vw-mo(170);
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .txt-box {
-      width: calc(100% - vw-mo(170) - vw-mo(40));
-
-      .text {
-        margin-bottom: vw-mo(10);
-        font-size: vw-mo(30);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      .name,
-      .info {
-        font-size: vw-mo(24);
-        color: $color-gray;
-      }
-
-      .info {
-        margin-bottom: vw-mo(10);
-      }
-    }
-  }
 }

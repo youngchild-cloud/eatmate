@@ -1,0 +1,44 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+#cp-meetup {
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $color-gray;
+    padding: vw-mo(20) 0;
+  }
+
+  .item-txt {
+    h3 {
+      font-size: vw-mo(30);
+      font-weight: bold;
+      padding-bottom: vw-mo(10);
+    }
+
+    p {
+      padding-bottom: vw-mo(20);
+      font-size: vw-mo(24);
+      color: $color-gray;
+    }
+
+    img {
+      height: vw-mo(20)
+    }
+
+    p span {
+      padding-right: vw-mo(20);
+    }
+  }
+
+  .item-img {
+    width: vw-mo(300);
+    text-align: right;
+
+    img {
+      width: vw-mo(170);
+      height: vw-mo(190);
+    }
+  }
+}

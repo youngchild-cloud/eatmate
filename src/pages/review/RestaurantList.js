@@ -1,10 +1,10 @@
 import './RestaurantList.scss';
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 import TitleCenter from '../../components/common/TitleCenter';
 import Search from '../../components/review/Search';
+import CpRestaurant from '../../components/review/CpRestaurant';
 
 const RestaurantList = () => {
   const [addAct, setAddAct] = useState(false);
@@ -33,41 +33,7 @@ const RestaurantList = () => {
             </div>
           </div>
 
-          <ul className="list-box">
-            <li>
-              <Link to={'/review/restaurant/detail'}>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant01.jpg`} alt="맛집" />
-                </div>
-                <div className="txt-box">
-                  <h4 className="tit">더 페어링</h4>
-                  <p><span className='rank'>4.3 (31)</span> · <span className='location'>잠실</span></p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to={'/review/restaurant/detail'}>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant01.jpg`} alt="맛집" />
-                </div>
-                <div className="txt-box">
-                  <h4 className="tit">더 페어링</h4>
-                  <p><span className='rank'>4.3 (31)</span> · <span className='location'>잠실</span></p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to={'/review/restaurant/detail'}>
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/restaurant01.jpg`} alt="맛집" />
-                </div>
-                <div className="txt-box">
-                  <h4 className="tit">더 페어링</h4>
-                  <p><span className='rank'>4.3 (31)</span> · <span className='location'>잠실</span></p>
-                </div>
-              </Link>
-            </li>
-          </ul>
+          <CpRestaurant />
         </div>
       </section>
     </>

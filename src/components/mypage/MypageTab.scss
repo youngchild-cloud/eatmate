@@ -1,0 +1,26 @@
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
+
+.mypage-tab {
+  .tab-title {
+    display: flex;
+
+    li {
+      width: 33.3333%;
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding-bottom: vw-mo(20);
+      border-bottom: vw-mo(2) solid $color-gray;
+      color: $color-gray;
+    }
+
+    li.act button {
+      border-color: $color-main;
+      color: $color-main;
+    }
+  }
+}
