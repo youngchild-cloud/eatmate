@@ -30,6 +30,45 @@
     width: 138px;
     height: 60px;
   }
+
+  .location-review {
+    color: $color-text;
+    background: $color-sub-yellow;
+    padding: 3px 5px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+  }
+
+  .location-review img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+  }
+
+  .admin-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .admin-info {
+    display: flex;
+    font-size: 16px;
+  }
+
+  .admin-info img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .admin-info p {
+    vertical-align: middle;
+  }
+
+  .admin-info button {
+    font-size: 14px;
+
+  }
 }
 
 // 푸터서식
