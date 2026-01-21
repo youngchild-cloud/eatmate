@@ -1,0 +1,99 @@
+@charset "utf-8";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/function';
+
+body.admin main{padding:0}
+.admin-restaurantlist {
+  .pc-inner {
+    width: 1600px;
+    height: 980px;
+    margin: 0 auto;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .admin-nav {
+    width: 320px;
+    margin-right: 70px;
+    background-color: $color-text;
+    color: $color-white;
+
+    h2 {
+      text-align: center;
+    }
+
+    ul {
+      border-bottom: 1px solid $color-gray;
+
+      li:first-child {
+        background-color: $color-main;
+      }
+
+      li {
+        text-align: center;
+        line-height: 140%;
+        font-size: 20px;
+
+        a {
+          display: block;
+          padding: 20px 0px;
+
+        }
+      }
+    }
+  }
+
+  // 우측 콘텐츠
+  .admin-list {
+    width: 100%;
+    .list-top {
+      display: flex;
+      justify-content: space-between;
+
+      h3 {
+        font-weight: bold;
+      }
+
+      a {
+        font-size: 14px;
+        padding: 10px 20px;
+        background-color: $color-sub-orange;
+        color: $color-white;
+        border-radius: 6px;
+        line-height: 140%;
+      }
+    }
+
+    table {
+      width: 100%;
+      font-size: 12px;
+
+      caption {
+        display: none;
+      }
+
+      thead {
+        tr {background-color: $color-sub-black;}
+
+        th {
+          border: 1px solid $color-gray-light;
+          color: $color-white;
+          text-align: center;
+        }
+      }
+
+      tbody {
+        tr {}
+
+        td {
+          border: 1px solid $color-gray-light;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+
+
+}
