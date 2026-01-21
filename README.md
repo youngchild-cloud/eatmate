@@ -59,19 +59,17 @@ assets
 ---
 components
 - common
-  - ButtonWide 버튼_fill_메인 컬러
-  - ButtonShort 버튼_line_서브 컬러
-  - TitleCenter 타이틀_가운데 / 글쓰기 버튼_왼쪽
-  - TitleLeft 타이틀_왼쪽 / 뒤로가기 버튼_오른쪽
-  - Rank5 맛집 리뷰 평점(별점)
-  - Input 인풋_텍스트, 파일, 비밀번호, 날짜, 넘버
-  - InputTextarea 인풋_텍스트박스
-  - InputSelectbox 인풋_셀렉트박스
-  - Bagde 프로필_뱃지
-
+  - 페이지 전체적으로 사용하는 컴포넌트
+  
 - layout
   - Header 헤더
   - Nav 내비
+
+- community
+- meetup
+- mypage
+- review
+
 ---
 pages
 - review 맛집 리뷰
@@ -85,7 +83,7 @@ pages
   - MeetupDetail.js 맛집 맛집 탐방 상세         => 퍼블 완료
 
 - write 글쓰기
-  - Write.js 글쓰기 모달                        => 퍼블 예정(혜련)
+  - Write.js 글쓰기 모달                        => 퍼블 완료
   - WriteReview.js 맛집 리뷰 글쓰기             => 퍼블 완료
   - WriteMeetup.js 맛집 맛집 탐방 글쓰기        => 퍼블 완료
   - WriteCommunity.js 자유게시판 글쓰기         => 퍼블 완료
@@ -96,28 +94,37 @@ pages
 
 - mypage 마이페이지
   - Mypage.js 마이페이지                        => 퍼블 완료
-  - MypageProfile.js 프로필
-  - MypageBookmark.js 저장한 맛집
-  - MypageMeetup.js 맛집 맛집 탐방 신청내역
-  - MypageWrite.js 작성한 게시글
-  - MypageLike.js 내가 남긴 좋아요
-  - MypageComment.js 내가 남긴 댓글
+  - MypageProfile.js 프로필                     => 퍼블 완료
+  - MypageBookmark.js 저장한 맛집               => 퍼블 완료
+  - MypageMeetup.js 맛집 맛집 탐방 신청내역      => 퍼블 완료
+  - MypageWrite.js 작성한 게시글                => 퍼블 완료
+  - MypageLike.js 내가 남긴 좋아요              => 퍼블 완료
+  - MypageComment.js 내가 남긴 댓글             => 퍼블 완료
 
 - login 로그인/회원가입
   - Login.js 로그인                             => 퍼블 완료
   - Join.js 회원가입                            => 퍼블 완료
 
 - notfound 404페이지
-  - NotFound.js 404페이지                       => 퍼블 진행중(영찬)
+  - NotFound.js 404페이지                       => 퍼블 완료
 
-- admin 관리자                                  => 퍼블 예정(지희)
-  - restaurant 맛집 관리
-    - RestaurantList.js 맛집 목록
-    - RestaurantCreate.js 맛집 등록
-  - reviews 게시판 관리 > 맛집 리뷰 관리 (디자인x 추후 시간 남으면 작업 예정)
-  - meetups 게시판 관리 > 맛집 탐방 (디자인x 추후 시간 남으면 작업 예정)
-  - community 게시판 관리 > 자유게시판 관리 (디자인x 추후 시간 남으면 작업 예정)
-  - Login.js 로그인
+- admin 관리자
+  - login 로그인                                => 퍼블 완료
+  - restaurant 매장 관리
+    - restaurant 매장 목록                      => 퍼블 작업중(영찬)
+    - restaurant/create 매장 등록               => 퍼블 예정(혜련)
+  - board 게시판 관리
+    - reviews
+      - reviews 맛집 리뷰 목록
+      - reviews/create 맛집 리뷰 등록
+    - meetups
+      - meetups 맛집 탐방 목록
+      - meetups/create
+    - community
+      - community 자유게시판 목록
+      - community/create
+  - user 회원 관리
+    - user 회원 목록
 
 # url 주소
 review 맛집 리뷰
@@ -156,14 +163,19 @@ notfound 404페이지
 - notfound 404페이지
 
 admin 관리자
+- login 로그인
 - restaurant 매장 관리
   - restaurant 매장 목록
   - restaurant/create 매장 등록
-- reviews 게시판 관리 > 맛집 리뷰 관리 (디자인x 추후 시간 남으면 작업 예정)
-- meetups 게시판 관리 > 맛집 탐방 (디자인x 추후 시간 남으면 작업 예정)
-- community 게시판 관리 > 자유게시판 관리 (디자인x 추후 시간 남으면 작업 예정)
-- login 로그인
-
-# 수정사항
-- 피그마에 표시 => 이미지 올려서 보는 법 알려드릴 예정
-- 리액트 순서 변경
+- board 게시판 관리
+  - reviews
+    - reviews 맛집 리뷰 목록
+    - reviews/create 맛집 리뷰 등록
+  - meetups
+    - meetups 맛집 탐방 목록
+    - meetups/create
+  - community
+    - community 자유게시판 목록
+    - community/create
+- user 회원 관리
+  - user 회원 목록
