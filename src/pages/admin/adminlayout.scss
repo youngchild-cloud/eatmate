@@ -2,39 +2,34 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/function';
 
-main {
-  padding: 0;
-}
-
-header,
-nav {
-  // display: none;
-}
-
 .admin-header {
   border-bottom: 1px solid $color-gray;
-}
 
-.header-top {
-  width: 1600px;
-  height: 100px;
-  padding: 0 30px;
-  display: flex;
-  color: $color-text;
-  gap: 252px;
-  margin: 0 auto;
-  align-items: center;
-}
+  .header-top {
+    width: 1600px;
+    height: 100px;
+    padding: 0 30px;
+    display: flex;
+    color: $color-text;
+    gap: 252px;
+    margin: 0 auto;
+    align-items: center;
+  }
 
-.header-top ul {
-  display: flex;
-  gap: 50px;
-  font-size: 24px;
-}
+  .header-top ul {
+    display: flex;
+    gap: 50px;
 
-h1 img {
-  width: 138px;
-  height: 60px;
+  }
+
+  .header-top li {
+    font-size: 24px;
+  }
+
+  h1 img {
+    width: 138px;
+    height: 60px;
+  }
 }
 
 // 푸터서식

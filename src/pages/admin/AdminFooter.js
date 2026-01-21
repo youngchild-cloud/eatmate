@@ -1,5 +1,5 @@
 import React from 'react';
-import './adminlayout.scss';
+
 
 function AdminFooter(props) {
   return (
