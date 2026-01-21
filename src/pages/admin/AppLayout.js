@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import '../../assets/scss/_reset.scss';
 import '../../assets/scss/base.scss';
 import Header from '../../components/layout/Header';
@@ -28,12 +28,9 @@ import NotFound from '../not-found/NotFound';
 import AdminLogin from './Login';
 
 function AppLayout() {
-  const location = useLocation();
-  const isAdminPage = location.pathname.startsWith('/admin');
-
   return (
     <>
-      {!isAdminPage && <Header />}
+      <Header />
 
       <main>
         <Routes>
@@ -77,7 +74,7 @@ function AppLayout() {
         </Routes>
       </main>
 
-      {!isAdminPage && <Nav />}
+      <Nav />
     </>
   );
 }
