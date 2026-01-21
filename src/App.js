@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <ScrollTop />
         <Routes>
-          <Route path='/admin' element={<PcLayout />} />
+          <Route path='/admin/*' element={<PcLayout />} />
           <Route path='/*' element={<MoLayout />} />
         </Routes>
       </BrowserRouter>
