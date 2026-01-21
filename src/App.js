@@ -1,18 +1,19 @@
-import React from 'react';
-import { BrowserRouter, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ScrollTop from '../src/components/common/ScrollTop';
-import AppLayout from '../src/pages/admin/AppLayout';
 import PcLayout from '../src/pages/admin/PcLayout';
+import MoLayout from '../src/pages/admin/MoLayout';
 
-function App(props) {
-  const location = useLocation();
-  const isAdminPage = location.pathname.startsWith('/admin');
-
+function App() {
   return (
-    <BrowserRouter>
-      <ScrollTop />
-      {isAdminPage ? <PcLayout /> : <AppLayout />}
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <ScrollTop />
+        <Routes>
+          <Route path='/admin' element={<PcLayout />} />
+          <Route path='/*' element={<MoLayout />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

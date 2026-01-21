@@ -1,5 +1,4 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import AdminHeader from './AdminHeader';
 import AdminFooter from './AdminFooter';
 import AdminLogin from './Login';
@@ -10,15 +9,10 @@ function AppLayout() {
       <AdminHeader />
 
       <main>
-        <Routes>
-          <Route path='/admin' element={<AdminLogin />} />
-        </Routes>
-
+        <AdminLogin />
       </main>
 
       <AdminFooter />
-
-
     </>
   );
 }
