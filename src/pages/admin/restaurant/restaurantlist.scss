@@ -2,7 +2,10 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/function';
 
-body.admin main{padding:0}
+body.admin main {
+  padding: 0
+}
+
 .admin-restaurantlist {
   .pc-inner {
     width: 1600px;
@@ -21,25 +24,21 @@ body.admin main{padding:0}
 
     h2 {
       text-align: center;
+      padding: 55px 0;
     }
 
     ul {
       border-bottom: 1px solid $color-gray;
 
-      li:first-child {
-        background-color: $color-main;
-      }
-
       li {
         text-align: center;
         line-height: 140%;
         font-size: 20px;
+      }
 
-        a {
-          display: block;
-          padding: 20px 0px;
-
-        }
+      a {
+        display: block;
+        padding: 20px 0px;
       }
     }
   }
@@ -47,9 +46,11 @@ body.admin main{padding:0}
   // 우측 콘텐츠
   .admin-list {
     width: 100%;
+
     .list-top {
       display: flex;
       justify-content: space-between;
+      margin: 60px 0px;
 
       h3 {
         font-weight: bold;
@@ -68,15 +69,20 @@ body.admin main{padding:0}
     table {
       width: 100%;
       font-size: 12px;
+      table-layout: fixed;
+      border-collapse: collapse;
 
       caption {
         display: none;
       }
 
       thead {
-        tr {background-color: $color-sub-black;}
+        tr {
+          background-color: $color-sub-black;
+        }
 
         th {
+          padding: 10px 0;
           border: 1px solid $color-gray-light;
           color: $color-white;
           text-align: center;
@@ -87,8 +93,12 @@ body.admin main{padding:0}
         tr {}
 
         td {
+          padding: 10px 5px;
           border: 1px solid $color-gray-light;
           text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
       }
     }

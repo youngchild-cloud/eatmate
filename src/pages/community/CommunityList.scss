@@ -2,4 +2,8 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/function';
 
-.community-list {}
+.community-list {
+  .common-title-box {
+    margin-bottom: vw-mo(10);
+  }
+}

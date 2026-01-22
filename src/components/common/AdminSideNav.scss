@@ -1,0 +1,31 @@
+@charset "utf-8";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/function';
+
+
+.admin-nav {
+  width: 320px;
+  margin-right: 70px;
+  background-color: $color-text;
+  color: $color-white;
+
+  h2 {
+    text-align: center;
+    padding: 55px 0;
+  }
+
+  ul {
+    border-bottom: 1px solid $color-gray;
+
+    li {
+      text-align: center;
+      line-height: 140%;
+      font-size: 20px;
+    }
+
+    a {
+      display: block;
+      padding: 20px 0px;
+    }
+  }
+}
