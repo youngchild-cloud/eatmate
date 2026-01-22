@@ -32,7 +32,7 @@ function Login(props) {
 
           <p className='ld-join-box'>
             <Link to="/login">아이디/비밀번호 찾기</Link>
-            <spna className="id-join-gap">|</spna>
+            <spna className="id-join-gap">&#10072;</spna>
             <Link to="/join">회원가입</Link>
           </p>
 
