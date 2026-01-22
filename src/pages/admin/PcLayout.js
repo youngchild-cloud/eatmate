@@ -9,6 +9,7 @@ import AdminFooter from './AdminFooter';
 import AdminLogin from './Login';
 import AdminRestaurantList from './restaurant/RestaurantList';
 import AdminRestaurantCreate from './restaurant/RestaurantCreate';
+import { Navigate } from 'react-router-dom';
 
 function AppLayout() {
   return (
@@ -17,6 +18,7 @@ function AppLayout() {
 
       <main>
         <Routes>
+          <Route path='' element={<Navigate to='login' replace />} />
           <Route path='login' element={<AdminLogin />} />
           <Route path='restaurant' element={<AdminRestaurantList />} />
           <Route path='restaurant/create' element={<AdminRestaurantCreate />} />
