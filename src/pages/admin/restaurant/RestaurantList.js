@@ -21,8 +21,8 @@ function RestaurantList(props) {
           <aside className='admin-nav'>
             <h2>맛집 관리</h2>
             <ul>
-              <li><Link to="/admin/restuarant" title="맛집 목록" ref={link}>맛집 목록</Link></li>
-              <li><Link to="/admin/restuarant/create" title="맛집 등록" ref={link} >맛집 등록</Link></li>
+              <li><Link to="/admin/restaurant" title="맛집 목록" ref={link}>맛집 목록</Link></li>
+              <li><Link to="/admin/restaurant/create" title="맛집 등록" ref={link} >맛집 등록</Link></li>
 
             </ul>
           </aside>

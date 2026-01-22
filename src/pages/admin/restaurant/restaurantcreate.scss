@@ -1,1 +1,62 @@
 @charset "uft-8";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/function';
+
+
+.admin-restaurantcreate {
+
+  .pc-inner {
+    width: 1600px;
+    height: 980px;
+    margin: 0 auto;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // 좌측내비
+  .admin-nav {
+    width: 320px;
+    margin-right: 70px;
+    background-color: $color-text;
+    color: $color-white;
+
+    h2 {
+      text-align: center;
+      padding: 55px 0;
+    }
+
+    ul {
+      border-bottom: 1px solid $color-gray;
+
+      li {
+        text-align: center;
+        line-height: 140%;
+        font-size: 20px;
+      }
+
+      a {
+        display: block;
+        padding: 20px 0px;
+      }
+    }
+  }
+
+  
+  // 우측 콘텐츠 서식
+  .right-content{
+    width:100%;
+
+    .list-top {
+      display: flex;
+      justify-content: space-between;
+      margin: 60px 0px;
+
+      h3 {
+        font-weight: bold;
+      }
+    }
+    
+
+  }
+}
