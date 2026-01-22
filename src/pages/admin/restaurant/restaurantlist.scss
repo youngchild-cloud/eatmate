@@ -27,19 +27,25 @@ body.admin main {
       padding: 55px 0;
     }
 
-    ul {
+    li {
+      text-align: center;
+      line-height: 140%;
+      font-size: 20px;
       border-bottom: 1px solid $color-gray;
 
-      li {
-        text-align: center;
-        line-height: 140%;
-        font-size: 20px;
+      &:first-child {
+        border-top: 1px solid $color-main;
       }
+    }
 
-      a {
-        display: block;
-        padding: 20px 0px;
-      }
+    a {
+      display: block;
+      padding: 20px 0px;
+    }
+
+    .act {
+      background: $color-main;
+      border-color: $color-main;
     }
   }
 
