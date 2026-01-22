@@ -14,13 +14,12 @@ function AdminHeader(props) {
             <li><Link to='/admin/restaurant'>맛집 관리</Link></li>
             <li><Link to='/admin/board'>게시판 관리</Link></li>
             <li><Link to='/admin/user'>회원 관리</Link></li>
-
+            <li className='location-review'><Link to='/review'><img src={Home} alt="" />사용자 페이지</Link></li>
           </ul>
           <div className='admin-info'>
             <img src={`${process.env.PUBLIC_URL}/images//meetup/user1.png`} alt="" />
-            <p>관리자님</p>&#10072;
-            {/* <button>로그아웃</button> */}
-            <Link to='/review'>서비스 바로가기</Link>
+            <p>관리자님</p>
+            <button>로그아웃</button>
           </div>
         </div>
       </div>
