@@ -16,6 +16,7 @@ body.admin main {
     justify-content: space-between;
   }
 
+  // 좌측내비
   .admin-nav {
     width: 320px;
     margin-right: 70px;
@@ -31,16 +32,17 @@ body.admin main {
       text-align: center;
       line-height: 140%;
       font-size: 20px;
-      border-bottom: 1px solid $color-gray;
 
-      &:first-child {
-        border-top: 1px solid $color-main;
-      }
+    }
+
+    li:first-child a {
+      border-top: 1px solid $color-main;
     }
 
     a {
       display: block;
       padding: 20px 0px;
+      border-bottom: 1px solid $color-gray;
     }
 
     .act {
@@ -48,6 +50,7 @@ body.admin main {
       border-color: $color-main;
     }
   }
+
 
   // 우측 콘텐츠
   .admin-list {

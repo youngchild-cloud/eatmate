@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import './restaurantcreate.scss'
 import PcInput from '../../../components/common/PcInput';
@@ -14,8 +14,25 @@ function RestaurantCreate(props) {
           <aside className='admin-nav'>
             <h2>맛집 관리</h2>
             <ul>
-              <li><Link to="/admin/restaurant" title="맛집 목록" >맛집 목록</Link></li>
-              <li><Link to="/admin/restaurant/create" title="맛집 등록" >맛집 등록</Link></li>
+              <li>
+                <NavLink
+                  to="/admin/restaurant"
+                  end
+                  title="맛집 목록 페이지로 이동"
+                  className={({ isActive }) => (isActive ? 'act' : '')}
+                >
+                  맛집 목록
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/admin/restaurant/create"
+                  title="맛집 등록 페이지로 이동"
+                  className={({ isActive }) => (isActive ? 'act' : '')}
+                >
+                  맛집 등록
+                </NavLink>
+              </li>
             </ul>
           </aside>
 

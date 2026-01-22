@@ -26,26 +26,33 @@
       padding: 55px 0;
     }
 
-    ul {
+    li {
+      text-align: center;
+      line-height: 140%;
+      font-size: 20px;
+
+    }
+
+    li:first-child a {
+      border-top: 1px solid $color-main;
+    }
+
+    a {
+      display: block;
+      padding: 20px 0px;
       border-bottom: 1px solid $color-gray;
+    }
 
-      li {
-        text-align: center;
-        line-height: 140%;
-        font-size: 20px;
-      }
-
-      a {
-        display: block;
-        padding: 20px 0px;
-      }
+    .act {
+      background: $color-main;
+      border-color: $color-main;
     }
   }
 
-  
+
   // 우측 콘텐츠 서식
-  .right-content{
-    width:100%;
+  .right-content {
+    width: 100%;
 
     .list-top {
       display: flex;
@@ -56,7 +63,7 @@
         font-weight: bold;
       }
     }
-    
+
 
   }
 }
