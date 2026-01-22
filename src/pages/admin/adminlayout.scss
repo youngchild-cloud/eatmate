@@ -11,9 +11,9 @@
     padding: 0 30px;
     display: flex;
     color: $color-text;
-    gap: 252px;
     margin: 0 auto;
     align-items: center;
+    justify-content: space-between;
   }
 
   .header-top ul {
@@ -31,29 +31,22 @@
     height: 60px;
   }
 
-  .location-review {
-    color: $color-text;
-    background: $color-sub-yellow;
-    padding: 3px 5px;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-  }
 
-  .location-review img {
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
-  }
+
+
 
   .admin-menu {
     display: flex;
     align-items: center;
+    gap: 577px;
   }
 
   .admin-info {
     display: flex;
     font-size: 16px;
+    align-items: center;
+    gap: 10px;
+    color: $color-gray;
   }
 
   .admin-info img {
@@ -62,12 +55,16 @@
   }
 
   .admin-info p {
-    vertical-align: middle;
+    font-size: 16px;
   }
 
   .admin-info button {
     font-size: 14px;
-
+    display: block;
+    padding: 5px 10px;
+    border: 1px solid $color-sub-orange;
+    border-radius: 6px;
+    ;
   }
 }
 
@@ -82,5 +79,3 @@ footer {
   font-size: 16px;
   padding: 30px 0;
 }
-
-// 테스트
