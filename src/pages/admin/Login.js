@@ -9,7 +9,7 @@ function Login(props) {
   return (
 
     <section className='admin-login'>
-      <div className='inner'>
+      <div className='pc-inner'>
         <h2>로그인</h2>
         <form className='admin-login-form'>
 

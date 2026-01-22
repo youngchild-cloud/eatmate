@@ -3,7 +3,10 @@
 @import '../../assets/scss/function';
 
 .admin-header {
+  position: fixed;
   border-bottom: 1px solid $color-gray;
+  background: $color-white;
+  width: 100%;
 
   .header-top {
     width: 1600px;
@@ -14,6 +17,7 @@
     margin: 0 auto;
     align-items: center;
     justify-content: space-between;
+
   }
 
   .header-top ul {
@@ -56,6 +60,12 @@
 
   .admin-info p {
     font-size: 16px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .admin-info p span {
+    padding-left: 2px;
   }
 
   .admin-info button {
@@ -64,18 +74,32 @@
     padding: 5px 10px;
     border: 1px solid $color-sub-orange;
     border-radius: 6px;
-    ;
+  }
+
+  .admin-logout-btn {
+    display: block;
+    position: absolute;
+    border: none !important;
+    border-radius: 10px;
+    box-shadow: 0 0 2px $color-gray;
+    font-size: 16px;
+    color: $color-text;
   }
 }
 
 // 푸터서식
 footer {
-  position: fixed;
-  bottom: 0px;
+  // position: relative;
+  // bottom: 0px;
   text-align: center;
   background: $color-text;
   color: $color-white;
   width: 100%;
   font-size: 16px;
   padding: 30px 0;
+  border-top: 1px solid $color-white;
+}
+
+.pc-inner {
+  padding-top: 100px !important;
 }

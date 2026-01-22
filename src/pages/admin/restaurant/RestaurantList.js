@@ -1,29 +1,42 @@
-import React, { useEffect, useRef } from 'react';
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
-// import AdminSideNav from '../../../components/common/AdminSideNav';
+import { Link, NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 import './restaurantlist.scss';
 
 function RestaurantList(props) {
-  document.querySelector('body').classList.add("admin")
-  const { pathname } = useLocation();
-  console.log(pathname);
-  const link = useRef()
-  // useEffect(() => {
-  //   console.log(link.current.href);
-  // }, [])
+  useEffect(() => {
+    document.body.classList.add('admin');
+    return () => {
+      document.body.classList.remove('admin');
+    };
+  }, []);
 
   return (
     <>
-
       <section className='admin-restaurantlist'>
         <article className="pc-inner">
           {/* 좌측 내비 */}
           <aside className='admin-nav'>
             <h2>맛집 관리</h2>
             <ul>
-              <li><Link to="/admin/restaurant" title="맛집 목록" ref={link}>맛집 목록</Link></li>
-              <li><Link to="/admin/restaurant/create" title="맛집 등록" ref={link} >맛집 등록</Link></li>
-
+              <li>
+                <NavLink
+                  to="/admin/restaurant"
+                  end
+                  title="맛집 목록 페이지로 이동"
+                  className={({ isActive }) => (isActive ? 'act' : '')}
+                >
+                  맛집 목록
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/admin/restaurant/create"
+                  title="맛집 등록 페이지로 이동"
+                  className={({ isActive }) => (isActive ? 'act' : '')}
+                >
+                  맛집 등록
+                </NavLink>
+              </li>
             </ul>
           </aside>
 
