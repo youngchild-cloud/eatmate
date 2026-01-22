@@ -1,5 +1,5 @@
-import TitleCenter from '../../components/common/TitleCenter';
-import MypageTab from '../../components/mypage/MypageTab';
+import TitleCenter from 'components/common/TitleCenter';
+import MypageTab from 'components/mypage/MypageTab';
 
 const MypageLike = () => {
   return (

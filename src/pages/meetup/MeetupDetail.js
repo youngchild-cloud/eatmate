@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './meetupdetail.scss';
 
-import TitleCenter from '../../components/common/TitleCenter';
-import ButtonWide from '../../components/common/ButtonWide';
-import HeartComment from '../../components/common/HeartComment';
-import Chat from '../../components/common/Chat';
+import TitleCenter from 'components/common/TitleCenter';
+import ButtonWide from 'components/common/ButtonWide';
+import HeartComment from 'components/common/HeartComment';
+import Chat from 'components/common/Chat';
 
-import tabTxtImg1 from '../../assets/images/meetup/con-txt-img1.png';
-import tabTxtImg2 from '../../assets/images/meetup/con-txt-img2.png';
-import tabTxtImg3 from '../../assets/images/meetup/con-txt-img3.png';
+import tabTxtImg1 from 'assets/images/meetup/con-txt-img1.png';
+import tabTxtImg2 from 'assets/images/meetup/con-txt-img2.png';
+import tabTxtImg3 from 'assets/images/meetup/con-txt-img3.png';
 
 const MeetupDetail = () => {
-
-  const [toggleBtn, setToggleBtn] = useState(false);
   return (
     <section className='meetup-detail'>
       <div className="inner">

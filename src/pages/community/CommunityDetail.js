@@ -1,10 +1,10 @@
-//전역 스타일
-import './CommunityDetail.scss'
+// 전역 스타일
+import './CommunityDetail.scss';
 
 // 기능 컴포넌트
-import TitleCenter from '../../components/common/TitleCenter';
-import HeartComment from '../../components/common/HeartComment';
-import Chat from '../../components/common/Chat'
+import TitleCenter from 'components/common/TitleCenter';
+import HeartComment from 'components/common/HeartComment';
+import Chat from 'components/common/Chat';
 
 function CommunityDetail(props) {
   return (

@@ -1,15 +1,18 @@
 import React from 'react';
-import TitleCenter from '../../components/common/TitleCenter';
-import ButtonWide from '../../components/common/ButtonWide';
-import BookmarkImg from '../../assets/images/mypage/bookmark.png';
-import MeetupImg from '../../assets/images/mypage/meetup.png';
-import WriteImg from '../../assets/images/mypage/write.png';
-import CommentImg from '../../assets/images/mypage/comment.png';
-import HeartImg from '../../assets/images/mypage/heart.png';
-import LogoutImg from '../../assets/images/mypage/logout.png';
-import './mypage.scss';
-import Badge from '../../components/common/Badge';
 import { Link } from 'react-router-dom';
+
+import './mypage.scss';
+
+import TitleCenter from 'components/common/TitleCenter';
+import ButtonWide from 'components/common/ButtonWide';
+import Badge from 'components/common/Badge';
+
+import BookmarkImg from 'assets/images/mypage/bookmark.png';
+import MeetupImg from 'assets/images/mypage/meetup.png';
+import WriteImg from 'assets/images/mypage/write.png';
+import CommentImg from 'assets/images/mypage/comment.png';
+import HeartImg from 'assets/images/mypage/heart.png';
+import LogoutImg from 'assets/images/mypage/logout.png';
 
 const Mypage = () => {
   return (

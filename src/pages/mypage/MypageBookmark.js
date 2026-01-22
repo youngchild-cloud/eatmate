@@ -1,6 +1,7 @@
 import React from 'react';
-import TitleCenter from '../../components/common/TitleCenter';
-import CpRestaurant from '../../components/review/CpRestaurant';
+
+import TitleCenter from 'components/common/TitleCenter';
+import CpRestaurant from 'components/review/CpRestaurant';
 
 const MypageBookmark = () => {
   return (

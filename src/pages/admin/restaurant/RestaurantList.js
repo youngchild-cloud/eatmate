@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './restaurantlist.scss';
-import Aside from '../../../components/admin/Aside';
+
+import Aside from 'components/admin/Aside';
 
 function RestaurantList(props) {
   return (

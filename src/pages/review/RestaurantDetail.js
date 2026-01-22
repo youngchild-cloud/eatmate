@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+
 import './RestaurantDetail.scss';
-import Rank5 from '../../components/review/Rank5';
-import iconBack from '../../assets/images/icon_back.png';
-import icon01 from '../../assets/images/review/icon_restaurant-detail01.png';
-import icon02 from '../../assets/images/review/icon_restaurant-detail02.png';
-import icon03 from '../../assets/images/review/icon_restaurant-detail03.png';
-import icon04 from '../../assets/images/review/icon_restaurant-detail04.png';
+
+import Rank5 from 'components/review/Rank5';
+
+import iconBack from 'assets/images/icon_back.png';
+import icon01 from 'assets/images/review/icon_restaurant-detail01.png';
+import icon02 from 'assets/images/review/icon_restaurant-detail02.png';
+import icon03 from 'assets/images/review/icon_restaurant-detail03.png';
+import icon04 from 'assets/images/review/icon_restaurant-detail04.png';
 
 const RestaurantDetail = () => {
   const navigate = useNavigate();

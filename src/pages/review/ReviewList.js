@@ -2,18 +2,18 @@ import { Link } from 'react-router-dom';
 
 import './ReviewList.scss';
 
-import TitleLeft from '../../components/common/TitleLeft';
-import Search from '../../components/review/Search';
-import CpReview from '../../components/review/CpReview';
+import TitleLeft from 'components/common/TitleLeft';
+import Search from 'components/review/Search';
+import CpReview from 'components/review/CpReview';
 
-import cate1 from '../../assets/images/review/icon_cate01.png';
-import cate2 from '../../assets/images/review/icon_cate02.png';
-import cate3 from '../../assets/images/review/icon_cate03.png';
-import cate4 from '../../assets/images/review/icon_cate04.png';
-import cate5 from '../../assets/images/review/icon_cate05.png';
-import cate6 from '../../assets/images/review/icon_cate06.png';
-import cate7 from '../../assets/images/review/icon_cate07.png';
-import cate8 from '../../assets/images/review/icon_cate08.png';
+import cate1 from 'assets/images/review/icon_cate01.png';
+import cate2 from 'assets/images/review/icon_cate02.png';
+import cate3 from 'assets/images/review/icon_cate03.png';
+import cate4 from 'assets/images/review/icon_cate04.png';
+import cate5 from 'assets/images/review/icon_cate05.png';
+import cate6 from 'assets/images/review/icon_cate06.png';
+import cate7 from 'assets/images/review/icon_cate07.png';
+import cate8 from 'assets/images/review/icon_cate08.png';
 
 const ReviewList = () => {
   return (

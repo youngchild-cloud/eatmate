@@ -1,10 +1,10 @@
-import './RestaurantList.scss';
-
 import { useState } from 'react';
 
-import TitleCenter from '../../components/common/TitleCenter';
-import Search from '../../components/review/Search';
-import CpRestaurant from '../../components/review/CpRestaurant';
+import './RestaurantList.scss';
+
+import TitleCenter from 'components/common/TitleCenter';
+import Search from 'components/review/Search';
+import CpRestaurant from 'components/review/CpRestaurant';
 
 const RestaurantList = () => {
   const [addAct, setAddAct] = useState(false);

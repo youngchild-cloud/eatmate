@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import './meetuplist.scss';
 
-import TitleLeft from '../../components/common/TitleLeft';
-import CpMeetup from '../../components/meetup/CpMeetup';
+import TitleLeft from 'components/common/TitleLeft';
+import CpMeetup from 'components/meetup/CpMeetup';
 
 function MeetupList(props) {
   const [tabTitle, setTabTitle] = useState(1);

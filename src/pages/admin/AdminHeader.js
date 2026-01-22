@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import Logo from '../../assets/images/logo.png';
+import Logo from 'assets/images/logo.png';
 
 function AdminHeader(props) {
   const [handleLogout, setHandleLogout] = useState(false);

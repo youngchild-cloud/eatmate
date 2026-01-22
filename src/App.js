@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ScrollTop from '../src/components/common/ScrollTop';
-import PcLayout from '../src/pages/admin/PcLayout';
-import MoLayout from '../src/pages/admin/MoLayout';
+import ScrollTop from 'components/common/ScrollTop';
+import PcLayout from 'pages/admin/PcLayout';
+import MoLayout from 'pages/admin/MoLayout';
 
 function App() {
   return (

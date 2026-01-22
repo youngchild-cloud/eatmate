@@ -1,10 +1,10 @@
-import './Login.scss';
-
 import { Link } from 'react-router-dom';
 
-import TitleCenter from '../../components/common/TitleCenter';
-import Input from '../../components/common/Input';
-import ButtonWide from '../../components/common/ButtonWide';
+import './Login.scss';
+
+import TitleCenter from 'components/common/TitleCenter';
+import Input from 'components/common/Input';
+import ButtonWide from 'components/common/ButtonWide';
 
 const Login = () => {
   return (

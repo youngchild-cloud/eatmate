@@ -1,12 +1,12 @@
-import './ReviewDetail.scss';
-
 import { Link } from 'react-router-dom';
 
-import TitleCenter from '../../components/common/TitleCenter';
-import Badge from '../../components/common/Badge';
-import Rank5 from '../../components/review/Rank5';
-import HeartComment from '../../components/common/HeartComment';
-import Chat from '../../components/common/Chat';
+import './ReviewDetail.scss';
+
+import TitleCenter from 'components/common/TitleCenter';
+import Badge from 'components/common/Badge';
+import Rank5 from 'components/review/Rank5';
+import HeartComment from 'components/common/HeartComment';
+import Chat from 'components/common/Chat';
 
 const ReviewDetail = () => {
   return (

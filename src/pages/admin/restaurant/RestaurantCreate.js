@@ -1,6 +1,7 @@
-import './restaurantcreate.scss'
-import Aside from '../../../components/admin/Aside';
-import PcInput from '../../../components/common/PcInput';
+import './restaurantcreate.scss';
+
+import Aside from 'components/admin/Aside';
+import PcInput from 'components/common/PcInput';
 
 function RestaurantCreate(props) {
   return (

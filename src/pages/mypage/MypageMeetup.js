@@ -1,6 +1,7 @@
 import React from 'react';
-import TitleCenter from '../../components/common/TitleCenter';
-import CpMeetup from '../../components/meetup/CpMeetup';
+
+import TitleCenter from 'components/common/TitleCenter';
+import CpMeetup from 'components/meetup/CpMeetup';
 
 const MypageMeetup = () => {
   return (

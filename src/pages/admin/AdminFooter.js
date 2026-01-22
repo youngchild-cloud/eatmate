@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function AdminFooter(props) {
   return (
     <footer className='admin-footer'>

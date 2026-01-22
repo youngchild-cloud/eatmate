@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import '../../assets/scss/_reset.scss';
+import 'assets/scss/_reset.scss';
 import './adminlayout.scss';
 
 import AdminHeader from './AdminHeader';

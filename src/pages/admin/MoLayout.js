@@ -1,32 +1,39 @@
-// import { Routes, Route, Navigate } from 'react-router-dom';
-import '../../assets/scss/_reset.scss';
-import '../../assets/scss/base.scss';
-import Header from '../../components/layout/Header';
-import Nav from '../../components/layout/Nav';
-
-import ReviewList from '../review/ReviewList'
-import ReviewDetail from '../review/ReviewDetail'
-import RestaurantList from '../review/RestaurantList'
-import RestaurantDetail from '../review/RestaurantDetail'
-import MeetupList from '../meetup/MeetupList'
-import MeetupDetail from '../meetup/MeetupDetail'
-import CommunityList from '../community/CommunityList';
-import CommunityDetail from '../community/CommunityDetail';
-import WriteReview from '../write/WriteReview';
-import WriteMeetup from '../write/WriteMeetup';
-import WriteCommunity from '../write/WriteCommunity';
-import Mypage from '../mypage/Mypage';
-import MypageProfile from '../mypage/MypageProfile';
-import MypageBookmark from '../mypage/MypageBookmark';
-import MypageMeetup from '../mypage/MypageMeetup';
-import MypageWrite from '../mypage/MypageWrite';
-import MypageLike from '../mypage/MypageLike';
-import MypageComment from '../mypage/MypageComment';
-import Login from '../login/Login';
-import Join from '../login/Join';
-import NotFound from '../not-found/NotFound';
-import AdminLogin from './Login';
 import { Routes, Route, Navigate } from 'react-router-dom';
+
+import 'assets/scss/_reset.scss';
+import 'assets/scss/base.scss';
+
+import Header from 'components/layout/Header';
+import Nav from 'components/layout/Nav';
+
+import ReviewList from 'pages/review/ReviewList';
+import ReviewDetail from 'pages/review/ReviewDetail';
+import RestaurantList from 'pages/review/RestaurantList';
+import RestaurantDetail from 'pages/review/RestaurantDetail';
+
+import MeetupList from 'pages/meetup/MeetupList';
+import MeetupDetail from 'pages/meetup/MeetupDetail';
+
+import CommunityList from 'pages/community/CommunityList';
+import CommunityDetail from 'pages/community/CommunityDetail';
+
+import WriteReview from 'pages/write/WriteReview';
+import WriteMeetup from 'pages/write/WriteMeetup';
+import WriteCommunity from 'pages/write/WriteCommunity';
+
+import Mypage from 'pages/mypage/Mypage';
+import MypageProfile from 'pages/mypage/MypageProfile';
+import MypageBookmark from 'pages/mypage/MypageBookmark';
+import MypageMeetup from 'pages/mypage/MypageMeetup';
+import MypageWrite from 'pages/mypage/MypageWrite';
+import MypageLike from 'pages/mypage/MypageLike';
+import MypageComment from 'pages/mypage/MypageComment';
+
+import Login from 'pages/login/Login';
+import Join from 'pages/login/Join';
+import NotFound from 'pages/not-found/NotFound';
+
+import AdminLogin from './Login';
 
 function AppLayout() {
   return (

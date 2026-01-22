@@ -1,9 +1,9 @@
 // scss
 import './CommunityList.scss';
 
-// 콤포넌트
-import TitleLeft from '../../components/common/TitleLeft';
-import CpCommunity from '../../components/community/CpCommunity';
+// 컴포넌트
+import TitleLeft from 'components/common/TitleLeft';
+import CpCommunity from 'components/community/CpCommunity';
 
 function CommunityList(props) {
   return (

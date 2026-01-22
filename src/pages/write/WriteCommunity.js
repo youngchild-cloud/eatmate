@@ -1,8 +1,9 @@
 import React from 'react';
-import TitleCenter from '../../components/common/TitleCenter';
-import Input from '../../components/common/Input';
-import InputTextarea from '../../components/common/InputTextarea';
-import ButtonWide from '../../components/common/ButtonWide';
+
+import TitleCenter from 'components/common/TitleCenter';
+import Input from 'components/common/Input';
+import InputTextarea from 'components/common/InputTextarea';
+import ButtonWide from 'components/common/ButtonWide';
 
 const WriteCommunity = () => {
   return (
