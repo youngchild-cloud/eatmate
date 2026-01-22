@@ -1,5 +1,5 @@
-
-import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import '../../assets/scss/_reset.scss';
 import './adminlayout.scss';
@@ -9,9 +9,15 @@ import AdminFooter from './AdminFooter';
 import AdminLogin from './Login';
 import AdminRestaurantList from './restaurant/RestaurantList';
 import AdminRestaurantCreate from './restaurant/RestaurantCreate';
-import { Navigate } from 'react-router-dom';
 
 function AppLayout() {
+  useEffect(() => {
+    document.body.classList.add('body-pc');
+    return () => {
+      document.body.classList.remove('body-pc');
+    };
+  }, []);
+
   return (
     <>
       <AdminHeader />

@@ -4,51 +4,13 @@
 
 
 .admin-restaurantcreate {
-
   .pc-inner {
     width: 1600px;
-    height: 980px;
     margin: 0 auto;
     padding: 0px 30px;
     display: flex;
     justify-content: space-between;
   }
-
-  // 좌측내비
-  .admin-nav {
-    width: 320px;
-    margin-right: 70px;
-    background-color: $color-text;
-    color: $color-white;
-
-    h2 {
-      text-align: center;
-      padding: 55px 0;
-    }
-
-    li {
-      text-align: center;
-      line-height: 140%;
-      font-size: 20px;
-
-    }
-
-    li:first-child a {
-      border-top: 1px solid $color-main;
-    }
-
-    a {
-      display: block;
-      padding: 20px 0px;
-      border-bottom: 1px solid $color-gray;
-    }
-
-    .act {
-      background: $color-main;
-      border-color: $color-main;
-    }
-  }
-
 
   // 우측 콘텐츠 서식
   .right-content {
@@ -63,7 +25,5 @@
         font-weight: bold;
       }
     }
-
-
   }
 }

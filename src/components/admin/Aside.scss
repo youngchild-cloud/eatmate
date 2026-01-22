@@ -1,0 +1,36 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/function';
+
+// 좌측내비
+.admin-aside {
+  width: 320px;
+  min-height: calc(100vh - 100px - 83px);
+  margin-right: 70px;
+  background-color: $color-text;
+  color: $color-white;
+
+  h2 {
+    text-align: center;
+    padding: 55px 0;
+  }
+
+  ul {
+    border-top: 1px solid $color-gray;
+  }
+
+  li {
+    text-align: center;
+    line-height: 140%;
+    font-size: 20px;
+  }
+
+  a {
+    display: block;
+    padding: 20px 0px;
+    border-bottom: 1px solid $color-gray;
+  }
+
+  .act {
+    background: $color-main;
+  }
+}

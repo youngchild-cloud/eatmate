@@ -1,44 +1,14 @@
-import { Link, NavLink } from 'react-router-dom';
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './restaurantlist.scss';
+import Aside from '../../../components/admin/Aside';
 
 function RestaurantList(props) {
-  useEffect(() => {
-    document.body.classList.add('admin');
-    return () => {
-      document.body.classList.remove('admin');
-    };
-  }, []);
-
   return (
     <>
       <section className='admin-restaurantlist'>
         <article className="pc-inner">
           {/* 좌측 내비 */}
-          <aside className='admin-nav'>
-            <h2>맛집 관리</h2>
-            <ul>
-              <li>
-                <NavLink
-                  to="/admin/restaurant"
-                  end
-                  title="맛집 목록 페이지로 이동"
-                  className={({ isActive }) => (isActive ? 'act' : '')}
-                >
-                  맛집 목록
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/admin/restaurant/create"
-                  title="맛집 등록 페이지로 이동"
-                  className={({ isActive }) => (isActive ? 'act' : '')}
-                >
-                  맛집 등록
-                </NavLink>
-              </li>
-            </ul>
-          </aside>
+          <Aside />
 
           {/* 우측 리스트 */}
           <div className='admin-list'>
@@ -61,7 +31,14 @@ function RestaurantList(props) {
               </colgroup>
               <thead>
                 <tr>
-                  <th>번호</th><th>맛집 카테고리</th><th>맛집명</th><th>맛집 설명</th><th>맛집 이미지</th><th>전화번호</th><th>주소</th><th>평점</th>
+                  <th>번호</th>
+                  <th>맛집 카테고리</th>
+                  <th>맛집명</th>
+                  <th>맛집 설명</th>
+                  <th>맛집 이미지</th>
+                  <th>전화번호</th>
+                  <th>주소</th>
+                  <th>평점</th>
                 </tr>
               </thead>
               <tbody>
@@ -78,14 +55,9 @@ function RestaurantList(props) {
                 </tr>
               </tbody>
             </table>
-
           </div>
         </article>
       </section>
-
-
-
-
     </>
   );
 }
