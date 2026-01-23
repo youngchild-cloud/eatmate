@@ -4,14 +4,14 @@ import TitleBox from 'components/admin/TitleBox';
 function RestaurantList(props) {
   return (
     <>
-      <section className='admin-list admin-restaurantlist'>
+      <section className='admin-list admin-userlist'>
         <article className="pc-inner">
           {/* 좌측 내비 */}
-          <Aside navName="restaurant" />
+          <Aside navName="user" />
 
           {/* 우측 리스트 */}
           <div className='admin-list'>
-            <TitleBox title="맛집 목록" linkto="/asdfa" btnname="맛집 등록" btnshow />
+            <TitleBox title="회원 목록" linkto="/asdfa" btnname="맛집 등록" btnshow />
 
             <table>
               <caption>맛집목록</caption>
