@@ -9,7 +9,7 @@ function RestaurantList(props) {
       <section className='admin-restaurantlist'>
         <article className="pc-inner">
           {/* 좌측 내비 */}
-          <Aside />
+          <Aside navName="restaurant" />
 
           {/* 우측 리스트 */}
           <div className='admin-list'>

@@ -1,0 +1,57 @@
+{
+  "restaurant": {
+    "title": "맛집 관리",
+    "menu": [
+      {
+        "to": "/admin/restaurant",
+        "title": "맛집 목록"
+      },
+      {
+        "to": "/admin/restaurant/create",
+        "title": "맛집 등록"
+      }
+    ]
+  },
+  "board": {
+    "title": "게시판 관리",
+    "menu": [
+      {
+        "to": "/admin/review",
+        "title": "맛집 리뷰 목록"
+      },
+      {
+        "to": "/admin/review/create",
+        "title": "맛집 리뷰 등록"
+      },
+      {
+        "to": "/admin/meetup",
+        "title": "맛집 탐방 목록"
+      },
+      {
+        "to": "/admin/meetup/create",
+        "title": "맛집 탐방 등록"
+      },
+      {
+        "to": "/admin/community",
+        "title": "자유게시판 목록"
+      },
+      {
+        "to": "/admin/community/create",
+        "title": "자유게시판 등록"
+      }
+    ]
+  },
+  "user": {
+    "title": "회원 관리",
+    "menu": [
+      {
+        "to": "/admin/user",
+        "title": "회원 목록"
+      },
+      {
+        "to": "/admin/user/create",
+        "title": "회원 등록"
+      }
+    ]
+  }
+}

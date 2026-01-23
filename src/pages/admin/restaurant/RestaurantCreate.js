@@ -9,7 +9,7 @@ function RestaurantCreate(props) {
       <section className='admin-restaurantcreate'>
         <article className="pc-inner">
           {/* 좌측 내비 */}
-          <Aside />
+          <Aside navName="restaurant" />
 
           {/* 우측 리스트 */}
           <div className='right-content'>

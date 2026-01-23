@@ -1,30 +1,26 @@
 import { NavLink } from 'react-router-dom';
 import './Aside.scss';
+import AdminAsideJson from 'data/admin_aside.json';
 
-const Aside = () => {
+const Aside = ({ navName }) => {
   return (
     <aside className='admin-aside'>
-      <h2>맛집 관리</h2>
+      <h2>{AdminAsideJson[navName]?.title}</h2>
       <ul>
-        <li>
-          <NavLink
-            to="/admin/restaurant"
-            end
-            title="맛집 목록 페이지로 이동"
-            className={({ isActive }) => (isActive ? 'act' : '')}
-          >
-            맛집 목록
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/admin/restaurant/create"
-            title="맛집 등록 페이지로 이동"
-            className={({ isActive }) => (isActive ? 'act' : '')}
-          >
-            맛집 등록
-          </NavLink>
-        </li>
+        {
+          AdminAsideJson[navName]?.menu.map(item => (
+            <li key={item.to}>
+              <NavLink
+                to={item.to}
+                end
+                title={`${item.title} 페이지로 이동`}
+                className={({ isActive }) => (isActive ? 'act' : '')}
+              >
+                {item.title}
+              </NavLink>
+            </li>
+          ))
+        }
       </ul>
     </aside>
   );
