@@ -26,4 +26,68 @@
       }
     }
   }
+
+  form {
+    legend {
+      display: none;
+    }
+
+    .pcinput-box {
+      padding-bottom: 20px;
+    }
+
+    .label {
+      display: block;
+      font-size: 16px;
+      padding-bottom: 10px;
+      cursor: default;
+    }
+
+    // 파일첨부 input
+    #img {
+      display: none;
+    }
+
+    label[for="img"] {
+      width: 70px;
+      height: 70px;
+      border-radius: 6px;
+      border: 1px solid $color-gray-light;
+      background: url("../../../assets/images/admin/camera.png") no-repeat center 20%;
+      text-align: center;
+      padding-top: 40px;
+      color:$color-gray-light;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+
+    .imglabel {
+      background-color: aqua;
+      overflow: hidden;
+      border: 1px solid $color-gray-light;
+
+      span {}
+
+      img {
+        width: 20px;
+        height: 18px;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    // 로그인 버튼
+    button {
+      display: block;
+      width: 100%;
+      height: 40px;
+      font-size: 14px;
+      color: $color-white;
+      background: $color-main;
+      border-radius: 6px;
+    }
+  }
+
+
 }
