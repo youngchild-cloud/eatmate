@@ -1,9 +1,63 @@
-@charset "uft-8";
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/function';
+@use './variables' as *;
+@use './function' as *;
+
+.admin-list {
+  .pc-inner {
+    width: 1600px;
+    margin: 0 auto;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // 우측 콘텐츠
+  .admin-list {
+    width: 100%;
 
 
-.admin-restaurantcreate {
+    table {
+      width: 100%;
+      font-size: 12px;
+      table-layout: fixed;
+      border-collapse: collapse;
+
+      caption {
+        display: none;
+      }
+
+      thead {
+        tr {
+          background-color: $color-sub-black;
+        }
+
+        th {
+          padding: 10px 0;
+          border: 1px solid $color-gray-light;
+          color: $color-white;
+          text-align: center;
+        }
+      }
+
+      tbody {
+        tr {}
+
+        td {
+          padding: 10px 5px;
+          border: 1px solid $color-gray-light;
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+
+
+}
+
+.admin-create {
   .pc-inner {
     width: 1600px;
     margin: 0 auto;
@@ -40,7 +94,7 @@
       display: block;
       font-size: 16px;
       padding-bottom: 10px;
-      cursor: default;
+
     }
 
     // 파일첨부 input
@@ -53,10 +107,10 @@
       height: 70px;
       border-radius: 6px;
       border: 1px solid $color-gray-light;
-      background: url("../../../assets/images/admin/camera.png") no-repeat center 20%;
+      background: url("../../assets/images/admin/camera.png") no-repeat center 20%;
       text-align: center;
       padding-top: 40px;
-      color:$color-gray-light;
+      color: $color-gray-light;
       font-size: 14px;
       cursor: pointer;
     }

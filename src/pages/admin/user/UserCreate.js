@@ -5,14 +5,14 @@ import TitleBox from 'components/admin/TitleBox';
 function RestaurantCreate(props) {
   return (
     <>
-      <section className='admin-create admin-restaurantcreate'>
+      <section className='admin-create admin-usercreate'>
         <article className="pc-inner">
           {/* 좌측 내비 */}
-          <Aside navName="restaurant" />
+          <Aside navName="user" />
 
           {/* 우측 리스트 */}
           <div className='right-content'>
-            <TitleBox title="맛집 등록" linkto="/asdfa" btnname="맛집 등록" />
+            <TitleBox title="회원 등록" linkto="/asdfa" btnname="맛집 등록" />
 
             <form>
               <legend>맛집 등록하기</legend>

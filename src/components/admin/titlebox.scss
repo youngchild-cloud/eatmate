@@ -1,0 +1,21 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/function';
+
+.list-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 0px;
+
+  h3 {
+    font-weight: bold;
+  }
+
+  a {
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: $color-sub-orange;
+    color: $color-white;
+    border-radius: 6px;
+    line-height: 140%;
+  }
+}
