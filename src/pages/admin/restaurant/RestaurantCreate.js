@@ -1,6 +1,6 @@
 import Aside from 'components/admin/Aside';
 
-import PcInput from 'pages/admin/PcInput';
+import PcInput from 'components/admin/PcInput';
 import TitleBox from 'components/admin/TitleBox';
 
 function RestaurantCreate(props) {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './login.scss';
 
-import PcInput from 'pages/admin/PcInput';
+import PcInput from 'components/admin/PcInput';
 
 function Login(props) {
   return (
