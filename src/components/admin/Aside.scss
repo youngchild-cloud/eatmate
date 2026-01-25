@@ -1,5 +1,5 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/function';
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
 
 // 좌측내비
 .admin-aside {

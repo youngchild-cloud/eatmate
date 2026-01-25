@@ -1,6 +1,6 @@
 // CommunityList.scss
-@import '../../assets/scss/variables';
-@import '../../assets/scss/function';
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
 
 .community-list {
   .common-title-box {

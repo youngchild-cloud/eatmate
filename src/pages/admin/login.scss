@@ -1,6 +1,6 @@
 @charset "utf-8";
-@import '../../assets/scss/variables';
-@import '../../assets/scss/function';
+@use '../../assets/scss/variables' as *;
+@use '../../assets/scss/function' as *;
 
 
 .admin-login {
