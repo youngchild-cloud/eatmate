@@ -1,20 +1,19 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// App.js
+import { BrowserRouter } from 'react-router-dom';
 import ScrollTop from 'components/common/ScrollTop';
-import PcLayout from 'pages/admin/PcLayout';
-import MoLayout from 'pages/admin/MoLayout';
 
-function App() {
+import 'assets/scss/_reset.scss';
+import 'assets/scss/base.scss';
+import 'assets/scss/adminlayout.scss';
+import 'assets/scss/admin.scss';
+
+import AppRoutes from './routes/AppRoutes';
+
+export default function App() {
   return (
-    <>
-      <BrowserRouter>
-        <ScrollTop />
-        <Routes>
-          <Route path='/admin/*' element={<PcLayout />} />
-          <Route path='/*' element={<MoLayout />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <ScrollTop />
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
-
-export default App;
