@@ -54,65 +54,55 @@ import Order from './components/Order';
 import logo from './assets/images/logo.png';
 
 # 폴더/페이지명
-assets
-- font, scss, images 등 js를 제외한 모든 폴더가 있는 곳
----
-components
-- common
-  - 페이지 전체적으로 사용하는 컴포넌트
-  
-- layout
-  - Header 헤더
-  - Nav 내비
-
-- community
-- meetup
-- mypage
-- review
-
+layouts/ : “껍데기(헤더/푸터/네비 + Outlet)”만 담당
+routes/ : 라우팅 정의만 담당
+pages/ : 화면(페이지)
+components/ : 재사용 컴포넌트
+assets/ : 이미지/스타일/폰트
+data/ : 더미데이터/상수/목업
 ---
 pages
 - review 맛집 리뷰
-  - ReviewList.js 맛집 리뷰 목록                => 퍼블 완료
-  - ReviewDetail.js 맛집 리뷰 상세              => 퍼블 완료
-  - RestaurantList.js 맛집 목록                 => 퍼블 완료
-  - RestaurantDetail.js 맛집 상세               => 퍼블 완료
+  - ReviewList.js 맛집 리뷰 목록              => 개발 예정(혜련)
+  - ReviewDetail.js 맛집 리뷰 상세
+  - RestaurantList.js 맛집 목록               => 개발 예정(혜련)
+  - RestaurantDetail.js 맛집 상세
 
 - meetup 맛집 맛집 탐방
-  - MeetupList.js 맛집 맛집 탐방 목록           => 퍼블 완료
-  - MeetupDetail.js 맛집 맛집 탐방 상세         => 퍼블 완료
+  - MeetupList.js 맛집 맛집 탐방 목록         => 개발 예정(지희)
+  - MeetupDetail.js 맛집 맛집 탐방 상세
 
 - write 글쓰기
-  - Write.js 글쓰기 모달                        => 퍼블 완료
-  - WriteReview.js 맛집 리뷰 글쓰기             => 퍼블 완료
-  - WriteMeetup.js 맛집 맛집 탐방 글쓰기        => 퍼블 완료
-  - WriteCommunity.js 자유게시판 글쓰기         => 퍼블 완료
+  - Write.js 글쓰기 모달
+  - WriteReview.js 맛집 리뷰 글쓰기
+  - WriteMeetup.js 맛집 맛집 탐방 글쓰기
+  - WriteCommunity.js 자유게시판 글쓰기
 
 - community 자유게시판
-  - CommunityList.js 맛집 맛집 탐방 목록        => 퍼블 완료
-  - CommunityDetail.js 맛집 맛집 탐방 상세      => 퍼블 완료
+  - CommunityList.js 맛집 맛집 탐방 목록      => 개발 예정(영찬)
+  - CommunityDetail.js 맛집 맛집 탐방 상세
 
 - mypage 마이페이지
-  - Mypage.js 마이페이지                        => 퍼블 완료
-  - MypageProfile.js 프로필                     => 퍼블 완료
-  - MypageBookmark.js 저장한 맛집               => 퍼블 완료
-  - MypageMeetup.js 맛집 맛집 탐방 신청내역      => 퍼블 완료
-  - MypageWrite.js 작성한 게시글                => 퍼블 완료
-  - MypageLike.js 내가 남긴 좋아요              => 퍼블 완료
-  - MypageComment.js 내가 남긴 댓글             => 퍼블 완료
+  - Mypage.js 마이페이지
+  - MypageProfile.js 프로필
+  - MypageBookmark.js 저장한 맛집
+  - MypageMeetup.js 맛집 맛집 탐방 신청내역
+  - MypageWrite.js 작성한 게시글
+  - MypageLike.js 내가 남긴 좋아요
+  - MypageComment.js 내가 남긴 댓글
 
 - login 로그인/회원가입
-  - Login.js 로그인                             => 퍼블 완료
-  - Join.js 회원가입                            => 퍼블 완료
+  - Login.js 로그인
+  - Join.js 회원가입
 
 - notfound 404페이지
-  - NotFound.js 404페이지                       => 퍼블 완료
+  - NotFound.js 404페이지
 
 - admin 관리자
-  - login 로그인                                => 퍼블 완료
+  - login 로그인
   - restaurant 매장 관리
-    - restaurant 매장 목록                      => 퍼블 작업중(영찬)
-    - restaurant/create 매장 등록               => 퍼블 예정(혜련)
+    - restaurant 매장 목록
+    - restaurant/create 매장 등록 
   - board 게시판 관리
     - reviews
       - reviews 맛집 리뷰 목록
@@ -169,13 +159,13 @@ admin 관리자
   - restaurant/create 매장 등록
 - board 게시판 관리
   - reviews
-    - reviews 맛집 리뷰 목록
-    - reviews/create 맛집 리뷰 등록
+    - board/reviews 맛집 리뷰 목록
+    - board/reviews/create 맛집 리뷰 등록
   - meetups
-    - meetups 맛집 탐방 목록
-    - meetups/create
+    - board/meetups 맛집 탐방 목록
+    - board/meetups/create
   - community
-    - community 자유게시판 목록
-    - community/create
+    - board/community 자유게시판 목록
+    - board/community/create
 - user 회원 관리
   - user 회원 목록
