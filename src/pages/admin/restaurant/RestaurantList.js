@@ -11,7 +11,7 @@ function RestaurantList(props) {
 
           {/* 우측 리스트 */}
           <div className='admin-list'>
-            <TitleBox title="맛집 목록" linkto="/asdfa" btnname="맛집 등록" btnshow />
+            <TitleBox title="맛집 목록" linkto="/admin/restaurant/create" btnname="맛집 등록" btnshow />
 
             <table>
               <caption>맛집목록</caption>

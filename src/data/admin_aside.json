@@ -16,27 +16,27 @@
     "title": "게시판 관리",
     "menu": [
       {
-        "to": "/admin/review",
+        "to": "/admin/board/review",
         "title": "맛집 리뷰 목록"
       },
       {
-        "to": "/admin/review/create",
+        "to": "/admin/board/review/create",
         "title": "맛집 리뷰 등록"
       },
       {
-        "to": "/admin/meetup",
+        "to": "/admin/board/meetup",
         "title": "맛집 탐방 목록"
       },
       {
-        "to": "/admin/meetup/create",
+        "to": "/admin/board/meetup/create",
         "title": "맛집 탐방 등록"
       },
       {
-        "to": "/admin/community",
+        "to": "/admin/board/community",
         "title": "자유게시판 목록"
       },
       {
-        "to": "/admin/community/create",
+        "to": "/admin/board/community/create",
         "title": "자유게시판 등록"
       }
     ]

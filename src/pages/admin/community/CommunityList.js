@@ -1,20 +1,20 @@
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
 
-function UserList(props) {
+function CommunityList(props) {
   return (
     <>
       <section className='admin-list admin-userlist'>
         <article className="pc-inner">
           {/* 좌측 내비 */}
-          <Aside navName="user" />
+          <Aside navName="board" />
 
           {/* 우측 리스트 */}
           <div className='admin-list'>
-            <TitleBox title="회원 목록" linkto="/admin/user/create" btnname="회원 등록" btnshow />
+            <TitleBox title="자유게시판 목록" linkto="/admin/board/community/create" btnname="자유게시판 등록" btnshow />
 
-            {/* <table>
-              <caption>맛집목록</caption>
+            <table>
+              {/* <caption>맛집목록</caption>
               <colgroup>
                 <col style={{ width: "4%" }} />
                 <col style={{ width: "10%" }} />
@@ -48,8 +48,8 @@ function UserList(props) {
                   <td>서울특별시 중구 다산로 265 럭키프라자 1층</td>
                   <td>4.9</td>
                 </tr>
-              </tbody>
-            </table> */}
+              </tbody> */}
+            </table>
           </div>
         </article>
       </section>
@@ -57,4 +57,4 @@ function UserList(props) {
   );
 }
 
-export default UserList;
+export default CommunityList;

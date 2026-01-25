@@ -1,22 +1,21 @@
 import Aside from 'components/admin/Aside';
-
 import PcInput from 'components/admin/PcInput';
 import TitleBox from 'components/admin/TitleBox';
 
-function RestaurantCreate(props) {
+function ReviewCreate(props) {
   return (
     <>
-      <section className='admin-create admin-restaurantcreate'>
+      <section className='admin-create admin-usercreate'>
         <article className="pc-inner">
           {/* 좌측 내비 */}
-          <Aside navName="restaurant" />
+          <Aside navName="board" />
 
           {/* 우측 리스트 */}
           <div className='right-content'>
-            <TitleBox title="맛집 등록" />
+            <TitleBox title="맛집 리뷰 등록" />
 
             <form>
-              <legend>맛집 등록하기</legend>
+              {/* <legend>맛집 등록하기</legend>
               <PcInput type="select" name="cate" title="맛집 카테고리" />
               <PcInput type="input" name="restaurant" title="맛집명" />
               <PcInput type="input" name="info" title="맛집 설명" />
@@ -25,7 +24,7 @@ function RestaurantCreate(props) {
               <PcInput type="tel" name="tel" title="전화번호" />
               <PcInput type="text" name="address" title="주소" />
 
-              <button type="submit">등록 완료</button>
+              <button type="submit">등록 완료</button> */}
             </form>
           </div>
         </article>
@@ -34,4 +33,4 @@ function RestaurantCreate(props) {
   );
 }
 
-export default RestaurantCreate;
+export default ReviewCreate;
