@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom';
 
 import './CpMeetup.scss';
 
-import HeartComment from '../../components/common/HeartComment';
-import tabTxtImg1 from '../../assets/images/meetup/con-txt-img1.png';
-import tabTxtImg2 from '../../assets/images/meetup/con-txt-img2.png';
-import tabTxtImg3 from '../../assets/images/meetup/con-txt-img3.png';
+import HeartComment from 'components/common/HeartComment';
+
+import tabTxtImg1 from 'assets/images/meetup/con-txt-img1.png';
+import tabTxtImg2 from 'assets/images/meetup/con-txt-img2.png';
+import tabTxtImg3 from 'assets/images/meetup/con-txt-img3.png';
 
 const CpMeetup = () => {
   return (

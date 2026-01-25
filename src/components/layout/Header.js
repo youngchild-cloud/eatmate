@@ -1,8 +1,8 @@
- import React from 'react';
-import '../../assets/scss/layout.scss';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/logo.png'
-import bell from '../../assets/images/icon_bell.png'
+import 'assets/scss/layout.scss';
+import logo from 'assets/images/logo.png';
+import bell from 'assets/images/icon_bell.png';
 
 const Header = () => {
   return (

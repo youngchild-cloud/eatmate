@@ -1,7 +1,7 @@
 import React from 'react';
-import './TitleCenter.scss'
-import iconBack from '../../assets/images/icon_back.png';
 import { useNavigate } from 'react-router-dom';
+import './TitleCenter.scss';
+import iconBack from 'assets/images/icon_back.png';
 
 const TitleCenter = ({ title }) => {
   const navigate = useNavigate();

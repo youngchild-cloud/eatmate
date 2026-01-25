@@ -1,13 +1,13 @@
+import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
-import '../../assets/scss/layout.scss';
+import 'assets/scss/layout.scss';
 
-import review from '../../assets/images/icon_nav_reviews.png';
-import meetup from '../../assets/images/icon_nav_meetups.png';
-import write from '../../assets/images/icon_nav_write.png';
-import community from '../../assets/images/icon_nav_community.png';
-import mypage from '../../assets/images/icon_nav_mypage.png';
-import { useEffect, useState } from 'react';
+import review from 'assets/images/icon_nav_reviews.png';
+import meetup from 'assets/images/icon_nav_meetups.png';
+import write from 'assets/images/icon_nav_write.png';
+import community from 'assets/images/icon_nav_community.png';
+import mypage from 'assets/images/icon_nav_mypage.png';
 
 const Nav = () => {
   const [navModal, setNavModal] = useState(false);

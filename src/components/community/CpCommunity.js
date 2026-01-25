@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
-
 import './CpCommunity.scss';
-
-import HeartComment from '../../components/common/HeartComment';
+import HeartComment from 'components/common/HeartComment';
 
 const CpCommunity = () => {
   return (

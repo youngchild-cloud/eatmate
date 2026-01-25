@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
-
 import './CpReview.scss';
-
-import Rank5 from '../../components/review/Rank5';
+import Rank5 from 'components/review/Rank5';
 
 const CpReview = () => {
   return (

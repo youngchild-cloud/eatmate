@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './MypageTab.scss';
-import CpReview from '../../components/review/CpReview';
-import CpMeetup from '../../components/meetup/CpMeetup';
-import CpCommunity from '../../components/community/CpCommunity';
+import CpReview from 'components/review/CpReview';
+import CpMeetup from 'components/meetup/CpMeetup';
+import CpCommunity from 'components/community/CpCommunity';
 
 const MypageTab = () => {
   const [active, setActive] = useState(0);
