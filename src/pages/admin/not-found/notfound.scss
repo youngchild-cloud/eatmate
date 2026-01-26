@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+@use 'assets/scss/variables' as *;
+;
+@use 'assets/scss/function' as *;
+
+
+.pc-not-found {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+
+  .pc-inner {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+
+    img {
+      padding-bottom: 30px;
+      width: 100px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    h2 {
+      padding-bottom: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .error-txt {
+      padding-bottom: 60px;
+    }
+
+    a {
+      width: 600px;
+      height: 40px;
+      font-size: 14px;
+      color: $color-white;
+      background: $color-main;
+      display: inline-block;
+      line-height: 40px;
+      border-radius: 6px;
+    }
+  }
+}

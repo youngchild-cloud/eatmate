@@ -36,6 +36,7 @@ import MypageComment from 'pages/mypage/MypageComment';
 import Login from 'pages/login/Login';
 import Join from 'pages/login/Join';
 import NotFound from 'pages/not-found/NotFound';
+import PcNotFound from 'pages/admin/not-found/NotFound';
 
 export default function AppRoutes() {
   return (
@@ -55,6 +56,7 @@ export default function AppRoutes() {
         <Route path="board/community/create" element={<AdminCommunityCreate />} />
         <Route path="user" element={<AdminUserList />} />
         <Route path="user/create" element={<AdminUserCreate />} />
+        <Route path="*" element={<PcNotFound />} />
       </Route>
 
       {/* Mobile */}

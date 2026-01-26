@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 import './meetuplist.scss';
 
@@ -11,7 +12,15 @@ function MeetupList(props) {
   const tabContent = (e) => {
     setTabTitle(e);
   }
-
+  // const loadData = () => {
+  //   axios
+  //     .get('http://localhost:9070/meetup')
+  //     .then(res => setData(res.data)
+  //     )
+  //     .catch(
+  //       err => console.log(err)
+  //     )
+  // }
   return (
     <section className='meetup-list'>
       <div className="inner">
