@@ -7,6 +7,9 @@ import HeartComment from 'components/common/HeartComment';
 import Chat from 'components/common/Chat';
 
 function CommunityDetail(props) {
+
+  
+
   return (
     <section className='community-detail'>
       <div className="inner">
