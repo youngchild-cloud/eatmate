@@ -68,7 +68,7 @@ export default function AppRoutes() {
         <Route path="review/restaurant/detail" element={<RestaurantDetail />} />
 
         <Route path="meetup" element={<MeetupList />} />
-        <Route path="meetup/detail" element={<MeetupDetail />} />
+        <Route path="meetup/detail/:bm_no" element={<MeetupDetail />} />
 
         <Route path="community" element={<CommunityList />} />
         <Route path="community/detail" element={<CommunityDetail />} />
