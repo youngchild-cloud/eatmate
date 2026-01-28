@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import './RestaurantList.scss';
 
@@ -8,6 +9,18 @@ import CpRestaurant from 'components/review/CpRestaurant';
 
 const RestaurantList = () => {
   const [addAct, setAddAct] = useState(false);
+  const { cate } = useParams();
+  const cateMap = {
+    cate1: '한식',
+    cate2: '일식',
+    cate3: '중식',
+    cate4: '양식',
+    cate5: '분식',
+    cate6: '카페',
+    cate7: '디저트',
+    cate8: '기타',
+  };
+  const category = cateMap[cate];
 
   return (
     <>
@@ -22,7 +35,7 @@ const RestaurantList = () => {
       <section className='restaurant-list'>
         <div className="inner">
           <div className="review-title-box">
-            <h3 class="review-title">한식</h3>
+            <h3 class="review-title">{category}</h3>
             <div className={`filter ${addAct ? 'act' : ''}`}> {/* act */}
               <p className='filter-tit' onClick={() => setAddAct(prev => !prev)}><button>평점순</button></p>
               <ul className='filter-list'>

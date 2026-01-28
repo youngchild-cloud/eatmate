@@ -53,8 +53,10 @@
     margin-bottom: vw-mo(20);
 
     .img-box {
+      overflow: hidden;
       width: vw-mo(170);
       height: vw-mo(193);
+      border-radius: vw-mo(10);
     }
 
     .img-box img {

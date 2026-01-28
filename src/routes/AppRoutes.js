@@ -63,9 +63,9 @@ export default function AppRoutes() {
       <Route path="/" element={<MoLayout />}>
         <Route index element={<Navigate to="review" replace />} />
         <Route path="review" element={<ReviewList />} />
-        <Route path="review/detail" element={<ReviewDetail />} />
-        <Route path="review/restaurant" element={<RestaurantList />} />
-        <Route path="review/restaurant/detail" element={<RestaurantDetail />} />
+        <Route path="review/detail/:br_no" element={<ReviewDetail />} />
+        <Route path="review/restaurant/:cate" element={<RestaurantList />} />
+        <Route path="review/restaurant/detail/:rt_no" element={<RestaurantDetail />} />
 
         <Route path="meetup" element={<MeetupList />} />
         <Route path="meetup/detail/:bm_no" element={<MeetupDetail />} />
