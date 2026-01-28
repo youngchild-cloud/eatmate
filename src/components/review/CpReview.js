@@ -24,7 +24,7 @@ const CpReview = () => {
 
   return (
     <>
-      <ul id="cp-review">
+      <ul className="cp-review">
         {
           reviewData.map(item => (
             <li>

@@ -2,7 +2,7 @@
 ;
 @use 'assets/scss/function' as *;
 
-#cp-review {
+.cp-review {
   a {
     display: flex;
     justify-content: space-between;
@@ -12,10 +12,15 @@
   }
 
   .img-box {
+    overflow: hidden;
     width: vw-mo(170);
+    height: vw-mo(193);
+    border-radius: vw-mo(20);
 
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
