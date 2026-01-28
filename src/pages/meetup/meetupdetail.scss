@@ -38,7 +38,9 @@
       .content-img {
         width: vw-mo(300);
         height: vw-mo(340);
-        padding-bottom: vw-mo(20);
+        margin-bottom: vw-mo(20);
+        border-radius: vw-mo(10);
+        object-fit: cover;
       }
     }
 
@@ -77,6 +79,10 @@
 
     .btn-wide {
       margin-bottom: vw-mo(20);
+    }
+
+    .meetup-toggle-btn .btn-wide {
+      background: $color-sub-orange;
     }
   }
 }

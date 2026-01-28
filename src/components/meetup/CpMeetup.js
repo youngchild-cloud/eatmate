@@ -41,7 +41,7 @@ const CpMeetup = () => {
                 <HeartComment heart={item.bm_heart} comment={item.bm_comment} />
               </div>
               <div className='item-img'>
-                <img src={`${process.env.PUBLIC_URL}/images/meetup/con-img1.png`} alt="" />
+                <img src={`${process.env.PUBLIC_URL}/images/meetup/${item.bm_img}`} alt="" />
               </div>
             </div>
           </Link>
