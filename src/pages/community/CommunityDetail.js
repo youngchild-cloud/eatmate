@@ -31,8 +31,8 @@ function CommunityDetail(props) {
         <TitleCenter title={'자유게시판'} />
 
         {/* 자유게시판 글 목록  */}
-        {data.map(item =>(
-          <div className='item'>
+        {data.map(item => (
+          <div key={item.bc_no} className='item'>
             {/* 프로필 + 닉네임 + 등록시간 */}
             <div className="comm-top">
               {/* 프로필 사진 public */}
@@ -57,10 +57,10 @@ function CommunityDetail(props) {
             <HeartComment heart={`${item.bc_heart}`} comment={`${item.bc_comment}`} />
           </div>
         ))
-      }
+        }
 
         {/* 댓글 창 시작 */}
-        <Chat />
+        <Chat ct_board_cate={'community'} ct_board_no={bc_no} />
 
       </div>
     </section>
