@@ -10,6 +10,8 @@ import tabTxtImg1 from 'assets/images/meetup/con-txt-img1.png';
 import tabTxtImg2 from 'assets/images/meetup/con-txt-img2.png';
 import tabTxtImg3 from 'assets/images/meetup/con-txt-img3.png';
 
+import { dateFormat } from 'utils/dateFormat'
+
 
 const CpMeetup = () => {
   const [data, setData] = useState([]);
@@ -34,7 +36,7 @@ const CpMeetup = () => {
               <div className='item-txt'>
                 <h3>{item.bm_title}</h3>
                 <p>
-                  <span><img src={tabTxtImg1} alt="달력아이콘" /> {item.bm_m_date}</span>
+                  <span><img src={tabTxtImg1} alt="달력아이콘" /> {dateFormat(item.bm_m_date)}</span>
                   <span><img src={tabTxtImg2} alt="위치아이콘" /> {item.bm_m_res}</span>
                   <span><img src={tabTxtImg3} alt="인원아이콘" /> {item.bm_m_people}/{item.bm_m_people_all}</span>
                 </p>

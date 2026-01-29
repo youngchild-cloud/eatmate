@@ -12,6 +12,7 @@ import Chat from 'components/common/Chat';
 import tabTxtImg1 from 'assets/images/meetup/con-txt-img1.png';
 import tabTxtImg2 from 'assets/images/meetup/con-txt-img2.png';
 import tabTxtImg3 from 'assets/images/meetup/con-txt-img3.png';
+import { dateFormat } from 'utils/dateFormat'
 
 const MeetupDetail = () => {
   const { bm_no } = useParams();
@@ -33,8 +34,14 @@ const MeetupDetail = () => {
     bm_m_people_all: '',
     bm_heart: '',
     bm_comment: '',
-    bm_date: ''
+    bm_date: '',
+    u_nick: '',
+    u_pic: ''
   });
+
+
+
+
 
   const [meetupChange, setMeetupChange] = useState(true);
 
@@ -73,14 +80,32 @@ const MeetupDetail = () => {
       })
       .catch(err => console.log('조회오류', err));
   }, [bm_no])
+
+  // const loadData = () => {
+  //   axios //비동기로 
+  //     .get('http://localhost:9070/users')//주소로 요청한 json data파일을 가져온다.
+  //     .then
+  //     (res => {
+  //       setUserInfo(res.data[0])
+  //     })
+  //     .catch(//실패시 내용
+  //       err => console.log(err)
+  //     )
+  // };
+
+  // useEffect(() => {
+  //   loadData()
+  // }, []);
+
+
   return (
     <section className='meetup-detail'>
       <div className="inner">
         <TitleCenter title={'맛집 탐방'} />
 
         <div className='user'>
-          <div className='user-img'><img src={`${process.env.PUBLIC_URL}/images/meetup/user1.png`} alt="" /></div>
-          <p className='user-info'>고래미<span className='user-info-gap'>&middot;</span>10분전</p>
+          <div className='user-img'><img src={`${process.env.PUBLIC_URL}/images/meetup/${meetUp.u_pic}`} alt="" /></div>
+          <p className='user-info'>{meetUp.u_nick}<span className='user-info-gap'>&middot;</span>{dateFormat(meetUp.bm_date)}</p>
         </div>
 
         <div className='content-box'>
@@ -91,7 +116,7 @@ const MeetupDetail = () => {
             </span>
           </p>
           <p className='content-info'>
-            <span className='content-info-txt'><img src={tabTxtImg1} alt="달력아이콘" />{meetUp.bm_m_date}</span>
+            <span className='content-info-txt'><img src={tabTxtImg1} alt="달력아이콘" />{dateFormat(meetUp.bm_m_date)}</span>
             <span className='content-info-txt'><img src={tabTxtImg2} alt="위치아이콘" /> {meetUp.bm_m_res}</span>
             <span className='content-info-txt'><img src={tabTxtImg3} alt="인원아이콘" /> {meetUp.bm_m_people}/ {meetUp.bm_m_people_all}</span>
           </p>

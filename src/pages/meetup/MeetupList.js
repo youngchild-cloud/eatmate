@@ -5,6 +5,7 @@ import './meetuplist.scss';
 
 import TitleLeft from 'components/common/TitleLeft';
 import CpMeetup from 'components/meetup/CpMeetup';
+import CpMeetup2 from 'components/meetup/CpMeetup2';
 
 function MeetupList(props) {
   const [tabTitle, setTabTitle] = useState(1);
@@ -21,6 +22,7 @@ function MeetupList(props) {
   //       err => console.log(err)
   //     )
   // }
+
   return (
     <section className='meetup-list'>
       <div className="inner">
@@ -38,7 +40,7 @@ function MeetupList(props) {
 
           {/* 2번탭 리스트(모집중) */}
           <li className={tabTitle === 1 ? 'tab-content-list' : ''}>
-            <CpMeetup />
+            <CpMeetup2 />
           </li>
         </ul>
       </div>
