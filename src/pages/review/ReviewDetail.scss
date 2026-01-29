@@ -1,5 +1,4 @@
 @use 'assets/scss/variables' as *;
-;
 @use 'assets/scss/function' as *;
 
 .review-detail {
@@ -12,8 +11,10 @@
     gap: vw-mo(20);
 
     .img-box {
+      overflow: hidden;
       width: vw-mo(64);
       height: vw-mo(64);
+      border-radius: 50%;
     }
 
     .img-box img {
@@ -33,7 +34,7 @@
       color: $color-gray;
     }
 
-    .bagde {
+    .badge {
       margin-left: vw-mo(6);
     }
 
