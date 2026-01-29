@@ -1,30 +1,24 @@
 @use 'assets/scss/variables' as *;
-;
 @use 'assets/scss/function' as *;
 
-.bagde {
+.badge {
   padding: vw-mo(4) vw-mo(10);
   border-radius: vw-mo(50);
   border: 1px solid #333;
   font-size: vw-mo(20);
   text-transform: uppercase;
 
-  &-vip {
-    border-color: $color-sub-yellow;
-    color: $color-sub-yellow;
+  &.badge-vip {
+    border-color: $color-main;
+    color: $color-main;
   }
 
-  &-gold {
-    border-color: $color-sub-yellow;
-    color: $color-sub-yellow;
+  &.badge-gold {
+    border-color: $color-sub-orange;
+    color: $color-sub-orange;
   }
 
-  &-sliver {
-    border-color: $color-sub-yellow;
-    color: $color-sub-yellow;
-  }
-
-  &-sliver {
+  &.badge-silver {
     border-color: $color-sub-yellow;
     color: $color-sub-yellow;
   }

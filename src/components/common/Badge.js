@@ -2,7 +2,9 @@ import './Badge.scss';
 
 const Badge = ({ rank }) => {
   return (
-    <span className={`bagde bagde-${rank}`}>{rank}</span>
+    rank !== 'normal' && (
+      <span className={`badge badge-${rank}`}>{rank}</span>
+    )
   );
 };
 

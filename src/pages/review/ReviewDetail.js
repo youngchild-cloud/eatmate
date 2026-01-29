@@ -10,18 +10,25 @@ import Rank5 from 'components/review/Rank5';
 import HeartComment from 'components/common/HeartComment';
 import Chat from 'components/common/Chat';
 
+import { dateFormat } from 'utils/dateFormat';
+
 const ReviewDetail = () => {
-  const [reviewData, setReviewData] = useState(null);
+  const [reviewData, setReviewData] = useState('');
   const { br_no } = useParams();
 
-  useEffect(() => {
-    const loadData = async () => {
-      const res = await axios.post('http://localhost:9070/review/detail', { br_no: Number(br_no) });
+  const loadData = async () => {
+    try {
+      const res = await axios.post(`http://localhost:9070/review/detail/${br_no}`);
 
       setReviewData(res.data);
-    };
+    } catch (err) {
+      console.log(err.response.data.error);
+    }
+  };
+
+  useEffect(() => {
     loadData();
-  }, [br_no]);
+  }, [br_no])
 
   return (
     <section className='review-detail'>
@@ -29,50 +36,68 @@ const ReviewDetail = () => {
         <TitleCenter title={'리뷰 보기'} />
 
         {
-          !reviewData ? (
-            <div>로딩중...</div>
-          ) : (
-            <article className="review-con" key={reviewData.br_no}>
-              <div className="profile-area">
-                <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/review-profile01.jpg`} alt="프로필" />
-                </div>
-                <div className="txt-box">
-                  <strong className='name'>
-                    고래미
-                    <Badge rank={'vip'} />
-                  </strong>
-                  <p className='rank-date'>
-                    <Rank5 num={'5'} />
-                    <span className="date">2026.01.06</span>
-                  </p>
+          <article className="review-con" key={reviewData.br_no}>
+            <div className="profile-area">
+              <div className="img-box">
+                <img src={`${process.env.PUBLIC_URL}/images/user/${reviewData.u_pic}`} alt={`${reviewData.u_nick} 프로필`} />
+              </div>
+              <div className="txt-box">
+                <strong className='name'>
+                  {reviewData.u_nick}
+                  <Badge rank={`${reviewData.u_badge}`} />
+                </strong>
+                <div className='rank-date'>
+                  <Rank5 num={`${reviewData.br_rank}`} />
+                  <span className="date">{dateFormat(reviewData.br_date)}</span>
                 </div>
               </div>
-              <div className="image-area">
+            </div>
+            <div className="image-area">
+              {
+                reviewData.br_img &&
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img}`} alt="리뷰" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img}`} alt={`${reviewData.rt_name} 대표`} />
                 </div>
+              }
+              {
+                reviewData.br_img2 &&
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img}`} alt="리뷰" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img2}`} alt={`${reviewData.rt_name} 서브`} />
                 </div>
+              }
+              {
+                reviewData.br_img3 &&
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img}`} alt="리뷰" />
+                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img3}`} alt={`${reviewData.rt_name} 서브`} />
                 </div>
-              </div>
-              <div className="text-area">
-                <p>
-                  {reviewData.br_desc}
-                </p>
+              }
+              {
+                reviewData.br_img4 &&
+                <div className="img-box">
+                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img4}`} alt={`${reviewData.rt_name} 서브`} />
+                </div>
+              }
+              {
+                reviewData.br_img5 &&
+                <div className="img-box">
+                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img5}`} alt={`${reviewData.rt_name} 서브`} />
+                </div>
+              }
+            </div>
+            <div className="text-area">
+              <p>
+                {reviewData.br_desc}
+              </p>
 
-                <Link to={`/review/restaurant/detail/${reviewData.br_no}`} title={`${reviewData.br_rt_name} 상세보기 페이지로 이동`} className='link'>#{reviewData.br_rt_name}</Link>
+              <Link to={`/review/restaurant/detail/${reviewData.br_no}`} title={`${reviewData.br_rt_name} 상세보기 페이지로 이동`} className='link'>#{reviewData.rt_name}</Link>
 
-                <HeartComment heart={reviewData.br_heart} comment={reviewData.br_comment} />
-              </div>
-            </article>
-          )
+              <HeartComment heart={reviewData.br_heart} comment={reviewData.br_comment} />
+            </div>
+          </article>
         }
 
-        <Chat />
+        {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호를 넘겨주시면 됩니다. */}
+        <Chat p_board_cate={'review'} p_board_no={br_no} />
       </div>
     </section>
   );
