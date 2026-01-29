@@ -29,7 +29,7 @@ function Chat({ p_board_cate, p_board_no }) {
 
   useEffect(() => {
     loadData();
-  }, [])
+  }, [boardInfo])
 
   return (
     <article className='common-chat'>

@@ -60,7 +60,7 @@ function CommunityDetail(props) {
         }
 
         {/* 댓글 창 시작 */}
-        <Chat ct_board_cate={'community'} ct_board_no={bc_no} />
+        <Chat p_board_cate={'community'} p_board_no={bc_no} />
 
       </div>
     </section>
