@@ -46,10 +46,10 @@ const ReviewDetail = () => {
                   {reviewData.u_nick}
                   <Badge rank={`${reviewData.u_badge}`} />
                 </strong>
-                <p className='rank-date'>
+                <div className='rank-date'>
                   <Rank5 num={`${reviewData.br_rank}`} />
                   <span className="date">{dateFormat(reviewData.br_date)}</span>
-                </p>
+                </div>
               </div>
             </div>
             <div className="image-area">
@@ -96,7 +96,8 @@ const ReviewDetail = () => {
           </article>
         }
 
-        <Chat />
+        {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호를 넘겨주시면 됩니다. */}
+        <Chat p_board_cate={'review'} p_board_no={br_no} />
       </div>
     </section>
   );
