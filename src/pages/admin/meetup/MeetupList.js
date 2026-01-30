@@ -14,41 +14,54 @@ function MeetupList(props) {
             <TitleBox title="맛집 탐방 목록" linkto="/admin/board/meetup/create" btnname="맛집 탐방 등록" btnshow />
 
             <table>
-              {/* <caption>맛집목록</caption>
+              <caption>맛집 탐방 목록</caption>
               <colgroup>
                 <col style={{ width: "4%" }} />
                 <col style={{ width: "10%" }} />
-                <col style={{ width: "15%" }} />
-                <col style={{ width: "22%" }} />
+                <col style={{ width: "12%" }} />
+                <col style={{ width: "12%" }} />
+                <col style={{ width: "14%" }} />
                 <col style={{ width: "10%" }} />
-                <col style={{ width: "10%" }} />
-                <col style={{ width: "25%" }} />
+                <col style={{ width: "8%" }} />
                 <col style={{ width: "4%" }} />
+                <col style={{ width: "4%" }} />
+                <col style={{ width: "12%" }} />
+                <col style={{ width: "10%" }} />
               </colgroup>
               <thead>
                 <tr>
-                  <th>번호</th>
-                  <th>맛집 카테고리</th>
-                  <th>맛집명</th>
-                  <th>맛집 설명</th>
-                  <th>맛집 이미지</th>
-                  <th>전화번호</th>
-                  <th>주소</th>
-                  <th>평점</th>
+                  <th>NO</th>
+                  <th>글쓴이</th>
+                  <th>탐방 글제목</th>
+                  <th>탐방 본문글</th>
+                  <th>대표 이미지</th>
+                  <th>탐방 맛집명</th>
+                  <th>탐방 날짜</th>
+                  <th>하트 수</th>
+                  <th>댓글 수</th>
+                  <th>등록 날짜/시간</th>
+                  <th>수정 및 삭제</th>
                 </tr>
               </thead>
               <tbody>
+                {/* 함수자리 */}
                 <tr>
-                  <td>1</td>
-                  <td>분식</td>
-                  <td>엽기떡볶이 종로</td>
-                  <td>한국을 대표하는 떡볶이 중에서...</td>
+                  <td>11111</td>
+                  <td>오홍식</td>
+                  <td>밥친구 찾습니다</td>
+                  <td>라라라라라라라라라동대문 엽기떡볶이 종로점</td>
                   <td>맛집 이미지(사진)</td>
-                  <td>02-000-0000</td>
-                  <td>서울특별시 중구 다산로 265 럭키프라자 1층</td>
-                  <td>4.9</td>
+                  <td>세상맛있는집</td>
+                  <td>2026.01.22</td>
+                  <td>100</td>
+                  <td>100</td>
+                  <td>2024.05.01 000000</td>
+                  <td className='btn-td'>
+                    <button className='btn-update'>수정</button>
+                    <button className='btn-delete'>삭제</button>
+                  </td>
                 </tr>
-              </tbody> */}
+              </tbody>
             </table>
           </div>
         </article>

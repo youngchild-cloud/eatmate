@@ -14,7 +14,6 @@
   .admin-list {
     width: 100%;
 
-
     table {
       width: 100%;
       font-size: 12px;
@@ -23,6 +22,30 @@
 
       caption {
         display: none;
+      }
+
+      // 수정 삭제 버튼 서식
+      .btn-td {
+        overflow: visible;
+        text-overflow: clip;
+        white-space: normal;
+      }
+
+      button {
+        // margin: 2px;
+        padding: 10px 15px;
+        color:$color-white;
+        border-radius: 6px;
+        transition: 0.1s;
+        &:hover{background: $color-gray;}
+      }
+      .btn-update{
+        background: $color-sub-yellow;
+        margin-right: 9px;
+      }
+      .btn-delete{
+        background: $color-main;
+        
       }
 
       thead {
