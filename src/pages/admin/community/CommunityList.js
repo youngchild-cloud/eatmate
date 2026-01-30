@@ -14,7 +14,7 @@ function CommunityList(props) {
             <TitleBox title="자유게시판 목록" linkto="/admin/board/community/create" btnname="자유게시판 등록" btnshow />
 
             <table>
-              {/* <caption>맛집목록</caption>
+              <caption>맛집목록</caption>
               <colgroup>
                 <col style={{ width: "4%" }} />
                 <col style={{ width: "10%" }} />
@@ -48,7 +48,7 @@ function CommunityList(props) {
                   <td>서울특별시 중구 다산로 265 럭키프라자 1층</td>
                   <td>4.9</td>
                 </tr>
-              </tbody> */}
+              </tbody>
             </table>
           </div>
         </article>
