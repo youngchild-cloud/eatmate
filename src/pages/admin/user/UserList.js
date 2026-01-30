@@ -34,7 +34,7 @@ function UserList(props) {
                   <th>프로필 이미지</th>
                   <th>뱃지</th>
                   <th>등록 날짜/시간</th>
-                  <th>수정 및 삭제</th>
+                  <th>수정/삭제</th>
                 </tr>
               </thead>
               <tbody>

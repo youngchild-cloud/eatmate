@@ -38,7 +38,7 @@ function ReviewList(props) {
                   <th>하트 수</th>
                   <th>댓글 수</th>
                   <th>등록 날짜/시간</th>
-                  <th>수정 및 삭제</th>
+                  <th>수정/삭제</th>
                 </tr>
               </thead>
               <tbody>

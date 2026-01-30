@@ -24,30 +24,6 @@
         display: none;
       }
 
-      // 수정 삭제 버튼 서식
-      .btn-td {
-        overflow: visible;
-        text-overflow: clip;
-        white-space: normal;
-      }
-
-      button {
-        // margin: 2px;
-        padding: 10px 15px;
-        color:$color-white;
-        border-radius: 6px;
-        transition: 0.1s;
-        &:hover{background: $color-gray;}
-      }
-      .btn-update{
-        background: $color-sub-yellow;
-        margin-right: 9px;
-      }
-      .btn-delete{
-        background: $color-main;
-        
-      }
-
       thead {
         tr {
           background-color: $color-sub-black;
@@ -62,8 +38,6 @@
       }
 
       tbody {
-        tr {}
-
         td {
           padding: 10px 5px;
           border: 1px solid $color-gray-light;
@@ -71,6 +45,38 @@
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
+        }
+
+        // 수정 삭제 버튼 서식
+        button {
+          padding: 6px 14px;
+          border-radius: 6px;
+          border: 1px solid #000;
+          transition: 0.2s;
+        }
+
+        button~button {
+          margin-left: 5px;
+        }
+
+        .btn-update {
+          border-color: $color-sub-yellow;
+          color: $color-sub-yellow;
+
+          &:hover {
+            background: $color-sub-yellow;
+            color: #fff;
+          }
+        }
+
+        .btn-delete {
+          border-color: $color-main;
+          color: $color-main;
+
+          &:hover {
+            background: $color-main;
+            color: #fff;
+          }
         }
       }
     }
@@ -143,8 +149,6 @@
       background-color: aqua;
       overflow: hidden;
       border: 1px solid $color-gray-light;
-
-      span {}
 
       img {
         width: 20px;

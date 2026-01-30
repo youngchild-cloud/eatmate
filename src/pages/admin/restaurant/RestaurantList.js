@@ -38,7 +38,7 @@ function RestaurantList(props) {
                   <th>위치</th>
                   <th>평점/리뷰수</th>
                   <th>등록 날짜/시간</th>
-                  <th>수정 및 삭제</th>
+                  <th>수정/삭제</th>
                 </tr>
               </thead>
               <tbody>

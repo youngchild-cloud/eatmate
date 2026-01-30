@@ -7,11 +7,11 @@ import AdminLogin from 'pages/admin/Login';
 import AdminRestaurantList from 'pages/admin/restaurant/RestaurantList';
 import AdminRestaurantCreate from 'pages/admin/restaurant/RestaurantCreate';
 import AdminReviewList from 'pages/admin/review/ReviewList';
-import AdminReviewCreate from 'pages/admin/review/ReviewCreate';
+import AdminReviewModify from 'pages/admin/review/ReviewModify';
 import AdminMeetupList from 'pages/admin/meetup/MeetupList';
-import AdminMeetupCreate from 'pages/admin/meetup/MeetupCreate';
+import AdminMeetupModify from 'pages/admin/meetup/MeetupModify';
 import AdminCommunityList from 'pages/admin/community/CommunityList';
-import AdminCommunityCreate from 'pages/admin/community/CommunityCreate';
+import AdminCommunityModify from 'pages/admin/community/CommunityModify';
 import AdminUserList from 'pages/admin/user/UserList';
 import AdminUserCreate from 'pages/admin/user/UserCreate';
 
@@ -49,11 +49,11 @@ export default function AppRoutes() {
         <Route path="restaurant/create" element={<AdminRestaurantCreate />} />
         <Route path="board" element={<Navigate to="review" replace />} />
         <Route path="board/review" element={<AdminReviewList />} />
-        <Route path="board/review/create" element={<AdminReviewCreate />} />
+        <Route path="board/review/modify" element={<AdminReviewModify />} />
         <Route path="board/meetup" element={<AdminMeetupList />} />
-        <Route path="board/meetup/create" element={<AdminMeetupCreate />} />
+        <Route path="board/meetup/modify" element={<AdminMeetupModify />} />
         <Route path="board/community" element={<AdminCommunityList />} />
-        <Route path="board/community/create" element={<AdminCommunityCreate />} />
+        <Route path="board/community/modify" element={<AdminCommunityModify />} />
         <Route path="user" element={<AdminUserList />} />
         <Route path="user/create" element={<AdminUserCreate />} />
         <Route path="*" element={<PcNotFound />} />
