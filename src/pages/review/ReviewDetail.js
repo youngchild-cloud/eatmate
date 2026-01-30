@@ -89,7 +89,7 @@ const ReviewDetail = () => {
                 {reviewData.br_desc}
               </p>
 
-              <Link to={`/review/restaurant/detail/${reviewData.br_no}`} title={`${reviewData.br_rt_name} 상세보기 페이지로 이동`} className='link'>#{reviewData.rt_name}</Link>
+              <Link to={`/review/restaurant/detail/${reviewData.br_rt_no}`} title={`${reviewData.rt_name} 상세보기 페이지로 이동`} className='link'>#{reviewData.rt_name}</Link>
 
               <HeartComment heart={reviewData.br_heart} comment={reviewData.br_comment} />
             </div>
