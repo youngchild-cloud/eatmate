@@ -1,8 +1,8 @@
 import './ButtonWide.scss';
 
-const ButtonWide = ({ type, text }) => {
+const ButtonWide = ({ type, text, disabled = false }) => {
   return (
-    <button type={type} className='btn-wide'>{text}</button>
+    <button type={type} className='btn-wide' disabled={disabled}>{text}</button>
   );
 };
 

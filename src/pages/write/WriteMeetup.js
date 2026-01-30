@@ -47,7 +47,7 @@ const WriteMeetup = () => {
       })
       .catch((err) => {
         console.log(err);
-        alert('등록 중 오류가 발생되었습니다.');
+        alert('필수항목을 입력해주세요.');
       })
   }
 

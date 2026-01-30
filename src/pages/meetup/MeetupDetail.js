@@ -45,31 +45,14 @@ const MeetupDetail = () => {
 
   const [meetupChange, setMeetupChange] = useState(true);
 
+  const [meetupIcon, setMeetupIcon] = useState(true);
 
   // const handleChange = (e) => {
   //   e.preventDefault();
   //   setMeetupCount(meetupCount + 1);
   // }
 
-  const meetupNum = () => {
-    const num = meetUp.bm_m_people;
-    const max = meetUp.bm_m_people_all;
-
-    if (num < max) {
-      setMeetupChange(false);
-      return {
-        ...meetUp,
-        bm_m_people: num + 1
-      }
-    }
-    if (num > max) {
-      setMeetupChange(true);
-      return {
-        ...meetUp,
-        bm_m_people: num - 1
-      }
-    }
-  }
+  const meetupMax = Number(meetUp.bm_m_people) === Number(meetUp.bm_m_people_all);
 
 
   useEffect(() => {
@@ -81,21 +64,56 @@ const MeetupDetail = () => {
       .catch(err => console.log('조회오류', err));
   }, [bm_no])
 
-  // const loadData = () => {
-  //   axios //비동기로 
-  //     .get('http://localhost:9070/users')//주소로 요청한 json data파일을 가져온다.
-  //     .then
-  //     (res => {
-  //       setUserInfo(res.data[0])
-  //     })
-  //     .catch(//실패시 내용
-  //       err => console.log(err)
-  //     )
-  // };
+  const meetupNum = () => {
+    setMeetUp(prev => {
+      const num = prev.bm_m_people;
+      const max = prev.bm_m_people_all;
 
-  // useEffect(() => {
-  //   loadData()
-  // }, []);
+
+      if (num < max) {
+        setMeetupChange(false)
+        return {
+          ...prev,
+          bm_m_people: num + 1
+        };
+      }
+      if (num >= max) {
+        setMeetupChange(true)
+        return {
+          ...prev,
+          bm_m_people: num - 1
+        }
+      }
+      // if (num === max && MeetupChange) {
+
+      //   alert('마감된 탐방입니다.');
+      //   return {
+      //     ...meetUp,
+      //     bm_m_people: num + 0
+      //   };
+      // }
+    })
+  }
+
+  let button;
+  if (!meetupChange) {
+    button = (
+      <p className='meetup-toggle-btn' onClick={meetupNum}>
+        <ButtonWide text={'참석취소'} />
+      </p>
+    )
+  } else if (meetupMax) {
+    button = (
+      <p className='meetup-toggle-btn-close' onClick={meetupNum}>
+        <ButtonWide text={'참석마감'} disabled />
+      </p>)
+  } else {
+    button = (
+      <p onClick={meetupNum}>
+        <ButtonWide text={'참석하기'} />
+      </p>)
+  }
+
 
 
   return (
@@ -121,15 +139,9 @@ const MeetupDetail = () => {
             <span className='content-info-txt'><img src={tabTxtImg3} alt="인원아이콘" /> {meetUp.bm_m_people}/ {meetUp.bm_m_people_all}</span>
           </p>
 
-          {
-            meetupChange ?
-              (<p onClick={meetupNum}>
-                <ButtonWide text={'참석하기'} />
-              </p>) : (<p className='meetup-toggle-btn' onClick={meetupNum}>
-                <ButtonWide text={'참석취소'} />
-              </p>)
 
-          }
+          {button}
+
 
           {/* {
             meetupChange ?
@@ -141,14 +153,13 @@ const MeetupDetail = () => {
               </p>)
           } */}
 
-
           <HeartComment heart={meetUp.bm_heart} comment={meetUp.bm_comment} />
         </div>
 
         {/* 댓글 */}
-        <Chat />
+        <Chat p_board_cate={'meetup'} p_board_no={bm_no} />
       </div>
-    </section>
+    </section >
 
   );
 };

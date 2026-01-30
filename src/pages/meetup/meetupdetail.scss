@@ -86,5 +86,9 @@
     .meetup-toggle-btn .btn-wide {
       background: $color-sub-orange;
     }
+
+    .meetup-toggle-btn-close .btn-wide {
+      filter: contrast(0.8);
+    }
   }
 }
