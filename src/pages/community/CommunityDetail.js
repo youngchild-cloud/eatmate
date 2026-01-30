@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 // 전역 스타일
 import './CommunityDetail.scss';
 
@@ -6,6 +5,9 @@ import './CommunityDetail.scss';
 import TitleCenter from 'components/common/TitleCenter';
 import HeartComment from 'components/common/HeartComment';
 import Chat from 'components/common/Chat';
+import { dateFormat } from 'utils/dateFormat'
+
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -43,7 +45,7 @@ function CommunityDetail(props) {
               <p className='txt-box'>
                 <span className="nick">{item.u_nick}</span>
                 |
-                <span className="upload-time">{item.bc_date}</span>
+                <span className="upload-time">{dateFormat(item.bc_date)}</span>
               </p>
             </div>
 

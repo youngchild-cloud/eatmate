@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
 import './CpCommunity.scss';
 import HeartComment from 'components/common/HeartComment';
+import { dateFormat } from 'utils/dateFormat'
+
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -9,6 +11,7 @@ const CpCommunity = ({ item }) => {
 
   // 자유게시판 리스트 조회
   const loadData = () => {
+    //서버 연결용 axios.get('http://localhost:9070/communitylist').then(res => {
     axios.get('http://localhost:9070/communitylist').then(res => {
       setData(res.data);
     })
@@ -36,7 +39,7 @@ const CpCommunity = ({ item }) => {
                 <p className='txt-box'>
                   <span className="nick">{item.u_nick}</span>
                   |
-                  <span className="upload-time">{item.bc_date}</span>
+                  <span className="upload-time">{dateFormat(item.bc_date)}</span>
                 </p>
               </div>
 
