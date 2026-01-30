@@ -8,6 +8,7 @@ import Search from 'components/review/Search';
 import CpRestaurant from 'components/review/CpRestaurant';
 
 const RestaurantList = () => {
+  // 맛집 카테고리
   const [addAct, setAddAct] = useState(false);
   const { cate } = useParams();
   const cateMap = {
@@ -21,6 +22,15 @@ const RestaurantList = () => {
     cate8: '기타',
   };
   const category = cateMap[cate];
+
+  // 필터 act
+  const [activeFilter, setActiveFilter] = useState('rating');
+
+  const handleClick = (filter) => {
+    setAddAct(false);
+
+    setActiveFilter(filter);
+  };
 
   return (
     <>
@@ -37,16 +47,41 @@ const RestaurantList = () => {
           <div className="review-title-box">
             <h3 class="review-title">{category}</h3>
             <div className={`filter ${addAct ? 'act' : ''}`}> {/* act */}
-              <p className='filter-tit' onClick={() => setAddAct(prev => !prev)}><button>평점순</button></p>
-              <ul className='filter-list'>
-                <li className='act'><button>평점순</button></li>
-                <li><button>리뷰순</button></li>
-                <li><button>이름순</button></li>
+              <p className='filter-tit' onClick={() => setAddAct(prev => !prev)}>
+                <button>
+                  {
+                    activeFilter === 'rating' ?
+                      '평점순' :
+                      (activeFilter === 'review' ? '리뷰순' : '이름순')
+                  }
+                </button>
+              </p>
+              <ul className="filter-list">
+                <li
+                  className={activeFilter === 'rating' ? 'act' : ''}
+                  onClick={() => handleClick('rating')}
+                >
+                  <button>평점순</button>
+                </li>
+
+                <li
+                  className={activeFilter === 'review' ? 'act' : ''}
+                  onClick={() => handleClick('review')}
+                >
+                  <button>리뷰순</button>
+                </li>
+
+                <li
+                  className={activeFilter === 'name' ? 'act' : ''}
+                  onClick={() => handleClick('name')}
+                >
+                  <button>이름순</button>
+                </li>
               </ul>
             </div>
           </div>
 
-          <CpRestaurant />
+          <CpRestaurant category={category} filter={activeFilter} />
         </div>
       </section>
     </>

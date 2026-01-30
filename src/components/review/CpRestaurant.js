@@ -4,39 +4,26 @@ import axios from 'axios';
 
 import './CpRestaurant.scss'
 
-const CpRestaurant = () => {
+const CpRestaurant = ({ category, filter }) => {
   const [restaurantData, setRestaurantData] = useState([]);
-  const { cate } = useParams();
-  const cateMap = {
-    cate1: '한식',
-    cate2: '일식',
-    cate3: '중식',
-    cate4: '양식',
-    cate5: '분식',
-    cate6: '카페',
-    cate7: '디저트',
-    cate8: '기타',
-  };
-  const category = cateMap[cate];
+  const restaurantInfo = { // props로 받은 값을 백엔드로 넘김
+    category: category, // 맛집 카테고리(한식, 일식...)
+    filter: filter // 보여지는 순서(평점순, 리뷰순, 이름순)
+  }
 
   const loadData = async () => {
     try {
-      const res = await axios.post(
-        'http://localhost:9070/restaurant',
-        { cate: category }
-      );
+      const res = await axios.post('http://localhost:9070/restaurant', restaurantInfo);
 
       setRestaurantData(res.data);
     } catch (err) {
-      console.log(err);
+      console.log(err.response.data.error);
     }
   };
 
   useEffect(() => {
-    if (category) {
-      loadData();
-    }
-  }, [category]);
+    loadData();
+  }, [restaurantInfo]);
 
   return (
     <>
