@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
@@ -10,19 +11,16 @@ import './RestaurantDetail.scss';
 
 import Rank5 from 'components/review/Rank5';
 
+import { dateFormat } from 'utils/dateFormat';
+
 import iconBack from 'assets/images/icon_back.png';
 import icon01 from 'assets/images/review/icon_restaurant-detail01.png';
 import icon02 from 'assets/images/review/icon_restaurant-detail02.png';
 import icon03 from 'assets/images/review/icon_restaurant-detail03.png';
 import icon04 from 'assets/images/review/icon_restaurant-detail04.png';
-import axios from 'axios';
 
 const RestaurantDetail = () => {
-  const [restaurantData, setRestaurantData] = useState('');
-  const { rt_no } = useParams();
-  const navigate = useNavigate();
-
-  // main에 다른 스타일을 주기 위해서 body에 클래스 추가
+  // main에 다른 스타일을 주기 위해서 body 클래스 추가
   useEffect(() => {
     document.body.classList.add('restaurant-detail');
 
@@ -31,19 +29,47 @@ const RestaurantDetail = () => {
     }
   }, [])
 
-  // db 데이터 연결
-  const loadData = async () => {
+  // 공유버튼 클릭시 현재 링크 복사
+  const clip = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      alert("링크 복사가 완료되었습니다.");
+    } catch (err) {
+      alert("복사에 실패했습니다. 다시 시도해주세요.");
+    }
+  };
+
+  // 데이터 연결
+  const [restaurantData, setRestaurantData] = useState('');
+  const [reviewData, setReviewData] = useState([]);
+  const { rt_no } = useParams();
+  const navigate = useNavigate();
+
+  // 맛집 데이터 연결
+  const rtLoadData = async () => {
     try {
       const res = await axios.get(`http://localhost:9070/restaurant/detail/${rt_no}`);
 
       setRestaurantData(res.data);
     } catch (err) {
-      console.log(err);
+      console.log(err.response.data.error);
+    }
+  }
+
+  // 리뷰 데이터 연결
+  const rvLoadData = async () => {
+    try {
+      const res = await axios.get(`http://localhost:9070/review/${rt_no}`);
+
+      setReviewData(res.data);
+    } catch (err) {
+      console.log(err.response.data.error);
     }
   }
 
   useEffect(() => {
-    loadData();
+    rtLoadData();
+    rvLoadData();
   }, [rt_no])
 
   return (
@@ -68,21 +94,46 @@ const RestaurantDetail = () => {
                 modules={[Autoplay, Pagination]}
                 className="restaurant-detail-swiper"
               >
-                <SwiperSlide>
-                  <div className="img-box">
-                    <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img}`} alt={`$${restaurantData.rt_no}`} />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="img-box">
-                    <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img}`} alt={`$${restaurantData.rt_no}`} />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="img-box">
-                    <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img}`} alt={`$${restaurantData.rt_no}`} />
-                  </div>
-                </SwiperSlide>
+                {
+                  restaurantData.rt_img &&
+                  <SwiperSlide>
+                    <div className="img-box">
+                      <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img}`} alt={`${restaurantData.rt_name} 메인`} />
+                    </div>
+                  </SwiperSlide>
+                }
+                {
+                  restaurantData.rt_img2 &&
+                  <SwiperSlide>
+                    <div className="img-box">
+                      <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img2}`} alt={`${restaurantData.rt_name} 메인`} />
+                    </div>
+                  </SwiperSlide>
+                }
+                {
+                  restaurantData.rt_img3 &&
+                  <SwiperSlide>
+                    <div className="img-box">
+                      <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img3}`} alt={`${restaurantData.rt_name} 메인`} />
+                    </div>
+                  </SwiperSlide>
+                }
+                {
+                  restaurantData.rt_img4 &&
+                  <SwiperSlide>
+                    <div className="img-box">
+                      <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img4}`} alt={`${restaurantData.rt_name} 메인`} />
+                    </div>
+                  </SwiperSlide>
+                }
+                {
+                  restaurantData.rt_img5 &&
+                  <SwiperSlide>
+                    <div className="img-box">
+                      <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img5}`} alt={`${restaurantData.rt_name} 메인`} />
+                    </div>
+                  </SwiperSlide>
+                }
               </Swiper>
             </article>
 
@@ -115,7 +166,7 @@ const RestaurantDetail = () => {
                     </button>
                   </li>
                   <li>
-                    <button>
+                    <button onClick={clip}>
                       <img src={icon04} alt="공유" />
                       <span>공유</span>
                     </button>
@@ -132,19 +183,22 @@ const RestaurantDetail = () => {
                 <Link to={'/write/review'} title='맛집 리뷰 글쓰기 페이지로 이동'>리뷰 쓰기 &gt;</Link>
               </div>
               <ul className='list'>
-                {/* 여기 작업해야함 */}
-                {/* <li>
-                  <Link to={'/review/detail'} title='리뷰 상세 페이지로 이동'>
-                    <div className="img-box">
-                      <img src={`${process.env.PUBLIC_URL}/images/review/restaurant-detail_review01.jpg`} alt="리뷰" />
-                    </div>
-                    <div className="txt-box">
-                      <p className='text'>크림파스타 넘맛있다 진짜 여기가 내 인생 맛집인 듯</p>
-                      <Rank5 num={'5'} />
-                      <span className='date'>2026.01.06</span>
-                    </div>
-                  </Link>
-                </li> */}
+                {
+                  reviewData.map(item => (
+                    <li key={item.br_no}>
+                      <Link to={`/review/detail/${item.br_no}`} title={`${item.rt_name} 리뷰 상세 페이지로 이동`}>
+                        <div className="img-box">
+                          <img src={`${process.env.PUBLIC_URL}/images/review/${item.br_img}`} alt={`${item.rt_name} 리뷰`} />
+                        </div>
+                        <div className="txt-box">
+                          <p className='text'>{item.br_desc}</p>
+                          <Rank5 num={item.br_rank} />
+                          <span className='date'>{dateFormat(item.br_date)}</span>
+                        </div>
+                      </Link>
+                    </li>
+                  ))
+                }
               </ul>
             </div>
           </section>
