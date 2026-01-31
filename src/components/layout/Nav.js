@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 import 'assets/scss/layout.scss';
 
@@ -12,13 +12,30 @@ import mypage from 'assets/images/icon_nav_mypage.png';
 const Nav = () => {
   const [navModal, setNavModal] = useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  // 로그인을 안 되어있다면 [글쓰기], [마이페이지] 진입 불가
+  const requireLogin = (e) => {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      e.preventDefault();
+      alert('로그인 후 사용 가능합니다.');
+      navigate('/login');
+      return false;
+    }
+    return true;
+  }
 
   // '글쓰기 버튼' 클릭시
   const handleWriteClick = (e) => {
-    e.preventDefault();
+    // 로그인 안 되어있을 경우
+    if (!requireLogin(e)) return;
 
+    // 로그인 되어있을 경우
+    e.preventDefault();
     setNavModal(true);
-  }
+  };
 
   // '모달 검정 배경' 클릭시
   const handleModalClick = (e) => {
@@ -83,6 +100,7 @@ const Nav = () => {
             <NavLink
               to="/mypage"
               className={({ isActive }) => (isActive ? 'act' : '')}
+              onClick={requireLogin}
             >
               <img src={mypage} alt="마이페이지" />
               마이페이지

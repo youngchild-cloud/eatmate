@@ -6,8 +6,11 @@ import Input from 'components/common/Input';
 import InputFile from 'components/common/InputFile';
 import InputTextarea from 'components/common/InputTextarea';
 import ButtonWide from 'components/common/ButtonWide';
+import { useRequireLogin } from 'utils/useRequireLogin';
 
 const WriteReview = () => {
+  useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
+
   const [reviewInput, setReviewInput] = useState({
     br_user_no: '',
     br_rank: '',

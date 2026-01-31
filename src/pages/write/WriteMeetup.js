@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 import TitleCenter from 'components/common/TitleCenter';
 import Input from 'components/common/Input';
 import InputFile from 'components/common/InputFile';
 import InputTextarea from 'components/common/InputTextarea';
 import ButtonWide from 'components/common/ButtonWide';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { useRequireLogin } from 'utils/useRequireLogin';
 
 const WriteMeetup = () => {
+  useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
 
   const [form, setForm] = useState({
     bm_board_cate: '',
@@ -28,7 +30,6 @@ const WriteMeetup = () => {
     bm_comment: '',
     bm_date: ''
   });
-
   const navigate = useNavigate();
 
   const handleChange = (e) => {
