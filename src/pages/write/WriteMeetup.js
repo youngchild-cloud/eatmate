@@ -59,7 +59,13 @@ const WriteMeetup = () => {
         <form className='write-form' onSubmit={handleSubmit}>
           <Input type={'text'} name={'bm_m_res'} title={'맛집명'} onChange={handleChange} value={form.bm_m_res} />
 
-          <InputFile name={'m_file'} title={'사진'} />
+          <InputFile
+            name="m_file"
+            title="사진"
+            requiredSel="(선택)"
+            onChange={handleChange}
+            maxFiles={5}
+          />
 
           <Input type={'text'} name={'bm_title'} title={'제목'} onChange={handleChange} value={form.bm_title} />
 

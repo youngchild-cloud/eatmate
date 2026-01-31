@@ -2,7 +2,20 @@
 @use 'assets/scss/function' as *;
 
 .common-input-box__file {
+  .file-wrap {
+    display: flex;
+    align-items: center;
+    gap: vw-mo(14);
+  }
+
+  .preview-wrap {
+    display: flex;
+    align-items: center;
+    gap: vw-mo(14);
+  }
+
   label {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,19 +23,37 @@
     gap: vw-mo(10);
     width: vw-mo(100);
     height: vw-mo(100);
+    margin-bottom: 0;
     border: 1px solid $color-gray-light;
     border-radius: vw-mo(6);
     color: $color-gray-light;
-    font-size: vw-mo(24);
     cursor: pointer;
   }
 
-  label::before {
-    content: '';
-    display: block;
+  .icon {
     width: vw-mo(28);
     height: vw-mo(24);
+    margin: 0;
     background: url('../../assets/images/write/icon_picture.png') no-repeat center / contain;
+  }
+
+  .txt {
+    margin: 0;
+    font-size: vw-mo(24);
+  }
+
+  .img-box {
+    overflow: hidden;
+    width: vw-mo(100);
+    height: vw-mo(100);
+    border: 1px solid $color-gray-light;
+    border-radius: vw-mo(6);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   input {

@@ -52,10 +52,11 @@ const WriteReview = () => {
           />
 
           <InputFile
-            name={'br_img'}
-            title={'사진'}
-            value={reviewInput.br_img}
+            name="br_img"
+            title="사진"
+            requiredSel="(선택)"
             onChange={handleChange}
+            maxFiles={5}
           />
 
           <InputTextarea
