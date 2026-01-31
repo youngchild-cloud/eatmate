@@ -1,28 +1,122 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import './Join.scss';
 
 import TitleCenter from 'components/common/TitleCenter';
 import Input from 'components/common/Input';
 import InputTextarea from 'components/common/InputTextarea';
 import ButtonWide from 'components/common/ButtonWide';
+import InputFile from 'components/common/InputFile';
+import { useNavigate } from 'react-router-dom';
 
 const Join = () => {
+  const [joinInput, setJoinInput] = useState({
+    u_id: '',
+    u_pw: '',
+    u_pw2: '',
+    u_desc: ''
+  });
+  const [errPwText, setErrPwText] = useState('');
+  const [isPwMatch, setIsPwMatch] = useState(false);
+  const navigate = useNavigate();
+
+  // input에 입력하면 value 변경
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setJoinInput(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  // form 유효성검사 > 비밀번호 일치 확인
+  useEffect(() => {
+    if (!joinInput.u_pw2) {
+      setErrPwText('동일한 비밀번호를 입력해주세요.');
+      return;
+    }
+
+    if (joinInput.u_pw === joinInput.u_pw2) {
+      setErrPwText('입력하신 비밀번호가 일치합니다.');
+      setIsPwMatch(true);
+    } else {
+      setErrPwText('입력하신 비밀번호가 일치하지 않습니다. 다시 확인해주세요.');
+      setIsPwMatch(false);
+    }
+  }, [joinInput.u_pw, joinInput.u_pw2]);
+
+  // submit 버튼 클릭시 회원가입이 되도록
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!isPwMatch) {
+      alert(errPwText);
+      return;
+    }
+
+    try {
+      await axios.post('http://localhost:9070/join', joinInput);
+
+      alert('회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.');
+      navigate('/login');
+    } catch (err) {
+      alert(err.response.data.error)
+    }
+  }
+
   return (
     <section className='join'>
       <div className="inner">
-        <TitleCenter title={'회원가입'} />
+        <TitleCenter title='회원가입' />
 
-        <form>
-          <div className="id-area">
-            <Input type={'text'} name={'j_id'} title={'아이디'} requiredReq={'(필수)'} />
-            <button type="button">중복 확인</button>
-          </div>
-          <Input type={'password'} name={'j_pw'} title={'비밀번호'} requiredReq={'(필수)'} />
-          <Input type={'password'} name={'j_pw2'} title={'비밀번호 확인'} requiredReq={'(필수)'} />
-          <p className='pw-text'>* 입력하신 비밀번호가 일치합니다.</p>
-          <Input type={'text'} name={'j_nick'} title={'닉네임'} requiredReq={'(필수)'} />
-          <InputTextarea name={'j_nick'} title={'내 소개글'} requiredSel={'(선택)'} />
+        <form onSubmit={handleSubmit}>
+          <Input
+            type='text'
+            name='u_id'
+            title='아이디'
+            requiredReq='(필수)'
+            value={joinInput.u_id}
+            onChange={handleChange}
+          />
 
-          <ButtonWide type={'submit'} text={'가입하기'} />
+          <Input
+            type='password'
+            name='u_pw'
+            title='비밀번호'
+            requiredReq='(필수)'
+            value={joinInput.u_pw}
+            onChange={handleChange}
+          />
+
+          <Input
+            type='password'
+            name='u_pw2'
+            title='비밀번호 확인'
+            requiredReq='(필수)'
+            value={joinInput.u_pw2}
+            onChange={handleChange}
+          />
+          <p className='pw-text' style={{ color: isPwMatch ? 'blue' : 'red' }}>* {errPwText}</p>
+
+          <InputFile
+            name="u_pic"
+            title="프로필 사진"
+            requiredSel="(선택)"
+            onChange={handleChange}
+            maxFiles={1}
+          />
+
+          <InputTextarea
+            name='u_desc'
+            title='내 소개글'
+            requiredSel='(선택)'
+            value={joinInput.u_desc}
+            onChange={handleChange}
+          />
+
+          <ButtonWide type='submit' text='가입하기' />
         </form>
       </div>
     </section>

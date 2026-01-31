@@ -8,7 +8,7 @@ const Input = ({ type, name, title, requiredReq, requiredSel, readonly, onChange
         {requiredSel && <span className='sel'>{requiredSel}</span>}
         {title}
       </label>
-      <input type={type} name={name} id={name} placeholder={`${title}을(를) 입력해 주세요.`} readOnly={readonly && true} onChange={onChange} />
+      <input type={type} name={name} id={name} placeholder={`${title}을(를) 입력해 주세요.`} readOnly={readonly && true} onChange={onChange} required={requiredSel ? false : true} />
     </div>
   );
 };
