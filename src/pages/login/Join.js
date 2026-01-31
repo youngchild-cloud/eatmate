@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import './Join.scss';
@@ -8,15 +9,15 @@ import Input from 'components/common/Input';
 import InputTextarea from 'components/common/InputTextarea';
 import ButtonWide from 'components/common/ButtonWide';
 import InputFile from 'components/common/InputFile';
-import { useNavigate } from 'react-router-dom';
 
 const Join = () => {
   const [joinInput, setJoinInput] = useState({
     u_id: '',
     u_pw: '',
     u_pw2: '',
-    u_desc: ''
+    u_desc: '',
   });
+  const [profileFile, setProfileFile] = useState(null);
   const [errPwText, setErrPwText] = useState('');
   const [isPwMatch, setIsPwMatch] = useState(false);
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ const Join = () => {
   useEffect(() => {
     if (!joinInput.u_pw2) {
       setErrPwText('동일한 비밀번호를 입력해주세요.');
+      setIsPwMatch(false);
       return;
     }
 
@@ -56,15 +58,23 @@ const Join = () => {
       return;
     }
 
+    const formData = new FormData();
+    formData.append('u_id', joinInput.u_id);
+    formData.append('u_pw', joinInput.u_pw);
+    formData.append('u_desc', joinInput.u_desc);
+
+    if (profileFile) formData.append('u_pic', profileFile); // key 이름 중요(백엔드와 동일)
+
     try {
-      await axios.post('http://localhost:9070/join', joinInput);
+      await axios.post('http://localhost:9070/join', formData);
 
       alert('회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.');
       navigate('/login');
     } catch (err) {
-      alert(err.response.data.error)
+      alert(err.response?.data?.error || '회원가입 실패');
     }
-  }
+  };
+
 
   return (
     <section className='join'>
@@ -98,14 +108,16 @@ const Join = () => {
             value={joinInput.u_pw2}
             onChange={handleChange}
           />
-          <p className='pw-text' style={{ color: isPwMatch ? 'blue' : 'red' }}>* {errPwText}</p>
+          <p className='pw-text' style={{ color: isPwMatch ? 'blue' : 'red' }}>
+            * {errPwText}
+          </p>
 
           <InputFile
             name="u_pic"
             title="프로필 사진"
             requiredSel="(선택)"
-            onChange={handleChange}
             maxFiles={1}
+            onFilesChange={(files) => setProfileFile(files[0] || null)}
           />
 
           <InputTextarea

@@ -6,23 +6,25 @@ const InputFile = ({
   title,
   requiredReq,
   requiredSel,
-  onChange,
-  maxFiles = 1, // 기본 1장
+  maxFiles = 1,
+  onFilesChange,
 }) => {
-  const [previews, setPreviews] = useState([]); // 배열로
+  const [previews, setPreviews] = useState([]);
 
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files || []);
-    if (files.length === 0) return;
+    if (files.length === 0) {
+      setPreviews([]);
+      onFilesChange && onFilesChange([]);
+      return;
+    }
 
-    // 최대 개수 제한
     const limited = files.slice(0, maxFiles);
 
-    // 미리보기 URL 생성
     const urls = limited.map((file) => URL.createObjectURL(file));
     setPreviews(urls);
 
-    onChange && onChange(e);
+    onFilesChange && onFilesChange(limited); // 부모에게 파일 전달
   };
 
   // 메모리 누수 방지(중요)
