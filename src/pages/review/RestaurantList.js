@@ -45,7 +45,7 @@ const RestaurantList = () => {
       <section className='restaurant-list'>
         <div className="inner">
           <div className="review-title-box">
-            <h3 class="review-title">{category}</h3>
+            <h3 className="review-title">{category}</h3>
             <div className={`filter ${addAct ? 'act' : ''}`}> {/* act */}
               <p className='filter-tit' onClick={() => setAddAct(prev => !prev)}>
                 <button>
