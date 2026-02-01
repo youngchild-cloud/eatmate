@@ -11,7 +11,7 @@ function CommunityList(props) {
 
           {/* 우측 리스트 */}
           <div className='admin-list'>
-            <TitleBox title="자유게시판 목록" linkto="/admin/board/community/create" btnname="자유게시판 등록" btnshow />
+            <TitleBox title="자유게시판 목록" />
 
             <table>
               <caption>자유게시판 목록</caption>

@@ -13,6 +13,7 @@
   // 우측 콘텐츠
   .admin-list {
     width: 100%;
+    padding: 60px 0;
 
     table {
       width: 100%;
@@ -98,16 +99,7 @@
   // 우측 콘텐츠 서식
   .right-content {
     width: 100%;
-
-    .list-top {
-      display: flex;
-      justify-content: space-between;
-      margin: 60px 0px;
-
-      h3 {
-        font-weight: bold;
-      }
-    }
+    padding: 60px 0;
   }
 
   form {

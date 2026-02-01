@@ -11,7 +11,7 @@ function ReviewList(props) {
 
           {/* 우측 리스트 */}
           <div className='admin-list'>
-            <TitleBox title="맛집 리뷰 목록" linkto="/admin/board/review/create" btnname="맛집 리뷰 등록" btnshow />
+            <TitleBox title="맛집 리뷰 목록" />
 
             <table>
               <caption>맛집 리뷰 목록</caption>

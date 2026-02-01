@@ -11,7 +11,7 @@ function MeetupList(props) {
 
           {/* 우측 리스트 */}
           <div className='admin-list'>
-            <TitleBox title="맛집 탐방 목록" linkto="/admin/board/meetup/create" btnname="맛집 탐방 등록" btnshow />
+            <TitleBox title="맛집 탐방 목록" />
 
             <table>
               <caption>맛집 탐방 목록</caption>
