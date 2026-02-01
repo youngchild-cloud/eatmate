@@ -13,7 +13,7 @@ function InputComment({ image }) {
   return (
     <div className='comm-input'>
       <div className="input-img">
-        <img src={`${process.env.PUBLIC_URL}/images/user/${image}`} alt="기본프로필" />
+        <img src={`${process.env.PUBLIC_URL}/images/user/default-user.png`} alt="기본프로필" />
       </div>
 
       <form className="input-form" onSubmit={handleSubmit}>
