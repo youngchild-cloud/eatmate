@@ -66,6 +66,7 @@ const InputFile = ({
           accept="image/*"
           multiple={maxFiles > 1}
           onChange={handleFileChange}
+          required={requiredSel ? false : true}
         />
       </div>
     </div>

@@ -8,7 +8,15 @@ const InputTextarea = ({ name, title, requiredReq, requiredSel, onChange }) => {
         {requiredSel ? <span className='sel'>{requiredSel}</span> : ''}
         {title}
       </label>
-      <textarea name={name} id={name} cols={10} rows={5} placeholder={`${title}을(를) 입력해 주세요.`} onChange={onChange} ></textarea>
+      <textarea
+        name={name}
+        id={name}
+        cols={10}
+        rows={5}
+        placeholder={`${title}을(를) 입력해 주세요.`}
+        onChange={onChange}
+        required={requiredSel ? false : true}
+      ></textarea>
     </div>
   );
 };
