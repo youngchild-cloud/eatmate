@@ -22,6 +22,14 @@ const Join = () => {
   const [isPwMatch, setIsPwMatch] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // 페이지에 들어왔을 때 로그인 토큰이 있다면 메인 페이지로 강제 이동
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/');
+    }
+  }, []);
+
   // input에 입력하면 value 변경
   const handleChange = (e) => {
     const { name, value } = e.target;
