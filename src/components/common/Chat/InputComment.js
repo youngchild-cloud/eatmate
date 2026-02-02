@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './InputComment.scss';
+import { jwtDecode } from 'jwt-decode';
 
 function InputComment({ image }) {
+  const token = localStorage.getItem('token');
+  const decoded = token ? jwtDecode(token) : '';
   const [text, setText] = useState('');
 
   const handleSubmit = (e) => {
@@ -13,7 +16,12 @@ function InputComment({ image }) {
   return (
     <div className='comm-input'>
       <div className="input-img">
-        <img src={`${process.env.PUBLIC_URL}/images/user/default-user.png`} alt="기본프로필" />
+        {
+          decoded.token_profile ?
+            <img src={`${process.env.PUBLIC_URL}/images/user/${decoded.token_profile}`} alt={`${decoded.token_nick} 프로필`} />
+            :
+            <img src={`${process.env.PUBLIC_URL}/images/user/user-default.png`} alt="프로필" />
+        }
       </div>
 
       <form className="input-form" onSubmit={handleSubmit}>
