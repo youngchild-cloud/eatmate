@@ -36,11 +36,9 @@ const MeetupDetail = () => {
     bm_comment: '',
     bm_date: '',
     u_nick: '',
-    u_pic: ''
+    u_pic: '',
+    u_no: ''
   });
-
-
-
 
 
   const [meetupChange, setMeetupChange] = useState(true);
@@ -64,55 +62,106 @@ const MeetupDetail = () => {
       .catch(err => console.log('조회오류', err));
   }, [bm_no])
 
-  const meetupNum = () => {
-    setMeetUp(prev => {
-      const num = prev.bm_m_people;
-      const max = prev.bm_m_people_all;
+  const u_no = localStorage.getItem('u_no');
+  const [joined, setJoined] = useState(false);
 
 
-      if (num < max) {
-        setMeetupChange(false)
-        return {
-          ...prev,
-          bm_m_people: num + 1
-        };
+
+  useEffect(() => {
+    if (!u_no) return;
+    axios.get('http://localhost:9070/meetup/join/check', {
+      params: {
+        bm_no,
+        u_no
       }
-      if (num >= max) {
-        setMeetupChange(true)
-        return {
-          ...prev,
-          bm_m_people: num - 1
-        }
-      }
-      // if (num === max && MeetupChange) {
-
-      //   alert('마감된 탐방입니다.');
-      //   return {
-      //     ...meetUp,
-      //     bm_m_people: num + 0
-      //   };
-      // }
     })
-  }
+      .then(res => {
+        setJoined(res.data.joined)
+      });
+  }, [bm_no, u_no]);
 
-  let button;
-  if (!meetupChange) {
-    button = (
-      <p className='meetup-toggle-btn' onClick={meetupNum}>
-        <ButtonWide text={'참석취소'} />
-      </p>
-    )
-  } else if (meetupMax) {
-    button = (
-      <p className='meetup-toggle-btn-close' onClick={meetupNum}>
-        <ButtonWide text={'참석마감'} disabled />
-      </p>)
-  } else {
-    button = (
-      <p onClick={meetupNum}>
-        <ButtonWide text={'참석하기'} />
-      </p>)
-  }
+  const handleJoin = () => {
+    axios.post(`http://localhost:9070/meetup/join`, { bm_no, u_no })
+      .then(() => {
+        setJoined(true);
+        setMeetUp(prev => ({
+          ...prev,
+          bm_m_people: Number(prev.bm_m_people) + 1
+        }));
+      })
+      .catch(err => {
+        alert('참석실패');
+      });
+  };
+
+  const handleCancel = () => {
+    axios.delete(`http://localhost:9070/meetup/${bm_no}/join`, {
+      data: { u_no }
+    })
+      .then(() => {
+        setJoined(false);
+        setMeetUp(prev => ({
+          ...prev,
+          bm_m_people: Number(prev.bm_m_people) - 1
+        }));
+      })
+      .catch(err => {
+        alert('참석취소실패');
+      });
+  };
+
+
+  // const meetupNum = () => {
+  //   setMeetUp(prev => {
+  //     const num = prev.bm_m_people;
+  //     const max = prev.bm_m_people_all;
+
+
+  //     if (num < max) {
+  //       setMeetupChange(false)
+  //       return {
+  //         ...prev,
+  //         bm_m_people: num + 1
+  //       };
+  //     }
+  //     if (num >= max) {
+  //       setMeetupChange(true)
+  //       return {
+  //         ...prev,
+  //         bm_m_people: num - 1
+  //       }
+  //     }
+  // if (num === max && MeetupChange) {
+
+  //   alert('마감된 탐방입니다.');
+  //   return {
+  //     ...meetUp,
+  //     bm_m_people: num + 0
+  //   };
+  // }
+  // })
+  //   }
+
+  // let button;
+
+
+  // if (!meetupChange && u_no) {
+  //   button = (
+  //     <p className='meetup-toggle-btn' onClick={meetupNum}>
+  //       <ButtonWide text={'참석취소'} />
+  //     </p>
+  //   )
+  // } else if (meetupMax) {
+  //   button = (
+  //     <p className='meetup-toggle-btn-close' onClick={meetupNum}>
+  //       <ButtonWide text={'참석마감'} disabled />
+  //     </p>)
+  // } else if (meetupChange && u_no) {
+  //   button = (
+  //     <p onClick={meetupNum}>
+  //       <ButtonWide text={'참석하기'} />
+  //     </p>)
+  // }
 
 
 
@@ -139,8 +188,19 @@ const MeetupDetail = () => {
             <span className='content-info-txt'><img src={tabTxtImg3} alt="인원아이콘" /> {meetUp.bm_m_people}/ {meetUp.bm_m_people_all}</span>
           </p>
 
+          {joined ?
+            (<p onClick={handleCancel}>
+              <ButtonWide text={'참석취소'} />
+            </p>) : (meetupMax ?
 
-          {button}
+              (<p>
+                <ButtonWide text={'참석마감'} disabled />
+              </p>) :
+
+              (<p onClick={handleJoin}>
+                <ButtonWide text={'참석하기'} />
+              </p>))
+          }
 
 
           {/* {

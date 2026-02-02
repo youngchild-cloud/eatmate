@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 
 import TitleCenter from 'components/common/TitleCenter';
 import Input from 'components/common/Input';
@@ -12,9 +13,13 @@ import { useRequireLogin } from 'utils/useRequireLogin';
 const WriteMeetup = () => {
   useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
 
+  const token = localStorage.getItem('token');
+  const decoded = token ? jwtDecode(token) : '';
+
+  console.log(decoded)
   const [form, setForm] = useState({
     bm_board_cate: '',
-    bm_user_no: '',
+    bm_user_no: decoded.token_no,
     bm_img: '',
     bm_img2: '',
     bm_img3: '',
@@ -53,7 +58,7 @@ const WriteMeetup = () => {
   }
 
   return (
-    <section className='write-meetup'>
+    <section className='write-meetup' >
       <div className="inner">
         <TitleCenter title={'맛집 탐방 글쓰기'} />
 
@@ -79,7 +84,7 @@ const WriteMeetup = () => {
           <ButtonWide type={'submit'} text={'등록하기'} />
         </form>
       </div>
-    </section>
+    </section >
   );
 };
 
