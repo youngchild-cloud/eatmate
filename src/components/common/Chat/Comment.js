@@ -6,7 +6,7 @@ function Comment({ profil, nick, txt, time }) {
       {/* ------게시글 댓글------ */}
       <li>
         <div className="comment-img">
-          <img src={`${process.env.PUBLIC_URL}/images/user/${profil}`} alt={`${nick} 프로필`} />
+          <img src={`http://localhost:9070/uploads/user/${profil}`} alt={`${nick} 프로필`} />
         </div>
 
         <div className="comment-content">

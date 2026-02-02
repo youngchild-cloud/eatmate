@@ -18,9 +18,9 @@ function InputComment({ image }) {
       <div className="input-img">
         {
           decoded.token_profile ?
-            <img src={`${process.env.PUBLIC_URL}/images/user/${decoded.token_profile}`} alt={`${decoded.token_nick} 프로필`} />
+            <img src={`http://localhost:9070/uploads//user/${decoded.token_profile}`} alt={`${decoded.token_nick} 프로필`} />
             :
-            <img src={`${process.env.PUBLIC_URL}/images/user/user-default.png`} alt="프로필" />
+            <img src={`http://localhost:9070/uploads//user/user-default.png`} alt="프로필" />
         }
       </div>
 

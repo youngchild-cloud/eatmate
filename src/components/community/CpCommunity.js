@@ -33,7 +33,7 @@ const CpCommunity = ({ item }) => {
               <div className="comm-top">
                 {/* 프로필 사진 public */}
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/user/${item.u_pic}`} alt={`${item.u_nick} 프로필`}/>
+                  <img src={`http://localhost:9070/uploads/user/${item.u_pic}`} alt={`${item.u_nick} 프로필`} />
                 </div>
                 {/* 닉네임 + 등록시간 */}
                 <p className='txt-box'>

@@ -39,7 +39,7 @@ const ReviewDetail = () => {
           <article className="review-con" key={reviewData.br_no}>
             <div className="profile-area">
               <div className="img-box">
-                <img src={`${process.env.PUBLIC_URL}/images/user/${reviewData.u_pic}`} alt={`${reviewData.u_nick} 프로필`} />
+                <img src={`http://localhost:9070/uploads//user/${reviewData.u_pic}`} alt={`${reviewData.u_nick} 프로필`} />
               </div>
               <div className="txt-box">
                 <strong className='name'>
