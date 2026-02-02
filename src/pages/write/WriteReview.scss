@@ -1,0 +1,43 @@
+@use 'assets/scss/variables' as *;
+@use 'assets/scss/function' as *;
+
+.write-review {
+  .rt-area {
+    position: relative;
+
+    .common-input-box {
+      margin-bottom: vw-mo(20);
+    }
+  }
+
+  .rt-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    li {
+      overflow: hidden;
+      margin-top: -1px;
+      background: $color-white-gray;
+      border: 1px solid $color-gray-light;
+      color: $color-gray-light;
+    }
+
+    li:first-child {
+      border-radius: vw-mo(6) vw-mo(6) 0 0;
+    }
+
+    li:last-child {
+      border-radius: 0 0 vw-mo(6) vw-mo(6);
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: vw-mo(23) vw-mo(20);
+      font-size: vw-mo(24);
+      text-align: left;
+    }
+  }
+}

@@ -98,7 +98,7 @@ const RestaurantDetail = () => {
                   restaurantData.rt_img &&
                   <SwiperSlide>
                     <div className="img-box">
-                      <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img}`} alt={`${restaurantData.rt_name} 메인`} />
+                      <img src={`http://localhost:9070/uploads/review/${restaurantData.rt_img}`} alt={`${restaurantData.rt_name} 메인`} />
                     </div>
                   </SwiperSlide>
                 }
@@ -106,7 +106,7 @@ const RestaurantDetail = () => {
                   restaurantData.rt_img2 &&
                   <SwiperSlide>
                     <div className="img-box">
-                      <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img2}`} alt={`${restaurantData.rt_name} 메인`} />
+                      <img src={`http://localhost:9070/uploads/review/${restaurantData.rt_img2}`} alt={`${restaurantData.rt_name} 메인`} />
                     </div>
                   </SwiperSlide>
                 }
@@ -114,7 +114,7 @@ const RestaurantDetail = () => {
                   restaurantData.rt_img3 &&
                   <SwiperSlide>
                     <div className="img-box">
-                      <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img3}`} alt={`${restaurantData.rt_name} 메인`} />
+                      <img src={`http://localhost:9070/uploads/review/${restaurantData.rt_img3}`} alt={`${restaurantData.rt_name} 메인`} />
                     </div>
                   </SwiperSlide>
                 }
@@ -122,7 +122,7 @@ const RestaurantDetail = () => {
                   restaurantData.rt_img4 &&
                   <SwiperSlide>
                     <div className="img-box">
-                      <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img4}`} alt={`${restaurantData.rt_name} 메인`} />
+                      <img src={`http://localhost:9070/uploads/review/${restaurantData.rt_img4}`} alt={`${restaurantData.rt_name} 메인`} />
                     </div>
                   </SwiperSlide>
                 }
@@ -130,7 +130,7 @@ const RestaurantDetail = () => {
                   restaurantData.rt_img5 &&
                   <SwiperSlide>
                     <div className="img-box">
-                      <img src={`${process.env.PUBLIC_URL}/images/review/${restaurantData.rt_img5}`} alt={`${restaurantData.rt_name} 메인`} />
+                      <img src={`http://localhost:9070/uploads/review/${restaurantData.rt_img5}`} alt={`${restaurantData.rt_name} 메인`} />
                     </div>
                   </SwiperSlide>
                 }
@@ -188,7 +188,7 @@ const RestaurantDetail = () => {
                     <li key={item.br_no}>
                       <Link to={`/review/detail/${item.br_no}`} title={`${item.rt_name} 리뷰 상세 페이지로 이동`}>
                         <div className="img-box">
-                          <img src={`${process.env.PUBLIC_URL}/images/review/${item.br_img}`} alt={`${item.rt_name} 리뷰`} />
+                          <img src={`http://localhost:9070/uploads/review/${item.br_img}`} alt={`${item.rt_name} 리뷰`} />
                         </div>
                         <div className="txt-box">
                           <p className='text'>{item.br_desc}</p>

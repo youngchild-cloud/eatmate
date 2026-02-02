@@ -30,7 +30,7 @@ const CpReview = () => {
             <li key={item.br_no}>
               <Link to={`/review/detail/${item.br_no}`}>
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/${item.br_img}`} alt={`${item.rt_name} 사진`} />
+                  <img src={`http://localhost:9070/uploads/review/${item.br_img}`} alt={`${item.rt_name} 사진`} />
                 </div>
                 <div className="txt-box">
                   <p className='text'>{item.br_desc}</p>

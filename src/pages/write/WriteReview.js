@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
+
+import './WriteReview.scss';
 
 import TitleCenter from 'components/common/TitleCenter';
 import Input from 'components/common/Input';
@@ -8,29 +11,57 @@ import InputFile from 'components/common/InputFile';
 import InputTextarea from 'components/common/InputTextarea';
 import ButtonWide from 'components/common/ButtonWide';
 import { useRequireLogin } from 'utils/useRequireLogin';
-import { useNavigate } from 'react-router-dom';
 
 const WriteReview = () => {
   useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
 
   const token = localStorage.getItem('token');
-  const decoded = jwtDecode(token);
+  const decoded = token ? jwtDecode(token) : '';
   const [reviewInput, setReviewInput] = useState({
     br_user_no: decoded.token_no,
     br_rank: '',
     br_desc: '',
     br_rt_no: '',
+    br_rt_name: '',
   });
   const [imgFile, setImgFile] = useState(null);
+  const [rtData, setRtData] = useState([]);
   const navigate = useNavigate();
+  const [showSelect, setShowSelect] = useState(false);
+
+  const rtSearch = async (word) => {
+    if (!word) return;
+
+    try {
+      const res = await axios.post('http://localhost:9070/restaurant/search', { word });
+
+      setRtData(res.data);
+    } catch (err) {
+      console.log(err.response.data.error);
+    }
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === 'br_rt_name') {
+      rtSearch(e.target.value);
+      setShowSelect(true);
+    }
 
     setReviewInput(prev => ({
       ...prev,
       [name]: value
     }))
+  }
+
+  const rtSelect = (rtNo, rtName) => {
+    setReviewInput(prev => ({
+      ...prev,
+      br_rt_no: rtNo,
+      br_rt_name: rtName,
+    }))
+    setShowSelect(false);
   }
 
   const handleSubmit = async (e) => {
@@ -60,13 +91,33 @@ const WriteReview = () => {
         <TitleCenter title='맛집 리뷰 글쓰기' />
 
         <form className='write-form' onSubmit={handleSubmit}>
-          <Input
-            type='text'
-            name='br_rt_no'
-            title='맛집명'
-            value={reviewInput.br_rt_no}
-            onChange={handleChange}
-          />
+          <div className="rt-area">
+            <Input
+              type='text'
+              name='br_rt_name'
+              title='맛집명'
+              value={reviewInput.br_rt_name}
+              onChange={handleChange}
+            />
+
+            {
+              (rtData && showSelect) &&
+              <ul className='rt-list'>
+                {
+                  rtData.map(item => (
+                    <li key={item.rt_no}>
+                      <button
+                        type='button'
+                        onClick={() => rtSelect(item.rt_no, item.rt_name)}
+                      >
+                        {item.rt_name}
+                      </button>
+                    </li>
+                  ))
+                }
+              </ul>
+            }
+          </div>
 
           <InputFile
             name="br_img"
