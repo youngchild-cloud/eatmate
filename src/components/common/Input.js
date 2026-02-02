@@ -1,11 +1,11 @@
 import './Input.scss';
 
-const Input = ({ type, name, title, requiredReq, requiredSel, readonly, value, onChange }) => {
+const Input = ({ type, name, title, RequiredInput, SelectInput, readonly, value, onChange }) => {
   return (
     <div className='common-input-box'>
       <label htmlFor={name}>
-        {requiredReq && <span className='req'>{requiredReq}</span>}
-        {requiredSel && <span className='sel'>{requiredSel}</span>}
+        {RequiredInput && <span className='req'>{RequiredInput}</span>}
+        {SelectInput && <span className='sel'>{SelectInput}</span>}
         {title}
       </label>
       <input
@@ -16,7 +16,7 @@ const Input = ({ type, name, title, requiredReq, requiredSel, readonly, value, o
         readOnly={readonly && true}
         value={value}
         onChange={onChange}
-        required={requiredSel ? false : true}
+        required={SelectInput ? false : true}
       />
     </div>
   );

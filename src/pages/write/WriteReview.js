@@ -140,6 +140,7 @@ const WriteReview = () => {
               id="br_rank"
               value={reviewInput.br_rank}
               onChange={handleChange}
+              required
             >
               <option value="">평점을 선택해 주세요</option>
               <option value="5">5점</option>

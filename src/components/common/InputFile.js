@@ -4,8 +4,8 @@ import './InputFile.scss';
 const InputFile = ({
   name,
   title,
-  requiredReq,
-  requiredSel,
+  RequiredInput,
+  SelectInput,
   maxFiles = 1,
   onFilesChange,
 }) => {
@@ -37,8 +37,8 @@ const InputFile = ({
   return (
     <div className='common-input-box common-input-box__file'>
       <strong className='label'>
-        {requiredReq && <span className='req'>{requiredReq}</span>}
-        {requiredSel && <span className='sel'>{requiredSel}</span>}
+        {RequiredInput && <span className='req'>{RequiredInput}</span>}
+        {SelectInput && <span className='sel'>{SelectInput}</span>}
         {title}
         {maxFiles > 2 ? `(최대 ${maxFiles}장 선택 가능)` : ''}
       </strong>
@@ -66,7 +66,7 @@ const InputFile = ({
           accept="image/*"
           multiple={maxFiles > 1}
           onChange={handleFileChange}
-          required={requiredSel ? false : true}
+          required={SelectInput ? false : true}
         />
       </div>
     </div>

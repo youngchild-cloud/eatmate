@@ -63,7 +63,7 @@ const WriteMeetup = () => {
           <InputFile
             name="m_file"
             title="사진"
-            requiredSel="(선택)"
+            SelectInput="(선택)"
             onChange={handleChange}
             maxFiles={5}
           />
