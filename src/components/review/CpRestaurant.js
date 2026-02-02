@@ -33,7 +33,7 @@ const CpRestaurant = ({ category, filter }) => {
             <li key={item.rt_no}>
               <Link to={`/review/restaurant/detail/${item.rt_no}`}>
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/${item.rt_img}`} alt={`${item.rt_name}`} />
+                  <img src={`http://localhost:9070/uploads/review/${item.rt_img}`} alt={`${item.rt_name}`} />
                 </div>
                 <div className="txt-box">
                   <h4 className="tit">{item.rt_name}</h4>

@@ -56,31 +56,31 @@ const ReviewDetail = () => {
               {
                 reviewData.br_img &&
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img}`} alt={`${reviewData.rt_name} 대표`} />
+                  <img src={`http://localhost:9070/uploads/review/${reviewData.br_img}`} alt={`${reviewData.rt_name} 대표`} />
                 </div>
               }
               {
                 reviewData.br_img2 &&
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img2}`} alt={`${reviewData.rt_name} 서브`} />
+                  <img src={`http://localhost:9070/uploads/review/${reviewData.br_img2}`} alt={`${reviewData.rt_name} 서브`} />
                 </div>
               }
               {
                 reviewData.br_img3 &&
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img3}`} alt={`${reviewData.rt_name} 서브`} />
+                  <img src={`http://localhost:9070/uploads/review/${reviewData.br_img3}`} alt={`${reviewData.rt_name} 서브`} />
                 </div>
               }
               {
                 reviewData.br_img4 &&
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img4}`} alt={`${reviewData.rt_name} 서브`} />
+                  <img src={`http://localhost:9070/uploads/review/${reviewData.br_img4}`} alt={`${reviewData.rt_name} 서브`} />
                 </div>
               }
               {
                 reviewData.br_img5 &&
                 <div className="img-box">
-                  <img src={`${process.env.PUBLIC_URL}/images/review/${reviewData.br_img5}`} alt={`${reviewData.rt_name} 서브`} />
+                  <img src={`http://localhost:9070/uploads/review/${reviewData.br_img5}`} alt={`${reviewData.rt_name} 서브`} />
                 </div>
               }
             </div>

@@ -94,7 +94,7 @@ const Join = () => {
             type='text'
             name='u_id'
             title='아이디'
-            requiredReq='(필수)'
+            RequiredInput='(필수)'
             value={joinInput.u_id}
             onChange={handleChange}
           />
@@ -103,7 +103,7 @@ const Join = () => {
             type='password'
             name='u_pw'
             title='비밀번호'
-            requiredReq='(필수)'
+            RequiredInput='(필수)'
             value={joinInput.u_pw}
             onChange={handleChange}
           />
@@ -112,7 +112,7 @@ const Join = () => {
             type='password'
             name='u_pw2'
             title='비밀번호 확인'
-            requiredReq='(필수)'
+            RequiredInput='(필수)'
             value={joinInput.u_pw2}
             onChange={handleChange}
           />
@@ -123,7 +123,7 @@ const Join = () => {
           <InputFile
             name="u_pic"
             title="프로필 사진"
-            requiredSel="(선택)"
+            SelectInput="(선택)"
             maxFiles={1}
             onFilesChange={(files) => setProfileFile(files[0] || null)}
           />
@@ -131,7 +131,7 @@ const Join = () => {
           <InputTextarea
             name='u_desc'
             title='내 소개글'
-            requiredSel='(선택)'
+            SelectInput='(선택)'
             value={joinInput.u_desc}
             onChange={handleChange}
           />
