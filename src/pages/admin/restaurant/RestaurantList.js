@@ -1,7 +1,24 @@
+import axios from 'axios';
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
+import { useEffect, useState } from 'react';
 
 function RestaurantList(props) {
+  const [data, setData] = useState([]);
+  const loadData = async () => {
+    try {
+      const res = await axios.post('http://localhost:9070/restaurant');
+
+      setData(res.data);
+    } catch (err) {
+      console.log(err.response.data.error);
+    }
+  };
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
   return (
     <>
       <section className='admin-list admin-restaurantlist'>
@@ -42,22 +59,24 @@ function RestaurantList(props) {
                 </tr>
               </thead>
               <tbody>
-                {/* 함수자리 */}
-                <tr>
-                  <td>1111111</td>
-                  <td>분식</td>
-                  <td>엽기떡볶이 종로</td>
-                  <td>한국을 대표하는 떡볶이 중에서...</td>
-                  <td>맛집 이미지(사진)</td>
-                  <td>02-000-0000</td>
-                  <td>서울특별시 중구 다산로 265 럭키프라자 1층</td>
-                  <td>4.9(10)</td>
-                  <td>2024.05.01 000000</td>
-                  <td className='btn-td'>
-                    <button className='btn-update'>수정</button>
-                    <button className='btn-delete'>삭제</button>
-                  </td>
-                </tr>
+                {data.map(item => (
+                  <tr key={item.rt_no}>
+                    <td>{item.rt_no}</td>
+                    <td>{item.rt_cate}</td>
+                    <td>{item.rt_name}</td>
+                    <td>{item.rt_desc}</td>
+                    <td><img src={`${process.env.PUBLIC_URL}/images/review/${item.rt_img}`} alt="식당 사진" /></td>
+                    <td>{item.rt_tel}</td>
+                    <td>{item.rt_location}</td>
+                    <td>{item.rt_rank}</td>
+                    <td>{item.rt_date}</td>
+                    <td className='btn-td'>
+                      <button className='btn-update'>수정</button>
+                      <button className='btn-delete'>삭제</button>
+                    </td>
+                  </tr>
+                ))
+                }
               </tbody>
             </table>
           </div>
