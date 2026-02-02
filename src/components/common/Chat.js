@@ -7,6 +7,7 @@ import Comment from './Chat/Comment';
 import InputComment from './Chat/InputComment';
 
 import { dateFormat } from 'utils/dateFormat';
+import { jwtDecode } from 'jwt-decode';
 
 function Chat({ p_board_cate, p_board_no }) {
   const [chatDate, setChatDate] = useState([]);
