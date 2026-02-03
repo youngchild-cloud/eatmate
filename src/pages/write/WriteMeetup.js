@@ -16,15 +16,10 @@ const WriteMeetup = () => {
   const token = localStorage.getItem('token');
   const decoded = token ? jwtDecode(token) : '';
 
-  console.log(decoded)
+  // console.log(decoded)
   const [form, setForm] = useState({
     bm_board_cate: '',
     bm_user_no: decoded.token_no,
-    bm_img: '',
-    bm_img2: '',
-    bm_img3: '',
-    bm_img4: '',
-    bm_img5: '',
     bm_title: '',
     bm_desc: '',
     bm_m_date: '',
@@ -35,6 +30,7 @@ const WriteMeetup = () => {
     bm_comment: '',
     bm_date: ''
   });
+  const [imgFile, setImgFile] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -46,7 +42,23 @@ const WriteMeetup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:9070/meetup', form)
+
+    const formData = new FormData();
+    formData.append('bm_board_cate', form.bm_board_cate);
+    formData.append('bm_user_no', form.bm_user_no);
+    formData.append('bm_title', form.bm_title);
+    formData.append('bm_desc', form.bm_desc);
+    formData.append('bm_m_date', form.bm_m_date);
+    formData.append('bm_m_res', form.bm_m_res);
+    formData.append('bm_m_people', form.bm_m_people);
+    formData.append('bm_m_people_all', form.bm_m_people_all);
+    formData.append('bm_heart', form.bm_heart);
+    formData.append('bm_comment', form.bm_comment);
+    formData.append('bm_date', form.bm_date);
+
+    if (imgFile) formData.append('bm_img', imgFile); // key 이름 중요(백엔드와 동일)
+
+    axios.post('http://localhost:9070/meetup', formData)
       .then(() => {
         alert('게시글이 등록되었습니다.');
         navigate('/meetup');
@@ -66,11 +78,10 @@ const WriteMeetup = () => {
           <Input type={'text'} name={'bm_m_res'} title={'맛집명'} onChange={handleChange} value={form.bm_m_res} />
 
           <InputFile
-            name="m_file"
+            name="bm_img"
             title="사진"
-            SelectInput="(선택)"
-            onChange={handleChange}
             maxFiles={5}
+            onFilesChange={(files) => setImgFile(files[0] || null)}
           />
 
           <Input type={'text'} name={'bm_title'} title={'제목'} onChange={handleChange} value={form.bm_title} />
