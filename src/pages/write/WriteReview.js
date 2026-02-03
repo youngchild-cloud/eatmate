@@ -122,7 +122,7 @@ const WriteReview = () => {
           <InputFile
             name="br_img"
             title="사진"
-            maxFiles={5}
+            // maxFiles={5}
             onFilesChange={(files) => setImgFile(files[0] || null)}
           />
 
