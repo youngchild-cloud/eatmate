@@ -16,6 +16,8 @@ import { dateFormat } from 'utils/dateFormat'
 
 const MeetupDetail = () => {
   const { bm_no } = useParams();
+  const token = localStorage.getItem('token');
+  console.log(token)
 
   const [meetUp, setMeetUp] = useState({
     bm_no: '',
@@ -37,13 +39,12 @@ const MeetupDetail = () => {
     bm_date: '',
     u_nick: '',
     u_pic: '',
-    u_no: ''
   });
 
 
-  const [meetupChange, setMeetupChange] = useState(true);
+  // const [meetupChange, setMeetupChange] = useState(true);
 
-  const [meetupIcon, setMeetupIcon] = useState(true);
+  // const [meetupIcon, setMeetupIcon] = useState(true);
 
   // const handleChange = (e) => {
   //   e.preventDefault();
@@ -51,6 +52,8 @@ const MeetupDetail = () => {
   // }
 
   const meetupMax = Number(meetUp.bm_m_people) === Number(meetUp.bm_m_people_all);
+
+  const [joined, setJoined] = useState(false);
 
 
   useEffect(() => {
@@ -62,26 +65,29 @@ const MeetupDetail = () => {
       .catch(err => console.log('조회오류', err));
   }, [bm_no])
 
-  const u_no = localStorage.getItem('u_no');
-  const [joined, setJoined] = useState(false);
-
-
-
   useEffect(() => {
-    if (!u_no) return;
+    if (!token) return;
     axios.get('http://localhost:9070/meetup/join/check', {
       params: {
         bm_no,
-        u_no
+      },
+      headers: {
+        Authorization: `Bearer ${token}`
       }
     })
-      .then(res => {
-        setJoined(res.data.joined)
-      });
-  }, [bm_no, u_no]);
+      .then(res =>
+        setJoined(res.data.joined))
+      .catch(() => setJoined(false));
+  }, [bm_no, token]);
 
   const handleJoin = () => {
-    axios.post(`http://localhost:9070/meetup/join`, { bm_no, u_no })
+    axios.post(`http://localhost:9070/meetup/join`, { bm_no },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    )
       .then(() => {
         setJoined(true);
         setMeetUp(prev => ({
@@ -90,13 +96,15 @@ const MeetupDetail = () => {
         }));
       })
       .catch(err => {
-        alert('참석실패');
+        alert(JSON.stringify(err.response?.data) || '참석실패');
       });
   };
 
   const handleCancel = () => {
     axios.delete(`http://localhost:9070/meetup/${bm_no}/join`, {
-      data: { u_no }
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     })
       .then(() => {
         setJoined(false);
@@ -106,9 +114,10 @@ const MeetupDetail = () => {
         }));
       })
       .catch(err => {
-        alert('참석취소실패');
+        alert(err.response?.data?.error || '참석취소실패');
       });
   };
+
 
 
   // const meetupNum = () => {
