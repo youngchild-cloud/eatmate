@@ -94,7 +94,7 @@ const ReviewDetail = () => {
 
               <Link to={`/review/restaurant/detail/${reviewData.br_rt_no}`} title={`${reviewData.rt_name} 상세보기 페이지로 이동`} className='link'>#{reviewData.rt_name}</Link>
 
-              {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호를 넘겨주시면 됩니다. */}
+              {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호 / p_user_token는 토큰값을 decoded해서 넘겨주시면 됩니다. */}
               <HeartComment heart={reviewData.br_heart} comment={reviewData.br_comment} p_board_cate={'review'} p_board_no={br_no} p_user_token={decoded} />
             </div>
           </article>

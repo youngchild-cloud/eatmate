@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 
 import './meetupdetail.scss';
 
@@ -17,7 +18,7 @@ import { dateFormat } from 'utils/dateFormat'
 const MeetupDetail = () => {
   const { bm_no } = useParams();
   const token = localStorage.getItem('token');
-  console.log(token)
+  const decoded = token ? jwtDecode(token) : '';
 
   const [meetUp, setMeetUp] = useState({
     bm_no: '',
@@ -222,10 +223,11 @@ const MeetupDetail = () => {
               </p>)
           } */}
 
-          <HeartComment heart={meetUp.bm_heart} comment={meetUp.bm_comment} />
+          {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호 / p_user_token는 토큰값을 decoded해서 넘겨주시면 됩니다. */}
+          <HeartComment heart={meetUp.bm_heart} comment={meetUp.bm_comment} p_board_cate={'meetup'} p_board_no={bm_no} p_user_token={decoded} />
         </div>
 
-        {/* 댓글 */}
+        {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호를 넘겨주시면 됩니다. */}
         <Chat p_board_cate={'meetup'} p_board_no={bm_no} />
       </div>
     </section >

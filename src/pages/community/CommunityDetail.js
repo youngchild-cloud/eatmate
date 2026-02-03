@@ -1,3 +1,8 @@
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
+
 // 전역 스타일
 import './CommunityDetail.scss';
 
@@ -7,13 +12,11 @@ import HeartComment from 'components/common/HeartComment';
 import Chat from 'components/common/Chat';
 import { dateFormat } from 'utils/dateFormat'
 
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-
 function CommunityDetail(props) {
   const { bc_no } = useParams();
   const [data, setData] = useState([]);
+  const token = localStorage.getItem('token');
+  const decoded = token ? jwtDecode(token) : '';
 
   const loadData = () => {
     axios.get(`http://localhost:9070/community/detail/${bc_no}`)
@@ -56,7 +59,8 @@ function CommunityDetail(props) {
             </div>
 
             {/* 하트 수 + 채팅 수 */}
-            <HeartComment heart={`${item.bc_heart}`} comment={`${item.bc_comment}`} />
+            {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호 / p_user_token는 토큰값을 decoded해서 넘겨주시면 됩니다. */}
+            <HeartComment heart={item.bc_heart} comment={item.bc_comment} p_board_cate={'community'} p_board_no={bc_no} p_user_token={decoded} />
           </div>
         ))
         }
