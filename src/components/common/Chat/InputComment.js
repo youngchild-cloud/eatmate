@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './InputComment.scss';
 import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function InputComment({ p_board_cate, p_board_no }) {
   const token = localStorage.getItem('token');
@@ -14,6 +15,8 @@ function InputComment({ p_board_cate, p_board_no }) {
     ct_desc: '',
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -25,6 +28,11 @@ function InputComment({ p_board_cate, p_board_no }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!token) {
+      alert('로그인 후 사용 가능합니다. 로그인 페이지로 이동합니다.');
+      navigate('/login');
+    }
 
     try {
       await axios.post('http://localhost:9070/comment', form);
