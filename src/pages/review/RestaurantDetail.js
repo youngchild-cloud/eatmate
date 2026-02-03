@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
@@ -20,6 +21,17 @@ import icon03 from 'assets/images/review/icon_restaurant-detail03.png';
 import icon04 from 'assets/images/review/icon_restaurant-detail04.png';
 
 const RestaurantDetail = () => {
+  const token = localStorage.getItem('token');
+  const decoded = token ? jwtDecode(token) : '';
+
+  const [restaurantData, setRestaurantData] = useState('');
+  const [reviewData, setReviewData] = useState([]);
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const { rt_no } = useParams();
+
+  const navigate = useNavigate();
+
   // main에 다른 스타일을 주기 위해서 body 클래스 추가
   useEffect(() => {
     document.body.classList.add('restaurant-detail');
@@ -39,11 +51,31 @@ const RestaurantDetail = () => {
     }
   };
 
-  // 데이터 연결
-  const [restaurantData, setRestaurantData] = useState('');
-  const [reviewData, setReviewData] = useState([]);
-  const { rt_no } = useParams();
-  const navigate = useNavigate();
+  // 저장버튼 클릭시 마이페이지-저장한 맛집에 저장
+  const bookmarkClick = async () => {
+    if (!token) {
+      alert('로그인 후 사용 가능합니다. 로그인 페이지로 이동합니다.');
+      navigate('/login');
+      return;
+    }
+
+    const nextToggle = !isBookmarked;
+
+    const info = {
+      bk_user_no: decoded.token_no,
+      bk_rt_no: rt_no,
+      toggle: nextToggle, // true / false
+    };
+
+    try {
+      await axios.post('http://localhost:9070/bookmark', info);
+      setIsBookmarked(nextToggle);
+
+      alert(nextToggle ? '저장되었습니다.' : '저장이 해제되었습니다.');
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   // 맛집 데이터 연결
   const rtLoadData = async () => {
@@ -160,7 +192,7 @@ const RestaurantDetail = () => {
                     </a>
                   </li>
                   <li>
-                    <button>
+                    <button onClick={bookmarkClick}>
                       <img src={icon03} alt="저장" />
                       <span>저장</span>
                     </button>
