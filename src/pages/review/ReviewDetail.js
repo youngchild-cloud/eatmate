@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 
 import './ReviewDetail.scss';
 
@@ -15,6 +16,8 @@ import { dateFormat } from 'utils/dateFormat';
 const ReviewDetail = () => {
   const [reviewData, setReviewData] = useState('');
   const { br_no } = useParams();
+  const token = localStorage.getItem('token');
+  const decoded = token ? jwtDecode(token) : '';
 
   const loadData = async () => {
     try {
@@ -39,7 +42,7 @@ const ReviewDetail = () => {
           <article className="review-con" key={reviewData.br_no}>
             <div className="profile-area">
               <div className="img-box">
-                <img src={`http://localhost:9070/uploads//user/${reviewData.u_pic}`} alt={`${reviewData.u_nick} 프로필`} />
+                <img src={`http://localhost:9070/uploads/user/${reviewData.u_pic}`} alt={`${reviewData.u_nick} 프로필`} />
               </div>
               <div className="txt-box">
                 <strong className='name'>
@@ -91,7 +94,8 @@ const ReviewDetail = () => {
 
               <Link to={`/review/restaurant/detail/${reviewData.br_rt_no}`} title={`${reviewData.rt_name} 상세보기 페이지로 이동`} className='link'>#{reviewData.rt_name}</Link>
 
-              <HeartComment heart={reviewData.br_heart} comment={reviewData.br_comment} />
+              {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호를 넘겨주시면 됩니다. */}
+              <HeartComment heart={reviewData.br_heart} comment={reviewData.br_comment} p_board_cate={'review'} p_board_no={br_no} p_user_token={decoded} />
             </div>
           </article>
         }
