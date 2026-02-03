@@ -7,7 +7,6 @@ import Comment from './Chat/Comment';
 import InputComment from './Chat/InputComment';
 
 import { dateFormat } from 'utils/dateFormat';
-import { jwtDecode } from 'jwt-decode';
 
 function Chat({ p_board_cate, p_board_no }) {
   const [chatDate, setChatDate] = useState([]);
@@ -30,11 +29,11 @@ function Chat({ p_board_cate, p_board_no }) {
 
   useEffect(() => {
     loadData();
-  }, [boardInfo])
+  }, [p_board_cate, p_board_no])
 
   return (
     <article className='common-chat'>
-      <InputComment image={'user01.png'} />
+      <InputComment p_board_cate={p_board_cate} p_board_no={p_board_no} />
       <ul className='comm-comment'>
         {
           chatDate.map(item => (
