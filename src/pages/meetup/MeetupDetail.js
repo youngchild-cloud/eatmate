@@ -14,11 +14,15 @@ import tabTxtImg1 from 'assets/images/meetup/con-txt-img1.png';
 import tabTxtImg2 from 'assets/images/meetup/con-txt-img2.png';
 import tabTxtImg3 from 'assets/images/meetup/con-txt-img3.png';
 import { dateFormat } from 'utils/dateFormat'
+import { useRequireLogin } from 'utils/useRequireLogin';
 
 const MeetupDetail = () => {
   const { bm_no } = useParams();
   const token = localStorage.getItem('token');
   const decoded = token ? jwtDecode(token) : '';
+
+  const navigateLogin = useRequireLogin();
+
 
   const [meetUp, setMeetUp] = useState({
     bm_no: '',
@@ -55,6 +59,12 @@ const MeetupDetail = () => {
   const meetupMax = Number(meetUp.bm_m_people) === Number(meetUp.bm_m_people_all);
 
   const [joined, setJoined] = useState(false);
+
+  const meetUpJoin = () => {
+    if (!joined && token) {
+      return;
+    }
+  }
 
 
   useEffect(() => {
@@ -119,62 +129,6 @@ const MeetupDetail = () => {
       });
   };
 
-
-
-  // const meetupNum = () => {
-  //   setMeetUp(prev => {
-  //     const num = prev.bm_m_people;
-  //     const max = prev.bm_m_people_all;
-
-
-  //     if (num < max) {
-  //       setMeetupChange(false)
-  //       return {
-  //         ...prev,
-  //         bm_m_people: num + 1
-  //       };
-  //     }
-  //     if (num >= max) {
-  //       setMeetupChange(true)
-  //       return {
-  //         ...prev,
-  //         bm_m_people: num - 1
-  //       }
-  //     }
-  // if (num === max && MeetupChange) {
-
-  //   alert('마감된 탐방입니다.');
-  //   return {
-  //     ...meetUp,
-  //     bm_m_people: num + 0
-  //   };
-  // }
-  // })
-  //   }
-
-  // let button;
-
-
-  // if (!meetupChange && u_no) {
-  //   button = (
-  //     <p className='meetup-toggle-btn' onClick={meetupNum}>
-  //       <ButtonWide text={'참석취소'} />
-  //     </p>
-  //   )
-  // } else if (meetupMax) {
-  //   button = (
-  //     <p className='meetup-toggle-btn-close' onClick={meetupNum}>
-  //       <ButtonWide text={'참석마감'} disabled />
-  //     </p>)
-  // } else if (meetupChange && u_no) {
-  //   button = (
-  //     <p onClick={meetupNum}>
-  //       <ButtonWide text={'참석하기'} />
-  //     </p>)
-  // }
-
-
-
   return (
     <section className='meetup-detail'>
       <div className="inner">
@@ -211,17 +165,6 @@ const MeetupDetail = () => {
                 <ButtonWide text={'참석하기'} />
               </p>))
           }
-
-
-          {/* {
-            meetupChange ?
-              (<p onClick={() => setMeetupChange(false)}>
-                <ButtonWide text={'참석하기'} />
-              </p>) :
-              (<p className='meetup-toggle-btn' onClick={() => setMeetupChange(true)}>
-                <ButtonWide text={'참석취소'} />
-              </p>)
-          } */}
 
           {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호 / p_user_token는 토큰값을 decoded해서 넘겨주시면 됩니다. */}
           <HeartComment heart={meetUp.bm_heart} comment={meetUp.bm_comment} p_board_cate={'meetup'} p_board_no={bm_no} p_user_token={decoded} />
