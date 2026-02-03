@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 
 import './mypage.scss';
 
@@ -14,21 +15,40 @@ import CommentImg from 'assets/images/mypage/comment.png';
 import HeartImg from 'assets/images/mypage/heart.png';
 import LogoutImg from 'assets/images/mypage/logout.png';
 import { useRequireLogin } from 'utils/useRequireLogin';
+import axios from 'axios';
 
 const Mypage = () => {
   useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
+
+  const token = localStorage.getItem('token');
+  const decoded = token ? jwtDecode(token) : '';
+
+  console.log(decoded)
+
+  const [user, setUser] = useState({
+    u_no: decoded.token_no,
+    u_pic: '',
+    u_nick: '',
+    u_badge: '',
+    u_desc: ''
+  });
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+  }
 
   return (
     <section className='mypage'>
       <div className="inner">
         <TitleCenter title={'마이페이지'} />
         <div className="profile">
-          <img src={`${process.env.PUBLIC_URL}/images/mypage/user-img.png`} alt="" />
+          <div><img src={`http://localhost:9070/uploads/user/${decoded?.token_profile}`} alt="" /></div>
+
           <p className="profile-txt">
-            룰루랄라
-            <span className='profile-badge'><Badge rank={'vip'} /></span>
+            {decoded?.token_nick}
+            <span className='profile-badge'><Badge rank={decoded?.token_badge} /></span>
             <span className='profile-txt-detail'>
-              맛집을 좋아하고, 글쓰는걸 좋아하고, 사람을 좋아합니다. 저랑 같이 맛집 탐방 다니실 분들은 항상 환영해요!
+              {decoded?.token_desc}
             </span>
           </p>
         </div>
@@ -44,7 +64,7 @@ const Mypage = () => {
           <Link to='/mypage/comment'><img src={CommentImg} alt="댓글아이콘" /><span>내가 남긴 댓글</span></Link>
         </div>
 
-        <Link to='/review' className='logout'><img src={LogoutImg} alt="로그아웃아이콘" /><span>로그아웃</span></Link>
+        <Link to='/review' className='logout' onClick={handleLogout}><img src={LogoutImg} alt="로그아웃아이콘" /><span>로그아웃</span></Link>
 
 
 

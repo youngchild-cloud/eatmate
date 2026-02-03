@@ -27,8 +27,17 @@
       padding-top: vw-mo(10);
     }
 
-    .profile img {
+    .profile div img {
       width: vw-mo(140);
+      height: vw-mo(140);
+      border-radius: 50%;
+
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .profile-edit button {
