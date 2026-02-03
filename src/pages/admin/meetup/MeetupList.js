@@ -68,7 +68,7 @@ function MeetupList(props) {
                     <td>{item.u_nick}</td>
                     <td>{item.bm_title}</td>
                     <td>{item.bm_desc}</td>
-                    <td className='imgtd'><img src={`${process.env.PUBLIC_URL}/images/meetup/${item.bm_img}`} alt="탐방 사진" ></img></td>
+                    <td className='imgtd'><img src={`http://localhost:9070/uploads/meetup/${item.bm_img}`} alt="탐방 사진" ></img></td>
                     <td>{item.bm_m_res}</td>
                     <td>{item.bm_m_date}</td>
                     <td>{item.bm_heart}</td>
