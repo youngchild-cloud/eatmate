@@ -40,10 +40,15 @@
       object-fit: cover;
     }
 
-    .profile-edit button {
+    .profile-edit a {
+      display: block;
+      width: 100%;
+      padding: vw-mo(20) 0;
+      border-radius: vw-mo(6);
       background: $color-white-gray;
       color: $color-text;
       margin: 0 0 vw-mo(60) 0;
+      text-align: center;
     }
 
     .line {
