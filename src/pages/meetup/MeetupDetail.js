@@ -135,12 +135,12 @@ const MeetupDetail = () => {
         <TitleCenter title={'맛집 탐방'} />
 
         <div className='user'>
-          <div className='user-img'><img src={`${process.env.PUBLIC_URL}/images/meetup/${meetUp.u_pic}`} alt="" /></div>
+          <div className='user-img'><img src={`http://localhost:9070/uploads/user/${meetUp.u_pic}`} alt="" /></div>
           <p className='user-info'>{meetUp.u_nick}<span className='user-info-gap'>&middot;</span>{dateFormat(meetUp.bm_date)}</p>
         </div>
 
         <div className='content-box'>
-          <img className="content-img" src={`${process.env.PUBLIC_URL}/images/meetup/${meetUp.bm_img}`} alt="" />
+          <img className="content-img" src={`http://localhost:9070/uploads/meetup/${meetUp.bm_img}`} alt="" />
           <p className='content-txt'>{meetUp.bm_title}
             <span className='content-txt-detail'>
               {meetUp.bm_desc}
