@@ -65,7 +65,7 @@ function RestaurantList(props) {
                     <td>{item.rt_cate}</td>
                     <td>{item.rt_name}</td>
                     <td>{item.rt_desc}</td>
-                    <td><img src={`${process.env.PUBLIC_URL}/images/review/${item.rt_img}`} alt="식당 사진" /></td>
+                    <td className='imgtd'><img src={`http://localhost:9070/uploads/review/${item.rt_img}`} alt="식당 사진" /></td>
                     <td>{item.rt_tel}</td>
                     <td>{item.rt_location}</td>
                     <td>{item.rt_rank}</td>
