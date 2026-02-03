@@ -40,6 +40,7 @@
 
       tbody {
         td {
+          // height: 52px; //음...
           padding: 10px 5px;
           border: 1px solid $color-gray-light;
           text-align: center;
@@ -47,6 +48,17 @@
           text-overflow: ellipsis;
           white-space: nowrap;
         }
+        .imgtd{
+          padding: 0;
+          height: 30px;
+          }
+        img {
+            //max-height: 1em; // 텍스트 높이까지만
+            object-fit:cover;
+            width: 100%; height: 100%;
+            display: inline-block;
+          }
+
 
         // 수정 삭제 버튼 서식
         button {

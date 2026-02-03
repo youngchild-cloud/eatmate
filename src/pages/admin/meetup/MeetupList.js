@@ -1,7 +1,25 @@
+import axios from 'axios';
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
+import { useEffect, useState } from 'react';
 
 function MeetupList(props) {
+
+  const [data, setData] = useState([]);
+
+  const loadData = async () => {
+    try {
+      const res = await axios.get('http://localhost:9070/meetup');
+      setData(res.data);
+    } catch (err) {
+      console.log(err.respone.data.error);
+    }
+  }
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
   return (
     <>
       <section className='admin-list admin-userlist'>
@@ -44,23 +62,25 @@ function MeetupList(props) {
                 </tr>
               </thead>
               <tbody>
-                {/* 함수자리 */}
-                <tr>
-                  <td>11111</td>
-                  <td>오홍식</td>
-                  <td>밥친구 찾습니다</td>
-                  <td>라라라라라라라라라동대문 엽기떡볶이 종로점</td>
-                  <td>맛집 이미지(사진)</td>
-                  <td>세상맛있는집</td>
-                  <td>2026.01.22</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>2024.05.01 000000</td>
-                  <td className='btn-td'>
-                    <button className='btn-update'>수정</button>
-                    <button className='btn-delete'>삭제</button>
-                  </td>
-                </tr>
+                {data.map(item => (
+                  <tr>
+                    <td>{item.bm_no}</td>
+                    <td>{item.u_nick}</td>
+                    <td>{item.bm_title}</td>
+                    <td>{item.bm_desc}</td>
+                    <td className='imgtd'><img src={`${process.env.PUBLIC_URL}/images/meetup/${item.bm_img}`} alt="탐방 사진" ></img></td>
+                    <td>{item.bm_m_res}</td>
+                    <td>{item.bm_m_date}</td>
+                    <td>{item.bm_heart}</td>
+                    <td>{item.bm_comment}</td>
+                    <td>{item.bm_date}</td>
+                    <td className='btn-td'>
+                      <button className='btn-update'>수정</button>
+                      <button className='btn-delete'>삭제</button>
+                    </td>
+                  </tr>
+                ))
+                }
               </tbody>
             </table>
           </div>

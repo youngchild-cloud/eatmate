@@ -1,7 +1,38 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
 
+
+
 function UserList(props) {
+
+  const [data, setData] = useState([]);
+
+  const loadData = () => {
+    axios.get('http://localhost:9070/admin/user')
+      .then(res => {
+        setData(res.data);
+      })
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const delData = (u_no) => {
+    if (window.confirm('삭제하시겠습니까?')) {
+      axios
+        .delete(`http://localhost:9070/admin/user/${u_no}`)
+        .then(() => {
+          alert('삭제되었습니다.')
+          loadData();
+        })
+    }
+  }
+
   return (
     <>
       <section className='admin-list admin-userlist'>
@@ -19,10 +50,9 @@ function UserList(props) {
                 <col style={{ width: "4%" }} />
                 <col style={{ width: "12%" }} />
                 <col style={{ width: "10%" }} />
-                <col style={{ width: "30%" }} />
-                <col style={{ width: "14%" }} />
-                <col style={{ width: "8%" }} />
+                <col style={{ width: "35%" }} />
                 <col style={{ width: "12%" }} />
+                <col style={{ width: "17%" }} />
                 <col style={{ width: "10%" }} />
               </colgroup>
               <thead>
@@ -31,7 +61,6 @@ function UserList(props) {
                   <th>아이디</th>
                   <th>닉네임</th>
                   <th>내 소개글</th>
-                  <th>프로필 이미지</th>
                   <th>뱃지</th>
                   <th>등록 날짜/시간</th>
                   <th>수정/삭제</th>
@@ -39,19 +68,21 @@ function UserList(props) {
               </thead>
               <tbody>
                 {/* 함수자리 */}
-                <tr>
-                  <td>12312</td>
-                  <td>kdt190000</td>
-                  <td>피노키오</td>
-                  <td>알라라라라라라라라라라라</td>
-                  <td>맛집 이미지(사진)</td>
-                  <td>normal</td>
-                  <td>2024.05.01 000000</td>
-                  <td className='btn-td'>
-                    <button className='btn-update'>수정</button>
-                    <button className='btn-delete'>삭제</button>
-                  </td>
-                </tr>
+                {data.map(item => (
+                  <tr key={item.u_no}>
+                    <td>{item.u_no}</td>
+                    <td>{item.u_id}</td>
+                    <td>{item.u_nick}</td>
+                    <td>{item.u_desc}</td>
+                    <td>{item.u_badge}</td>
+                    <td>{item.u_date}</td>
+                    <td className='btn-td'>
+                      <button className='btn-update'>수정</button>
+                      <button className='btn-delete' onClick={() => delData(item.u_no)}>삭제</button>
+                    </td>
+                  </tr>
+                ))
+                }
               </tbody>
             </table>
           </div>

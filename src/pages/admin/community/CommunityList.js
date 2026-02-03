@@ -1,7 +1,24 @@
+import axios from 'axios';
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
+import { useEffect, useState } from 'react';
 
 function CommunityList(props) {
+  const [data, setData] = useState([]);
+
+  const loadData = () => {
+    axios.get('http://localhost:9070/communitylist')
+      .then(res => {
+        setData(res.data);
+      })
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+
   return (
     <>
       <section className='admin-list admin-userlist'>
@@ -38,20 +55,22 @@ function CommunityList(props) {
                 </tr>
               </thead>
               <tbody>
-                {/* 함수자리 */}
-                <tr>
-                  <td>11111</td>
-                  <td>오홍식</td>
-                  <td>밥친구 찾습니다</td>
-                  <td>라라라라라라라라라동대문 엽기떡볶이 종로점</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>2024.05.01 000000</td>
-                  <td className='btn-td'>
-                    <button className='btn-update'>수정</button>
-                    <button className='btn-delete'>삭제</button>
-                  </td>
-                </tr>
+                {data.map(item => (
+                  <tr>
+                    <td>{item.bc_no}</td>
+                    <td>{item.u_nick}</td>
+                    <td>{item.bc_title}</td>
+                    <td>{item.bc_desc}</td>
+                    <td>{item.bc_heart}</td>
+                    <td>{item.bc_comment}</td>
+                    <td>{item.bc_date}</td>
+                    <td className='btn-td'>
+                      <button className='btn-update'>수정</button>
+                      <button className='btn-delete'>삭제</button>
+                    </td>
+                  </tr>
+                ))
+                }
               </tbody>
             </table>
           </div>
