@@ -186,7 +186,7 @@ const RestaurantDetail = () => {
                     </a>
                   </li>
                   <li>
-                    <a href={restaurantData.rt_map} title={`${restaurantData.rt_name} 카카오맵으로 이동(새창)`} target='_blank' rel='noopener noreferrer'>
+                    <a href={`https://map.kakao.com/?q=${restaurantData.rt_name}`} title={`${restaurantData.rt_name} 카카오맵으로 이동(새창)`} target='_blank' rel='noopener noreferrer'>
                       <img src={icon02} alt="길찾기" />
                       <span>길찾기</span>
                     </a>
