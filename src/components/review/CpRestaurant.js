@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import './CpRestaurant.scss'
 
-const CpRestaurant = ({ category, filter }) => {
+const CpRestaurant = ({ category, filter, mypageUser }) => {
   const [restaurantData, setRestaurantData] = useState([]);
   const restaurantInfo = { // props로 받은 값을 백엔드로 넘김
     category: category, // 맛집 카테고리(한식, 일식...)
-    filter: filter // 보여지는 순서(평점순, 리뷰순, 이름순)
+    filter: filter, // 보여지는 순서(평점순, 리뷰순, 이름순)
+    mypage_user: mypageUser, // 마이페이지 유저 no값
   }
 
   const loadData = async () => {
