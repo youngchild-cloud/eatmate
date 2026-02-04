@@ -4,6 +4,7 @@ import PcLayout from 'layouts/PcLayout';
 import MoLayout from 'layouts/MoLayout';
 
 import AdminLogin from 'pages/admin/Login';
+import AdminJoin from 'pages/admin/Join';
 import AdminRestaurantList from 'pages/admin/restaurant/RestaurantList';
 import AdminRestaurantModify from 'pages/admin/restaurant/RestaurantModify';
 import AdminRestaurantCreate from 'pages/admin/restaurant/RestaurantCreate';
@@ -46,6 +47,7 @@ export default function AppRoutes() {
       <Route path="/admin" element={<PcLayout />}>
         <Route index element={<Navigate to="login" replace />} />
         <Route path="login" element={<AdminLogin />} />
+        <Route path="join" element={<AdminJoin />} />
         <Route path="restaurant" element={<AdminRestaurantList />} />
         <Route path="restaurant/modify/:rt_no" element={<AdminRestaurantModify />} />
         <Route path="restaurant/create" element={<AdminRestaurantCreate />} />

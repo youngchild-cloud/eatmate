@@ -1,0 +1,73 @@
+@charset "utf-8";
+@use 'assets/scss/variables' as *;
+@use 'assets/scss/function' as *;
+
+
+.admin-join {
+  margin: 0 auto;
+  width: 1600px;
+  padding: 0 30px;
+
+  .pc-inner {
+    width: 700px;
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  form {
+    width: 700px;
+
+    p {
+      padding-bottom: 20px;
+    }
+
+    .check-box {
+      display: flex;
+      align-items: center;
+      color: $color-gray;
+    }
+
+    .check-box label {
+      padding-bottom: 0;
+      font-size: 14px;
+    }
+
+    #check {
+      width: 16px;
+      margin-right: 10px;
+    }
+
+    .ld-join-box {
+      text-align: center;
+      color: $color-gray;
+      font-size: 14px;
+      padding-bottom: 60px;
+    }
+
+    .id-join-gap {
+      padding: 0 10px;
+    }
+
+    .pw-text {
+      font-size: 16px;
+    }
+
+    button {
+      display: block;
+      width: 700px;
+      height: 40px;
+      font-size: 14px;
+      color: $color-white;
+      background: $color-main;
+      border-radius: 6px;
+      padding-top: 10px;
+    }
+  }
+}

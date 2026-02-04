@@ -1,0 +1,67 @@
+@use 'assets/scss/variables' as *;
+@use 'assets/scss/function' as *;
+
+.pc-input-box__file {
+  .file-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .preview-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  label {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0;
+    border: 1px solid $color-gray-light;
+    border-radius: 6px;
+    color: $color-gray-light;
+    cursor: pointer;
+  }
+
+  .icon {
+    width: 28px;
+    height: 24px;
+    margin: 0;
+    background: url('../../assets/images/write/icon_picture.png') no-repeat center / contain;
+  }
+
+  .label {
+    font-size: 16px;
+    ;
+  }
+
+  .txt {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .img-box {
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border: 1px solid $color-gray-light;
+    border-radius: 6px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  }
+
+  input {
+    display: none;
+  }
+}

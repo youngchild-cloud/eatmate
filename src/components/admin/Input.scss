@@ -1,0 +1,65 @@
+@use 'assets/scss/variables' as *;
+@use 'assets/scss/function' as *;
+
+.pc-input-box {
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-bottom: 60px;
+  }
+
+  label,
+  .label {
+    display: block;
+    margin-bottom: 6px;
+    color: $color-sub-black;
+    font-size: 16px;
+  }
+
+  label span,
+  .label span {
+    margin-right: 6px;
+  }
+
+  label .req,
+  .label .req {
+    color: $color-sub-orange;
+  }
+
+  label .sel,
+  .label .sel {
+    color: $color-gray;
+  }
+
+  input,
+  textarea,
+  select {
+    height: 40px;
+    display: block;
+    width: 100%;
+    padding: 23px 20px;
+    border: 1px solid $color-gray-light;
+    border-radius: 6px;
+    color: $color-text;
+    font-size: 14px !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: $color-gray-light;
+  }
+
+  input:read-only {
+    background: $color-white-gray;
+  }
+
+  select {
+    appearance: none; // 기본 화살표 제거
+    background: url('../../assets/images/review/icon_filter.png') no-repeat 97% 50% / 20px;
+  }
+
+  select option {
+    color: $color-text;
+    background: $color-white-gray;
+  }
+}
