@@ -1,0 +1,66 @@
+@use 'assets/scss/variables' as *;
+@use 'assets/scss/function' as *;
+
+/*** 저장한 맛집 ***/
+.mypage-bookmark {
+  .filter-box {
+    position: relative;
+    height: 50px;
+  }
+
+  .filter {
+    position: absolute;
+    top: vw-mo(5);
+    right: 0;
+  }
+
+  .filter-tit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: vw-mo(10);
+    width: vw-mo(105);
+    font-size: vw-mo(24);
+    text-align: center;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: vw-mo(15);
+      height: vw-mo(8);
+      background: url('../../assets/images/review/icon_filter.png') no-repeat center / contain;
+    }
+  }
+
+  .filter-list {
+    display: none;
+    margin-top: vw-mo(4);
+    padding: vw-mo(10) vw-mo(20);
+    background: $color-white;
+    border-radius: vw-mo(10);
+    box-shadow: 0 0 vw-mo(10) rgba(0, 0, 0, 0.1);
+
+    li {
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: vw-mo(24);
+    }
+
+    li.act button {
+      color: $color-main;
+    }
+  }
+
+  // act
+  .filter.act {
+    .filter-tit::after {
+      transform: rotate(-180deg);
+    }
+
+    .filter-list {
+      display: block;
+    }
+  }
+}

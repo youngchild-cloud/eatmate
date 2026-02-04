@@ -1,6 +1,6 @@
 import './Input.scss';
 
-const InputTextarea = ({ name, title, RequiredInput, SelectInput, onChange }) => {
+const InputTextarea = ({ name, title, RequiredInput, SelectInput, value, onChange }) => {
   return (
     <div className='common-input-box'>
       <label htmlFor={name}>
@@ -14,6 +14,7 @@ const InputTextarea = ({ name, title, RequiredInput, SelectInput, onChange }) =>
         cols={10}
         rows={5}
         placeholder={`${title}을(를) 입력해 주세요.`}
+        value={value || ''}
         onChange={onChange}
         required={SelectInput ? false : true}
       ></textarea>
