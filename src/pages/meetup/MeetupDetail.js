@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 
 import './meetupdetail.scss';
@@ -14,20 +14,46 @@ import tabTxtImg1 from 'assets/images/meetup/con-txt-img1.png';
 import tabTxtImg2 from 'assets/images/meetup/con-txt-img2.png';
 import tabTxtImg3 from 'assets/images/meetup/con-txt-img3.png';
 import { dateFormat } from 'utils/dateFormat'
-import { useRequireLogin } from 'utils/useRequireLogin';
 
 const MeetupDetail = () => {
   const { bm_no } = useParams();
+  const navigate = useNavigate();
   const token = localStorage.getItem('token');
   const decoded = token ? jwtDecode(token) : '';
 
-  const navigateLogin = useRequireLogin();
+  const handleJoin = () => {
+    if (!token) {
+      alert('로그인 후 사용 가능합니다.');
+      navigate('/login');
+      return;
+    }
+    axios.post('http://localhost:9070/meetup_join', {
+      bm_no, user_no: decoded.token_no
+    }).then(() => {
+      setJoined(true);
+      setMeetUp(prev => ({
+        ...prev,
+        bm_m_people: Number(prev.bm_m_people) + 1
+      }))
+    })
+  }
 
+  const handleCancel = () => {
+    axios.delete('http://localhost:9070/meetup_join', {
+      data: { bm_no, user_no: decoded.token_no }
+    }).then(() => {
+      setJoined(false);
+      setMeetUp(prev => ({
+        ...prev,
+        bm_m_people: Number(prev.bm_m_people) - 1
+      }))
+    })
+  }
 
   const [meetUp, setMeetUp] = useState({
     bm_no: '',
     bm_board_cate: '',
-    bm_user_no: '',
+    bm_user_no: decoded.token_no,
     bm_img: '',
     bm_img2: '',
     bm_img3: '',
@@ -46,26 +72,9 @@ const MeetupDetail = () => {
     u_pic: '',
   });
 
-
-  // const [meetupChange, setMeetupChange] = useState(true);
-
-  // const [meetupIcon, setMeetupIcon] = useState(true);
-
-  // const handleChange = (e) => {
-  //   e.preventDefault();
-  //   setMeetupCount(meetupCount + 1);
-  // }
-
   const meetupMax = Number(meetUp.bm_m_people) === Number(meetUp.bm_m_people_all);
 
   const [joined, setJoined] = useState(false);
-
-  const meetUpJoin = () => {
-    if (!joined && token) {
-      return;
-    }
-  }
-
 
   useEffect(() => {
     axios.get(`http://localhost:9070/meetup/`, {
@@ -76,60 +85,19 @@ const MeetupDetail = () => {
         setMeetUp(res.data);
       })
       .catch(err => console.log('조회오류', err));
-  }, [bm_no])
+  }, [bm_no]);
+
 
   useEffect(() => {
     if (!token) return;
-    axios.get('http://localhost:9070/meetup/join/check', {
-      params: {
-        bm_no,
-      },
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
+    axios.get('http://localhost:9070/meetup_join', {
+      params: { bm_no, user_no: decoded.token_no }
     })
-      .then(res =>
-        setJoined(res.data.joined))
-      .catch(() => setJoined(false));
+      .then(res => {
+        setJoined(res.data.joined);
+      });
   }, [bm_no, token]);
 
-  const handleJoin = () => {
-    axios.post(`http://localhost:9070/meetup/join`, { bm_no },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    )
-      .then(() => {
-        setJoined(true);
-        setMeetUp(prev => ({
-          ...prev,
-          bm_m_people: Number(prev.bm_m_people) + 1
-        }));
-      })
-      .catch(err => {
-        alert(JSON.stringify(err.response?.data) || '참석실패');
-      });
-  };
-
-  const handleCancel = () => {
-    axios.delete(`http://localhost:9070/meetup/${bm_no}/join`, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-      .then(() => {
-        setJoined(false);
-        setMeetUp(prev => ({
-          ...prev,
-          bm_m_people: Number(prev.bm_m_people) - 1
-        }));
-      })
-      .catch(err => {
-        alert(err.response?.data?.error || '참석취소실패');
-      });
-  };
 
   return (
     <section className='meetup-detail'>
@@ -154,19 +122,18 @@ const MeetupDetail = () => {
             <span className='content-info-txt'><img src={tabTxtImg3} alt="인원아이콘" /> {meetUp.bm_m_people}/ {meetUp.bm_m_people_all}</span>
           </p>
 
-          {joined ?
-            (<p onClick={handleCancel}>
+          {joined &&
+            (<p onClick={handleCancel} className='meetup-toggle-btn'>
               <ButtonWide text={'참석취소'} />
-            </p>) : (meetupMax ?
-
-              (<p>
-                <ButtonWide text={'참석마감'} disabled />
-              </p>) :
-
-              (<p onClick={handleJoin}>
-                <ButtonWide text={'참석하기'} />
-              </p>))
-          }
+            </p>)}
+          {!joined && meetupMax && (
+            <p className='meetup-toggle-btn-close'>
+              <ButtonWide text={'참석마감'} disabled />
+            </p>)}
+          {!meetupMax && !joined && (
+            <p onClick={handleJoin}>
+              <ButtonWide text={'참석하기'} />
+            </p>)}
 
           {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호 / p_user_token는 토큰값을 decoded해서 넘겨주시면 됩니다. */}
           <HeartComment heart={meetUp.bm_heart} comment={meetUp.bm_comment} p_board_cate={'meetup'} p_board_no={bm_no} p_user_token={decoded} />
