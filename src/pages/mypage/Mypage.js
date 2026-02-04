@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 
@@ -21,7 +22,17 @@ const Mypage = () => {
   const token = localStorage.getItem('token');
   const decoded = token ? jwtDecode(token) : '';
 
+  const [mypageData, setMyPageDate] = useState('');
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const user_no = decoded.token_no;
+
+    axios.get(`http://localhost:9070/mypage/${user_no}`)
+      .then(res => setMyPageDate(res.data))
+      .catch(err => console.log(err))
+  }, [])
 
   const handleLogout = () => {
     if (window.confirm('로그아웃 하시겠습니까?')) {
@@ -39,14 +50,12 @@ const Mypage = () => {
         <TitleCenter title={'마이페이지'} />
 
         <div className="profile">
-          <div><img src={`http://localhost:9070/uploads/user/${decoded?.token_profile}`} alt="" /></div>
+          <div><img src={`http://localhost:9070/uploads/user/${mypageData.u_pic}`} alt="" /></div>
 
           <p className="profile-txt">
-            {decoded?.token_nick}
-            <span className='profile-badge'><Badge rank={decoded?.token_badge} /></span>
-            <span className='profile-txt-detail'>
-              {decoded?.token_desc}
-            </span>
+            {mypageData.u_nick}
+            <Badge rank={mypageData.u_badge} />
+            <span className='profile-txt-detail'>{mypageData.u_desc}</span>
           </p>
         </div>
 
