@@ -6,21 +6,29 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const CpCommunity = ({ item }) => {
+const CpCommunity = ({ mypageUser }) => {
   const [data, setData] = useState([]);
 
   // 자유게시판 리스트 조회
   const loadData = () => {
-    //서버 연결용 axios.get('http://localhost:9070/communitylist').then(res => {
-    axios.get('http://localhost:9070/communitylist').then(res => {
-      setData(res.data);
-    })
-      .catch(err => console.log(err))
+    if (!mypageUser) {
+      // 커뮤니티
+      axios.get('http://localhost:9070/communitylist')
+        .then(res => setData(res.data))
+        .catch(err => console.log(err))
+    } else {
+      // 마이페이지 - 작성한 게시글
+      axios.get('http://localhost:9070/community', {
+        params: { user_no: mypageUser }
+      })
+        .then(res => setData(res.data))
+        .catch(err => console.log(err))
+    }
   }
+
   useEffect(() => {
     loadData();
   }, [])
-
 
   return (
     <>

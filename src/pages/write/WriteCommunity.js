@@ -53,9 +53,9 @@ const WriteCommunity = () => {
         <TitleCenter title={'자유게시판 글쓰기'} />
 
         <form className='write-form' onSubmit={handleSubmit}>
-          <Input type={'text'} name={'bc_title'} title={'제목'} onChange={handleChange} />
+          <Input type={'text'} name={'bc_title'} title={'제목'} onChange={handleChange} value={form.bc_title} />
 
-          <InputTextarea name={'bc_desc'} title={'내용'} onChange={handleChange} RequiredInput={'필수'} />
+          <InputTextarea name={'bc_desc'} title={'내용'} onChange={handleChange} value={form.bc_desc} />
 
           <ButtonWide type={'submit'} text={'등록하기'} />
         </form>
