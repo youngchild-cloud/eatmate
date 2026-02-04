@@ -5,6 +5,7 @@ import MoLayout from 'layouts/MoLayout';
 
 import AdminLogin from 'pages/admin/Login';
 import AdminRestaurantList from 'pages/admin/restaurant/RestaurantList';
+import AdminRestaurantModify from 'pages/admin/restaurant/RestaurantModify';
 import AdminRestaurantCreate from 'pages/admin/restaurant/RestaurantCreate';
 import AdminReviewList from 'pages/admin/review/ReviewList';
 import AdminReviewModify from 'pages/admin/review/ReviewModify';
@@ -46,14 +47,15 @@ export default function AppRoutes() {
         <Route index element={<Navigate to="login" replace />} />
         <Route path="login" element={<AdminLogin />} />
         <Route path="restaurant" element={<AdminRestaurantList />} />
+        <Route path="restaurant/modify/:rt_no" element={<AdminRestaurantModify />} />
         <Route path="restaurant/create" element={<AdminRestaurantCreate />} />
         <Route path="board" element={<Navigate to="review" replace />} />
         <Route path="board/review" element={<AdminReviewList />} />
-        <Route path="board/review/modify" element={<AdminReviewModify />} />
+        <Route path="board/review/modify/:br_no" element={<AdminReviewModify />} />
         <Route path="board/meetup" element={<AdminMeetupList />} />
-        <Route path="board/meetup/modify" element={<AdminMeetupModify />} />
+        <Route path="board/meetup/modify/:bm_no" element={<AdminMeetupModify />} />
         <Route path="board/community" element={<AdminCommunityList />} />
-        <Route path="board/community/modify" element={<AdminCommunityModify />} />
+        <Route path="board/community/modify/:bc_no" element={<AdminCommunityModify />} />
         <Route path="user" element={<AdminUserList />} />
         <Route path="user/create" element={<AdminUserCreate />} />
         <Route path="*" element={<PcNotFound />} />

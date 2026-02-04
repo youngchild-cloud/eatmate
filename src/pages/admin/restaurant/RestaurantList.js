@@ -2,6 +2,7 @@ import axios from 'axios';
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function RestaurantList(props) {
   const [data, setData] = useState([]);
@@ -18,6 +19,20 @@ function RestaurantList(props) {
   useEffect(() => {
     loadData();
   }, []);
+
+  const deleteData = async (rt_no, rt_name) => {
+    if (window.confirm(`${rt_name}을(를) 삭제하시겠습니까?`)) {
+      try {
+        await axios
+          .delete(`http://localhost:9070/admin/restaurant/${rt_no}`);
+
+        alert(`선택하신 ${rt_name}을(를) 삭제했습니다.`);
+        loadData();
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
 
   return (
     <>
@@ -71,8 +86,8 @@ function RestaurantList(props) {
                     <td>{item.rt_rank}</td>
                     <td>{item.rt_date}</td>
                     <td className='btn-td'>
-                      <button className='btn-update'>수정</button>
-                      <button className='btn-delete'>삭제</button>
+                      <Link to={`/admin/restaurant/modify/${item.rt_no}`} className='btn-update btn'>수정</Link>
+                      <button className='btn-delete' onClick={() => deleteData(item.rt_no, item.rt_name)}>삭제</button>
                     </td>
                   </tr>
                 ))
