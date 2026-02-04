@@ -54,39 +54,40 @@ import Order from './components/Order';
 import logo from './assets/images/logo.png';
 
 # 폴더/페이지명
-layouts/ : “껍데기(헤더/푸터/네비 + Outlet)”만 담당
-routes/ : 라우팅 정의만 담당
-pages/ : 화면(페이지)
-components/ : 재사용 컴포넌트
 assets/ : 이미지/스타일/폰트
-data/ : 더미데이터/상수/목업
+components/ : 재사용 컴포넌트
+data/ : 더미 데이터
+layouts/ : “껍데기(헤더/푸터/네비 + Outlet)”만 담당
+pages/ : 화면(페이지) => 하단에 정리해둠
+routes/ : 라우팅 정의만 담당
+utils/ : 재사용 함수
 ---
 pages
 - review 맛집 리뷰
-  - ReviewList.js 맛집 리뷰 목록              => 개발 예정(혜련)
+  - ReviewList.js 맛집 리뷰 목록
   - ReviewDetail.js 맛집 리뷰 상세
-  - RestaurantList.js 맛집 목록               => 개발 예정(혜련)
+  - RestaurantList.js 맛집 목록
   - RestaurantDetail.js 맛집 상세
 
-- meetup 맛집 맛집 탐방
-  - MeetupList.js 맛집 맛집 탐방 목록         => 개발 예정(지희)
-  - MeetupDetail.js 맛집 맛집 탐방 상세
+- meetup 맛집 탐방
+  - MeetupList.js 맛집 탐방 목록
+  - MeetupDetail.js 맛집 탐방 상세
+
+- community 자유게시판
+  - CommunityList.js 맛집 탐방 목록
+  - CommunityDetail.js 맛집 탐방 상세
 
 - write 글쓰기
   - Write.js 글쓰기 모달
   - WriteReview.js 맛집 리뷰 글쓰기
-  - WriteMeetup.js 맛집 맛집 탐방 글쓰기
+  - WriteMeetup.js 맛집 탐방 글쓰기
   - WriteCommunity.js 자유게시판 글쓰기
-
-- community 자유게시판
-  - CommunityList.js 맛집 맛집 탐방 목록      => 개발 예정(영찬)
-  - CommunityDetail.js 맛집 맛집 탐방 상세
 
 - mypage 마이페이지
   - Mypage.js 마이페이지
   - MypageProfile.js 프로필
   - MypageBookmark.js 저장한 맛집
-  - MypageMeetup.js 맛집 맛집 탐방 신청내역
+  - MypageMeetup.js 맛집 탐방 신청내역
   - MypageWrite.js 작성한 게시글
   - MypageLike.js 내가 남긴 좋아요
   - MypageComment.js 내가 남긴 댓글
@@ -99,73 +100,26 @@ pages
   - NotFound.js 404페이지
 
 - admin 관리자
-  - login 로그인
-  - restaurant 매장 관리
-    - restaurant 매장 목록
-    - restaurant/create 매장 등록 
+  - Login.js 로그인
+  - restaurant 맛집 관리
+    - RestaurantList.js 맛집 목록
+    - RestaurantCreate.js 맛집 등록 
   - board 게시판 관리
-    - reviews
-      - reviews 맛집 리뷰 목록
-      - reviews/create 맛집 리뷰 등록
-    - meetups
-      - meetups 맛집 탐방 목록
-      - meetups/create
-    - community
-      - community 자유게시판 목록
-      - community/create
+    - review 맛집 리뷰
+      - ReviewList.js 맛집 리뷰 목록
+      - ReviewModify.js 맛집 리뷰 수정
+    - meetup 맛집 탐방
+      - MeetupList.js 맛집 탐방 목록
+      - MeetupModify.js 맛집 탐방 수정
+    - community 자유게시판
+      - Community.js 자유게시판 목록
+      - CommunityModify.js 자유게시판 수정
   - user 회원 관리
-    - user 회원 목록
+    - UserList.js 회원 목록
+    - UserModify.js 회원 수정
 
-# url 주소
-review 맛집 리뷰
-- review/ 맛집 리뷰
-- review/detail 맛집 리뷰 상세
-- review/restaurant 매장 목록
-- review/restaurant/detail 매장 상세
+# 페이지별 url 주소
+https://docs.google.com/spreadsheets/d/1tyFd-ocBtVweiLiTlegaGZ1oJvKRwaJ6KhGoSY0ODiU/edit?gid=1821756723#gid=1821756723
 
-meetup 맛집 맛집 탐방
-- meetup 맛집 맛집 탐방 목록
-- meetup/detail 맛집 맛집 탐방 상세
-
-write 글쓰기
-- write/review 맛집 리뷰 글쓰기
-- write/meetup 맛집 맛집 탐방 글쓰기
-- write/community 자유게시판 글쓰기
-
-community 자유게시판
-- community 맛집 맛집 탐방 목록
-- community/detail 맛집 맛집 탐방 상세
-
-mypage 마이페이지
-- mypage 홈
-- mypage/profile 프로필
-- mypage/bookmark 저장한 맛집
-- mypage/meetup 맛집 맛집 탐방 신청내역
-- mypage/write 작성한 게시글
-- mypage/like 내가 남긴 좋아요
-- mypage/comment 내가 남긴 댓글
-
-login 로그인/회원가입
-- login 로그인
-- join 회원가입
-
-notfound 404페이지
-- notfound 404페이지
-
-admin 관리자
-- login 로그인
-- restaurant 매장 관리
-  - restaurant 매장 목록
-  - restaurant/create 매장 등록
-- board 게시판 관리
-  - reviews
-    - board/reviews 맛집 리뷰 목록
-    - board/reviews/create 맛집 리뷰 등록
-  - meetups
-    - board/meetups 맛집 탐방 목록
-    - board/meetups/create
-  - community
-    - board/community 자유게시판 목록
-    - board/community/create
-- user 회원 관리
-  - user 회원 목록
+# QA
+https://docs.google.com/spreadsheets/d/1tyFd-ocBtVweiLiTlegaGZ1oJvKRwaJ6KhGoSY0ODiU/edit?gid=513598370#gid=513598370
