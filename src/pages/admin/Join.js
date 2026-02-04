@@ -17,9 +17,35 @@ const Join = () => {
   const [profileFile, setProfileFile] = useState(null);
   const [errPwText, setErrPwText] = useState('');
   const [isPwMatch, setIsPwMatch] = useState(false);
-  const [message, setMessage] = useState('')
-  const [error, setError] = useState(false)
+
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState(false);
+
   const navigate = useNavigate();
+
+  //아이디 중복 체크
+  const idCheck = () => {
+    axios.post('http://localhost:9070/admin/idcheck', {
+      au_id: joinInput.au_id
+    })
+      .then(res => {
+        if (res.data.exists) {
+          setMessage('이미 사용중인 아이디입니다.');
+          setError(true);
+        } else {
+          setMessage('사용가능한 아이디입니다.');
+          setError(false);
+        }
+      });
+  }
+  useEffect(() => {
+    if (!joinInput.au_id) {
+      setMessage('');
+      return;
+    }
+    idCheck();
+  }, [joinInput.au_id]);
+
 
   useEffect(() => {
     // 페이지에 들어왔을 때 로그인 토큰이 있다면 메인 페이지로 강제 이동
@@ -28,21 +54,6 @@ const Join = () => {
       navigate('/admin/user');
     }
   }, []);
-
-  const idCheck = () => {
-    axios.post('http://localhost:9070/admin/idcheck', {
-      au_id: joinInput.au_id
-    })
-      .then(res => {
-        if (res.data.exists) {
-          setMessage('이미 사용중인 아이디입니다.');
-          setError(true)
-        } else {
-          setMessage('사용가능한 아이디입니다.');
-          setError(false)
-        }
-      })
-  }
 
   // input에 입력하면 value 변경
   const handleChange = (e) => {
@@ -111,9 +122,11 @@ const Join = () => {
             value={joinInput.au_id}
             onChange={handleChange}
           />
-          <p></p>
+          <p className='pw-text' style={{ color: error ? 'red' : 'blue' }}>
+            {message}
+          </p>
 
-          <Input
+          < Input
             type='password'
             name='au_pw'
             title='비밀번호'
