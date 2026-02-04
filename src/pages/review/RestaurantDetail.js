@@ -91,7 +91,9 @@ const RestaurantDetail = () => {
   // 리뷰 데이터 연결
   const rvLoadData = async () => {
     try {
-      const res = await axios.get(`http://localhost:9070/review/${rt_no}`);
+      const res = await axios.get('http://localhost:9070/review', {
+        params: { rt_no },
+      });
 
       setReviewData(res.data);
     } catch (err) {

@@ -6,6 +6,7 @@ import MoLayout from 'layouts/MoLayout';
 import AdminLogin from 'pages/admin/Login';
 import AdminJoin from 'pages/admin/Join';
 import AdminRestaurantList from 'pages/admin/restaurant/RestaurantList';
+import AdminRestaurantModify from 'pages/admin/restaurant/RestaurantModify';
 import AdminRestaurantCreate from 'pages/admin/restaurant/RestaurantCreate';
 import AdminReviewList from 'pages/admin/review/ReviewList';
 import AdminReviewModify from 'pages/admin/review/ReviewModify';
@@ -48,14 +49,15 @@ export default function AppRoutes() {
         <Route path="login" element={<AdminLogin />} />
         <Route path="join" element={<AdminJoin />} />
         <Route path="restaurant" element={<AdminRestaurantList />} />
+        <Route path="restaurant/modify/:rt_no" element={<AdminRestaurantModify />} />
         <Route path="restaurant/create" element={<AdminRestaurantCreate />} />
         <Route path="board" element={<Navigate to="review" replace />} />
         <Route path="board/review" element={<AdminReviewList />} />
-        <Route path="board/review/modify" element={<AdminReviewModify />} />
+        <Route path="board/review/modify/:br_no" element={<AdminReviewModify />} />
         <Route path="board/meetup" element={<AdminMeetupList />} />
-        <Route path="board/meetup/modify" element={<AdminMeetupModify />} />
+        <Route path="board/meetup/modify/:bm_no" element={<AdminMeetupModify />} />
         <Route path="board/community" element={<AdminCommunityList />} />
-        <Route path="board/community/modify" element={<AdminCommunityModify />} />
+        <Route path="board/community/modify/:bc_no" element={<AdminCommunityModify />} />
         <Route path="user" element={<AdminUserList />} />
         <Route path="user/create" element={<AdminUserCreate />} />
         <Route path="*" element={<PcNotFound />} />
@@ -80,12 +82,12 @@ export default function AppRoutes() {
         <Route path="write/community" element={<WriteCommunity />} />
 
         <Route path="mypage" element={<Mypage />} />
-        <Route path="mypage/profile" element={<MypageProfile />} />
-        <Route path="mypage/bookmark" element={<MypageBookmark />} />
-        <Route path="mypage/meetup" element={<MypageMeetup />} />
-        <Route path="mypage/write" element={<MypageWrite />} />
-        <Route path="mypage/like" element={<MypageLike />} />
-        <Route path="mypage/comment" element={<MypageComment />} />
+        <Route path="mypage/profile/:user_no" element={<MypageProfile />} />
+        <Route path="mypage/bookmark/:user_no" element={<MypageBookmark />} />
+        <Route path="mypage/meetup/:user_no" element={<MypageMeetup />} />
+        <Route path="mypage/write/:user_no" element={<MypageWrite />} />
+        <Route path="mypage/like/:user_no" element={<MypageLike />} />
+        <Route path="mypage/comment/:user_no" element={<MypageComment />} />
 
         <Route path="login" element={<Login />} />
         <Route path="join" element={<Join />} />

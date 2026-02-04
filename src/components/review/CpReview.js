@@ -5,13 +5,23 @@ import './CpReview.scss';
 import Rank5 from 'components/review/Rank5';
 import { dateFormat } from 'utils/dateFormat';
 
-const CpReview = () => {
+const CpReview = ({ mypageUser }) => {
   // db 데이터값 가져오기
   const [reviewData, setReviewData] = useState([]);
 
   const loadData = async () => {
     try {
-      const res = await axios.get('http://localhost:9070/review');
+      let res;
+
+      if (!mypageUser) {
+        // 메인 - 맛집 리뷰 목록
+        res = await axios.get('http://localhost:9070/review/all');
+      } else {
+        // 마이페이지 - 작성한 게시글 - 맛집 리뷰 목록
+        res = await axios.get('http://localhost:9070/review', {
+          params: { user_no: mypageUser }
+        });
+      }
       setReviewData(res.data);
     } catch (err) {
       console.log(err.response.data.error);
@@ -20,7 +30,7 @@ const CpReview = () => {
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, [mypageUser]);
 
   return (
     <>

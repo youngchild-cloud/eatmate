@@ -8,13 +8,22 @@ const InputFile = ({
   SelectInput,
   maxFiles = 1,
   onFilesChange,
+  defaultPreview,
 }) => {
   const [previews, setPreviews] = useState([]);
+
+  // 기존 이미지 미리보기 세팅
+  useEffect(() => {
+    if (defaultPreview) {
+      // 서버에 저장된 이미지 URL 형태라고 가정
+      setPreviews([defaultPreview]);
+    }
+  }, [defaultPreview]);
 
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files || []);
     if (files.length === 0) {
-      setPreviews([]);
+      setPreviews(defaultPreview ? [defaultPreview] : []);
       onFilesChange && onFilesChange([]);
       return;
     }
@@ -53,7 +62,14 @@ const InputFile = ({
           <div className="preview-wrap">
             {previews.map((src, idx) => (
               <div className='img-box' key={src}>
-                <img src={src} alt={`미리보기 ${idx + 1}`} />
+                <img
+                  src={
+                    src.startsWith('blob:')
+                      ? src
+                      : `http://localhost:9070/uploads/user/${src}`
+                  }
+                  alt={`미리보기 ${idx + 1}`}
+                />
               </div>
             ))}
           </div>

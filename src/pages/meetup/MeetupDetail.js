@@ -68,7 +68,9 @@ const MeetupDetail = () => {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:9070/meetup/${bm_no}`)
+    axios.get(`http://localhost:9070/meetup/`, {
+      params: { bm_no }
+    })
       .then(res => {
         console.log('서버응답값:', res.data);
         setMeetUp(res.data);

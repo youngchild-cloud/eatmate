@@ -3,12 +3,14 @@ import Aside from 'components/admin/Aside';
 
 import PcInput from 'components/admin/PcInput';
 import TitleBox from 'components/admin/TitleBox';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function RestaurantCreate(props) {
 
-  const [ rtInput, setRtInput] = useState({
+  // const { rt_no } = useParams();
+
+  const [rtInput, setRtInput] = useState({
     // rt_no: '',맛집 번호
     rt_cate: '',
     rt_name: '',
@@ -28,14 +30,24 @@ function RestaurantCreate(props) {
 
   const navigate = useNavigate();
 
-  const handleChange = (e) =>{
+  // useEffect(() => {
+  //   axios.get(`http://localhost:9070/goods/${g_code}`)
+  //   .then(res =>{
+  //     console.log('서버 응답 값 : ', res.data);
+
+  //     if(Array.isArray(res.data))
+  //   })
+
+  // })
+
+  const handleChange = (e) => {
     setRtInput({
       ...rtInput,
       [e.target.name]: e.target.value
     });
   }
 
-  const handleSubmit = async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -62,7 +74,7 @@ function RestaurantCreate(props) {
 
             <form onSubmit={handleSubmit}>
               <legend>맛집 등록하기</legend>
-              <PcInput type="select" name="rt_cate" title="맛집 카테고리" onChange={handleChange}/>
+              <PcInput type="select" name="rt_cate" title="맛집 카테고리" onChange={handleChange} />
               <PcInput type="input" name="rt_name" title="맛집명" onChange={handleChange} />
               <PcInput type="input" name="rt_desc" title="맛집 설명" onChange={handleChange} />
               <strong className="label">맛집 이미지</strong>
@@ -70,7 +82,7 @@ function RestaurantCreate(props) {
               <PcInput type="tel" name="rt_tel" title="전화번호" onChange={handleChange} />
               <PcInput type="text" name="rt_location" title="주소" onChange={handleChange} />
 
-              <button type="submit">등록 완료</button>
+              <button type="submit">수정 완료</button>
             </form>
           </div>
         </article>
