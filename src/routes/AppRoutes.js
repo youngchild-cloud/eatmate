@@ -78,12 +78,12 @@ export default function AppRoutes() {
         <Route path="write/community" element={<WriteCommunity />} />
 
         <Route path="mypage" element={<Mypage />} />
-        <Route path="mypage/profile" element={<MypageProfile />} />
-        <Route path="mypage/bookmark" element={<MypageBookmark />} />
-        <Route path="mypage/meetup" element={<MypageMeetup />} />
-        <Route path="mypage/write" element={<MypageWrite />} />
-        <Route path="mypage/like" element={<MypageLike />} />
-        <Route path="mypage/comment" element={<MypageComment />} />
+        <Route path="mypage/profile/:user_no" element={<MypageProfile />} />
+        <Route path="mypage/bookmark/:user_no" element={<MypageBookmark />} />
+        <Route path="mypage/meetup/:user_no" element={<MypageMeetup />} />
+        <Route path="mypage/write/:user_no" element={<MypageWrite />} />
+        <Route path="mypage/like/:user_no" element={<MypageLike />} />
+        <Route path="mypage/comment/:user_no" element={<MypageComment />} />
 
         <Route path="login" element={<Login />} />
         <Route path="join" element={<Join />} />

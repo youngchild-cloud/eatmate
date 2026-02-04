@@ -37,6 +37,7 @@ const Mypage = () => {
     <section className='mypage'>
       <div className="inner">
         <TitleCenter title={'마이페이지'} />
+
         <div className="profile">
           <div><img src={`http://localhost:9070/uploads/user/${decoded?.token_profile}`} alt="" /></div>
 
@@ -49,14 +50,14 @@ const Mypage = () => {
           </p>
         </div>
 
-        <div className='profile-edit'><Link to='/mypage/profile'>프로필 수정</Link></div>
+        <div className='profile-edit'><Link to={`/mypage/profile/${decoded.token_no}`}>프로필 수정</Link></div>
 
         <div className='line'>
-          <Link to='/mypage/bookmark'><img src={BookmarkImg} alt="북마크 아이콘" /><span>저장한 맛집</span></Link>
-          <Link to='/mypage/meetup'><img src={MeetupImg} alt="맛집 아이콘" /><span>맛집 탐방 신청내역</span></Link>
-          <Link to='/mypage/write'><img src={WriteImg} alt="글쓰기 아이콘" /><span>작성한 게시글</span></Link>
-          <Link to='/mypage/like'><img src={HeartImg} alt="좋아요 아이콘" /><span>내가 남긴 좋아요</span></Link>
-          <Link to='/mypage/comment'><img src={CommentImg} alt="댓글 아이콘" /><span>내가 남긴 댓글</span></Link>
+          <Link to={`/mypage/bookmark/${decoded.token_no}`}><img src={BookmarkImg} alt="북마크 아이콘" /><span>저장한 맛집</span></Link>
+          <Link to={`/mypage/meetup/${decoded.token_no}`}><img src={MeetupImg} alt="맛집 아이콘" /><span>맛집 탐방 신청내역</span></Link>
+          <Link to={`/mypage/write/${decoded.token_no}`}><img src={WriteImg} alt="글쓰기 아이콘" /><span>작성한 게시글</span></Link>
+          <Link to={`/mypage/like/${decoded.token_no}`}><img src={HeartImg} alt="좋아요 아이콘" /><span>내가 남긴 좋아요</span></Link>
+          <Link to={`/mypage/comment/${decoded.token_no}`}><img src={CommentImg} alt="댓글 아이콘" /><span>내가 남긴 댓글</span></Link>
         </div>
 
         <button className='logout' onClick={handleLogout}><img src={LogoutImg} alt="로그아웃 아이콘" /><span>로그아웃</span></button>
