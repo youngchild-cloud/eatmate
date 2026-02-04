@@ -36,7 +36,7 @@ const MypageProfile = () => {
     }
 
     // 페이지에 들어왔을 때 기존 유저값이 나오게
-    axios.get(`http://localhost:9070/mypage/profile/${user_no}`)
+    axios.get(`http://localhost:9070/mypage/${user_no}`)
       .then(res => {
         setMyProfileInput(prev => ({
           ...prev,
@@ -155,7 +155,7 @@ const MypageProfile = () => {
             onChange={handleChange}
           />
 
-          <ButtonWide type='submit' text='가입하기' />
+          <ButtonWide type='submit' text='수정 완료' />
         </form>
       </div>
     </section>
