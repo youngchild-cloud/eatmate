@@ -4,12 +4,11 @@ import TitleBox from 'components/admin/TitleBox';
 import { useEffect, useState } from 'react';
 
 function ReviewList(props) {
-
   const [data, setData] = useState([]);
 
   const loadData = async () => {
     try {
-      const res = await axios.get('http://localhost:9070/review');
+      const res = await axios.get('http://localhost:9070/review/all');
       setData(res.data);
     } catch (err) {
       console.log(err.response.data.error);
@@ -62,7 +61,7 @@ function ReviewList(props) {
               <tbody>
                 {
                   data.map(item => (
-                    <tr>
+                    <tr key={item.br_no}>
                       <td>{item.br_no}</td>
                       <td>{item.u_nick}</td>
                       <td>{item.br_desc}</td>
