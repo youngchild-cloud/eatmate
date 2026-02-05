@@ -7,6 +7,7 @@ import axios from 'axios';
 
 function Login(props) {
 
+
   const [form, setForm] = useState({
     au_id: '',
     au_pw: ''
@@ -27,7 +28,7 @@ function Login(props) {
     e.preventDefault();
     axios.post('http://localhost:9070/admin/login', form)
       .then(res => {
-        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('adminToken', res.data.token);
         localStorage.setItem('au_id', form.au_id);
 
         alert('로그인성공! 메인페이지로 이동합니다.');

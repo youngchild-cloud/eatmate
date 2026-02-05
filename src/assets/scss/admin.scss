@@ -12,7 +12,7 @@
 
   // 우측 콘텐츠
   .admin-list {
-    width: 100%;
+    width: 1150px;
     padding: 60px 0;
 
     table {
@@ -49,6 +49,10 @@
           white-space: nowrap;
           vertical-align: middle;
         }
+        .btn-td{
+          padding:10px 0px;
+          overflow: initial;
+        }
 
         .imgtd {
           padding: 0;
@@ -65,15 +69,12 @@
 
 
         // 수정 삭제 버튼 서식
-        button {
+        .btn {
+          display: inline-block;
           padding: 6px 14px;
           border-radius: 6px;
           border: 1px solid #000;
           transition: 0.2s;
-        }
-
-        button~button {
-          margin-left: 5px;
         }
 
         .btn-update {
@@ -89,6 +90,7 @@
         .btn-delete {
           border-color: $color-main;
           color: $color-main;
+          margin-left: 5px;
 
           &:hover {
             background: $color-main;
@@ -114,7 +116,7 @@
 
   // 우측 콘텐츠 서식
   .right-content {
-    width: 100%;
+    width: 1150px;
     padding: 60px 0;
   }
 

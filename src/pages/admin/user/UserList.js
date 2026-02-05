@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
+import { Link } from 'react-router-dom';
 
 
 
@@ -77,8 +78,8 @@ function UserList(props) {
                     <td>{item.u_badge}</td>
                     <td>{item.u_date}</td>
                     <td className='btn-td'>
-                      <button className='btn-update'>수정</button>
-                      <button className='btn-delete' onClick={() => delData(item.u_no)}>삭제</button>
+                      <Link to={`/admin/user/modify/${item.u_no}`} className='btn-update btn'>수정</Link>
+                      <button className='btn-delete btn' onClick={() => delData(item.u_no)}>삭제</button>
                     </td>
                   </tr>
                 ))

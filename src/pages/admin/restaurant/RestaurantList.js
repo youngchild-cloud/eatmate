@@ -88,7 +88,7 @@ function RestaurantList(props) {
                     <td>{item.rt_date}</td>
                     <td className='btn-td'>
                       <Link to={`/admin/restaurant/modify/${item.rt_no}`} className='btn-update btn'>수정</Link>
-                      <button className='btn-delete' onClick={() => deleteData(item.rt_no, item.rt_name)}>삭제</button>
+                      <button className='btn-delete btn' onClick={() => deleteData(item.rt_no, item.rt_name)}>삭제</button>
                     </td>
                   </tr>
                 ))

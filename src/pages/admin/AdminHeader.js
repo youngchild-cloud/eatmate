@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import Logo from 'assets/images/logo.png';
 
 function AdminHeader(props) {
+  // const token = 
   const [handleLogout, setHandleLogout] = useState(false);
 
   return (
@@ -41,6 +42,7 @@ function AdminHeader(props) {
               </NavLink>
             </li>
           </ul>
+
 
           <div className='admin-info'>
             <img src={`${process.env.PUBLIC_URL}/images//meetup/user1.png`} alt="" />
