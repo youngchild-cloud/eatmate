@@ -16,7 +16,6 @@ const WriteMeetup = () => {
   const token = localStorage.getItem('token');
   const decoded = token ? jwtDecode(token) : '';
 
-  // console.log(decoded)
   const [form, setForm] = useState({
     bm_board_cate: '',
     bm_user_no: decoded.token_no,

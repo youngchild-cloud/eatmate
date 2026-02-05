@@ -34,11 +34,10 @@ function RestaurantCreate(props) {
     axios.get(`http://localhost:9070/restaurant/detail/${rt_no}`)
       .then(res => {
         console.log('서버 응답 값 : ', res.data);
-          setRtInput(res.data);
+        setRtInput(res.data);
       })
       .catch(err => console.log('조회 오류 : ', err));
   }, [rt_no]);
-  console.log(rt_no)
 
   const handleChange = (e) => {
     setRtInput({
@@ -66,7 +65,7 @@ function RestaurantCreate(props) {
 
 
       alert('맛집 정보가 수정되었습니다.');
-      
+
       navigate('/restaurant')
     } catch (err) {
       console.log(err)
