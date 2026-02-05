@@ -63,7 +63,7 @@ function MeetupList(props) {
               </thead>
               <tbody>
                 {data.map(item => (
-                  <tr>
+                  <tr key={item.bm_no}>
                     <td>{item.bm_no}</td>
                     <td>{item.u_nick}</td>
                     <td>{item.bm_title}</td>

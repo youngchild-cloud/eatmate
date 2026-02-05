@@ -56,7 +56,7 @@ function CommunityList(props) {
               </thead>
               <tbody>
                 {data.map(item => (
-                  <tr>
+                  <tr key={item.bc_no}>
                     <td>{item.bc_no}</td>
                     <td>{item.u_nick}</td>
                     <td>{item.bc_title}</td>
