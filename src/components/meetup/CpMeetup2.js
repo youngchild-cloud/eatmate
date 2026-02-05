@@ -12,20 +12,28 @@ import tabTxtImg3 from 'assets/images/meetup/con-txt-img3.png';
 
 import { dateFormat } from 'utils/dateFormat';
 
-const CpMeetup = () => {
+const CpMeetup = ({ mypageUser, mypageCategory }) => {
   const [data, setData] = useState([]);
 
   const loadData = () => {
-    axios.get('http://localhost:9070/meetup')
-      .then(res => {
-        setData(res.data);
+    if (!mypageUser) {
+      // 맛집 탐방
+      axios.get('http://localhost:9070/meetup/all')
+        .then(res => setData(res.data))
+        .catch(err => console.log(err))
+    } else {
+      // 마이페이지 - 작성한 게시글
+      axios.get('http://localhost:9070/meetup', {
+        params: { user_no: mypageUser, board_cate: mypageCategory }
       })
-      .catch(err => console.log(err))
+        .then(res => setData(res.data))
+        .catch(err => console.log(err))
+    }
   }
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, [mypageUser, mypageCategory]);
 
   return (
     <>

@@ -15,6 +15,7 @@ function RestaurantList(props) {
       console.log(err.response.data.error);
     }
   };
+  
 
   useEffect(() => {
     loadData();

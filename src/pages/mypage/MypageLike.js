@@ -10,7 +10,7 @@ const MypageLike = () => {
       <div className="inner">
         <TitleCenter title={'내가 남긴 좋아요'} />
 
-        <MypageTab />
+        <MypageTab category='like' />
       </div>
     </section>
   );

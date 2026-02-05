@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const CpCommunity = ({ mypageUser }) => {
+const CpCommunity = ({ mypageUser, mypageCategory }) => {
   const [data, setData] = useState([]);
 
   // 자유게시판 리스트 조회
@@ -19,7 +19,7 @@ const CpCommunity = ({ mypageUser }) => {
     } else {
       // 마이페이지 - 작성한 게시글
       axios.get('http://localhost:9070/community', {
-        params: { user_no: mypageUser }
+        params: { user_no: mypageUser, board_cate: mypageCategory }
       })
         .then(res => setData(res.data))
         .catch(err => console.log(err))
@@ -28,14 +28,14 @@ const CpCommunity = ({ mypageUser }) => {
 
   useEffect(() => {
     loadData();
-  }, [])
+  }, [mypageUser, mypageCategory])
 
   return (
     <>
       <div id="cp-community">
         {/* 자유게시판 글 목록  */}
         {data.map(item => (
-          <div>
+          <div key={item.bc_no}>
             <Link to={`/community/detail/${item.bc_no}`} className='item'>
               {/* 프로필 + 닉네임 + 등록시간 */}
               <div className="comm-top">

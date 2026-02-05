@@ -10,7 +10,7 @@ const MypageComment = () => {
       <div className="inner">
         <TitleCenter title={'내가 남긴 댓글'} />
 
-        <MypageTab />
+        <MypageTab category='comment' />
       </div>
     </section>
   );
