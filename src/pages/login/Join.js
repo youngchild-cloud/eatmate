@@ -30,16 +30,6 @@ const Join = () => {
     }
   }, []);
 
-  // input에 입력하면 value 변경
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setJoinInput(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
   // form 유효성검사 > 비밀번호 일치 확인
   useEffect(() => {
     if (!joinInput.u_pw2) {
@@ -56,6 +46,16 @@ const Join = () => {
       setIsPwMatch(false);
     }
   }, [joinInput.u_pw, joinInput.u_pw2]);
+
+  // input에 입력하면 value 변경
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setJoinInput(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
 
   // submit 버튼 클릭시 회원가입이 되도록
   const handleSubmit = async (e) => {

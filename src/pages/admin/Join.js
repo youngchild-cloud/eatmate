@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import './join.scss';
+
 import Input from 'components/admin/Input';
 import ButtonWide from 'components/common/ButtonWide';
 import PcInputFile from 'components/admin/PcInputFile';
@@ -23,7 +24,15 @@ const Join = () => {
 
   const navigate = useNavigate();
 
-  //아이디 중복 체크
+  useEffect(() => {
+    // 페이지에 들어왔을 때 로그인 토큰이 있다면 메인 페이지로 강제 이동
+    const adminToken = localStorage.getItem('adminToken');
+    if (adminToken) {
+      navigate('/admin');
+    }
+  }, []);
+
+  // 아이디 중복 체크
   const idCheck = () => {
     axios.post('http://localhost:9070/admin/idcheck', {
       au_id: joinInput.au_id
@@ -38,32 +47,15 @@ const Join = () => {
         }
       });
   }
+
   useEffect(() => {
+    // 아이디를 다 지우면 공란으로
     if (!joinInput.au_id) {
       setMessage('');
       return;
     }
     idCheck();
   }, [joinInput.au_id]);
-
-
-  useEffect(() => {
-    // 페이지에 들어왔을 때 로그인 토큰이 있다면 메인 페이지로 강제 이동
-    const token = localStorage.getItem('token');
-    if (token) {
-      navigate('/admin/user');
-    }
-  }, []);
-
-  // input에 입력하면 value 변경
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setJoinInput(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
 
   // form 유효성검사 > 비밀번호 일치 확인
   useEffect(() => {
@@ -81,6 +73,16 @@ const Join = () => {
       setIsPwMatch(false);
     }
   }, [joinInput.au_pw, joinInput.au_pw2]);
+
+  // input에 입력하면 value 변경
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setJoinInput(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
 
   // submit 버튼 클릭시 회원가입이 되도록
   const handleSubmit = async (e) => {
@@ -114,17 +116,19 @@ const Join = () => {
         <h2>회원가입</h2>
 
         <form onSubmit={handleSubmit}>
-          <Input
-            type='text'
-            name='au_id'
-            title='아이디'
-            RequiredInput='(필수)'
-            value={joinInput.au_id}
-            onChange={handleChange}
-          />
-          <p className='pw-text' style={{ color: error ? 'red' : 'blue' }}>
-            {message}
-          </p>
+          <div className="text-box">
+            <Input
+              type='text'
+              name='au_id'
+              title='아이디'
+              RequiredInput='(필수)'
+              value={joinInput.au_id}
+              onChange={handleChange}
+            />
+            <p className='pw-text' style={{ color: error ? 'red' : 'blue' }}>
+              {message}
+            </p>
+          </div>
 
           < Input
             type='password'
@@ -135,17 +139,19 @@ const Join = () => {
             onChange={handleChange}
           />
 
-          <Input
-            type='password'
-            name='au_pw2'
-            title='비밀번호 확인'
-            RequiredInput='(필수)'
-            value={joinInput.au_pw2}
-            onChange={handleChange}
-          />
-          <p className='pw-text' style={{ color: isPwMatch ? 'blue' : 'red' }}>
-            * {errPwText}
-          </p>
+          <div className="text-box">
+            <Input
+              type='password'
+              name='au_pw2'
+              title='비밀번호 확인'
+              RequiredInput='(필수)'
+              value={joinInput.au_pw2}
+              onChange={handleChange}
+            />
+            <p className='pw-text' style={{ color: isPwMatch ? 'blue' : 'red' }}>
+              * {errPwText}
+            </p>
+          </div>
 
           <Input
             type='text'
