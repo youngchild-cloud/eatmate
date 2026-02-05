@@ -2,6 +2,7 @@ import axios from 'axios';
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function CommunityList(props) {
   const [data, setData] = useState([]);
@@ -17,6 +18,21 @@ function CommunityList(props) {
   useEffect(() => {
     loadData();
   }, []);
+
+  const deleteData = async (bc_no, u_nick) => {
+    if(window.confirm(`${u_nick}님의 게시물을 삭제하시겠습니까?`))
+    {
+      try{
+        await axios
+        .delete(`http://localhost:9070/admin/community/${bc_no}`);
+
+        alert(`선택하신 ${u_nick}님의 게시글을 삭제했습니다.`);
+        loadData();
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
 
 
   return (
@@ -65,8 +81,8 @@ function CommunityList(props) {
                     <td>{item.bc_comment}</td>
                     <td>{item.bc_date}</td>
                     <td className='btn-td'>
-                      <button className='btn-update'>수정</button>
-                      <button className='btn-delete'>삭제</button>
+                      <Link to={`/admin/board/community/modify/${item.bc_no}`} className='btn-update btn'>수정</Link>
+                      <button className='btn-delete btn' onClick={() => deleteData(item.bc_no, item.u_nick)}>삭제</button>
                     </td>
                   </tr>
                 ))

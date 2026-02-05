@@ -2,6 +2,7 @@ import axios from 'axios';
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function MeetupList(props) {
 
@@ -9,7 +10,7 @@ function MeetupList(props) {
 
   const loadData = async () => {
     try {
-      const res = await axios.get('http://localhost:9070/meetup');
+      const res = await axios.get('http://localhost:9070/meetup/all');
       setData(res.data);
     } catch (err) {
       console.log(err.respone.data.error);
@@ -19,6 +20,19 @@ function MeetupList(props) {
   useEffect(() => {
     loadData();
   }, []);
+
+  const deleteData = async (bm_no, u_nick) => {
+    if (window.confirm(`${u_nick}님의 게시글을 삭제하시겠습니까?`)) {
+      try {
+        await axios.delete(`http://localhost:9070/admin/meetup/${bm_no}`);
+
+        alert(`선택하신 ${u_nick}님의 게시글을 삭제했습니다.`);
+        loadData();
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
 
   return (
     <>
@@ -75,8 +89,8 @@ function MeetupList(props) {
                     <td>{item.bm_comment}</td>
                     <td>{item.bm_date}</td>
                     <td className='btn-td'>
-                      <button className='btn-update'>수정</button>
-                      <button className='btn-delete'>삭제</button>
+                      <Link to={`/admin/board/meetup/modify/${item.bm_no}`} className='btn-update btn'>수정</Link>
+                      <button className='btn-delete btn' onClick={() => deleteData(item.bm_no, item.u_nick)}>삭제</button>
                     </td>
                   </tr>
                 ))

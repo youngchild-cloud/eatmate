@@ -33,12 +33,12 @@ function RestaurantCreate(props) {
   useEffect(() => {
     axios.get(`http://localhost:9070/restaurant/detail/${rt_no}`)
       .then(res => {
-        console.log('서버 응답 값 : ', res.data);
+        // console.log('서버 응답 값 : ', res.data);
           setRtInput(res.data);
       })
       .catch(err => console.log('조회 오류 : ', err));
   }, [rt_no]);
-  console.log(rt_no)
+  
 
   const handleChange = (e) => {
     setRtInput({
@@ -67,7 +67,7 @@ function RestaurantCreate(props) {
 
       alert('맛집 정보가 수정되었습니다.');
       
-      navigate('/restaurant')
+      navigate('/admin/restaurant')
     } catch (err) {
       console.log(err)
     }
@@ -84,17 +84,17 @@ function RestaurantCreate(props) {
 
           {/* 우측 리스트 */}
           <div className='right-content'>
-            <TitleBox title="맛집 등록" />
+            <TitleBox title="맛집 수정" />
 
             <form onSubmit={handleSubmit}>
               <legend>맛집 등록하기</legend>
-              <PcInput type="select" name="rt_cate" title="맛집 카테고리" value={rtInput.rt_name} onChange={handleChange} />
-              <PcInput type="input" name="rt_name" title="맛집명" onChange={handleChange} />
-              <PcInput type="input" name="rt_desc" title="맛집 설명" onChange={handleChange} />
+              <PcInput type="select" name="rt_cate" title="맛집 카테고리" value={rtInput.rt_cate} onChange={handleChange} />
+              <PcInput type="input" name="rt_name" title="맛집명" value={rtInput.rt_name} onChange={handleChange} />
+              <PcInput type="input" name="rt_desc" title="맛집 설명" value={rtInput.rt_desc} onChange={handleChange} />
               <strong className="label">맛집 이미지</strong>
               <PcInput type="file" name="rt_img" title="사진" onChange={handleChange} />
-              <PcInput type="tel" name="rt_tel" title="전화번호" onChange={handleChange} />
-              <PcInput type="text" name="rt_location" title="주소" onChange={handleChange} />
+              <PcInput type="tel" name="rt_tel" title="전화번호" value={rtInput.rt_tel} onChange={handleChange} />
+              <PcInput type="text" name="rt_location" title="주소" value={rtInput.rt_location} onChange={handleChange} />
 
               <button type="submit">수정 완료</button>
             </form>
