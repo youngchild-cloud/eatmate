@@ -45,7 +45,7 @@ export default function AppRoutes() {
     <Routes>
       {/* Admin (PC) */}
       <Route path="/admin" element={<PcLayout />}>
-        <Route index element={<Navigate to="login" replace />} />
+        <Route index element={<Navigate to="restaurant" replace />} />
         <Route path="login" element={<AdminLogin />} />
         <Route path="join" element={<AdminJoin />} />
         <Route path="restaurant" element={<AdminRestaurantList />} />
