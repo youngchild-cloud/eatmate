@@ -21,6 +21,7 @@ const MeetupDetail = () => {
   const token = localStorage.getItem('token');
   const decoded = token ? jwtDecode(token) : '';
 
+
   const handleJoin = () => {
     if (!token) {
       alert('로그인 후 사용 가능합니다.');
@@ -53,7 +54,7 @@ const MeetupDetail = () => {
   const [meetUp, setMeetUp] = useState({
     bm_no: '',
     bm_board_cate: '',
-    bm_user_no: decoded.token_no,
+    bm_user_no: '',
     bm_img: '',
     bm_img2: '',
     bm_img3: '',
@@ -72,31 +73,69 @@ const MeetupDetail = () => {
     u_pic: '',
   });
 
+  const myPage = token && decoded.token_no === meetUp.bm_user_no;
+
+  // const myPageCheck = () => {
+  //   if (!token) return;
+
+  //   if (decoded.token_no === meetUp.bm_user_no) {
+  //     setMyPage(true);
+  //   } else {
+  //     setMyPage(false)
+  //   }
+  // }
+
+
   const meetupMax = Number(meetUp.bm_m_people) === Number(meetUp.bm_m_people_all);
 
   const [joined, setJoined] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:9070/meetup/`, {
-      params: { bm_no }
-    })
-      .then(res => {
-        console.log('서버응답값:', res.data);
-        setMeetUp(res.data);
-      })
-      .catch(err => console.log('조회오류', err));
-  }, [bm_no]);
+    const fetchData = async () => {
+      try {
+        const meetupRes = await axios.get('http://localhost:9070/meetup/', {
+          params: { bm_no }
+        });
+        setMeetUp(meetupRes.data);
 
+        if (token) {
+          const joinRes = await axios.get('http://localhost:9070/meetup_join', {
+            params: { bm_no, user_no: decoded.token_no }
+          });
+          setJoined(joinRes.data.joined);
+        } else {
+          setJoined(false);
+        }
 
-  useEffect(() => {
-    if (!token) return;
-    axios.get('http://localhost:9070/meetup_join', {
-      params: { bm_no, user_no: decoded.token_no }
-    })
-      .then(res => {
-        setJoined(res.data.joined);
-      });
+      } catch (err) {
+        console.log('조회 오류', err);
+      }
+    };
+
+    fetchData();
   }, [bm_no, token]);
+
+  // useEffect(() => {
+  //   axios.get(`http://localhost:9070/meetup/`, {
+  //     params: { bm_no }
+  //   })
+  //     .then(res => {
+  //       console.log('서버응답값:', res.data);
+  //       setMeetUp(res.data);
+  //     })
+  //     .catch(err => console.log('조회오류', err));
+  // }, [bm_no]);
+
+
+  // useEffect(() => {
+  //   if (!token) return;
+  //   axios.get('http://localhost:9070/meetup_join', {
+  //     params: { bm_no, user_no: decoded.token_no }
+  //   })
+  //     .then(res => {
+  //       setJoined(res.data.joined);
+  //     });
+  // }, [bm_no, token]);
 
 
   return (
@@ -104,10 +143,24 @@ const MeetupDetail = () => {
       <div className="inner">
         <TitleCenter title={'맛집 탐방'} />
 
-        <div className='user'>
-          <div className='user-img'><img src={`http://localhost:9070/uploads/user/${meetUp.u_pic}`} alt="" /></div>
-          <p className='user-info'>{meetUp.u_nick}<span className='user-info-gap'>&middot;</span>{dateFormat(meetUp.bm_date)}</p>
+        <div className='user-writer'>
+          <div className='user'>
+            <div className='user-img'><img src={`http://localhost:9070/uploads/user/${meetUp.u_pic}`} alt="" /></div>
+            <p className='user-info'>{meetUp.u_nick}<span className='user-info-gap'>&middot;</span>{dateFormat(meetUp.bm_date)}</p>
+          </div>
+          {myPage &&
+            <div className='meetup-writer'>
+              <div className='myPage-btn'>
+                <span className='dot'>&middot;</span>
+                <span className='dot'>&middot;</span>
+                <span className='dot'>&middot;</span>
+              </div>
+              <button>수정</button>
+              <button>삭제</button>
+            </div>
+          }
         </div>
+
 
         <div className='content-box'>
           <img className="content-img" src={`http://localhost:9070/uploads/meetup/${meetUp.bm_img}`} alt="" />

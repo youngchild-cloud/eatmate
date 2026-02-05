@@ -34,6 +34,22 @@
       padding: 0 vw-mo(10);
     }
 
+    .user-writer button {
+      display: block;
+    }
+
+    .dot {
+      font-size: vw-mo(60);
+      line-height: 20px;
+    }
+
+    .user-writer {
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+
     .content-box {
       padding-bottom: vw-mo(60);
 
