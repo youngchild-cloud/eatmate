@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import './CpMeetup.scss';
@@ -13,6 +13,7 @@ import tabTxtImg3 from 'assets/images/meetup/con-txt-img3.png';
 
 const CpMeetup = ({ mypageUser }) => {
   const [data, setData] = useState([]);
+  const { user_no } = useParams();
 
   const loadData = () => {
     if (!mypageUser) {
@@ -30,9 +31,30 @@ const CpMeetup = ({ mypageUser }) => {
     }
   }
 
+  const loadMeetupData = () => {
+    axios.get('http://localhost:9070/mymeetup', {
+      params: { user_no }
+    })
+      .then(res => {
+        const list = res.data.meetupData ?? res.data ?? [];
+        setData(Array.isArray(list) ? list : []);
+
+      })
+
+      .catch(err => console.log(err))
+  }
+
+  // useEffect(() => {
+  //   loadData();
+  // }, []);
+
   useEffect(() => {
-    loadData();
-  }, []);
+    if (window.location.pathname.startsWith('/mypage/meetup')) {
+      loadMeetupData();
+    } else {
+      loadData();
+    }
+  }, [mypageUser, user_no])
 
   return (
     <>
