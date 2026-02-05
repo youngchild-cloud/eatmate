@@ -5,7 +5,7 @@ import './CpReview.scss';
 import Rank5 from 'components/review/Rank5';
 import { dateFormat } from 'utils/dateFormat';
 
-const CpReview = ({ mypageUser }) => {
+const CpReview = ({ mypageUser, mypageCategory }) => {
   // db 데이터값 가져오기
   const [reviewData, setReviewData] = useState([]);
 
@@ -19,7 +19,7 @@ const CpReview = ({ mypageUser }) => {
       } else {
         // 마이페이지 - 작성한 게시글 - 맛집 리뷰 목록
         res = await axios.get('http://localhost:9070/review', {
-          params: { user_no: mypageUser }
+          params: { user_no: mypageUser, board_cate: mypageCategory }
         });
       }
       setReviewData(res.data);
@@ -30,7 +30,7 @@ const CpReview = ({ mypageUser }) => {
 
   useEffect(() => {
     loadData();
-  }, [mypageUser]);
+  }, [mypageUser, mypageCategory]);
 
   return (
     <>

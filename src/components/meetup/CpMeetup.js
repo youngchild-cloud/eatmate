@@ -11,7 +11,7 @@ import tabTxtImg1 from 'assets/images/meetup/con-txt-img1.png';
 import tabTxtImg2 from 'assets/images/meetup/con-txt-img2.png';
 import tabTxtImg3 from 'assets/images/meetup/con-txt-img3.png';
 
-const CpMeetup = ({ mypageUser }) => {
+const CpMeetup = ({ mypageUser, mypageCategory }) => {
   const [data, setData] = useState([]);
 
   const loadData = () => {
@@ -23,7 +23,7 @@ const CpMeetup = ({ mypageUser }) => {
     } else {
       // 마이페이지 - 작성한 게시글
       axios.get('http://localhost:9070/meetup', {
-        params: { user_no: mypageUser }
+        params: { user_no: mypageUser, board_cate: mypageCategory }
       })
         .then(res => setData(res.data))
         .catch(err => console.log(err))
@@ -32,7 +32,7 @@ const CpMeetup = ({ mypageUser }) => {
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, [mypageUser, mypageCategory]);
 
   return (
     <>

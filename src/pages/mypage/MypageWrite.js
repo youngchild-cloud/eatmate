@@ -10,7 +10,7 @@ const MypageWrite = () => {
       <div className="inner">
         <TitleCenter title={'작성한 게시글'} />
 
-        <MypageTab />
+        <MypageTab category='write' />
       </div>
     </section>
   );
