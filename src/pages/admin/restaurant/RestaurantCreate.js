@@ -72,7 +72,7 @@ function RestaurantCreate(props) {
               <div className="pc-input-box">
                 <label htmlFor="rt_cate">맛집 카테고리</label>
                 <select name="rt_cate" id="rt_cate" value={rtInput.rt_cate} onChange={handleChange} required>
-                  <option value="">옵션을 선택하세요</option>
+                  <option value="">맛집 카테고리를 선택해주세요</option>
                   <option value="한식">한식</option>
                   <option value="일식">일식</option>
                   <option value="중식">중식</option>
