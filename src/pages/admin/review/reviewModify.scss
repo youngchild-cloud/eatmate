@@ -1,0 +1,16 @@
+@use 'assets/scss/variables' as *;
+@use 'assets/scss/function' as *;
+
+.review-modify {
+  button {
+    margin-top: 40px;
+  }
+
+  .reveiw-box .pc-input-box {
+    margin-bottom: 20px;
+  }
+
+  .label {
+    padding-bottom: 4px !important
+  }
+}

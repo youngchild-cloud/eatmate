@@ -1,6 +1,11 @@
 import Aside from 'components/admin/Aside';
-import PcInput from 'components/admin/PcInput';
+import Input from 'components/admin/Input';
+import PcInputFile from 'components/admin/PcInputFile';
+import InputTextarea from 'components/admin/InputTextarea';
+
 import TitleBox from 'components/admin/TitleBox';
+
+import './reviewModify.scss';
 
 function ReviewCreate(props) {
   return (
@@ -12,19 +17,38 @@ function ReviewCreate(props) {
 
           {/* 우측 리스트 */}
           <div className='right-content'>
-            <TitleBox title="맛집 리뷰 등록" />
+            <TitleBox title="맛집 리뷰 수정" />
 
-            <form>
-              {/* <legend>맛집 등록하기</legend>
-              <PcInput type="select" name="cate" title="맛집 카테고리" />
-              <PcInput type="input" name="restaurant" title="맛집명" />
-              <PcInput type="input" name="info" title="맛집 설명" />
-              <strong className="label">맛집 이미지</strong>
-              <PcInput type="file" name="img" title="사진" />
-              <PcInput type="tel" name="tel" title="전화번호" />
-              <PcInput type="text" name="address" title="주소" />
+            <form className='review-modify'>
+              <legend>맛집 리뷰 수정하기</legend>
 
-              <button type="submit">등록 완료</button> */}
+              <div className='pcinput-box'>
+                <label htmlFor="br_rank">맛집명</label>
+                <select required >
+                  <option value="">맛집명을 선택해주세요.</option>
+                </select>
+              </div>
+
+              {/* <strong className="label">맛집 이미지</strong> */}
+              <div className="reveiw-box">
+                <PcInputFile type="file" name="rt_img" title="사진" />
+              </div>
+
+              <InputTextarea type="input" name="rt_desc" title="리뷰" />
+              <div className='pcinput-box'>
+                <label htmlFor="br_rank">평점</label>
+                <select required >
+                  <option value="">평점을 선택해 주세요</option>
+                  <option value="5">5점</option>
+                  <option value="4">4점</option>
+                  <option value="3">3점</option>
+                  <option value="2">2점</option>
+                  <option value="1">1점</option>
+                </select>
+              </div>
+
+
+              <button type="submit">수정 완료</button>
             </form>
           </div>
         </article>
