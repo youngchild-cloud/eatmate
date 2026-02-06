@@ -54,8 +54,8 @@ export default function AppRoutes() {
         <Route element={<AdminPrivateRoute />}>
           <Route index element={<Navigate to="restaurant" replace />} />
           <Route path="restaurant" element={<AdminRestaurantList />} />
-          <Route path="restaurant/modify/:rt_no" element={<AdminRestaurantModify />} />
           <Route path="restaurant/create" element={<AdminRestaurantCreate />} />
+          <Route path="restaurant/modify/:rt_no" element={<AdminRestaurantModify />} />
           <Route path="board" element={<Navigate to="review" replace />} />
           <Route path="board/review" element={<AdminReviewList />} />
           <Route path="board/review/modify/:br_no" element={<AdminReviewModify />} />

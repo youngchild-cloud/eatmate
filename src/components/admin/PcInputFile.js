@@ -66,7 +66,7 @@ const InputFile = ({
                   src={
                     src.startsWith('blob:')
                       ? src
-                      : `http://localhost:9070/uploads/user/${src}`
+                      : `http://localhost:9070/uploads/restaurant/${src}`
                   }
                   alt={`미리보기 ${idx + 1}`}
                 />
@@ -82,7 +82,7 @@ const InputFile = ({
           accept="image/*"
           multiple={maxFiles > 1}
           onChange={handleFileChange}
-          required={SelectInput ? false : true}
+        // required={SelectInput ? false : true}
         />
       </div>
     </div>

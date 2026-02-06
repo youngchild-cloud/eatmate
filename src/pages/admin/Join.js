@@ -5,8 +5,8 @@ import axios from 'axios';
 import './join.scss';
 
 import Input from 'components/admin/Input';
-import ButtonWide from 'components/common/ButtonWide';
 import PcInputFile from 'components/admin/PcInputFile';
+import ButtonWide from 'components/common/ButtonWide';
 
 const Join = () => {
   const [joinInput, setJoinInput] = useState({

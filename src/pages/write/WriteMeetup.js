@@ -42,6 +42,11 @@ const WriteMeetup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!imgFile) {
+      alert('사진을 선택해주세요.');
+      return;
+    }
+
     const formData = new FormData();
     formData.append('bm_board_cate', form.bm_board_cate);
     formData.append('bm_user_no', form.bm_user_no);
