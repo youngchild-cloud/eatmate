@@ -10,14 +10,15 @@
   width: 100%;
 
   .admin-header-inner {
+    display: flex;
+    align-items: center;
+    gap: 252px;
+    position: relative;
     width: 1600px;
     height: 100px;
-    padding: 0 30px;
-    display: flex;
-    color: $color-text;
     margin: 0 auto;
-    align-items: center;
-    justify-content: space-between;
+    padding: 0 30px;
+    color: $color-text;
   }
 
   h1 img {
@@ -26,10 +27,6 @@
   }
 
   .admin-menu {
-    display: flex;
-    align-items: center;
-    gap: 577px;
-
     ul {
       display: flex;
       gap: 50px;
@@ -47,9 +44,13 @@
 
   .admin-info {
     display: flex;
-    font-size: 16px;
     align-items: center;
     gap: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    font-size: 16px;
     color: $color-gray;
 
     img {

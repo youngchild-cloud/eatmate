@@ -1,11 +1,17 @@
-import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 import Logo from 'assets/images/logo.png';
 
 function AdminHeader(props) {
-  // const token = 
+  const [adminToken, setAdminToken] = useState(() => localStorage.getItem('adminToken') || '');
   const [handleLogout, setHandleLogout] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    // 라우트가 바뀔 때마다 localStorage 다시 읽어서 state 갱신
+    setAdminToken(localStorage.getItem('adminToken') || '');
+  }, [location.pathname]);
 
   return (
     <section className='admin-header'>
@@ -42,14 +48,14 @@ function AdminHeader(props) {
               </NavLink>
             </li>
           </ul>
+        </div>
 
-
+        {adminToken && (
           <div className='admin-info'>
             <img src={`${process.env.PUBLIC_URL}/images//meetup/user1.png`} alt="" />
             <p onClick={() => setHandleLogout(prev => !prev)} className={handleLogout ? 'up' : 'down'}>
               관리자님<span></span>
-              {
-                handleLogout &&
+              {handleLogout &&
                 <Link to='/admin/login' title='관리자 페이지 로그아웃 하기'>
                   <button className='admin-logout-btn'>로그아웃</button>
                 </Link>
@@ -58,7 +64,7 @@ function AdminHeader(props) {
             &#10072;
             <Link to='/review' className='EatMate 서비스 메인 페이지로 이동'>서비스 바로가기</Link>
           </div>
-        </div>
+        )}
       </div>
     </section >
   );
