@@ -5,6 +5,7 @@ import axios from 'axios';
 import './login.scss';
 
 import PcInput from 'components/admin/PcInput';
+import ButtonWide from 'components/common/ButtonWide';
 
 function Login(props) {
   const [loginInput, setIoginInput] = useState({
@@ -112,7 +113,7 @@ function Login(props) {
             <Link to="/admin/join" title='회원가입 페이지로 이동'>회원가입</Link>
           </p>
 
-          <button type="submit">로그인</button>
+          <ButtonWide type='submit' text='로그인' />
         </form>
       </div>
     </section>

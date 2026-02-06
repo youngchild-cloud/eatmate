@@ -24,42 +24,20 @@
   form {
     width: 700px;
 
-    .text-box {
+    .join-mb {
       margin-bottom: 20px;
-
-      .pc-input-box {
-        margin-bottom: 6px;
-      }
     }
 
-    .check-box {
-      display: flex;
-      align-items: center;
-      color: $color-gray;
+    .join-mb:last-of-type {
+      margin-bottom: 60px;
     }
 
-    .check-box label {
-      padding-bottom: 0;
-      font-size: 14px;
-    }
-
-    #check {
-      width: 16px;
-      margin-right: 10px;
-    }
-
-    .ld-join-box {
-      text-align: center;
-      color: $color-gray;
-      font-size: 14px;
-      padding-bottom: 60px;
-    }
-
-    .id-join-gap {
-      padding: 0 10px;
+    .pc-input-box {
+      margin-bottom: 0;
     }
 
     .pw-text {
+      margin-top: 4px;
       font-size: 16px;
     }
 

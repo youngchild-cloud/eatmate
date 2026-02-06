@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './join.scss';
 
-import Input from 'components/admin/Input';
+import PcInput from 'components/admin/PcInput';
 import PcInputFile from 'components/admin/PcInputFile';
 import ButtonWide from 'components/common/ButtonWide';
 
@@ -116,8 +116,8 @@ const Join = () => {
         <h2>회원가입</h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="text-box">
-            <Input
+          <div className="join-mb">
+            <PcInput
               type='text'
               name='au_id'
               title='아이디'
@@ -130,17 +130,19 @@ const Join = () => {
             </p>
           </div>
 
-          < Input
-            type='password'
-            name='au_pw'
-            title='비밀번호'
-            RequiredInput='(필수)'
-            value={joinInput.au_pw}
-            onChange={handleChange}
-          />
+          <div className="join-mb">
+            <PcInput
+              type='password'
+              name='au_pw'
+              title='비밀번호'
+              RequiredInput='(필수)'
+              value={joinInput.au_pw}
+              onChange={handleChange}
+            />
+          </div>
 
-          <div className="text-box">
-            <Input
+          <div className="join-mb">
+            <PcInput
               type='password'
               name='au_pw2'
               title='비밀번호 확인'
@@ -153,22 +155,25 @@ const Join = () => {
             </p>
           </div>
 
-          <Input
-            type='text'
-            name='au_name'
-            title='이름'
-            RequiredInput='(필수)'
-            value={joinInput.au_name}
-            onChange={handleChange}
-          />
+          <div className="join-mb">
+            <PcInput
+              type='text'
+              name='au_name'
+              title='이름'
+              RequiredInput='(필수)'
+              value={joinInput.au_name}
+              onChange={handleChange}
+            />
+          </div>
 
-          <PcInputFile
-            name="au_pic"
-            title="프로필 사진"
-            SelectInput="(선택)"
-            maxFiles={1}
-            onFilesChange={(files) => setProfileFile(files[0] || null)}
-          />
+          <div className="join-mb">
+            <PcInputFile
+              name="au_pic"
+              title="프로필 사진"
+              maxFiles={1}
+              onFilesChange={(files) => setProfileFile(files[0] || null)}
+            />
+          </div>
 
           <ButtonWide type='submit' text='가입하기' />
         </form>
