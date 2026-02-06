@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
+import { Link } from "react-router-dom";
 
 import './meetupdetail.scss';
 
@@ -155,8 +156,8 @@ const MeetupDetail = () => {
                 <span className='dot'>&middot;</span>
                 <span className='dot'>&middot;</span>
               </div>
-              <button>수정</button>
-              <button>삭제</button>
+              <Link to="/meetup/modify/:bm_no"><button>수정</button></Link>
+              <Link to=""><button>삭제</button></Link>
             </div>
           }
         </div>
