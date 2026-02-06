@@ -18,7 +18,21 @@ const CpRestaurant = ({ category, filter, mypageUser }) => {
 
       setRestaurantData(res.data);
     } catch (err) {
-      console.log(err.response.data.error);
+      // 백엔드에서 응답이 온 경우(4xx/5xx)
+      if (err.response) {
+        console.log(err.response.data?.error ?? err.response.statusText);
+      }
+      // 서버 다운/네트워크/CORS 등으로 응답 자체가 없는 경우
+      else if (err.request) {
+        console.log('백엔드 서버에 연결할 수 없습니다. (9070)');
+      }
+      // 그 외
+      else {
+        console.log(err.message);
+      }
+
+      // 화면이 깨지지 않게 안전값
+      setRestaurantData([]);
     }
   };
 

@@ -24,7 +24,21 @@ const CpReview = ({ mypageUser, mypageCategory }) => {
       }
       setReviewData(res.data);
     } catch (err) {
-      console.log(err.response.data.error);
+      // 백엔드에서 응답이 온 경우(4xx/5xx)
+      if (err.response) {
+        console.log(err.response.data?.error ?? err.response.statusText);
+      }
+      // 요청은 나갔는데 응답이 없는 경우(서버 다운/네트워크/CORS 등)
+      else if (err.request) {
+        console.log('서버에 연결할 수 없습니다. 백엔드를 실행했는지 확인하세요.');
+      }
+      // 그 외(코드 에러 등)
+      else {
+        console.log(err.message);
+      }
+
+      // 화면 깨지지 않게 빈 배열로
+      setReviewData([]);
     }
   }
 
