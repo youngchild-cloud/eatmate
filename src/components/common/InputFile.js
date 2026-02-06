@@ -82,7 +82,7 @@ const InputFile = ({
           accept="image/*"
           multiple={maxFiles > 1}
           onChange={handleFileChange}
-          required={SelectInput ? false : true}
+        // required={SelectInput ? false : true}
         />
       </div>
     </div>

@@ -66,7 +66,7 @@ const InputFile = ({
                   src={
                     src.startsWith('blob:')
                       ? src
-                      : `http://localhost:9070/uploads/user/${src}`
+                      : `http://localhost:9070/uploads/restaurant/${src}`
                   }
                   alt={`미리보기 ${idx + 1}`}
                 />
