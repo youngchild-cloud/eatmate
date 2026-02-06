@@ -35,10 +35,6 @@
       {
         "to": "/admin/user",
         "title": "회원 목록"
-      },
-      {
-        "to": "/admin/user/create",
-        "title": "회원 등록"
       }
     ]
   }
