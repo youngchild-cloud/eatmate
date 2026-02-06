@@ -5,9 +5,9 @@ import axios from 'axios';
 
 
 import TitleCenter from 'components/common/TitleCenter';
-import Input from 'components/common/Input';
+import ModifyInput from 'components/common/ModifyInput';
 import InputFile from 'components/common/InputFile';
-import InputTextarea from 'components/common/InputTextarea';
+import ModifyTextarea from 'components/common/ModifyTextarea';
 import ButtonWide from 'components/common/ButtonWide';
 import { useRequireLogin } from 'utils/useRequireLogin';
 
@@ -36,8 +36,13 @@ const MeetupModify = () => {
   useEffect(() => {
     axios.get(`http://localhost:9070/meetup/modify/${bm_no}`)
       .then(res => {
-        console.log('서버응답값:', res.data)
-        setForm(res.data);
+        console.log('서버응답값:', res.data);
+        const data = res.data;
+        setForm({
+          ...data,
+          bm_m_date: data.bm_m_date?.slice(0, 10)
+
+        });
       })
       .catch(err => console.log('조회오류:', err));
   }, [bm_no])
@@ -45,6 +50,7 @@ const MeetupModify = () => {
 
   const [imgFile, setImgFile] = useState(null);
   const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     setForm({
@@ -101,7 +107,7 @@ const MeetupModify = () => {
         <TitleCenter title={'맛집 탐방 수정하기'} />
 
         <form className='write-form' onSubmit={handleSubmit}>
-          <Input type={'text'} name={'bm_m_res'} title={'맛집명'} onChange={handleChange} value={form.bm_m_res} />
+          <ModifyInput type={'text'} name={'bm_m_res'} onChange={handleChange} value={form.bm_m_res} title={'맛집명'} />
 
           <InputFile
             name="bm_img"
@@ -110,13 +116,13 @@ const MeetupModify = () => {
             onFilesChange={(files) => setImgFile(files[0] || null)}
           />
 
-          <Input type={'text'} name={'bm_title'} title={'제목'} onChange={handleChange} value={form.bm_title} />
+          <ModifyInput type={'text'} name={'bm_title'} title={'제목'} onChange={handleChange} value={form.bm_title} />
 
-          <InputTextarea name={'bm_desc'} title={'내용'} onChange={handleChange} value={form.bm_desc} />
+          <ModifyTextarea name={'bm_desc'} title={'내용'} onChange={handleChange} value={form.bm_desc} />
 
-          <Input type={'date'} name={'bm_m_date'} title={'날짜'} onChange={handleChange} value={form.bm_m_date} />
+          <ModifyInput type={'date'} name={'bm_m_date'} title={'날짜'} onChange={handleChange} value={form.bm_m_date} />
 
-          <Input type={'number'} name={'bm_m_people_all'} title={'참석인원'} onChange={handleChange} value={form.bm_m_people_all} />
+          <ModifyInput type={'number'} name={'bm_m_people_all'} title={'참석인원'} onChange={handleChange} value={form.bm_m_people_all} />
 
           <ButtonWide type={'submit'} text={'등록하기'} />
         </form>

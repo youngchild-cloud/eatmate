@@ -89,7 +89,22 @@ const MeetupDetail = () => {
 
   const meetupMax = Number(meetUp.bm_m_people) === Number(meetUp.bm_m_people_all);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const [joined, setJoined] = useState(false);
+
+  const deleteData = (bm_no) => {
+    if (window.confirm('삭제하시겠습니까?')) {
+      axios
+        .delete(`http://localhost:9070/delmeetup/${bm_no}`)
+        .then(() => {
+          alert('삭제되었습니다.');
+          navigate('/meetup');
+        })
+        .catch(err => console.log(err));
+    }
+  }
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -150,14 +165,14 @@ const MeetupDetail = () => {
             <p className='user-info'>{meetUp.u_nick}<span className='user-info-gap'>&middot;</span>{dateFormat(meetUp.bm_date)}</p>
           </div>
           {myPage &&
-            <div className='meetup-writer'>
+            <div className='meetup-writer' onClick={() => setMenuOpen(prev => !prev)}>
               <div className='myPage-btn'>
                 <span className='dot'>&middot;</span>
                 <span className='dot'>&middot;</span>
                 <span className='dot'>&middot;</span>
               </div>
-              <Link to="/meetup/modify/:bm_no"><button>수정</button></Link>
-              <Link to=""><button>삭제</button></Link>
+              <Link to={`/meetup/modify/${bm_no}`}><button>수정</button></Link>
+              <button onClick={() => deleteData(bm_no)}>삭제</button>
             </div>
           }
         </div>
