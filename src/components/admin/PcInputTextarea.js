@@ -2,7 +2,7 @@ import './pcinput.scss';
 
 const InputTextarea = ({ name, title, RequiredInput, SelectInput, value, onChange }) => {
   return (
-    <div className='pcinput-box'>
+    <div className='pc-input-box'>
       <label htmlFor={name}>
         {RequiredInput ? <span className='req'>{RequiredInput}</span> : ''}
         {SelectInput ? <span className='sel'>{SelectInput}</span> : ''}

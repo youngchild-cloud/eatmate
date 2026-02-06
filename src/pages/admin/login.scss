@@ -24,10 +24,6 @@
   .admin-login-form {
     width: 700px;
 
-    p {
-      padding-bottom: 20px;
-    }
-
     .check-box {
       display: flex;
       align-items: center;
@@ -59,11 +55,11 @@
     button {
       display: block;
       width: 700px;
-      height: 40px;
       font-size: 14px;
-      color: $color-white;
-      background: $color-main;
+      color: #fff;
+      background: #C92E2E;
       border-radius: 6px;
+      padding: 10px;
     }
   }
 }

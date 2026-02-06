@@ -1,7 +1,6 @@
 import Aside from 'components/admin/Aside';
-import Input from 'components/admin/Input';
 import PcInputFile from 'components/admin/PcInputFile';
-import InputTextarea from 'components/admin/InputTextarea';
+import PcInputTextarea from 'components/admin/PcInputTextarea';
 
 import TitleBox from 'components/admin/TitleBox';
 
@@ -22,7 +21,7 @@ function ReviewCreate(props) {
             <form className='review-modify'>
               <legend>맛집 리뷰 수정하기</legend>
 
-              <div className='pcinput-box'>
+              <div className='pc-input-box'>
                 <label htmlFor="br_rank">맛집명</label>
                 <select required >
                   <option value="">맛집명을 선택해주세요.</option>
@@ -34,8 +33,8 @@ function ReviewCreate(props) {
                 <PcInputFile type="file" name="rt_img" title="사진" />
               </div>
 
-              <InputTextarea type="input" name="rt_desc" title="리뷰" />
-              <div className='pcinput-box'>
+              <PcInputTextarea type="input" name="rt_desc" title="리뷰" />
+              <div className='pc-input-box'>
                 <label htmlFor="br_rank">평점</label>
                 <select required >
                   <option value="">평점을 선택해 주세요</option>

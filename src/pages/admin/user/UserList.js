@@ -43,7 +43,7 @@ function UserList(props) {
 
           {/* 우측 리스트 */}
           <div className='admin-list'>
-            <TitleBox title="회원 목록" linkto="/admin/user/create" btnname="회원 등록" btnshow />
+            <TitleBox title="회원 목록" />
 
             <table>
               <caption>회원 목록</caption>
