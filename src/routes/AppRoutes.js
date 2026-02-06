@@ -39,27 +39,34 @@ import Login from 'pages/login/Login';
 import Join from 'pages/login/Join';
 import NotFound from 'pages/not-found/NotFound';
 import PcNotFound from 'pages/admin/not-found/NotFound';
+import AdminPrivateRoute from './AdminPrivateRoute';
 
 export default function AppRoutes() {
   return (
     <Routes>
       {/* Admin (PC) */}
       <Route path="/admin" element={<PcLayout />}>
-        <Route index element={<Navigate to="restaurant" replace />} />
+        {/* 로그인/회원가입은 가드 없이 */}
         <Route path="login" element={<AdminLogin />} />
         <Route path="join" element={<AdminJoin />} />
-        <Route path="restaurant" element={<AdminRestaurantList />} />
-        <Route path="restaurant/modify/:rt_no" element={<AdminRestaurantModify />} />
-        <Route path="restaurant/create" element={<AdminRestaurantCreate />} />
-        <Route path="board" element={<Navigate to="review" replace />} />
-        <Route path="board/review" element={<AdminReviewList />} />
-        <Route path="board/review/modify/:br_no" element={<AdminReviewModify />} />
-        <Route path="board/meetup" element={<AdminMeetupList />} />
-        <Route path="board/meetup/modify/:bm_no" element={<AdminMeetupModify />} />
-        <Route path="board/community" element={<AdminCommunityList />} />
-        <Route path="board/community/modify/:bc_no" element={<AdminCommunityModify />} />
-        <Route path="user" element={<AdminUserList />} />
-        <Route path="user/create" element={<AdminUserCreate />} />
+
+        {/* 나머지는 가드 안으로 */}
+        <Route element={<AdminPrivateRoute />}>
+          <Route index element={<Navigate to="restaurant" replace />} />
+          <Route path="restaurant" element={<AdminRestaurantList />} />
+          <Route path="restaurant/modify/:rt_no" element={<AdminRestaurantModify />} />
+          <Route path="restaurant/create" element={<AdminRestaurantCreate />} />
+          <Route path="board" element={<Navigate to="review" replace />} />
+          <Route path="board/review" element={<AdminReviewList />} />
+          <Route path="board/review/modify/:br_no" element={<AdminReviewModify />} />
+          <Route path="board/meetup" element={<AdminMeetupList />} />
+          <Route path="board/meetup/modify/:bm_no" element={<AdminMeetupModify />} />
+          <Route path="board/community" element={<AdminCommunityList />} />
+          <Route path="board/community/modify/:bc_no" element={<AdminCommunityModify />} />
+          <Route path="user" element={<AdminUserList />} />
+          <Route path="user/create" element={<AdminUserCreate />} />
+        </Route>
+
         <Route path="*" element={<PcNotFound />} />
       </Route>
 

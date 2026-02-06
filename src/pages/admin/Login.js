@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import './login.scss';
@@ -14,7 +14,17 @@ function Login(props) {
   const [checkInput, setCheckInput] = useState(false);
   const navigate = useNavigate();
 
+  const location = useLocation();
+
   useEffect(() => {
+    // AdminPrivateRoute에서 넘어온 메시지(alert) 처리
+    const msg = location.state?.message;
+    if (msg) {
+      alert(msg);
+      // state 제거(뒤로가기/재진입 시 alert 반복 방지)
+      navigate(location.pathname, { replace: true, state: null });
+    }
+
     // 페이지에 들어왔을 때 로그인 토큰이 있다면 메인 페이지로 강제 이동
     const adminToken = localStorage.getItem('adminToken');
     if (adminToken) {
