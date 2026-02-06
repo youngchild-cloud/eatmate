@@ -3,6 +3,14 @@
 @use 'assets/scss/function' as *;
 
 .pc-input-box {
+
+  label,
+  .label {
+    display: block;
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+
   input {
     font-size: 14px;
     color: $color-text;
