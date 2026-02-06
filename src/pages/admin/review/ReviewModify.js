@@ -46,7 +46,6 @@ function ReviewCreate(props) {
                 </select>
               </div>
 
-
               <button type="submit">수정 완료</button>
             </form>
           </div>

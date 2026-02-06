@@ -64,7 +64,7 @@ export default function AppRoutes() {
           <Route path="board/community" element={<AdminCommunityList />} />
           <Route path="board/community/modify/:bc_no" element={<AdminCommunityModify />} />
           <Route path="user" element={<AdminUserList />} />
-          <Route path="user/modify/" element={<AdminUserModify />} />
+          <Route path="user/modify/:u_no" element={<AdminUserModify />} />
         </Route>
 
         <Route path="*" element={<PcNotFound />} />
