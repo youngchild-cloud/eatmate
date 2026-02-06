@@ -1,57 +1,63 @@
 import axios from 'axios';
-import Aside from 'components/admin/Aside';
-
-import PcInput from 'components/admin/PcInput';
-import TitleBox from 'components/admin/TitleBox';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function RestaurantCreate(props) {
+import './RestaurantCreate.scss';
 
-  const [ rtInput, setRtInput] = useState({
-    // rt_no: '',맛집 번호
-    rt_cate: '',
+import Aside from 'components/admin/Aside';
+import TitleBox from 'components/admin/TitleBox';
+import PcInput from 'components/admin/PcInput';
+import PcInputFile from 'components/admin/PcInputFile';
+
+function RestaurantCreate(props) {
+  const [rtInput, setRtInput] = useState({
     rt_name: '',
     rt_desc: '',
-    rt_img: '',
-    rt_img2: '',
-    rt_img3: '',
-    rt_img4: '',
-    rt_img5: '',
-    rt_tel: '',
+    rt_cate: '',
     rt_location: '',
-    // rt_rank: '',별점 평균
-    // rt_review: '',리뷰 수
-    // rt_map: '', 길찾기
-    // rt_data: '', 등록날짜
+    rt_tel: '',
   });
+  const [picFile, setPicFile] = useState(null);
 
   const navigate = useNavigate();
 
-  const handleChange = (e) =>{
+  const handleChange = (e) => {
     setRtInput({
       ...rtInput,
       [e.target.name]: e.target.value
     });
   }
 
-  const handleSubmit = async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!picFile) {
+      alert('사진을 선택해주세요.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('rt_name', rtInput.rt_name);
+    formData.append('rt_desc', rtInput.rt_desc);
+    formData.append('rt_cate', rtInput.rt_cate);
+    formData.append('rt_location', rtInput.rt_location);
+    formData.append('rt_tel', rtInput.rt_tel);
+
+    if (picFile) formData.append('rt_img', picFile); // key 이름 중요(백엔드와 동일)
+
     try {
-      await axios.post('http://localhost:9070/restaurant/input', rtInput);
+      await axios.post('http://localhost:9070/admin/restaurant', formData);
 
       alert('맛집 등록이 완료되었습니다. 맛집 목록 페이지로 이동합니다.');
       navigate('/admin/restaurant');
     } catch (err) {
-      console.log(err.response.data.error);
+      alert(err.response.data.error);
     }
   }
 
-
   return (
     <>
-      <section className='admin-create admin-restaurantcreate'>
+      <section className='admin-create admin-restaurant-create'>
         <article className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="restaurant" />
@@ -62,13 +68,36 @@ function RestaurantCreate(props) {
 
             <form onSubmit={handleSubmit}>
               <legend>맛집 등록하기</legend>
-              <PcInput type="select" name="rt_cate" title="맛집 카테고리" onChange={handleChange}/>
-              <PcInput type="input" name="rt_name" title="맛집명" onChange={handleChange} />
-              <PcInput type="input" name="rt_desc" title="맛집 설명" onChange={handleChange} />
-              <strong className="label">맛집 이미지</strong>
-              <PcInput type="file" name="rt_img" title="사진" onChange={handleChange} />
-              <PcInput type="tel" name="rt_tel" title="전화번호" onChange={handleChange} />
-              <PcInput type="text" name="rt_location" title="주소" onChange={handleChange} />
+
+              <div className="pc-input-box">
+                <label htmlFor="rt_cate">맛집 카테고리</label>
+                <select name="rt_cate" id="rt_cate" value={rtInput.rt_cate} onChange={handleChange} required>
+                  <option value="">옵션을 선택하세요</option>
+                  <option value="한식">한식</option>
+                  <option value="일식">일식</option>
+                  <option value="중식">중식</option>
+                  <option value="양식">양식</option>
+                  <option value="분식">분식</option>
+                  <option value="카페">카페</option>
+                  <option value="디저트">디저트</option>
+                  <option value="기타">기타</option>
+                </select>
+              </div>
+
+              <PcInput type="input" name="rt_name" title="맛집명" value={rtInput.rt_name} onChange={handleChange} />
+
+              <PcInput type="input" name="rt_desc" title="맛집 설명" value={rtInput.rt_desc} onChange={handleChange} />
+
+              <PcInputFile
+                name="rt_img"
+                title="사진"
+                maxFiles={1}
+                onFilesChange={(files) => setPicFile(files[0] || null)}
+              />
+
+              <PcInput type="tel" name="rt_tel" title="전화번호" value={rtInput.rt_tel} onChange={handleChange} />
+
+              <PcInput type="text" name="rt_location" title="주소" value={rtInput.rt_location} onChange={handleChange} />
 
               <button type="submit">등록 완료</button>
             </form>

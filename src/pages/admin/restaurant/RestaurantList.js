@@ -15,7 +15,7 @@ function RestaurantList(props) {
       console.log(err.response.data.error);
     }
   };
-  
+
 
   useEffect(() => {
     loadData();
@@ -81,10 +81,10 @@ function RestaurantList(props) {
                     <td>{item.rt_cate}</td>
                     <td>{item.rt_name}</td>
                     <td>{item.rt_desc}</td>
-                    <td className='imgtd'><img src={`http://localhost:9070/uploads/review/${item.rt_img}`} alt="식당 사진" /></td>
+                    <td className='imgtd'><img src={`http://localhost:9070/uploads/restaurant/${item.rt_img}`} alt="식당 사진" /></td>
                     <td>{item.rt_tel}</td>
                     <td>{item.rt_location}</td>
-                    <td>{item.rt_rank}</td>
+                    <td>{item.rt_rank}/{item.rt_review}</td>
                     <td>{item.rt_date}</td>
                     <td className='btn-td'>
                       <Link to={`/admin/restaurant/modify/${item.rt_no}`} className='btn-update btn'>수정</Link>
