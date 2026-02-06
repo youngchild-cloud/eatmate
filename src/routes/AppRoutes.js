@@ -15,7 +15,7 @@ import AdminMeetupModify from 'pages/admin/meetup/MeetupModify';
 import AdminCommunityList from 'pages/admin/community/CommunityList';
 import AdminCommunityModify from 'pages/admin/community/CommunityModify';
 import AdminUserList from 'pages/admin/user/UserList';
-import AdminUserCreate from 'pages/admin/user/UserCreate';
+import AdminUserModify from 'pages/admin/user/UserModify';
 
 import ReviewList from 'pages/review/ReviewList';
 import ReviewDetail from 'pages/review/ReviewDetail';
@@ -64,7 +64,7 @@ export default function AppRoutes() {
           <Route path="board/community" element={<AdminCommunityList />} />
           <Route path="board/community/modify/:bc_no" element={<AdminCommunityModify />} />
           <Route path="user" element={<AdminUserList />} />
-          <Route path="user/create" element={<AdminUserCreate />} />
+          <Route path="user/modify/" element={<AdminUserModify />} />
         </Route>
 
         <Route path="*" element={<PcNotFound />} />
