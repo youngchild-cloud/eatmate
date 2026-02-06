@@ -67,6 +67,11 @@ const WriteReview = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!imgFile) {
+      alert('사진을 선택해주세요.');
+      return;
+    }
+
     const formData = new FormData();
     formData.append('br_user_no', reviewInput.br_user_no);
     formData.append('br_rank', reviewInput.br_rank);
