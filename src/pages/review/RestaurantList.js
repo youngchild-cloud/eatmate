@@ -4,10 +4,24 @@ import { useParams } from 'react-router-dom';
 import './RestaurantList.scss';
 
 import TitleCenter from 'components/common/TitleCenter';
-import Search from 'components/review/Search';
+// import Search from 'components/review/Search';
 import CpRestaurant from 'components/review/CpRestaurant';
 
 const RestaurantList = () => {
+  // 검색
+  const [formSearch, setFormSearch] = useState(''); // 검색 입력값
+  const [searchKeyword, setSearchKeyword] = useState(''); // 실제 검색에 사용되는 키워드
+
+  const handleChange = (e) => {
+    setFormSearch(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setSearchKeyword(formSearch);
+  }
+
   // 맛집 카테고리
   const [addAct, setAddAct] = useState(false);
   const { cate } = useParams();
@@ -38,7 +52,11 @@ const RestaurantList = () => {
         <div className="inner">
           <TitleCenter title={'맛집 보기'} />
 
-          <Search />
+          {/* <Search /> */}
+          <form className="review-search-box" onSubmit={handleSubmit}>
+            <input type="search" name="rt_search" id="rt_search" placeholder='맛집명을 검색하세요' value={formSearch} onChange={handleChange} />
+            <button><span className="blind">검색</span></button>
+          </form>
         </div>
       </section>
 
@@ -81,7 +99,7 @@ const RestaurantList = () => {
             </div>
           </div>
 
-          <CpRestaurant category={category} filter={activeFilter} />
+          <CpRestaurant category={category} filter={activeFilter} searchKeyword={searchKeyword} />
         </div>
       </section>
     </>
