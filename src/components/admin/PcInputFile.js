@@ -9,8 +9,16 @@ const InputFile = ({
   maxFiles = 1,
   onFilesChange,
   defaultPreview,
+  previewBasePath = '/uploads/', // 기본값
 }) => {
   const [previews, setPreviews] = useState([]);
+
+  const toSrc = (src) => {
+    if (!src) return '';
+    if (src.startsWith('blob:')) return src;
+    if (src.startsWith('http')) return src;
+    return `http://localhost:9070${previewBasePath}/${src}`;
+  };
 
   // 기존 이미지 미리보기 세팅
   useEffect(() => {
@@ -62,14 +70,7 @@ const InputFile = ({
           <div className="preview-wrap">
             {previews.map((src, idx) => (
               <div className='img-box' key={src}>
-                <img
-                  src={
-                    src.startsWith('blob:')
-                      ? src
-                      : `http://localhost:9070/uploads/restaurant/${src}`
-                  }
-                  alt={`미리보기 ${idx + 1}`}
-                />
+                <img src={toSrc(src)} alt={`미리보기 ${idx + 1}`} />
               </div>
             ))}
           </div>

@@ -116,6 +116,7 @@ function RestaurantModify(props) {
                 title="사진"
                 maxFiles={1}
                 defaultPreview={originPic}
+                previewBasePath="/uploads/restaurant"
                 onFilesChange={(files) => setPicFile(files[0] || null)}
               />
 
