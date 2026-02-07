@@ -14,6 +14,24 @@
 }
 
 /*** 맛집 리뷰 목록 ***/
+// 검색 영역
+.review-list-search {
+  .review-title-box {
+    position: relative;
+  }
+
+  .back-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+
+    svg {
+      margin-left: vw-mo(6);
+    }
+  }
+}
+
 // 카테고리 영역
 .review-list-category {
   .categorys {

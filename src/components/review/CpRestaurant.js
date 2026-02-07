@@ -43,6 +43,11 @@ const CpRestaurant = ({ category, filter, mypageUser, searchKeyword }) => {
 
   return (
     <>
+      {/* 결과 없을 때 */}
+      {restaurantData.length === 0 && (
+        <p className="empty">검색 결과가 없습니다.</p>
+      )}
+
       <ul id='comp-restaurant'>
         {
           restaurantData.map(item => (
