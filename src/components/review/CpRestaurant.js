@@ -39,7 +39,7 @@ const CpRestaurant = ({ category, filter, mypageUser, searchKeyword }) => {
 
   useEffect(() => {
     loadData();
-  }, [restaurantInfo]);
+  }, [category, filter, mypageUser, searchKeyword]);
 
   return (
     <>

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import './RestaurantList.scss';
 
 import TitleCenter from 'components/common/TitleCenter';
-// import Search from 'components/review/Search';
+import Search from 'components/review/Search';
 import CpRestaurant from 'components/review/CpRestaurant';
 
 const RestaurantList = () => {
@@ -12,18 +12,11 @@ const RestaurantList = () => {
   const [formSearch, setFormSearch] = useState(''); // 검색 입력값
   const [searchKeyword, setSearchKeyword] = useState(''); // 실제 검색에 사용되는 키워드
 
-  const handleChange = (e) => {
-    setFormSearch(e.target.value)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const handleSubmitSearch = () => {
     setSearchKeyword(formSearch);
-  }
+  };
 
   // 맛집 카테고리
-  const [addAct, setAddAct] = useState(false);
   const { cate } = useParams();
   const cateMap = {
     cate1: '한식',
@@ -38,6 +31,7 @@ const RestaurantList = () => {
   const category = cateMap[cate];
 
   // 필터 act
+  const [addAct, setAddAct] = useState(false);
   const [activeFilter, setActiveFilter] = useState('rating');
 
   const handleClick = (filter) => {
@@ -52,11 +46,11 @@ const RestaurantList = () => {
         <div className="inner">
           <TitleCenter title={'맛집 보기'} />
 
-          {/* <Search /> */}
-          <form className="review-search-box" onSubmit={handleSubmit}>
-            <input type="search" name="rt_search" id="rt_search" placeholder='맛집명을 검색하세요' value={formSearch} onChange={handleChange} />
-            <button><span className="blind">검색</span></button>
-          </form>
+          <Search
+            value={formSearch}
+            onChange={setFormSearch}
+            onSubmit={handleSubmitSearch}
+          />
         </div>
       </section>
 
