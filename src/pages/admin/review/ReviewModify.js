@@ -4,8 +4,6 @@ import PcInputTextarea from 'components/admin/PcInputTextarea';
 
 import TitleBox from 'components/admin/TitleBox';
 
-import './reviewModify.scss';
-
 function ReviewCreate(props) {
   return (
     <>
@@ -28,12 +26,10 @@ function ReviewCreate(props) {
                 </select>
               </div>
 
-              {/* <strong className="label">맛집 이미지</strong> */}
-              <div className="reveiw-box">
-                <PcInputFile type="file" name="rt_img" title="사진" />
-              </div>
+              <PcInputFile type="file" name="rt_img" title="사진" />
 
-              <PcInputTextarea type="input" name="rt_desc" title="리뷰" />
+              <PcInputTextarea name="rt_desc" title="리뷰" />
+
               <div className='pc-input-box'>
                 <label htmlFor="br_rank">평점</label>
                 <select required >
