@@ -194,7 +194,10 @@ const RestaurantDetail = () => {
                     </a>
                   </li>
                   <li>
-                    <button onClick={bookmarkClick}>
+                    <button
+                      onClick={bookmarkClick}
+                      className={isBookmarked ? 'act' : ''}
+                    >
                       <img src={icon03} alt="저장" />
                       <span>저장</span>
                     </button>

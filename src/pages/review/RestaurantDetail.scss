@@ -139,6 +139,15 @@ body.restaurant-detail main {
       height: vw-mo(40);
       object-fit: contain;
     }
+
+    // act
+    button.act img {
+      filter: invert(32%) sepia(71%) saturate(2247%) hue-rotate(342deg) brightness(81%) contrast(94%);
+    }
+
+    button.act span {
+      color: $color-main;
+    }
   }
 }
 
