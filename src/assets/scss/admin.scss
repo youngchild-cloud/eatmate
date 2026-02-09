@@ -3,6 +3,10 @@
 
 // 목록
 .admin-list {
+  .hidden {
+    display: none;
+  }
+
   .pc-inner {
     width: 1600px;
     margin: 0 auto;
@@ -103,6 +107,10 @@
 
 // 등록/수정
 .admin-create {
+  .hidden {
+    display: none;
+  }
+
   .pc-inner {
     width: 1600px;
     margin: 0 auto;
@@ -118,10 +126,6 @@
   }
 
   form {
-    legend {
-      display: none;
-    }
-
     button {
       display: block;
       width: 100%;

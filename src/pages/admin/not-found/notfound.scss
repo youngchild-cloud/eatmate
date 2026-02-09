@@ -7,6 +7,10 @@
   align-items: center;
   min-height: 100vh;
 
+  .hidden {
+    display: none;
+  }
+
   .pc-inner {
     width: 600px;
     margin: 0 auto;

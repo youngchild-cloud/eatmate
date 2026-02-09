@@ -81,6 +81,7 @@ function RestaurantModify(props) {
   return (
     <>
       <section className='admin-create admin-restaurant-create'>
+        <h2 className='hidden'>맛집 수정</h2>
         <article className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="restaurant" />
@@ -90,8 +91,6 @@ function RestaurantModify(props) {
             <TitleBox title="맛집 수정" />
 
             <form onSubmit={handleSubmit}>
-              <legend>맛집 수정하기</legend>
-
               <div className="pc-input-box">
                 <label htmlFor="rt_cate">맛집 카테고리</label>
                 <select name="rt_cate" id="rt_cate" value={rtInput.rt_cate} onChange={handleChange} required>
@@ -107,9 +106,9 @@ function RestaurantModify(props) {
                 </select>
               </div>
 
-              <PcInput type="input" name="rt_name" title="맛집명" value={rtInput.rt_name} onChange={handleChange} />
+              <PcInput type="text" name="rt_name" title="맛집명" value={rtInput.rt_name} onChange={handleChange} />
 
-              <PcInput type="input" name="rt_desc" title="맛집 설명" value={rtInput.rt_desc} onChange={handleChange} />
+              <PcInput type="text" name="rt_desc" title="맛집 설명" value={rtInput.rt_desc} onChange={handleChange} />
 
               <PcInputFile
                 name="rt_img"

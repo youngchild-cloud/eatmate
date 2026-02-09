@@ -38,6 +38,7 @@ function RestaurantList(props) {
   return (
     <>
       <section className='admin-list admin-restaurantlist'>
+        <h2 className='hidden'>맛집 관리</h2>
         <article className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="restaurant" />
@@ -84,7 +85,7 @@ function RestaurantList(props) {
                     <td className='imgtd'><img src={`http://localhost:9070/uploads/restaurant/${item.rt_img}`} alt="식당 사진" /></td>
                     <td>{item.rt_tel}</td>
                     <td>{item.rt_location}</td>
-                    <td>{item.rt_rank}/{item.rt_review}</td>
+                    <td>{item.rt_rank} / ({item.rt_review})</td>
                     <td>{item.rt_date}</td>
                     <td className='btn-td'>
                       <Link to={`/admin/restaurant/modify/${item.rt_no}`} className='btn-update btn'>수정</Link>

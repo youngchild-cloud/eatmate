@@ -53,6 +53,7 @@ const handleSubmit = async (e) =>{
   return (
     <>
       <section className='admin-create admin-usercreate'>
+        <h2 className="hidden">자유게시판 수정</h2>
         <article className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="board" />
@@ -62,9 +63,8 @@ const handleSubmit = async (e) =>{
             <TitleBox title="자유게시판 수정" />
 
             <form onSubmit={handleSubmit}>
-              <legend>게시글 수정</legend>
-              <PcInput type="input" name='bc_title' title='제목'  value={bcInput.bc_title} onChange={handleChange} />
-              <PcInput type="input" name="bc_desc" title="내용" value={bcInput.bc_desc} onChange={handleChange} />
+              <PcInput type="text" name='bc_title' title='제목'  value={bcInput.bc_title} onChange={handleChange} />
+              <PcInput type="text" name="bc_desc" title="내용" value={bcInput.bc_desc} onChange={handleChange} />
 
               <button type="submit">수정 완료</button>
             </form>

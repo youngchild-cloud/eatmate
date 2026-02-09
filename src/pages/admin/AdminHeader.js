@@ -49,7 +49,7 @@ function AdminHeader() {
       <div className='admin-header-inner'>
         <h1>
           <Link to='/admin' title='관리자 메인 페이지로 이동'>
-            <img src={Logo} alt='' />
+            <img src={Logo} alt='메인로고' />
           </Link>
         </h1>
 

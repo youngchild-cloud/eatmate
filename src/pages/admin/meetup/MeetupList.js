@@ -37,6 +37,7 @@ function MeetupList(props) {
   return (
     <>
       <section className='admin-list admin-userlist'>
+        <h2 className='hidden'>맛집 탐방 목록</h2>
         <article className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="board" />

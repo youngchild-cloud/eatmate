@@ -86,6 +86,7 @@ function ReviewCreate(props) {
   return (
     <>
       <section className='admin-create admin-usercreate'>
+        <h2 className='hidden'>맛집 리뷰 수정</h2>
         <article className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="board" />
@@ -95,7 +96,6 @@ function ReviewCreate(props) {
             <TitleBox title="맛집 리뷰 수정" />
 
             <form className='review-modify' onSubmit={handleSubmit}>
-              <legend>맛집 리뷰 수정하기</legend>
 
               <PcInput
                 type="number"
@@ -134,6 +134,7 @@ function ReviewCreate(props) {
                 <label htmlFor="br_rank">평점</label>
                 <select
                   name='br_rank'
+                  id="br_rank"
                   className='br_rank'
                   value={reviewData.br_rank}
                   onChange={handleChange}

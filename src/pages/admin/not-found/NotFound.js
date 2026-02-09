@@ -7,6 +7,7 @@ import PcError from 'assets/images/404error/error.png';
 function NotFound(props) {
   return (
     <section className='pc-not-found'>
+      <h2 className="hidden">404에러 페이지</h2>
       <article className='pc-inner'>
         <img src={PcError} alt="404에러 페이지" />
         <h2>찾으시는 페이지가 없습니다.</h2>
