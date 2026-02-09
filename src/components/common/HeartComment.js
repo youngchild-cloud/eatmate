@@ -95,7 +95,7 @@ const HeartComment = ({ heart, comment, p_board_cate, p_board_no, p_user_token }
   return (
     <ul className='common-heart-comment'>
       <li>
-        <button
+        <button aria-label="좋아요"
           className={heartToggle && 'act'}
           onClick={heartClick}
         >
