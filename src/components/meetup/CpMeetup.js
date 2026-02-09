@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './CpMeetup.scss';
 
-import HeartComment from 'components/common/HeartComment';
+import HeartCommentList from 'components/common/HeartCommentList';
 import { dateFormat } from 'utils/dateFormat'
 
 import tabTxtImg1 from 'assets/images/meetup/con-txt-img1.png';
@@ -58,7 +58,7 @@ const CpMeetup = ({ mypageUser, mypageCategory }) => {
 
   return (
     <>
-      <div id="cp-meetup">
+      <div className="cp-meetup">
         {data.map(item => (
           <Link to={`/meetup/detail/${item.bm_no}`} key={item.bm_no}>
             <div className='item'>
@@ -69,7 +69,7 @@ const CpMeetup = ({ mypageUser, mypageCategory }) => {
                   <span><img src={tabTxtImg2} alt="위치 아이콘" /> {item.bm_m_res}</span>
                   <span><img src={tabTxtImg3} alt="인원 아이콘" /> {item.bm_m_people}/{item.bm_m_people_all}</span>
                 </p>
-                <HeartComment heart={item.bm_heart} comment={item.bm_comment} />
+                <HeartCommentList heart={item.bm_heart} comment={item.bm_comment} />
               </div>
               <div className='item-img'>
                 <img src={`http://localhost:9070/uploads/meetup/${item.bm_img}`} alt="" />

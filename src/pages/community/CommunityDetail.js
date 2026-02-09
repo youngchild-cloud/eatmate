@@ -14,7 +14,7 @@ import { dateFormat } from 'utils/dateFormat'
 
 function CommunityDetail(props) {
   const { bc_no } = useParams();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState('');
   const token = localStorage.getItem('token');
   const decoded = token ? jwtDecode(token) : '';
 
@@ -36,34 +36,31 @@ function CommunityDetail(props) {
         <TitleCenter title={'자유게시판'} />
 
         {/* 자유게시판 글 목록  */}
-        {data.map(item => (
-          <div key={item.bc_no} className='item'>
-            {/* 프로필 + 닉네임 + 등록시간 */}
-            <div className="comm-top">
-              {/* 프로필 사진 public */}
-              <div className="img-box">
-                <img src={`http://localhost:9070/uploads/user/${item.u_pic}`} alt={`${item.u_nick} 프로필`} />
-              </div>
-              {/* 닉네임 + 등록시간 */}
-              <p className='txt-box'>
-                <span className="nick">{item.u_nick}</span>
-                |
-                <span className="upload-time">{dateFormat(item.bc_date)}</span>
-              </p>
+        <div key={data.bc_no} className='item'>
+          {/* 프로필 + 닉네임 + 등록시간 */}
+          <div className="comm-top">
+            {/* 프로필 사진 public */}
+            <div className="img-box">
+              <img src={`http://localhost:9070/uploads/user/${data.u_pic}`} alt={`${data.u_nick} 프로필`} />
             </div>
-
-            {/* 게시물 제목 + 게시글 내용 */}
-            <div className="comm-mid">
-              <h3 className='comm-title'>{item.bc_title}</h3>
-              <p className='comm-content'>{item.bc_desc}</p>
-            </div>
-
-            {/* 하트 수 + 채팅 수 */}
-            {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호 / p_user_token는 토큰값을 decoded해서 넘겨주시면 됩니다. */}
-            <HeartComment heart={item.bc_heart} comment={item.bc_comment} p_board_cate={'community'} p_board_no={bc_no} p_user_token={decoded} />
+            {/* 닉네임 + 등록시간 */}
+            <p className='txt-box'>
+              <span className="nick">{data.u_nick}</span>
+              |
+              <span className="upload-time">{dateFormat(data.bc_date)}</span>
+            </p>
           </div>
-        ))
-        }
+
+          {/* 게시물 제목 + 게시글 내용 */}
+          <div className="comm-mid">
+            <h3 className='comm-title'>{data.bc_title}</h3>
+            <p className='comm-content'>{data.bc_desc}</p>
+          </div>
+
+          {/* 하트 수 + 채팅 수 */}
+          {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호 / p_user_token는 토큰값을 decoded해서 넘겨주시면 됩니다. */}
+          <HeartComment heart={data.bc_heart} comment={data.bc_comment} p_board_cate={'community'} p_board_no={bc_no} p_user_token={decoded} />
+        </div>
 
         {/* 댓글 창 시작 */}
         <Chat p_board_cate={'community'} p_board_no={bc_no} />

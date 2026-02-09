@@ -32,7 +32,7 @@ function Chat({ p_board_cate, p_board_no }) {
   }, [p_board_cate, p_board_no])
 
   return (
-    <article className='common-chat'>
+    <div className='common-chat'>
       <InputComment p_board_cate={p_board_cate} p_board_no={p_board_no} />
       <ul className='comm-comment'>
         {
@@ -47,7 +47,7 @@ function Chat({ p_board_cate, p_board_no }) {
           ))
         }
       </ul>
-    </article>
+    </div>
   );
 }
 

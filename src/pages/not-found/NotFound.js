@@ -8,8 +8,7 @@ const NotFound = () => {
   return (
     <>
       <section className='page404'>
-        <article className="inner">
-
+        <div className="inner">
           {/* 404페이지 전체박스 */}
           <div className='error'>
             <div className='error-img'>
@@ -22,11 +21,8 @@ const NotFound = () => {
 
             <Link to="/" title="메인페이지로 가기" >홈으로</Link>
           </div>
-
-
-        </article>
+        </div>
       </section>
-
     </>
   );
 };

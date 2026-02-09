@@ -12,7 +12,7 @@ const Input = ({ type, name, title, RequiredInput, SelectInput, readonly, value,
         type={type}
         name={name}
         id={name}
-        placeholder={`${title}을(를) 입력해 주세요.`}
+        placeholder={type === 'date' ? undefined : `${title}을(를) 입력해 주세요.`}
         readOnly={readonly && true}
         value={value}
         onChange={onChange}

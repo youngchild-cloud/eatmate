@@ -1,7 +1,7 @@
 @use 'assets/scss/variables' as *;
 @use 'assets/scss/function' as *;
 
-#cp-meetup {
+.cp-meetup {
   .item {
     display: flex;
     justify-content: space-between;

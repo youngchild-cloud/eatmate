@@ -1,10 +1,11 @@
-import './CpCommunity.scss';
-import HeartComment from 'components/common/HeartComment';
-import { dateFormat } from 'utils/dateFormat'
-
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+import './CpCommunity.scss';
+
+import HeartCommentList from 'components/common/HeartCommentList';
+import { dateFormat } from 'utils/dateFormat'
 
 const CpCommunity = ({ mypageUser, mypageCategory }) => {
   const [data, setData] = useState([]);
@@ -58,7 +59,7 @@ const CpCommunity = ({ mypageUser, mypageCategory }) => {
               </div>
 
               {/* 하트 수 + 채팅 수 */}
-              <HeartComment heart={`${item.bc_heart}`} comment={`${item.bc_comment}`} />
+              <HeartCommentList heart={`${item.bc_heart}`} comment={`${item.bc_comment}`} />
             </Link>
           </div>
         ))}

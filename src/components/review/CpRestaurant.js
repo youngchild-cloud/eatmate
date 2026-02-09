@@ -45,7 +45,7 @@ const CpRestaurant = ({ category, filter, mypageUser, searchKeyword }) => {
     <>
       {/* 결과 없을 때 */}
       {restaurantData.length === 0 && (
-        <p className="empty">검색 결과가 없습니다.</p>
+        <p className="empty">결과가 없습니다.</p>
       )}
 
       <ul id='comp-restaurant'>
@@ -57,7 +57,7 @@ const CpRestaurant = ({ category, filter, mypageUser, searchKeyword }) => {
                   <img src={`http://localhost:9070/uploads/restaurant/${item.rt_img}`} alt={`${item.rt_name}`} />
                 </div>
                 <div className="txt-box">
-                  <h4 className="tit">{item.rt_name}</h4>
+                  <h3 className="tit">{item.rt_name}</h3>
                   <p><span className='rank'>{item.rt_rank} ({item.rt_review})</span> · <span className='location'>{item.rt_location}</span></p>
                 </div>
               </Link>
