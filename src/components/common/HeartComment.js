@@ -96,7 +96,7 @@ const HeartComment = ({ heart, comment, p_board_cate, p_board_no, p_user_token }
     <ul className='common-heart-comment'>
       <li>
         <button aria-label="좋아요"
-          className={heartToggle && 'act'}
+          className={heartToggle ? 'act' : undefined}
           onClick={heartClick}
         >
           {heartToggle ? <FontAwesomeIcon icon={HeartSolid} /> : <FontAwesomeIcon icon={HeartRegular} />}
