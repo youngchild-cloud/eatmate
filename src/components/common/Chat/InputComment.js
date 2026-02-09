@@ -52,7 +52,7 @@ function InputComment({ p_board_cate, p_board_no }) {
             ?
             <img src={`http://localhost:9070/uploads/user/${decoded.token_profile}`} alt={`${decoded.token_nick} 프로필`} />
             :
-            <img src={`http://localhost:9070/uploads/user/default-user.png`} alt='기본 프로필' />
+            <img src={`http://localhost:9070/uploads/user/default-user.jpg`} alt='기본 프로필' />
         }
       </div>
 
