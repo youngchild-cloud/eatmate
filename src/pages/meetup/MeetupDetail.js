@@ -164,17 +164,28 @@ const MeetupDetail = () => {
             <div className='user-img'><img src={`http://localhost:9070/uploads/user/${meetUp.u_pic}`} alt="" /></div>
             <p className='user-info'>{meetUp.u_nick}<span className='user-info-gap'>&middot;</span>{dateFormat(meetUp.bm_date)}</p>
           </div>
+
+
           {myPage &&
-            <div className='meetup-writer' onClick={() => setMenuOpen(prev => !prev)}>
+            (<div className='meetup-writer' onClick={() => setMenuOpen(prev => !prev)}>
+
               <div className='myPage-btn'>
                 <span className='dot'>&middot;</span>
                 <span className='dot'>&middot;</span>
                 <span className='dot'>&middot;</span>
               </div>
-              <Link to={`/meetup/modify/${bm_no}`}><button>수정</button></Link>
-              <button onClick={() => deleteData(bm_no)}>삭제</button>
-            </div>
-          }
+
+
+
+              {menuOpen &&
+                (<div className='opne-menu-btn'>
+                  <Link to={`/meetup/modify/${bm_no}`}><button>수정</button></Link>
+                  <button onClick={() => deleteData(bm_no)}>삭제</button>
+
+                </div>)}
+
+            </div>)}
+
         </div>
 
 

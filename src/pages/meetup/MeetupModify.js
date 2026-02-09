@@ -66,37 +66,39 @@ const MeetupModify = () => {
     //   alert('사진을 선택해주세요.');
     //   return;
     // }
+    const formData = new FormData();
 
 
     // formData.append('bm_date', form.bm_date);
     // formData.append('bm_board_cate', form.bm_board_cate);
     // formData.append('bm_user_no', form.bm_user_no);
-    // formData.append('bm_title', form.bm_title);
-    // formData.append('bm_desc', form.bm_desc);
-    // formData.append('bm_m_date', form.bm_m_date);
-    // formData.append('bm_m_res', form.bm_m_res);
+    formData.append('bm_title', form.bm_title);
+    formData.append('bm_desc', form.bm_desc);
+    formData.append('bm_m_date', form.bm_m_date);
+    formData.append('bm_m_res', form.bm_m_res);
     // formData.append('bm_m_people', form.bm_m_people);
-    // formData.append('bm_m_people_all', form.bm_m_people_all);
+    formData.append('bm_m_people_all', form.bm_m_people_all);
     // formData.append('bm_heart', form.bm_heart);
     // formData.append('bm_comment', form.bm_comment);
     // formData.append('bm_date', form.bm_date);
 
-    // if (imgFile) formData.append('bm_img', imgFile); // key 이름 중요(백엔드와 동일)
+    if (imgFile) formData.append('bm_img', imgFile); // key 이름 중요(백엔드와 동일)
 
-    axios.put(`http://localhost:9070/meetup/update/${bm_no}`, {
-      bm_title: form.bm_title,
-      bm_desc: form.bm_desc,
-      bm_m_date: form.bm_m_date,
-      bm_m_res: form.bm_m_res,
-      bm_m_people_all: form.bm_m_people_all
+    axios.put(`http://localhost:9070/meetup/update/${bm_no}`, formData, {
+      headers: { 'Conernt-Type': 'multipart/form-data' }
+      // bm_title: form.bm_title,
+      // bm_desc: form.bm_desc,
+      // bm_m_date: form.bm_m_date,
+      // bm_m_res: form.bm_m_res,
+      // bm_m_people_all: form.bm_m_people_all
     })
       .then(() => {
-        alert('게시글이 등록되었습니다.');
+        alert('게시글이 수정되었습니다.');
         navigate('/meetup');
       })
       .catch((err) => {
         console.log(err);
-        alert('필수항목을 입력해주세요.');
+        alert('수정실패');
       })
   }
 
