@@ -41,11 +41,8 @@
       font-size: vw-mo(24);
       color: $color-text;
       white-space: normal;
-      /* 줄바꿈 허용 */
       overflow-wrap: break-word;
-      /* 너무 긴 단어도 줄바꿈 */
-      word-break: break-word;
-      /* 구형 브라우저/긴 문자열 대비 */
+      word-break: normal;
     }
 
     .comment-time {

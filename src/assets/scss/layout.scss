@@ -97,6 +97,7 @@ nav {
     width: vw-mo(300);
     background: rgba($color: $color-white, $alpha: 0.2);
     backdrop-filter: blur(vw-mo(10));
+    -webkit-backdrop-filter: blur(vw-mo(10));
     border-radius: vw-mo(10);
     text-align: center;
   }

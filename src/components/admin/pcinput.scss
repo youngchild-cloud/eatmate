@@ -55,6 +55,7 @@
 
   select {
     appearance: none; // 기본 화살표 제거
+    -webkit-appearance: none; // 기본 화살표 제거, 사파리 대응
     background: url('../../assets/images/review/icon_filter.png') no-repeat 99% 50% / 14px;
   }
 
