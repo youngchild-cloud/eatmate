@@ -7,12 +7,12 @@ function UserCreate(props) {
   return (
     <>
       <section className='admin-create admin-usercreate'>
-        <article className="pc-inner">
+        <div className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="user" />
 
           {/* 우측 리스트 */}
-          <div className='right-content'>
+          <article className='right-content'>
             <TitleBox title="회원 등록" />
 
             <form>
@@ -33,8 +33,8 @@ function UserCreate(props) {
 
               <button type="submit">수정 완료</button>
             </form>
-          </div>
-        </article>
+          </article>
+        </div>
       </section>
     </>
   );

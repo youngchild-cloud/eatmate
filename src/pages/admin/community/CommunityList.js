@@ -20,11 +20,10 @@ function CommunityList(props) {
   }, []);
 
   const deleteData = async (bc_no, u_nick) => {
-    if(window.confirm(`${u_nick}님의 게시물을 삭제하시겠습니까?`))
-    {
-      try{
+    if (window.confirm(`${u_nick}님의 게시물을 삭제하시겠습니까?`)) {
+      try {
         await axios
-        .delete(`http://localhost:9070/admin/community/${bc_no}`);
+          .delete(`http://localhost:9070/admin/community/${bc_no}`);
 
         alert(`선택하신 ${u_nick}님의 게시글을 삭제했습니다.`);
         loadData();
@@ -39,12 +38,12 @@ function CommunityList(props) {
     <>
       <section className='admin-list admin-userlist'>
         <h2 className='hidden'>자유게시판 목록</h2>
-        <article className="pc-inner">
+        <div className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="board" />
 
           {/* 우측 리스트 */}
-          <div className='admin-list'>
+          <article className='admin-list'>
             <TitleBox title="자유게시판 목록" />
 
             <table>
@@ -90,8 +89,8 @@ function CommunityList(props) {
                 }
               </tbody>
             </table>
-          </div>
-        </article>
+          </article>
+        </div>
       </section>
     </>
   );

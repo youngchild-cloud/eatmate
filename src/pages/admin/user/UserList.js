@@ -38,12 +38,12 @@ function UserList(props) {
     <>
       <section className='admin-list admin-userlist'>
         <h2 className="hidden">회원 목록</h2>
-        <article className="pc-inner">
+        <div className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="user" />
 
           {/* 우측 리스트 */}
-          <div className='admin-list'>
+          <article className='admin-list'>
             <TitleBox title="회원 목록" />
 
             <table>
@@ -87,8 +87,8 @@ function UserList(props) {
                 }
               </tbody>
             </table>
-          </div>
-        </article>
+          </article>
+        </div>
       </section>
     </>
   );

@@ -21,11 +21,10 @@ function ReviewList(props) {
   }, []);
 
   const deleteData = async (br_no, u_nick) => {
-    if (window.confirm(`${u_nick}님의 리뷰를 삭제하시겠습니까?`))
-    {
+    if (window.confirm(`${u_nick}님의 리뷰를 삭제하시겠습니까?`)) {
       try {
         await axios
-        .delete(`http://localhost:9070/admin/review/${br_no}`);
+          .delete(`http://localhost:9070/admin/review/${br_no}`);
 
         alert(`선택하신 ${u_nick}님의 리뷰를 삭제했습니다.`);
         loadData();
@@ -39,12 +38,12 @@ function ReviewList(props) {
     <>
       <section className='admin-list admin-userlist'>
         <h2 className='hidden'>맛집 리뷰 목록</h2>
-        <article className="pc-inner">
+        <div className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="board" />
 
           {/* 우측 리스트 */}
-          <div className='admin-list'>
+          <article className='admin-list'>
             <TitleBox title="맛집 리뷰 목록" />
 
             <table>
@@ -90,15 +89,15 @@ function ReviewList(props) {
                       <td>{item.br_date}</td>
                       <td className='btn-td'>
                         <Link to={`/admin/board/review/modify/${item.br_no}`} className='btn-update btn'>수정</Link>
-                        <button className='btn-delete btn' onClick={()=> deleteData(item.br_no, item.u_no)}>삭제</button>
+                        <button className='btn-delete btn' onClick={() => deleteData(item.br_no, item.u_no)}>삭제</button>
                       </td>
                     </tr>
                   ))
                 }
               </tbody>
             </table>
-          </div>
-        </article>
+          </article>
+        </div>
       </section>
     </>
   );
