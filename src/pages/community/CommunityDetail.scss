@@ -9,6 +9,46 @@
     padding: vw-mo(20) 0 vw-mo(60);
   }
 
+  .meetup-writer {
+    position: relative;
+    right: vw-mo(20);
+    display: flex;
+    align-items: center;
+    :hover {cursor: pointer;}
+  }
+
+  .user-writer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .user-writer button {
+      display: block;
+    }
+
+  .dot {
+    font-size: vw-mo(50);
+    line-height: vw-mo(10);
+    color: $color-gray-light;
+  }
+
+  .opne-menu-btn {
+    position: absolute;
+    top: vw-mo(50);
+    left: vw-mo(-15);
+    width: vw-mo(82);
+    height: vw-mo(106);
+    font-size: vw-mo(24);
+    border-radius: vw-mo(10);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12);
+    padding-top: 10px;
+
+  }
+
+  .opne-menu-btn button {
+    margin: 0 auto;
+    line-height: vw-mo(43);
+  }
+
   .comm-top {
     display: flex;
     align-items: center;
