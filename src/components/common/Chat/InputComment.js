@@ -34,6 +34,11 @@ function InputComment({ p_board_cate, p_board_no }) {
       navigate('/login');
     }
 
+    if (form.ct_desc === '') {
+      alert('댓글 내용을 입력하세요.');
+      return;
+    }
+
     try {
       await axios.post('http://localhost:9070/comment', form);
 

@@ -9,7 +9,7 @@ function PcInput({ type, name, title, onChange, value, readOnly }) {
         type={type}
         id={name}
         name={name}
-        placeholder={`${title}을(를) 입력해주세요`}
+        placeholder={type === 'date' ? undefined : `${title}을(를) 입력해 주세요.`}
         value={value}
         onChange={onChange}
         required

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
@@ -26,8 +26,9 @@ const WriteReview = () => {
   });
   const [imgFile, setImgFile] = useState(null);
   const [rtData, setRtData] = useState([]);
-  const navigate = useNavigate();
   const [showSelect, setShowSelect] = useState(false);
+  const brRtName = useRef();
+  const navigate = useNavigate();
 
   const rtSearch = async (word) => {
     if (!word) return;
@@ -67,6 +68,12 @@ const WriteReview = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!reviewInput.br_rt_no) {
+      alert('맛집을 선택해주세요.');
+      brRtName.current.focus();
+      return;
+    }
+
     if (!imgFile) {
       alert('사진을 선택해주세요.');
       return;
@@ -103,6 +110,7 @@ const WriteReview = () => {
               title='맛집명'
               value={reviewInput.br_rt_name}
               onChange={handleChange}
+              ref={brRtName}
             />
 
             {

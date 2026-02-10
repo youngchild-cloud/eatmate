@@ -1,6 +1,6 @@
 import './Input.scss';
 
-const Input = ({ type, name, title, RequiredInput, SelectInput, readonly, value, onChange, min }) => {
+const Input = ({ type, name, title, RequiredInput, SelectInput, readonly, value, onChange, ref, min }) => {
   return (
     <div className='common-input-box'>
       <label htmlFor={name}>
@@ -18,6 +18,7 @@ const Input = ({ type, name, title, RequiredInput, SelectInput, readonly, value,
         onChange={onChange}
         required={SelectInput ? false : true}
         min={type === 'date' ? min : undefined}
+        ref={ref}
       />
     </div>
   );

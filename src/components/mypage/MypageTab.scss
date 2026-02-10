@@ -23,4 +23,10 @@
       color: $color-main;
     }
   }
+
+  .tab-content {
+    .empty {
+      margin-top: vw-mo(20);
+    }
+  }
 }

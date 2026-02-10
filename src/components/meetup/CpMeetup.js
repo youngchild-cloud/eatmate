@@ -38,15 +38,9 @@ const CpMeetup = ({ mypageUser, mypageCategory }) => {
       .then(res => {
         const list = res.data.meetupData ?? res.data ?? [];
         setData(Array.isArray(list) ? list : []);
-
       })
-
       .catch(err => console.log(err))
   }
-
-  // useEffect(() => {
-  //   loadData();
-  // }, []);
 
   useEffect(() => {
     if (window.location.pathname.startsWith('/mypage/meetup')) {
@@ -59,6 +53,11 @@ const CpMeetup = ({ mypageUser, mypageCategory }) => {
   return (
     <>
       <div className="cp-meetup">
+        {/* 결과 없을 때 */}
+        {data.length === 0 && (
+          <p className="empty">해당 내용이 없습니다.</p>
+        )}
+
         {data.map(item => (
           <Link to={`/meetup/detail/${item.bm_no}`} key={item.bm_no}>
             <div className='item'>

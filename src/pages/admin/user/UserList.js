@@ -4,6 +4,7 @@ import axios from 'axios';
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
 import { Link } from 'react-router-dom';
+import { dateFormat2 } from 'utils/dateFormat2';
 
 
 
@@ -77,7 +78,7 @@ function UserList(props) {
                     <td>{item.u_nick}</td>
                     <td>{item.u_desc}</td>
                     <td>{item.u_badge}</td>
-                    <td>{item.u_date}</td>
+                    <td>{dateFormat2(item.u_date)}</td>
                     <td className='btn-td'>
                       <Link to={`/admin/user/modify/${item.u_no}`} className='btn-update btn'>수정</Link>
                       <button className='btn-delete btn' onClick={() => delData(item.u_no)}>삭제</button>
