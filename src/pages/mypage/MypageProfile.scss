@@ -11,4 +11,26 @@
     color: $color-gray;
     font-size: vw-mo(24);
   }
+
+  .nick-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: vw-mo(20);
+
+    .common-input-box {
+      width: vw-mo(513);
+      margin-bottom: 0;
+    }
+
+    button {
+      display: block;
+      width: vw-mo(177);
+      padding: vw-mo(23) vw-mo(10);
+      border-radius: vw-mo(6);
+      border: 1px solid $color-main;
+      color: $color-main;
+      font-size: vw-mo(24);
+    }
+  }
 }
