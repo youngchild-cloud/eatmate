@@ -34,6 +34,11 @@ const CpCommunity = ({ mypageUser, mypageCategory }) => {
   return (
     <>
       <div id="cp-community">
+        {/* 결과 없을 때 */}
+        {data.length === 0 && (
+          <p className="empty">해당 내용이 없습니다.</p>
+        )}
+
         {/* 자유게시판 글 목록  */}
         {data.map(item => (
           <div key={item.bc_no}>

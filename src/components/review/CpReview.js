@@ -48,6 +48,11 @@ const CpReview = ({ mypageUser, mypageCategory }) => {
 
   return (
     <>
+      {/* 결과 없을 때 */}
+      {reviewData.length === 0 && (
+        <p className="empty">해당 내용이 없습니다.</p>
+      )}
+
       <ul className="cp-review">
         {
           reviewData.map(item => (
