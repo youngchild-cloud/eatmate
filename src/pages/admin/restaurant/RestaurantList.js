@@ -40,12 +40,12 @@ function RestaurantList(props) {
     <>
       <section className='admin-list admin-restaurantlist'>
         <h2 className='hidden'>맛집 관리</h2>
-        <article className="pc-inner">
+        <div className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="restaurant" />
 
           {/* 우측 리스트 */}
-          <div className='admin-list'>
+          <article className='admin-list'>
             <TitleBox title="맛집 목록" linkto="/admin/restaurant/create" btnname="맛집 등록" btnshow />
 
             <table>
@@ -97,8 +97,8 @@ function RestaurantList(props) {
                 }
               </tbody>
             </table>
-          </div>
-        </article>
+          </article>
+        </div>
       </section>
     </>
   );

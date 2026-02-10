@@ -8,12 +8,12 @@ function MeetupCreate(props) {
   return (
     <>
       <section className='admin-create admin-usercreate'>
-        <article className="pc-inner">
+        <div className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="board" />
 
           {/* 우측 리스트 */}
-          <div className='right-content'>
+          <article className='right-content'>
             <TitleBox title="맛집 탐방 수정" />
 
             <form>
@@ -36,8 +36,8 @@ function MeetupCreate(props) {
 
               <button type="submit">수정 완료</button>
             </form>
-          </div>
-        </article>
+          </article>
+        </div>
       </section>
     </>
   );

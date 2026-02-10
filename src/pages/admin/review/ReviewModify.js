@@ -87,12 +87,12 @@ function ReviewCreate(props) {
     <>
       <section className='admin-create admin-usercreate'>
         <h2 className='hidden'>맛집 리뷰 수정</h2>
-        <article className="pc-inner">
+        <div className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="board" />
 
           {/* 우측 리스트 */}
-          <div className='right-content'>
+          <article className='right-content'>
             <TitleBox title="맛집 리뷰 수정" />
 
             <form className='review-modify' onSubmit={handleSubmit}>
@@ -151,8 +151,8 @@ function ReviewCreate(props) {
 
               <button type="submit">수정 완료</button>
             </form>
-          </div>
-        </article>
+          </article>
+        </div>
       </section>
     </>
   );

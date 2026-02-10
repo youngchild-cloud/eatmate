@@ -82,12 +82,12 @@ function RestaurantModify(props) {
     <>
       <section className='admin-create admin-restaurant-create'>
         <h2 className='hidden'>맛집 수정</h2>
-        <article className="pc-inner">
+        <div className="pc-inner">
           {/* 좌측 내비 */}
           <Aside navName="restaurant" />
 
           {/* 우측 리스트 */}
-          <div className='right-content'>
+          <article className='right-content'>
             <TitleBox title="맛집 수정" />
 
             <form onSubmit={handleSubmit}>
@@ -125,8 +125,8 @@ function RestaurantModify(props) {
 
               <button type="submit">등록 완료</button>
             </form>
-          </div>
-        </article>
+          </article>
+        </div>
       </section>
     </>
   );
