@@ -15,6 +15,7 @@ const WriteMeetup = () => {
 
   const token = localStorage.getItem('token');
   const decoded = token ? jwtDecode(token) : '';
+  const today = new Date().toISOString().split('T')[0];
 
   const [form, setForm] = useState({
     bm_board_cate: '',
@@ -92,7 +93,7 @@ const WriteMeetup = () => {
 
           <InputTextarea name={'bm_desc'} title={'내용'} onChange={handleChange} value={form.bm_desc} />
 
-          <Input type={'date'} name={'bm_m_date'} title={'날짜'} onChange={handleChange} value={form.bm_m_date} />
+          <Input type={'date'} name={'bm_m_date'} title={'날짜'} onChange={handleChange} value={form.bm_m_date} min={today} />
 
           <Input type={'number'} name={'bm_m_people_all'} title={'참석인원'} onChange={handleChange} value={form.bm_m_people_all} />
 

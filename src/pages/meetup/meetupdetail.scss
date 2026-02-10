@@ -127,7 +127,8 @@
       background: $color-sub-orange;
     }
 
-    .meetup-toggle-btn-close .btn-wide {
+    .meetup-toggle-btn-close .btn-wide,
+    .mymeetup-btn .btn-wide {
       filter: contrast(0.8);
     }
   }
