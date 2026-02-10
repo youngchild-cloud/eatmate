@@ -45,7 +45,7 @@ const CpRestaurant = ({ category, filter, mypageUser, searchKeyword }) => {
     <>
       {/* 결과 없을 때 */}
       {restaurantData.length === 0 && (
-        <p className="empty">결과가 없습니다.</p>
+        <p className="empty">해당 내용이 없습니다.</p>
       )}
 
       <ul id='comp-restaurant'>
