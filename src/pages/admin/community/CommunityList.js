@@ -3,6 +3,7 @@ import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { dateFormat2 } from 'utils/dateFormat2';
 
 function CommunityList(props) {
   const [data, setData] = useState([]);
@@ -80,7 +81,7 @@ function CommunityList(props) {
                     <td>{item.bc_desc}</td>
                     <td>{item.bc_heart}</td>
                     <td>{item.bc_comment}</td>
-                    <td>{item.bc_date}</td>
+                    <td>{ dateFormat2(item.bc_date)}</td>
                     <td className='btn-td'>
                       <Link to={`/admin/board/community/modify/${item.bc_no}`} className='btn-update btn'>수정</Link>
                       <button className='btn-delete btn' onClick={() => deleteData(item.bc_no, item.u_nick)}>삭제</button>

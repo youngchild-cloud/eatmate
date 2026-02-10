@@ -3,6 +3,7 @@ import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { dateFormat2 } from 'utils/dateFormat2';
 
 function RestaurantList(props) {
   const [data, setData] = useState([]);
@@ -55,8 +56,8 @@ function RestaurantList(props) {
                 <col style={{ width: "10%" }} />
                 <col style={{ width: "16%" }} />
                 <col style={{ width: "14%" }} />
-                <col style={{ width: "8%" }} />
-                <col style={{ width: "15%" }} />
+                <col style={{ width: "9%" }} />
+                <col style={{ width: "14%" }} />
                 <col style={{ width: "6%" }} />
                 <col style={{ width: "12%" }} />
                 <col style={{ width: "10%" }} />
@@ -86,7 +87,7 @@ function RestaurantList(props) {
                     <td>{item.rt_tel}</td>
                     <td>{item.rt_location}</td>
                     <td>{item.rt_rank} / ({item.rt_review})</td>
-                    <td>{item.rt_date}</td>
+                    <td>{dateFormat2(item.rt_date)}</td>
                     <td className='btn-td'>
                       <Link to={`/admin/restaurant/modify/${item.rt_no}`} className='btn-update btn'>수정</Link>
                       <button className='btn-delete btn' onClick={() => deleteData(item.rt_no, item.rt_name)}>삭제</button>
