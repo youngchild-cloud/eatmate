@@ -3,6 +3,7 @@ import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { dateFormat2 } from 'utils/dateFormat2';
 
 function ReviewList(props) {
   const [data, setData] = useState([]);
@@ -86,7 +87,7 @@ function ReviewList(props) {
                       <td>{item.br_rank}</td>
                       <td>{item.br_heart}</td>
                       <td>{item.br_comment}</td>
-                      <td>{item.br_date}</td>
+                      <td>{ dateFormat2(item.br_date)}</td>
                       <td className='btn-td'>
                         <Link to={`/admin/board/review/modify/${item.br_no}`} className='btn-update btn'>수정</Link>
                         <button className='btn-delete btn' onClick={() => deleteData(item.br_no, item.u_no)}>삭제</button>

@@ -6,3 +6,9 @@ export const dateFormat2 = (value) => {
   const dateTime = date.slice(0, 16).replace("T", " ");
   return dateTime;
 }
+export const dateFormat3 = (value) => {
+
+  const date = value;
+  const dateTime = date.slice(0, 10)
+  return dateTime;
+}
