@@ -4,6 +4,8 @@ import PcInput from 'components/admin/PcInput';
 import TitleBox from 'components/admin/TitleBox';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
+import { useAdminRequireLogin } from 'utils/useAdminRequireLogin';
 
 function CommunityCreate(props) {
 
@@ -14,7 +16,16 @@ function CommunityCreate(props) {
     bc_desc: '',
   })
 
+  useAdminRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
   const navigate = useNavigate();
+  const token = localStorage.getItem('adminToken');
+  //토큰만료 확인후 삭제
+  if (token) {
+    const { exp } = jwtDecode(token);
+    if (Date.now() >= exp * 1000) {
+      localStorage.removeItem('adminToken');
+    }
+  }
 
   useEffect(() => {
     axios.get(`http://localhost:9070/community/detail/${bc_no}`)

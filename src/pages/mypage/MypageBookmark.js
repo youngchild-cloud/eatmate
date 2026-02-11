@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 import './MypageBookmark.scss';
 
@@ -10,7 +11,16 @@ import { useRequireLogin } from 'utils/useRequireLogin';
 const MypageBookmark = () => {
   useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
 
+  const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  //토큰만료 확인후 삭제
+  if (token) {
+    const { exp } = jwtDecode(token);
+    if (Date.now() >= exp * 1000) {
+      localStorage.removeItem('token');
+      navigate('/login');
+    }
+  }
   const decoded = token ? jwtDecode(token) : '';
 
   // 맛집 카테고리

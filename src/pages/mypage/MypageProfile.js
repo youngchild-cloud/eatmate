@@ -10,9 +10,21 @@ import InputTextarea from 'components/common/InputTextarea';
 import ButtonWide from 'components/common/ButtonWide';
 import InputFile from 'components/common/InputFile';
 import { useRequireLogin } from 'utils/useRequireLogin';
+import { jwtDecode } from 'jwt-decode';
 
 const MypageProfile = () => {
   useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
+
+  const navigate = useNavigate();
+  const token = localStorage.getItem('token');
+  //토큰만료 확인후 삭제
+  if (token) {
+    const { exp } = jwtDecode(token);
+    if (Date.now() >= exp * 1000) {
+      localStorage.removeItem('token');
+      navigate('/login');
+    }
+  }
 
   const [myProfileInput, setMyProfileInput] = useState({
     u_id: '',
@@ -29,7 +41,7 @@ const MypageProfile = () => {
   const [checkedNick, setCheckedNick] = useState('');
   const [originalNick, setOriginalNick] = useState('');
   const { user_no } = useParams()
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     // 페이지에 들어왔을 때 로그인 토큰이 있다면 메인 페이지로 강제 이동

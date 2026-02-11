@@ -12,7 +12,17 @@ import { jwtDecode } from 'jwt-decode';
 const WriteCommunity = () => {
   useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
 
+  const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  //토큰만료 확인후 삭제
+  if (token) {
+    const { exp } = jwtDecode(token);
+    if (Date.now() >= exp * 1000) {
+      localStorage.removeItem('token');
+      navigate('/login');
+    }
+  }
+
   const decoded = token ? jwtDecode(token) : '';
 
   const [form, setForm] = useState({
@@ -22,7 +32,7 @@ const WriteCommunity = () => {
     //유저 정보? 입력시간?
   })
   // 완료후 이동?
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({

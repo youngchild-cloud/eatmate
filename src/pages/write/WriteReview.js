@@ -15,7 +15,16 @@ import { useRequireLogin } from 'utils/useRequireLogin';
 const WriteReview = () => {
   useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
 
+  const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  //토큰만료 확인후 삭제
+  if (token) {
+    const { exp } = jwtDecode(token);
+    if (Date.now() >= exp * 1000) {
+      localStorage.removeItem('token');
+      navigate('/login');
+    }
+  }
   const decoded = token ? jwtDecode(token) : '';
   const [reviewInput, setReviewInput] = useState({
     br_user_no: decoded.token_no,
@@ -28,7 +37,7 @@ const WriteReview = () => {
   const [rtData, setRtData] = useState([]);
   const [showSelect, setShowSelect] = useState(false);
   const brRtName = useRef();
-  const navigate = useNavigate();
+
 
   const rtSearch = async (word) => {
     if (!word) return;
