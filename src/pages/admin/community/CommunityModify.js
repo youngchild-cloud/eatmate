@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Aside from 'components/admin/Aside';
 import PcInput from 'components/admin/PcInput';
+import PcInputTextarea from 'components/admin/PcInputTextarea';
 import TitleBox from 'components/admin/TitleBox';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -64,7 +65,7 @@ function CommunityCreate(props) {
 
             <form onSubmit={handleSubmit}>
               <PcInput type="text" name='bc_title' title='제목' value={bcInput.bc_title} onChange={handleChange} />
-              <PcInput type="text" name="bc_desc" title="내용" value={bcInput.bc_desc} onChange={handleChange} />
+              <PcInputTextarea name="bc_desc" title="내용" value={bcInput.bc_desc} onChange={handleChange} />
 
               <button type="submit">수정 완료</button>
             </form>
