@@ -4,7 +4,7 @@ import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function InputComment({ p_board_cate, p_board_no }) {
+function InputComment({ p_board_cate, p_board_no, onAfterSubmit }) {
   const token = localStorage.getItem('token');
   const decoded = token ? jwtDecode(token) : '';
 
@@ -41,9 +41,12 @@ function InputComment({ p_board_cate, p_board_no }) {
 
     try {
       await axios.post('http://localhost:9070/comment', form);
-
       alert('댓글이 등록되었습니다.');
-      window.location.reload();
+      onAfterSubmit?.();
+      setForm(prev => ({
+        ...prev,
+        ct_desc: '',
+      }))
     } catch (err) {
       console.log(err);
     }

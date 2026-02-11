@@ -27,6 +27,7 @@
   }
 
   .comment-content {
+    position: relative;
     width: vw-mo(624);
 
     .comment-nick {
@@ -48,6 +49,16 @@
     .comment-time {
       font-size: vw-mo(24);
       color: $color-gray-light;
+    }
+
+    .comment-delete {
+      position: absolute;
+      top: vw-mo(10);
+      right: 0;
+    }
+
+    .comment-delete svg {
+      color: $color-main;
     }
   }
 }

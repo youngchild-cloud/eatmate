@@ -134,7 +134,11 @@ const ReviewDetail = () => {
         </div>
 
         {/* p_board_cate는 게시판 카테고리(review, meetup, community) / p_board_no는 게시글 번호를 넘겨주시면 됩니다. */}
-        <Chat p_board_cate={'review'} p_board_no={br_no} />
+        <Chat
+          p_board_cate={'review'}
+          p_board_no={br_no}
+          onRefreshBoard={loadData}
+        />
       </div>
     </section>
   );
