@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 import Header from 'components/layout/Header';
 import Nav from 'components/layout/Nav';
+import TopButton from 'components/common/TopButton';
 
 export default function MoLayout() {
   return (
@@ -11,6 +12,9 @@ export default function MoLayout() {
         <Outlet />
       </main>
       <Nav />
+
+      {/* Top 버튼 */}
+      <TopButton />
     </>
   );
 }

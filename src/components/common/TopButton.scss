@@ -1,0 +1,23 @@
+@use 'assets/scss/variables' as *;
+@use 'assets/scss/function' as *;
+
+.top-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: vw-mo(20);
+  bottom: vw-mo(140);
+  z-index: 1000;
+  width: vw-mo(70);
+  height: vw-mo(70);
+  border-radius: 50%;
+  background: $color-sub-yellow;
+  color: $color-white;
+  opacity: 0;
+  transition: 0.3s;
+
+  &.act {
+    opacity: 1;
+  }
+}
