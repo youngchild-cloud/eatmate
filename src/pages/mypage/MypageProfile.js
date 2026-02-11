@@ -148,6 +148,9 @@ const MypageProfile = () => {
     try {
       await axios.put('http://localhost:9070/mypage/profile/modify/', formData);
 
+      // 프로필 수정 후 Header 즉시 갱신
+      window.dispatchEvent(new Event('authchange'));
+
       alert('프로필 수정이 완료되었습니다. 마이페이지로 이동합니다.');
       navigate('/mypage');
     } catch (err) {

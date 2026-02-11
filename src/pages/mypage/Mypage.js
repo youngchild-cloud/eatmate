@@ -47,6 +47,8 @@ const Mypage = () => {
   const handleLogout = () => {
     if (window.confirm('로그아웃 하시겠습니까?')) {
       localStorage.removeItem('token');
+      window.dispatchEvent(new Event('authchange')); // Header 즉시 갱신
+
       alert('로그아웃 되었습니다. 메인 페이지로 이동합니다.');
       navigate('/');
     } else {

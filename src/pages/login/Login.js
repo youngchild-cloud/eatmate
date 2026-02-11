@@ -49,6 +49,7 @@ const Login = () => {
       // 비동기 통신으로 값을 전달하고, 토큰을 생성
       const res = await axios.post('http://localhost:9070/login', loginInput);
       localStorage.setItem('token', res.data.token);
+      window.dispatchEvent(new Event('authchange'));
 
       // 아이디 저장 체크박스 선택시 save_id값 생성/체크박스 해지시 save_id값 삭제
       if (checkInput) {
