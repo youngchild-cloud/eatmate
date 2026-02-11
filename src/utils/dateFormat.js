@@ -1,37 +1,21 @@
 // 날짜 함수(2026.03.01 or 10시간 전 or 10분 전)
 export const dateFormat = (writeDate) => {
-  // today 날짜
-  const todayDate = new Date();
-  const todayYear = todayDate.getFullYear();
-  const todayMonth = String(todayDate.getMonth() + 1).padStart(2, '0');
-  const todayDay = String(todayDate.getDate()).padStart(2, '0');
-  const todayHour = todayDate.getHours();
-  const todayMinute = todayDate.getMinutes();
+  const now = new Date();
+  const d = new Date(writeDate);
 
-  // 리뷰 입력 날짜
-  const reviewDate = new Date(writeDate);
-  const reviewYear = reviewDate.getFullYear();
-  const reviewMonth = String(reviewDate.getMonth() + 1).padStart(2, '0');
-  const reviewDay = String(reviewDate.getDate()).padStart(2, '0');
-  const reviewHour = reviewDate.getHours();
-  const reviewMinute = reviewDate.getMinutes();
+  if (Number.isNaN(d.getTime())) return '';
 
-  // 리턴시킬 날짜값
-  let date;
+  const diffMs = now - d;
+  const diffMin = Math.floor(diffMs / 60000);
 
-  // today 날짜가 리뷰 입력 날짜와 일치하면
-  if (todayYear === reviewYear && todayMonth === reviewMonth && todayDay === reviewDay) {
-    const minutes = (todayHour - reviewHour) * 60 + todayMinute - reviewMinute;
+  // 서버 시간이 앞서서 미래로 잡히는 경우 방어 소스
+  if (diffMin < 0) return '방금 전'; // 또는 날짜로 표시
 
-    // 1시간(60분) 이하라면
-    if (minutes < 60) {
-      date = `${minutes}분 전`; // n분 전
-    } else { // 1시간(60분) 이상이면
-      date = `${Math.floor(minutes / 60)}시간 전`; // n시간 전
-    }
-  } else {
-    date = `${reviewYear}.${reviewMonth}.${reviewDay}`; // yyyy.mm.dd
-  }
+  if (diffMin < 60) return `${diffMin}분 전`;
+  if (diffMin < 60 * 24) return `${Math.floor(diffMin / 60)}시간 전`;
 
-  return date;
-}
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}.${m}.${day}`;
+};
