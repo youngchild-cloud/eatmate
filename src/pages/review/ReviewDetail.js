@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 
@@ -10,15 +10,23 @@ import Badge from 'components/common/Badge';
 import Rank5 from 'components/review/Rank5';
 import HeartComment from 'components/common/HeartComment';
 import Chat from 'components/common/Chat';
-
 import { dateFormat } from 'utils/dateFormat';
 
+import more from 'assets/images/review/btn_board.png';
+
 const ReviewDetail = () => {
-  const [reviewData, setReviewData] = useState('');
-  const { br_no } = useParams();
   const token = localStorage.getItem('token');
   const decoded = token ? jwtDecode(token) : '';
+  const [reviewData, setReviewData] = useState('');
+  const [modalShow, setModleShow] = useState(false);
+  const { br_no } = useParams();
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    loadData();
+  }, [br_no])
+
+  // 게시물 가져오기
   const loadData = async () => {
     try {
       const res = await axios.post(`http://localhost:9070/review/detail/${br_no}`);
@@ -29,9 +37,21 @@ const ReviewDetail = () => {
     }
   };
 
-  useEffect(() => {
-    loadData();
-  }, [br_no])
+  // 본인이 작성한 게시글일 경우 삭제 가능
+  const boardDelete = async (br_no) => {
+    if (window.confirm('해당 게시글을 삭제하시겠습니까?')) {
+      try {
+        await axios.delete(`http://localhost:9070/review/detail/${br_no}`);
+
+        alert('해당 게시글이 삭제되었습니다. 맛집 목록 페이지로 이동합니다.');
+        navigate('/review');
+      } catch (err) {
+        console.log(err.response.data.message);
+      }
+    } else {
+      return;
+    }
+  }
 
   return (
     <section className='review-detail'>
@@ -53,6 +73,21 @@ const ReviewDetail = () => {
                 <span className="date">{dateFormat(reviewData.br_date)}</span>
               </div>
             </div>
+            {
+              reviewData.br_user_no === decoded.token_no &&
+              <div className='more-box'>
+                <button
+                  className='more-btn'
+                  onClick={() => setModleShow(prev => !prev)}
+                >
+                  <img src={more} alt="더보기" />
+                </button>
+                <ul className={`more-list ${modalShow && 'act'}`}>
+                  <li><button>수정</button></li>
+                  <li><button onClick={() => boardDelete(reviewData.br_no)}>삭제</button></li>
+                </ul>
+              </div>
+            }
           </div>
           <div className="image-area">
             {
