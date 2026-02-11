@@ -1,6 +1,6 @@
 import './Comment.scss';
 
-function Comment({ profil, nick, txt, time }) {
+function Comment({ profil, nick, txt, time, isMine, onDelete }) {
   return (
     <>
       {/* ------게시글 댓글------ */}
@@ -12,7 +12,14 @@ function Comment({ profil, nick, txt, time }) {
         <div className="comment-content">
           <span className='comment-nick'>{nick}</span>
           <p className='comment-txt'>{txt}</p>
-          <span className="comment-time">{time}</span>
+          <span className="comment-time">{time} {isMine && (<>
+            {' '} &middot;{' '}
+            <button className="comment-delete" onClick={onDelete}>
+              삭제
+            </button>
+          </>)}</span>
+
+
         </div>
       </li>
     </>
