@@ -7,11 +7,22 @@
       display: flex;
       align-items: start;
       gap: vw-mo(20);
+      margin-bottom: vw-mo(20);
+    }
+
+    .profile-img {
+      width: vw-mo(140);
+      height: vw-mo(140);
+    }
+
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .profile-txt {
       vertical-align: middle;
-      padding-bottom: vw-mo(20);
       width: vw-mo(540);
     }
 
@@ -44,8 +55,8 @@
       width: 100%;
       padding: vw-mo(20) 0;
       border-radius: vw-mo(6);
-      background: $color-white-gray;
-      color: $color-text;
+      background: $color-sub-yellow;
+      color: $color-white;
       margin: 0 0 vw-mo(60) 0;
       text-align: center;
     }

@@ -50,7 +50,9 @@ const Mypage = () => {
         <TitleCenter title={'마이페이지'} />
 
         <div className="profile">
-          <div><img src={`http://localhost:9070/uploads/user/${mypageData.u_pic}`} alt="" /></div>
+          <div className='profile-img'>
+            <img src={`http://localhost:9070/uploads/user/${mypageData.u_pic}`} alt="" />
+          </div>
 
           <p className="profile-txt">
             {mypageData.u_nick}
