@@ -9,6 +9,7 @@ const InputFile = ({
   maxFiles = 1,
   onFilesChange,
   defaultPreview,
+  imgUrl = 'user',
 }) => {
   const [previews, setPreviews] = useState([]);
 
@@ -66,7 +67,7 @@ const InputFile = ({
                   src={
                     src.startsWith('blob:')
                       ? src
-                      : `http://localhost:9070/uploads/user/${src}`
+                      : `http://localhost:9070/uploads/${imgUrl}/${src}`
                   }
                   alt={`미리보기 ${idx + 1}`}
                 />
