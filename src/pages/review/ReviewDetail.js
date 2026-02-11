@@ -83,7 +83,7 @@ const ReviewDetail = () => {
                   <img src={more} alt="더보기" />
                 </button>
                 <ul className={`more-list ${modalShow && 'act'}`}>
-                  <li><button>수정</button></li>
+                  <li><Link to={`/write/review/${reviewData.br_no}`} title='글쓰기 수정 페이지로 이동'>수정</Link></li>
                   <li><button onClick={() => boardDelete(reviewData.br_no)}>삭제</button></li>
                 </ul>
               </div>
