@@ -9,6 +9,7 @@
   .profile-area {
     display: flex;
     gap: vw-mo(20);
+    position: relative;
 
     .img-box {
       overflow: hidden;
@@ -45,6 +46,42 @@
       gap: vw-mo(10);
       color: $color-gray-light;
       font-size: vw-mo(24);
+    }
+
+    .more-box {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+    }
+
+    .more-btn {
+      width: vw-mo(42);
+      vertical-align: super;
+    }
+
+    .more-btn img {
+      width: 100%;
+    }
+
+    .more-list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: vw-mo(10) vw-mo(20);
+      border-radius: vw-mo(10);
+      box-shadow: 0 0 vw-mo(10) rgba($color: #000000, $alpha: 0.1);
+    }
+
+    .more-list li {
+      line-height: 1.8;
+    }
+
+    // act
+    .more-list.act {
+      display: block;
     }
   }
 

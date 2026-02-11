@@ -25,6 +25,26 @@ header {
     width: vw-mo(184);
   }
 
+  .user-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: vw-mo(20);
+  }
+
+  .user-box .img-box {
+    overflow: hidden;
+    width: vw-mo(50);
+    height: vw-mo(50);
+    border-radius: 50%;
+  }
+
+  .user-box .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .bell {
     width: vw-mo(40);
   }

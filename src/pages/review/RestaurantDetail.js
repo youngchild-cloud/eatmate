@@ -104,7 +104,25 @@ const RestaurantDetail = () => {
   useEffect(() => {
     rtLoadData();
     rvLoadData();
-  }, [rt_no])
+
+    // 북마크 상태 로드
+    const loadBookmark = async () => {
+      if (!token) {
+        setIsBookmarked(false);
+        return;
+      }
+      try {
+        const res = await axios.get('http://localhost:9070/bookmark/check', {
+          params: { user_no: decoded.token_no, rt_no },
+        });
+        setIsBookmarked(res.data.isBookmarked);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    loadBookmark();
+  }, [rt_no, token]);
 
   return (
     <>

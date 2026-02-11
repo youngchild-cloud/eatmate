@@ -4,8 +4,19 @@ import TitleBox from 'components/admin/TitleBox';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { dateFormat2 } from 'utils/dateFormat2';
+import { jwtDecode } from 'jwt-decode';
+import { useAdminRequireLogin } from 'utils/useAdminRequireLogin';
 
 function ReviewList(props) {
+  useAdminRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
+  const token = localStorage.getItem('adminToken');
+  //토큰만료 확인후 삭제
+  if (token) {
+    const { exp } = jwtDecode(token);
+    if (Date.now() >= exp * 1000) {
+      localStorage.removeItem('adminToken');
+    }
+  }
   const [data, setData] = useState([]);
 
   const loadData = async () => {
@@ -87,7 +98,7 @@ function ReviewList(props) {
                       <td>{item.br_rank}</td>
                       <td>{item.br_heart}</td>
                       <td>{item.br_comment}</td>
-                      <td>{ dateFormat2(item.br_date)}</td>
+                      <td>{dateFormat2(item.br_date)}</td>
                       <td className='btn-td'>
                         <Link to={`/admin/board/review/modify/${item.br_no}`} className='btn-update btn'>수정</Link>
                         <button className='btn-delete btn' onClick={() => deleteData(item.br_no, item.u_no)}>삭제</button>

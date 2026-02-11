@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import './WriteReview.scss';
 
@@ -15,7 +15,16 @@ import { useRequireLogin } from 'utils/useRequireLogin';
 const WriteReview = () => {
   useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
 
+  const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  //토큰만료 확인후 삭제
+  if (token) {
+    const { exp } = jwtDecode(token);
+    if (Date.now() >= exp * 1000) {
+      localStorage.removeItem('token');
+      navigate('/login');
+    }
+  }
   const decoded = token ? jwtDecode(token) : '';
   const [reviewInput, setReviewInput] = useState({
     br_user_no: decoded.token_no,
@@ -24,12 +33,33 @@ const WriteReview = () => {
     br_rt_no: '',
     br_rt_name: '',
   });
-  const [imgFile, setImgFile] = useState(null);
+  const [originPic, setOriginPic] = useState(null);
   const [rtData, setRtData] = useState([]);
   const [showSelect, setShowSelect] = useState(false);
+  const [imgFile, setImgFile] = useState(null);
   const brRtName = useRef();
-  const navigate = useNavigate();
+  const { br_no } = useParams();
 
+  // br_no이 있는 경우(=== 수정 버튼을 누르고 들어온 경우)
+  useEffect(() => {
+    if (!br_no) return;
+
+    axios.get(`http://localhost:9070/write/review/modify/${br_no}`)
+      .then(res => {
+        setReviewInput(prev => ({
+          ...prev,
+          br_user_no: decoded.token_no,
+          br_rank: res.data.br_rank,
+          br_desc: res.data.br_desc,
+          br_rt_no: res.data.br_rt_no,
+          br_rt_name: res.data.rt_name,
+        }))
+        setOriginPic(res.data.br_img);
+      })
+      .catch(err => console.log(err.response.data.message));
+  }, [br_no]);
+
+  // 맛집명 검색 기능 - 입력한 키워드로 맛집 목록 조회
   const rtSearch = async (word) => {
     if (!word) return;
 
@@ -42,6 +72,17 @@ const WriteReview = () => {
     }
   }
 
+  // 맛집명 검색 기능 - 맛집 선택 시 실행
+  const rtSelect = (rtNo, rtName) => {
+    setReviewInput(prev => ({
+      ...prev,
+      br_rt_no: rtNo,
+      br_rt_name: rtName,
+    }))
+    setShowSelect(false);
+  }
+
+  // input값 변경
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -56,15 +97,7 @@ const WriteReview = () => {
     }))
   }
 
-  const rtSelect = (rtNo, rtName) => {
-    setReviewInput(prev => ({
-      ...prev,
-      br_rt_no: rtNo,
-      br_rt_name: rtName,
-    }))
-    setShowSelect(false);
-  }
-
+  // 폼 제출 함수
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -74,7 +107,7 @@ const WriteReview = () => {
       return;
     }
 
-    if (!imgFile) {
+    if (!br_no && !imgFile) {
       alert('사진을 선택해주세요.');
       return;
     }
@@ -88,10 +121,17 @@ const WriteReview = () => {
     if (imgFile) formData.append('br_img', imgFile); // key 이름 중요(백엔드와 동일)
 
     try {
-      await axios.post('http://localhost:9070/write/review', formData);
-
-      alert('맛집 리뷰 글쓰기가 완료되었습니다. 맛집 리뷰 목록 페이지로 이동합니다.');
-      navigate('/review');
+      if (!br_no) {
+        // 등록하기
+        const res = await axios.post('http://localhost:9070/write/review', formData);
+        alert('맛집 리뷰 글쓰기가 완료되었습니다. 작성한 게시글로 이동합니다.');
+        navigate(`/review/detail/${res.data.br_no}`);
+      } else {
+        // 수정하기
+        await axios.put(`http://localhost:9070/write/review/modify/${br_no}`, formData);
+        alert('맛집 리뷰 글쓰기 수정이 완료되었습니다. 수정한 게시글로 이동합니다.');
+        navigate(`/review/detail/${br_no}`);
+      }
     } catch (err) {
       console.log(err.response.data.error);
     }
@@ -135,7 +175,9 @@ const WriteReview = () => {
           <InputFile
             name="br_img"
             title="사진"
-            // maxFiles={5}
+            maxFiles={1}
+            defaultPreview={originPic}
+            imgUrl='review'
             onFilesChange={(files) => setImgFile(files[0] || null)}
           />
 
@@ -166,7 +208,7 @@ const WriteReview = () => {
 
           <ButtonWide
             type='submit'
-            text='등록하기'
+            text={br_no ? '수정하기' : '등록하기'}
           />
         </form>
       </div>

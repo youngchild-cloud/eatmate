@@ -89,6 +89,7 @@ export default function AppRoutes() {
         <Route path="community/modify/:bc_no" element={<CommunityModify />} />
 
         <Route path="write/review" element={<WriteReview />} />
+        <Route path="write/review/:br_no" element={<WriteReview />} />
         <Route path="write/meetup" element={<WriteMeetup />} />
         <Route path="write/community" element={<WriteCommunity />} />
 

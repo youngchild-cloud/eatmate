@@ -19,12 +19,22 @@ import LogoutImg from 'assets/images/mypage/logout.png';
 const Mypage = () => {
   useRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
 
+  const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  //토큰만료 확인후 삭제
+  if (token) {
+    const { exp } = jwtDecode(token);
+    if (Date.now() >= exp * 1000) {
+      localStorage.removeItem('token');
+      navigate('/login');
+    }
+  }
+
   const decoded = token ? jwtDecode(token) : '';
 
   const [mypageData, setMyPageDate] = useState('');
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const user_no = decoded.token_no;
@@ -50,7 +60,9 @@ const Mypage = () => {
         <TitleCenter title={'마이페이지'} />
 
         <div className="profile">
-          <div><img src={`http://localhost:9070/uploads/user/${mypageData.u_pic}`} alt="" /></div>
+          <div className='profile-img'>
+            <img src={`http://localhost:9070/uploads/user/${mypageData.u_pic}`} alt="" />
+          </div>
 
           <p className="profile-txt">
             {mypageData.u_nick}
