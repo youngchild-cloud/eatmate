@@ -8,16 +8,16 @@ import meetup from 'assets/images/icon_nav_meetups.png';
 import write from 'assets/images/icon_nav_write.png';
 import community from 'assets/images/icon_nav_community.png';
 import mypage from 'assets/images/icon_nav_mypage.png';
+import login from 'assets/images/icon_nav_login.png';
 
 const Nav = () => {
   const [navModal, setNavModal] = useState(false);
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const token = localStorage.getItem('token');
 
   // 로그인을 안 되어있다면 [글쓰기], [마이페이지] 진입 불가
   const requireLogin = (e) => {
-    const token = localStorage.getItem('token');
-
     if (!token) {
       e.preventDefault();
       alert('로그인 후 사용 가능합니다.');
@@ -102,8 +102,19 @@ const Nav = () => {
               className={({ isActive }) => (isActive ? 'act' : '')}
               onClick={requireLogin}
             >
-              <img src={mypage} alt="마이페이지" />
-              마이페이지
+              {
+                token
+                  ?
+                  <>
+                    <img src={mypage} alt="마이페이지" />
+                    마이페이지
+                  </>
+                  :
+                  <>
+                    <img src={login} alt="로그인" />
+                    로그인
+                  </>
+              }
             </NavLink>
           </li>
         </ul>
