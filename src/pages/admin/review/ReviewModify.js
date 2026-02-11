@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
+import { useAdminRequireLogin } from 'utils/useAdminRequireLogin';
 
 import Aside from 'components/admin/Aside';
 import TitleBox from 'components/admin/TitleBox';
@@ -9,6 +11,15 @@ import PcInputFile from 'components/admin/PcInputFile';
 import PcInputTextarea from 'components/admin/PcInputTextarea';
 
 function ReviewCreate(props) {
+  useAdminRequireLogin(); // 페이지에 진입했을 때 로그인이 안되어 있다면 로그인 페이지로 이동
+  const token = localStorage.getItem('adminToken');
+  //토큰만료 확인후 삭제
+  if (token) {
+    const { exp } = jwtDecode(token);
+    if (Date.now() >= exp * 1000) {
+      localStorage.removeItem('adminToken');
+    }
+  }
   const [reviewData, setReviewData] = useState({
     rt_no: '',
     rt_name: '',
