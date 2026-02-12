@@ -5,7 +5,7 @@ import axios from 'axios';
 import './CpMeetup.scss';
 
 import HeartCommentList from 'components/common/HeartCommentList';
-import { dateFormat } from 'utils/dateFormat'
+import { dateFormat3 } from 'utils/dateFormat2'
 
 import tabTxtImg1 from 'assets/images/meetup/con-txt-img1.png';
 import tabTxtImg2 from 'assets/images/meetup/con-txt-img2.png';
@@ -64,7 +64,7 @@ const CpMeetup = ({ mypageUser, mypageCategory }) => {
               <div className='item-txt'>
                 <h3>{item.bm_title}</h3>
                 <p>
-                  <span><img src={tabTxtImg1} alt="달력 아이콘" /> {dateFormat(item.bm_m_date)}</span>
+                  <span><img src={tabTxtImg1} alt="달력 아이콘" /> {dateFormat3(item.bm_m_date)}</span>
                   <span><img src={tabTxtImg2} alt="위치 아이콘" /> {item.bm_m_res}</span>
                   <span><img src={tabTxtImg3} alt="인원 아이콘" /> {item.bm_m_people}/{item.bm_m_people_all}</span>
                 </p>
