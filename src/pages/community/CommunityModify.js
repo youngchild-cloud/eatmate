@@ -57,7 +57,7 @@ const CommunityModify = () => {
 
       alert('게시글이 수정되었습니다.');
 
-      navigate('/community')
+      navigate(`/community/detail/${bc_no}`)
     }catch (err) {
       console.log(err)
     }
