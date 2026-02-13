@@ -101,7 +101,7 @@ function ReviewList(props) {
                       <td>{dateFormat2(item.br_date)}</td>
                       <td className='btn-td'>
                         <Link to={`/admin/board/review/modify/${item.br_no}`} className='btn-update btn'>수정</Link>
-                        <button className='btn-delete btn' onClick={() => deleteData(item.br_no, item.u_no)}>삭제</button>
+                        <button className='btn-delete btn' onClick={() => deleteData(item.br_no, item.u_nick)}>삭제</button>
                       </td>
                     </tr>
                   ))
